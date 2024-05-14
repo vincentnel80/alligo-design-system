@@ -1,0 +1,1 @@
+# alligo-design-system information
