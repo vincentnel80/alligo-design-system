@@ -1,0 +1,52 @@
+@import '../Layout/layout';
+
+.icon-library-content-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(6, 1fr);
+    border-bottom: 2px solid #E5E5E5;
+
+    .icon-library-column{
+        width: 80px;
+        height: 80px;
+
+        @include breakpoint(desktop) {
+            width: 180px;
+            height: 120px;
+        }
+
+        .vertical-center {
+            display: block;
+            vertical-align: middle;
+            text-align: center;
+
+            @include breakpoint(desktop) {
+                margin-top: 10%;
+            }
+
+            .icon-name {
+                text-align: center;
+                padding-top: 6px;
+                padding-bottom: 6px;
+            }
+
+            svg {
+                width: 40px;
+            }
+        }
+
+        &:hover  {
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        &:last-child {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+
+
+

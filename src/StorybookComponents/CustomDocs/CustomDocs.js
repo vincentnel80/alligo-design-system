@@ -2,8 +2,8 @@ import React from 'react';
 
 import MainIntroComponent from '../Layout/TemplateComponents/MainIntroComponent';
 
-//import './buttons.scss';
-import './custom-docs.scss';
+
+//import './custom-docs.scss';
 
 <link rel="stylesheet" type="text/css" src="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&amp;family=Material+Symbols+Outlined:wght,FILL@300,0;300,1&amp;display=swap" src_type="url" />
 

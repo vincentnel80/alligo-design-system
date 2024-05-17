@@ -1,0 +1,47 @@
+@import '../Layout/layout';
+
+.icon-search-field {
+    margin-top: 16px;
+    max-width: 792px;
+    margin-bottom: 32px;
+
+    .icon-input-image {
+        background-color: #F6F6F6 !important;
+        background: url(./ComponentIcons/search.svg);
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        border: 0;
+        margin-left: 12px;
+        margin-top: 10px;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+    }
+
+    .icon-search-input {
+        background-color: #F6F6F6;
+        height: 38px;
+        border: 0;
+        width: 100%;
+        padding-left: 44px;
+        box-sizing: border-box;
+    }
+}
+
+.svg-mobile-display {
+    display: block;
+    @include breakpoint(tablet) {
+        display: none;
+    }
+}
+
+.svg-tablet-display {
+    display: none;
+    @include breakpoint(tablet) {
+        display: block;
+    }
+}
+
+.svg-desktop-display {
+    display: block;
+}

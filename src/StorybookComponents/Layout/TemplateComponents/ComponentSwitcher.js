@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
-import './component-switcher.scss';
-import '../../Buttons/buttons.scss';
+//import './component-switcher.scss';
+//import '../../Buttons/buttons.scss';
 
 const ComponentSwitcher = () => {
     // NEw
