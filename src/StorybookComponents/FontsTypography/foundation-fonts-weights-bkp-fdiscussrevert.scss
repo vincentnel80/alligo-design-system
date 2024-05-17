@@ -1,0 +1,730 @@
+/*
+* New Font and Weight styles from Figma
+* The styles contained in this file need to be implemented in the main system.
+*
+*/
+// set globals
+/*@import '../../StyleConfig/foundation-sites/scss/util/_math.scss';
+$global-font-size: 100% !default;
+
+// new but this might need to be put in seperate file and compiled into main
+
+/// @returns {List} A list of converted values.
+@function rem-calc($values, $base: null) {
+    $rem-values: ();
+    $count: length($values);
+
+    // If no base is defined, defer to the global font size
+    @if $base == null {
+        $base: $global-font-size;
+    }
+
+    // If the base font size is a %, then multiply it by 16px
+    // This is because 100% font size = 16px in most all browsers
+    @if unit($base) == '%' {
+        $base: divide($base, 100%) * 16px;
+    }
+
+    // Using rem as base allows correct scaling
+    @if unit($base) == 'rem' {
+        $base: strip-unit($base) * 16px;
+    }
+
+    @if $count == 1 {
+        @return -zf-to-rem($values, $base);
+    }
+
+    @for $i from 1 through $count {
+        $rem-values: append($rem-values, -zf-to-rem(nth($values, $i), $base));
+    }
+
+    @return $rem-values;
+}
+*/
+
+/// color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+
+// in base setting, should i add in default font: ,Roboto,Arial,Helvetica,sans-serif ??
+// default font
+// $header-font-family: Arial, Helvetica, Roboto, sans-serif;
+
+/// all base settings for fonts
+// all optomizing
+// in body, in root
+/*
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+*/
+// best place, html , root or body? what is difference
+$body-antialiased: true;
+body {
+    font-family: Roboto,Arial,Helvetica,sans-serif; // is this the correct place to declare? should i even use it
+   // font-family: breuercondensed,Roboto,Arial,Helvetica,sans-serif;
+    /// if body is antialised ---
+    font-stretch: condensed;
+    font-style: normal;
+
+    @if ($body-antialiased) {
+        -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
+        -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
+    }
+}
+// all calcs - or a global for all rem
+// vars, tokens
+
+// should this be 12 or 16 ???? default seems to be 16 but I set it as 10 ... but maybe calcs should be different
+$base-font-size: 16px; // Set your base font size here (default is 16px).
+$global-line-height: 1.5 !default;
+
+
+@function rem-calc($pixels) {
+    @return #{$pixels / $base-font-size}rem;
+}
+
+@function rem($pixels) {
+    @return #{$pixels / $base-font-size}rem;
+}
+
+@function line-height-rem($line-height-in-pixels) {
+    @return rem($line-height-in-pixels);
+}
+
+
+// font sixes pixels to rem
+
+//$paragraph-line-height: rem-calc(28px) !default;
+
+// good var name and what about token
+// what is !default ??
+// do i need default
+$font-size-12: rem-calc(12px) !default; // what is default
+$font-size-14: rem-calc(14px) !default;
+$font-size-16: rem-calc(16px) !default;
+$font-size-18: rem-calc(18px) !default;
+$font-size-20: rem-calc(20px) !default;
+$font-size-22: rem-calc(22px) !default;
+$font-size-24: rem-calc(24px) !default;
+$font-size-26: rem-calc(26px) !default;
+$font-size-28: rem-calc(28px) !default;
+$font-size-30: rem-calc(30px) !default;
+$font-size-32: rem-calc(32px) !default;
+$font-size-36: rem-calc(36px) !default;
+$font-size-40: rem-calc(40px) !default; /// not using ??
+$font-size-46: rem-calc(46px) !default;
+$font-size-66: rem-calc(66px) !default;
+
+// Weight variables
+//$hairline-weight: 100;
+//$thin-weight:     200;
+//$light-weight:    300;
+$normal-weight-400:   400; // regular
+$medium-weight-500:   500; // medium
+$semibold-weight-600: 600; /// ??? modified
+$bold-weight-700:     700; // bold
+//$xbold-weight:    800;
+//$black-weight:    900;
+
+// what weights are being used
+
+// new:
+// line height
+
+$line-height-12: line-height-rem(12px);
+$line-height-14: line-height-rem(14px);
+$line-height-16: line-height-rem(16px);
+$line-height-18: line-height-rem(18px);
+$line-height-20: line-height-rem(20px);
+$line-height-22: line-height-rem(22px);
+$line-height-24: line-height-rem(24px);
+$line-height-26: line-height-rem(26px);
+$line-height-28: line-height-rem(28px);
+$line-height-32: line-height-rem(32px);
+$line-height-34: line-height-rem(34px);
+$line-height-36: line-height-rem(36px);
+$line-height-40: line-height-rem(40px);
+$line-height-48: line-height-rem(48px);
+$line-height-66: line-height-rem(66px);
+
+//letter spacing
+// to do make new section ??? yes no
+// what abaout spacing and vars
+// make as a token???
+
+
+// dont think i am using
+// weight: 100
+.hairline-weight {
+   // font-weight: $hairline-weight;
+}
+// weight: 200
+.thin-weight {
+   // font-weight: $thin-weight;
+}
+// weight: 300
+.light-weight {
+   // font-weight: $light-weight;
+}
+// weight: 400
+.normal-weight {
+    font-weight: $normal-weight-400 !important;
+}
+// weight: 500
+.medium-weight {
+    font-weight: $medium-weight-500 !important;
+}
+// weight: 600
+.semibold-weight {
+    font-weight: $semibold-weight-600;
+}
+// weight: 700
+.bold-weight {
+    font-weight: $bold-weight-700 !important;
+}
+// weight: 800
+.xbold-weight {
+   // font-weight: $xbold-weight;
+}
+// weight: 900
+.black-weight {
+    // font-weight: $black-weight;
+}
+
+// make correct mixin
+
+/*
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-bold-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-bolditalic-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-bolditalic-webfont.woff') format('woff');
+     font-weight: 700;
+        font-style: italic;
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-medium-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-mediumitalic-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-mediumitalic-webfont.woff') format('woff');
+
+
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-regular-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-regularitalic-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-regularitalic-webfont.woff') format('woff');
+    // new added
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-light-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-lightitalic-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-lightitalic-webfont.woff') format('woff');
+font-weight: 300;
+    font-style: italic;
+
+}
+*/
+
+@font-face {
+    font-family: breuercondensed;
+    src: local(BreuerCondensed-Regular),
+url('./StorybookFonts/breuercondensed-regular-webfont.woff2') format("woff2"),
+url('./StorybookFonts/breuercondensed-regular-webfont.woff') format("woff");
+    // url(/path/to/BreuerCondensed-Regular.ttf) format("truetype");
+font-weight: normal;
+    font-style: normal;
+    font-stretch: condensed;
+    // 400
+}
+@font-face {
+    font-family: breuercondensed;
+     src: local(BreuerCondensed-Medium),
+url('./StorybookFonts/breuercondensed-medium-webfont.woff2') format("woff2"),
+url('./StorybookFonts/breuercondensed-medium-webfont.woff') format("woff");
+    // url(/path/to/BreuerCondensed-Medium.ttf) format("truetype");
+font-weight: 500;
+    font-style: normal;
+    font-stretch: condensed; // yes or no
+}
+@font-face {
+    font-family: breuercondensed;
+     src: local(BreuerCondensed-Bold),
+url('./StorybookFonts/breuercondensed-bold-webfont.woff2') format("woff2"),
+url('./StorybookFonts/breuercondensed-bold-webfont.woff') format("woff");
+    // url(/path/to/BreuerCondensed-Bold.ttf) format("truetype");
+font-weight: bold;
+    font-style: normal;
+    font-stretch: condensed;
+    // 700
+}
+
+
+
+// Typeface classes
+.display-sm {
+    //font-family: BreuerCondensedBold;
+    font-family: breuercondensed;
+    font-weight: $bold-weight-700;
+    font-size: $font-size-22;
+    line-height: $line-height-24;
+    text-transform: uppercase;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-weight: $bold-weight-700;
+        font-size: $font-size-26; //d m
+        line-height: $line-height-28; // d m
+    }
+}
+.display-md {
+    //font-family: BreuerCondensedBold;
+    font-family: breuercondensed; /// can i add in body?
+    font-weight: $bold-weight-700;
+    font-size: $font-size-28;
+    line-height: $line-height-32;
+    text-transform: uppercase;
+    letter-spacing: 0px; // needs rem calc --- which one is suitable
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-36;
+        line-height: $line-height-40;
+    }
+}
+
+.display-lrg {
+    font-family: breuercondensed;
+    font-size: $font-size-36;
+    line-height: $line-height-40;
+    font-weight: $bold-weight-700;
+    text-transform: uppercase;
+    letter-spacing: 0px; // needs rem calc --- which one is suitable
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+
+    @media (min-width: 768px) {
+        font-size: $font-size-66;
+        line-height: $line-height-66;
+    }
+}
+
+.headline-sm {
+    font-family: breuercondensed;
+    font-size: 22px;
+    line-height: 24px;
+    font-size: $font-size-22;
+    line-height: $line-height-24;
+    font-weight: $bold-weight-700;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-28;
+        line-height: $line-height-32;
+    }
+}
+
+.headline-md {
+    //font-family: BreuerCondensedBold;
+    font-family: breuercondensed;
+    font-size: $font-size-26;
+    line-height: $line-height-32;
+    font-weight: $bold-weight-700;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-32;
+        line-height: $line-height-36;
+    }
+}
+.headline-lrg {
+    font-family: breuercondensed;
+    font-size: $font-size-28;
+    line-height: $line-height-32;
+    font-weight: $bold-weight-700;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+
+    @media (min-width: 768px) {
+        font-size: $font-size-36;
+        line-height: $line-height-40;
+    }
+}
+
+.headline-xl {
+    font-family: breuercondensed;
+    font-size:$font-size-30;
+    line-height: $line-height-34;
+    font-weight: $bold-weight-700;
+    // color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+
+    @media (min-width: 768px) {
+        font-size: $font-size-46;
+        //line-height: 48px;
+       // line-height: line-height-rem(48px);
+        line-height: $line-height-48;
+    }
+}
+
+.title-sm {
+    font-family: breuercondensed;
+    font-size: $font-size-16;
+    line-height: $line-height-22;
+    font-weight: $bold-weight-700;
+   // color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-16;
+        line-height: $line-height-22;
+    }
+}
+.title-md {
+    font-family: breuercondensed;
+    font-size: $font-size-18;
+    line-height: $line-height-24;
+    font-weight: $bold-weight-700;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-20;
+        line-height: $line-height-24;
+    }
+}
+.title-lrg {
+    font-family: breuercondensed;
+    font-size: $font-size-20;
+    line-height: $line-height-24;
+    font-weight: $bold-weight-700;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-24;
+        line-height: $line-height-28;
+    }
+}
+
+.label-sm {
+    //font-family: BreuerCondensedBold;
+    //font-family: 'breuercondensed', Arial, Helvetica, Roboto, sans-serif; // how to handle fallback ??
+    font-family: breuercondensed;
+    font-size: $font-size-12;
+    line-height: $line-height-12;
+    font-weight: $bold-weight-700;
+    letter-spacing: 0.04px;
+    text-transform: uppercase;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+       /* font-size: 14px;
+        line-height: 14px;*/
+        font-size: $font-size-14;
+        line-height: $line-height-14;
+    }
+}
+.label-md {
+    //font-family: BreuerCondensedBold; // var or not
+    //font-family: 'breuercondensed', Arial, Helvetica, Roboto, sans-serif;
+    font-family: breuercondensed;
+    font-size: $font-size-14;
+    line-height: $line-height-14;
+    font-weight: $bold-weight-700;
+    letter-spacing: 0.03px; // 0.48 in zeplyn
+    text-transform: uppercase;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+
+    @media (min-width: 768px) {
+        font-size: $font-size-16;
+        line-height: $line-height-16;
+    }
+}
+.label-lrg {
+    font-family: breuercondensed;
+    //font-size: 18px; /// 18 px is listed listed in Figma, listed in Zeplyn but makes incorrect button size - 16 makes correct one according to calcs
+    /// different line height /// but I guess 1 makes it ok
+    // maybe set line height here? experiment on typography pages to see what it does
+   // line-height: 16px; /// set this initially ? or control it elsewhere?
+    letter-spacing: 0.02px; /// difference in figma and  !!!! ISSUES for Eric - list
+    font-weight: $bold-weight-700;
+    text-transform: uppercase;
+    font-size: $font-size-16;
+    line-height: $line-height-16;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        letter-spacing: 0.01px; /// vin add as var????
+        font-size: $font-size-18;
+        line-height: $line-height-18;
+    }
+}
+.alt-label-sm {
+    font-family: breuercondensed;
+    font-size: $font-size-12;
+    line-height: $line-height-12;
+    font-weight: $medium-weight-500;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+    letter-spacing: 0.04px;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-14;
+        line-height: $line-height-14;
+    }
+}
+.alt-label-md {
+    font-family: breuercondensed;
+    font-size: $font-size-14;
+    line-height: $line-height-14;
+    font-weight: $medium-weight-500;
+    letter-spacing: 0.04px;
+   // color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+
+    @media (min-width: 768px) {
+        font-size: $font-size-16;
+        line-height: $line-height-16;
+    }
+}
+.alt-label-lrg {;
+    font-family: breuercondensed;
+    font-size: $font-size-16;
+    line-height: $line-height-16;
+    font-weight: $medium-weight-500;
+    letter-spacing: 0.02px;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-18;
+        line-height: $line-height-18;
+    }
+}
+
+.body-sm {
+    font-family: breuercondensed;
+    font-weight: $normal-weight-400;
+    font-size: $font-size-14;
+    line-height: $line-height-20;
+    letter-spacing: 0.02px; /// ???
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss06' on, 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-14;
+        line-height: $line-height-20;
+    }
+
+
+}
+.body-md {
+    //font-family: BreuerCondensedRegular;
+    font-family: breuercondensed;
+    font-weight: $normal-weight-400;
+    font-size: $font-size-16;
+    line-height: $line-height-22;
+    letter-spacing: 0.02px;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss06' on, 'ss03' on, 'ss02' on;
+
+    /// might not need @ media --- as they are the same
+    @media (min-width: 768px) {
+        font-size: $font-size-16;
+        line-height: $line-height-22;
+    }
+}
+
+.body-lrg {
+    //font-family: BreuerCondensedRegular;
+    font-family: breuercondensed;
+    font-weight: $normal-weight-400;
+    font-size: $font-size-18;
+    line-height: $line-height-26;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on !important;
+
+    @media (min-width: 768px) {
+       /* font-size: 20px;
+        line-height: 28px; */
+        font-size: $font-size-20;
+        line-height: $line-height-28;
+    }
+}
+.body-xl {
+    //font-family: BreuerCondensedRegular;
+    font-family: breuercondensed;
+    font-size: $font-size-20;
+    line-height: $line-height-26;
+    font-weight: $normal-weight-400;
+
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-24;
+        line-height: $line-height-32;
+    }
+}
+
+.badges-change {
+    //font-family: BreuerCondensedRegular;
+    font-family: breuercondensed;
+    font-size: $font-size-12;
+    line-height: $line-height-12;
+    font-weight: $medium-weight-500;
+    letter-spacing: 0.24px;
+
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-14;
+        line-height: $line-height-14;
+        letter-spacing: 0.28px;
+    }
+}
+/* vin
+$line-height-24: line-height-rem(24px); // d m
+$font-size-32: rem-calc(32px) !default; //d
+// add correct variables
+*/
+
+// made up class
+.preamble-body-xl {
+    font-family: breuercondensed;
+    font-size: $font-size-20;
+    line-height: $line-height-26;
+    //font-weight: normal; //600 in figma (in fonts displayed settings, but in reality - 500 looks like a closer match)
+    font-weight: $medium-weight-500;
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    font-feature-settings: 'ss03' on, 'ss02' on;
+
+    @media (min-width: 768px) {
+        font-size: $font-size-24;
+        line-height: $line-height-32;
+    }
+}
+
+// To DO - Incomplete
+.sb-blockquote-label-medium {
+    font-family: BreuerCondensedBold;
+    font-size: 24px;
+    font-weight: $bold-weight-700;
+    line-height: 32px;
+    text-transform: uppercase;
+    font-style: normal;
+
+    @media (min-width:321px) and (max-width:768px) {
+        font-size: 26px;
+        line-height: 16px;
+        letter-spacing: 0.02px;
+    }
+    @media (min-width: 768px) {}
+}
+
+.sb-blockquote{
+    padding: 12px;
+    border-left:6px solid #D90000 ;
+    position: relative;
+    margin-top: 40px;
+}
+
+.sb-blockquote span{
+    display:block;
+    opacity: 80%;
+    margin-top:24px;
+}
+
+/*
+* Temporary overrides
+* Used to override current system styles, that are new design system styles.
+* These are not part of the new designs, and can be deleted when the new styles are implemented in the main system.
+*/
+
+.sb-info-block-container {
+    h1 {
+        margin: 0;
+        display: block;
+        vertical-align: bottom;
+    }
+
+    h2 {
+        margin-bottom: 0px
+    }
+
+    h3 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    h4 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    h5 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    h6 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+
+
+
+
+

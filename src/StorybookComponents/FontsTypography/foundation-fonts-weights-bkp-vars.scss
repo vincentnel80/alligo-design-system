@@ -1,0 +1,474 @@
+/*
+* New Font and Weight styles from Figma
+* The styles contained in this file need to be implemented in the main system.
+*
+*/
+
+// Weight variables
+$hairline-weight: 100;
+$thin-weight:     200;
+$light-weight:    300;
+$normal-weight:   400;
+$medium-weight:   500;
+$semibold-weight: 600;
+$bold-weight:     700;
+$xbold-weight:    800;
+$black-weight:    900;
+
+
+// Weight classes (and for token usage)
+
+// weight: 100
+.hairline-weight {
+    font-weight: $hairline-weight;
+}
+// weight: 200
+.thin-weight {
+    font-weight: $thin-weight;
+}
+// weight: 300
+.light-weight {
+    font-weight: $light-weight;
+}
+// weight: 400
+.normal-weight {
+    font-weight: $normal-weight !important;
+}
+// weight: 500
+.medium-weight {
+    font-weight: $medium-weight !important;
+}
+// weight: 600
+.semibold-weight {
+    font-weight: $semibold-weight;
+}
+// weight: 700
+.bold-weight {
+    font-weight: $bold-weight !important;
+}
+// weight: 800
+.xbold-weight {
+    font-weight: $xbold-weight;
+}
+// weight: 900
+.black-weight {
+    font-weight: $black-weight;
+}
+
+// Fonts & Families
+@font-face {
+    font-family: BreuerCondensedRegular;
+    src: local(BreuerCondensed-Regular),
+    url(./StorybookFonts/breuercondensed-regular-webfont.woff2) format("woff2"),
+    url(./StorybookFonts/breuercondensed-regular-webfont.woff) format("woff");
+    //url(./StorybookFonts/breuercondensed-regular-webfont.woff2) format("truetype");
+    font-style: normal;
+   /* font-stretch: condensed;
+    letter-spacing: 0px; */
+    -webkit-font-smoothing: antialiased; /// experiment
+    -moz-osx-font-smoothing: grayscale; // exp
+}
+
+/*@font-face {
+    font-family: BreuerCondensedMedium;
+    src: local(BreuerCondensed-Medium),
+    url(./StorybookFonts/breuercondensed-medium-webfont.woff2) format("woff2"),
+    url(./StorybookFonts/breuercondensed-medium-webfont.woff) format("woff");
+    //url(./StorybookFonts/breuercondensed-medium-webfont.woff2) format("truetype");
+    font-style: normal;
+    font-stretch: condensed;
+    letter-spacing: 0px;
+    -webkit-font-smoothing: antialiased; /// experiment
+    -moz-osx-font-smoothing: grayscale; // exp
+}*/
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-medium-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-medium-webfont.woff') format('woff');
+    /* Add any other desired properties */
+    /// these are not coming through
+    /* font-style: normal;
+     font-stretch: condensed;
+     letter-spacing: 0px;
+     -webkit-font-smoothing: antialiased; /// experiment
+     -moz-osx-font-smoothing: grayscale; // exp
+     */
+}
+
+/*@font-face {
+    font-family: BreuerCondensedBold;
+    src: local(BreuerCondensed-Bold),
+    url(./StorybookFonts/breuercondensed-bold-webfont.woff2) format("woff2"),
+    url(./StorybookFonts/breuercondensed-bold-webfont.woff) format("woff");
+    //url(./StorybookFonts/breuercondensed-bold-webfont.woff2) format("truetype");
+    font-style: normal;
+    font-stretch: condensed;
+    letter-spacing: 0px;
+    -webkit-font-smoothing: antialiased; /// experiment
+    -moz-osx-font-smoothing: grayscale; // exp
+}*/
+
+/*
+@font-face {
+    font-family: 'Roboto';
+    src: url('path/to/roboto.woff2') format('woff2'),
+    url('path/to/roboto.woff') format('woff');
+     // Add any other desired properties
+} */
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-bold-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    /* Add any other desired properties */
+    /// these are not coming through
+   /* font-style: normal;
+    font-stretch: condensed;
+    letter-spacing: 0px;
+    -webkit-font-smoothing: antialiased; /// experiment
+    -moz-osx-font-smoothing: grayscale; // exp
+    */
+}
+
+
+// Typeface classes
+.display-sm {
+    font-family: BreuerCondensedBold;
+    font-weight: $bold-weight;
+    font-size: 22px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 26px;
+        line-height: 28px;
+    }
+}
+.display-md {
+    font-family: BreuerCondensedBold;
+    font-weight: $bold-weight;
+    font-size: 28px;
+    line-height: 32px;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 36px;
+        line-height: 40px;
+    }
+}
+
+.display-lrg {
+    font-family: BreuerCondensedBold;
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: $bold-weight;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 66px;
+        line-height: 66px;
+    }
+}
+
+.headline-sm {
+    font-family: BreuerCondensedBold;
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: $bold-weight;
+
+    @media (min-width: 768px) {
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+
+.headline-md {
+    font-family: BreuerCondensedBold;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: $bold-weight;
+
+    @media (min-width: 768px) {
+        font-size: 32px;
+        line-height: 36px;
+    }
+}
+.headline-lrg {
+    font-family: BreuerCondensedBold;
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: $bold-weight;
+
+    @media (min-width: 768px) {
+        font-size: 36px;
+        line-height: 40px;
+    }
+}
+.headline-xl {
+    font-family: BreuerCondensedBold;
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: $bold-weight;
+
+    @media (min-width: 768px) {
+        font-size: 46px;
+        line-height: 48px;
+    }
+}
+
+.title-sm {
+    font-family: BreuerCondensedBold;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: $bold-weight;
+
+    @media (min-width: 768px) {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+.title-md {
+    font-family: BreuerCondensedBold;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: $bold-weight;
+
+    @media (min-width: 768px) {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+.title-lrg {
+    font-family: BreuerCondensedBold;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: $bold-weight;
+
+    @media (min-width: 768px) {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.label-sm {
+    font-family: BreuerCondensedBold;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: $bold-weight;
+    letter-spacing: 0.04px;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}
+.label-md {
+    //font-family: BreuerCondensedBold; // var or not
+    font-family: 'breuercondensed', Arial, Helvetica, Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: $bold-weight;
+    letter-spacing: 0.03px; // 0.48 in zeplyn
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+.label-lrg {
+    //font-family: BreuerCondensedBold;
+    font-family: 'breuercondensed', Arial, Helvetica, Roboto, sans-serif;
+    font-size: 18px; /// 18 px is listed listed in Figma, listed in Zeplyn but makes incorrect button size - 16 makes correct one according to calcs
+    /// different line height /// but I guess 1 makes it ok
+    // maybe set line height here? experiment on typography pages to see what it does
+   // line-height: 16px; /// set this initially ? or control it elsewhere?
+    letter-spacing: 0.18px; /// difference in figma and  !!!! ISSUES for Eric - list
+    font-weight: $bold-weight;
+    text-transform: uppercase;
+    line-height: 18px;
+
+    font-style: normal;
+    font-stretch: condensed;
+    //letter-spacing: 0px;
+    -webkit-font-smoothing: antialiased; /// experiment
+    -moz-osx-font-smoothing: grayscale; // exp
+
+
+    @media (min-width: 768px) {
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: 0.01px;
+    }
+}
+.alt-label-sm {
+    font-family: BreuerCondensedMedium;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: $medium-weight;
+    letter-spacing: 0.04px;
+
+    @media (min-width: 768px) {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}
+.alt-label-md {
+    font-family: BreuerCondensedBold;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: $medium-weight;
+    letter-spacing: 0.04px;
+
+    @media (min-width: 768px) {
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+.alt-label-lrg {
+    font-family: BreuerCondensedMedium;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: $medium-weight;
+    letter-spacing: 0.02px;
+
+    @media (min-width: 768px) {
+        font-size: 18px;
+        line-height: 18px;
+    }
+}
+
+.body-sm {
+    font-family: BreuerCondensedRegular;
+    font-size: 14px;
+    font-weight: $normal-weight;
+    line-height: 20px;
+    letter-spacing: 0.02px;
+}
+.body-md {
+    font-family: BreuerCondensedRegular;
+    font-size: 16px;
+    font-weight: $normal-weight;
+    line-height: 22px;
+    letter-spacing: 0.02px;
+}
+
+.body-lrg {
+    font-family: BreuerCondensedRegular;
+    font-size: 18px;
+    font-weight: $normal-weight;
+    line-height: 26px;
+
+    @media (min-width: 768px) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+.body-xl {
+    font-family: BreuerCondensedRegular;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: $normal-weight;
+
+    @media (min-width: 768px) {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+.preamble-body-xl {
+    font-family: BreuerCondensedMedium;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: $medium-weight;
+
+    @media (min-width: 768px) {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+// To DO - Incomplete
+.sb-blockquote-label-medium {
+    font-family: BreuerCondensedBold;
+    font-size: 24px;
+    font-weight: $bold-weight;
+    line-height: 32px;
+    text-transform: uppercase;
+    font-style: normal;
+
+    @media (min-width:321px) and (max-width:768px) {
+        font-size: 26px;
+        line-height: 16px;
+        letter-spacing: 0.02px;
+    }
+    @media (min-width: 768px) {}
+}
+
+.sb-blockquote{
+    padding: 12px;
+    border-left:6px solid #D90000 ;
+    position: relative;
+    margin-top: 40px;
+}
+
+.sb-blockquote span{
+    display:block;
+    opacity: 80%;
+    margin-top:24px;
+}
+
+/*
+* Temporary overrides
+* Used to override current system styles, that are new design system styles.
+* These are not part of the new designs, and can be deleted when the new styles are implemented in the main system.
+*/
+
+.sb-info-block-container {
+    h1 {
+        margin: 0;
+        display: block;
+        vertical-align: bottom;
+    }
+
+    h2 {
+        margin-bottom: 0px
+    }
+
+    h3 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    h4 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    h5 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    h6 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+
+
+
+
+

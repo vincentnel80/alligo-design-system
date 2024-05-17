@@ -1,0 +1,13 @@
+import React from 'react';
+
+/// reactivate this
+import CustomDocs from '../../StorybookComponents/CustomDocs/CustomDocs';
+
+export default {
+    title: 'Foundation/Custom Docs',
+    component: CustomDocs,
+};
+
+export const customDocs = () => (
+    <CustomDocs />
+);
