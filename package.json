@@ -1,0 +1,39 @@
+{
+  "name": "alligo-design-system",
+  "version": "1.0.0",
+  "description": "Alligo's design system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincentnel80/alligo-design-system.git"
+  },
+  "author": "Vincent Nel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vincentnel80/alligo-design-system/issues"
+  },
+  "homepage": "https://github.com/vincentnel80/alligo-design-system#readme",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.10",
+    "@storybook/addon-interactions": "^7.6.10",
+    "@storybook/addon-links": "^7.6.10",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/blocks": "^7.6.10",
+    "@storybook/react": "^7.6.10",
+    "@storybook/react-webpack5": "^7.6.10",
+    "@storybook/test": "^7.6.10",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^7.6.10"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
