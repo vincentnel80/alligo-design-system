@@ -27,6 +27,7 @@
     "@storybook/react": "^7.6.10",
     "@storybook/react-webpack5": "^7.6.10",
     "@storybook/test": "^7.6.10",
+    "chromatic": "^11.3.5",
     "css-loader": "^6.5.1",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
