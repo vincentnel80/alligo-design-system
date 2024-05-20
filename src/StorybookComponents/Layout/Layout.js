@@ -13,7 +13,7 @@ const Layout = () => {
 
                 <MainIntroComponent
                     fontClassName={'body-xl'}
-                    introText={'In order to assure responsiveness and flexibility in different browser widths and devices, we base our layout on a grid. The grid contains of margins, columns and gutters wich consists of fluid and fixed values.\\n - Margins are fixed \\n- Gutters are fixed \\n- Columns are fluid \\nThe responsive layout is based on our spacing scale.'}
+                    introText={'In order to assure responsiveness and flexibility in different browser widths and devices, we base our layout on a grid. The grid contains of margins, columns and gutters wich consists of fluid and fixed values.\\n - Margins are fixed \\n- Gutters are fixed \\n- Columns are fluid \\nThe responsive layout is based on our spacing scale!'}
                     title={'Layout'}
                 />
 
