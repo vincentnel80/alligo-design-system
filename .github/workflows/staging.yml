@@ -1,0 +1,29 @@
+name: Deploy to Chromatic on Staging
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  chromatic-deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # or the version you are using
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Publish to Chromatic
+      env:
+        CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      run: npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
