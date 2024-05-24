@@ -1,9 +1,9 @@
-name: Deploy to Chromatic on Main
+name: Deploy to Chromatic on Master
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   chromatic-deployment:
@@ -11,9 +11,9 @@ jobs:
 
     steps:
     - name: Checkout repository
-    uses: actions/checkout@v2
-    with:
-      fetch-depth: 0
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
 
     - name: Install Node.js
       uses: actions/setup-node@v3
