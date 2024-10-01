@@ -1,0 +1,141 @@
+import { Headline } from './Headline';
+import CustomDocsContainer from './CustomDocsContainer';
+
+// Dynamic HTML snippet generator function
+const generateHtmlSnippet = (args) => {
+  const { fontName = 'headline-lg', summary, marginBottom = '' } = args;  // Default values
+  return `<div class="${fontName} ${marginBottom}">${summary}</div>`;
+};
+
+export default {
+  //title: 'Typography/Headline',
+  title: 'Foundation/Typography/Components/Headline',
+  component: Headline,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      container: CustomDocsContainer,
+      source: {
+        transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+      },
+    },
+  },
+  argTypes: { 
+    viewport: {
+      control: { type: 'select' }, 
+      options: ['Desktop', 'Mobile'],
+      defaultValue: 'Desktop',
+    },
+    fontName: {
+      control: { type: 'select' },
+      options: ['headline-sm', 'headline-md', 'headline-lg', 'headline-xl'],
+      defaultValue: 'headline-lg',
+    },
+    modifier: {
+      control: { type: 'select' },
+      options: ['', 'blockquote'],
+      defaultValue: 'blockquote',
+      // Conditionally disable the modifier control based on the value of fontName
+      table: {
+        disable: true, // initially disabled in the docs table
+      },
+    },
+    marginBottom: {
+      control: { type: 'select' },
+      options: ['', 'space-8-small', 'space-12-small', 'space-16-small'],
+      defaultValue: '',
+    },
+  },
+  // Custom logic to enable or disable the modifier based on fontName
+  decorators: [
+    (Story, context) => {
+      const { args } = context;
+      const modifierControl = context.argTypes.modifier;
+      modifierControl.table.disable = args.fontName !== 'headline-md';
+      return <Story {...args} />;
+    },
+  ],
+  tags: ['autodocs'],
+};
+
+const summaryText = 'Swedol caters to the needs of the professionals';
+
+const Template = (args) => <Headline {...args} />;
+
+// Dynamic generation of the Default story
+export const Default = Template.bind({});
+Default.args = {
+  summary: summaryText,
+  fontName: 'headline-lg',  // Set a default fontName
+  marginBottom: '',  // Set a default marginBottom
+};
+
+Default.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+// Other variants like HeadlineLarge, HeadlineMedium, etc.
+export const HeadlineXLarge = Template.bind({});
+HeadlineXLarge.args = {
+  ...Default.args,
+  fontName: 'headline-xl',
+};
+HeadlineXLarge.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const HeadlineLarge = Template.bind({});
+HeadlineLarge.args = {
+  ...Default.args,
+  fontName: 'headline-lg',
+};
+HeadlineLarge.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const HeadlineMedium = Template.bind({});
+HeadlineMedium.args = {
+  ...Default.args,
+  fontName: 'headline-md',
+};
+HeadlineMedium.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const HeadlineSmall = Template.bind({});
+HeadlineSmall.args = {
+  ...Default.args,
+  fontName: 'headline-sm',
+};
+HeadlineSmall.parameters = {
+  docs: {
+    code: null,  // This will hide the "Show Code" button
+  },
+};
+
+export const HeadlineMediumModifier = Template.bind({});
+HeadlineMediumModifier.args = {
+  ...Default.args,
+  fontName: 'headline-md headline-md--blockquote',
+};
+HeadlineMediumModifier.parameters = {
+  docs: {
+    code: null,  // This will hide the "Show Code" button
+  },
+};

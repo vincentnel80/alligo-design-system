@@ -1,0 +1,62 @@
+// HeadlineSmall.stories.js
+
+import React from 'react';
+//import Header from './Header.component';
+import HeadlineSmall from '../../StorybookComponents/FontsTypography/HeadlineSmall';
+
+// HTML Snippet for the Breadcrumb component
+const htmlSnippet = `
+<h4 class="headline-sm">Lorem ipsum dolor</h4>
+`;
+
+export default {
+    title: 'Typography/Headline Small',
+    component: HeadlineSmall,
+    parameters: {
+      layout: 'centered',
+      docs: {
+        description: {
+          component: 'A customizable header component for different heading levels.',
+        },
+        source: {
+          code: `<h4 class="headline-sm">Lorem ipsum dolor</h1>`,
+        },
+      },
+    },
+    argTypes: {
+      text: { 
+        control: 'text',
+        description: 'The text to display',
+        defaultValue: 'Sample Text'
+      },
+      level: { 
+        control: 'number', 
+        min: 1, 
+        max: 6, 
+        step: 1, 
+        defaultValue: 1
+      },
+      paddingBottom: {
+        options: ['12px', '40px'],
+        control: { type: 'select' },
+        description: 'Bottom padding of the header',
+      },
+    },
+    tags: ['autodocs'],
+  };
+  
+  const Template = (args) => <HeadlineSmall {...args} />;
+  
+  export const Default = Template.bind({});
+  Default.args = {
+    text: 'Lorem ipsum dolor',
+    level: 1,
+    paddingBottom: '12px',
+  };
+  
+  export const CustomPadding = Template.bind({});
+  CustomPadding.args = {
+    text: 'Headline smaall H4 cusom Padding',
+    level: 1,
+    paddingBottom: '40px',
+  };

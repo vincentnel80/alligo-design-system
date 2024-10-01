@@ -1,0 +1,942 @@
+.temp-page{
+
+    .loader {
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .display {
+       display: block;
+        background: red;
+    }
+
+    /* this works */
+/* .container {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        img{
+            width:500px;
+        }
+        .element{
+            position:absolute;
+            top:0;
+            bottom: 0;
+            width:500px;
+            height:500px;
+            background:rgba(255,0,0,0.8) ;
+
+            -webkit-clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+
+            // mine to vertically align
+            margin: auto;
+            //width: 100%;
+           // height: 100%;
+
+        }
+    } */
+
+
+/*.root {
+    display: block;
+
+    .black-bg {
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+
+        .fixed-container {
+            height: 100%;
+            position: fixed;
+            width: 100%;
+            background-color: black;
+
+            .scanner-container {
+                width: 100%;
+                height: 100%;
+
+                .relative-container {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+
+                    .scanbot-camera-view {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        /// what is this
+                       // overflow-clip-margin: content-box;
+                        overflow: clip;
+                    }
+
+                    div {
+                        display: block;
+
+                        .clip-path {
+                            background-color: rgba(0, 0, 0, 0.7);
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0px;
+                            bottom: 0px;
+                            clip-path: polygon(0% 0%, 0% 100%, 208.352px 100%, 208.352px 360.352px, 209.352px 357.352px, 211.352px 355.352px, 213.352px 353.352px, 215.352px 351.352px, 218.352px 350.352px, 382.648px 350.352px, 385.648px 351.352px, 387.648px 353.352px, 389.648px 355.352px, 391.648px 357.352px, 392.648px 360.352px, 392.648px 524.648px, 391.648px 527.648px, 389.648px 529.648px, 387.648px 531.648px, 385.648px 533.648px, 382.648px 534.648px, 218.352px 534.648px, 215.352px 533.648px, 213.352px 531.648px, 211.352px 529.648px, 209.352px 527.648px, 208.352px 524.648px, 208.352px 100%, 100% 100%, 100% 0%);
+                        }
+
+                        .window-container {
+                            display: block;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            position: absolute;
+
+                            .window-border {
+                                display: block;
+                                width: 180.3px;
+                                height: 180.3px;
+                                border-radius: 10px;
+                                border: 2px solid white;
+                            }
+
+                            .window-text {
+                                color: white;
+                                font-size: 0.9em;
+                                font-weight: 300;
+                                text-align: center;
+                                margin-top: 10px;
+                                width: 180.3px;
+                                position: absolute;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} */
+
+
+    //// black doody
+
+
+
+
+    /*#root {
+        display: block;
+
+        .div-1 {
+            width: 100%;height: 100vh;background-color: #f70000;
+
+            .div-2 {
+                .div-3 {
+                    .div-4 {
+                        .scanbot-camera-view {
+
+                        }
+
+                        .div-5 {
+                            .div-6 {
+
+                            }
+
+                            .div-7 {
+
+                                .div-8 {}
+                                .div-9 {}
+
+
+                            }
+
+                        }
+
+                    }
+
+                }
+            }
+        }
+    } */
+
+
+    /// end black dooody
+
+
+
+
+
+
+    /// just for loader
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    //// end loader
+
+    // sliding
+    .slide-div {
+        width: 200px;
+        overflow: hidden;
+        transition: height 0.5s ease-in-out;
+    }
+
+    .slide-div.open {
+        height: 200px; /* Adjust the desired open height */
+    }
+
+    .slide-div.closed {
+        height: 0;
+       /// display: none;
+        /// shall i make it display none?
+        /// display none makes it jarred --- is there a way to smoothly transition to display none?
+    }
+
+    /* Additional styling for the button and content */
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    .content {
+        background-color: #f0f0f0;
+        padding: 10px;
+    }
+
+    /// just sot I can transfer new shit
+
+    .page-header {
+        /// there are styles in sys with vars so this is temp
+        /// esentiall a lot of trash
+        background: #111;
+        color: #fff;
+        border-bottom: 0.25rem solid #c7d300;
+        height: 4.25rem;
+        position: relative;
+        z-index: 9999;
+
+        .panel.wrapper {
+            .panel.header {
+                ul.header.links {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .wrapper {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header.content {
+            align-items: center;
+            display: flex;
+            max-width: 75rem;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            height: 4rem;
+            line-height: 4rem;
+
+            #ux\.menu {
+                display: flex;
+
+                .jsx-hamburger {
+                    cursor: pointer;
+                    width: 1.5rem;
+                    font-size: 0;
+                    line-height: 0;
+                    display: block;
+                }
+                button {
+                    padding: 0;
+                    appearance: none;
+                    border: 0;
+                    border-radius: 0;
+                    background: 0 0;
+                }
+
+            }
+
+        }
+
+        /// this is mine
+    }
+    /// end just so i can transfer shit
+
+    /// think of this as a game --- your speciality
+.header-func-test {
+
+    width: 375px;
+    background: #6c757d;
+
+
+    .header-func-test-wrapper {
+        display: flex;
+         height: 64px;
+    }
+
+    .search-test-func-wrapper {
+        background: red;
+        height: 48px;
+    }
+}
+
+
+
+
+
+    ///// anything below is what I am working on //// but anything above is purely for the functions
+    .header {
+        display: flex;
+        width: 375px;
+        height: 112px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        /* Elevation & Shadows/Down/60% */
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10), 0px 0px 1px 0px rgba(0, 0, 0, 0.05);
+        // **
+
+        .main-navigation-container {
+            display: flex;
+            padding: 8px;
+            align-items: center;
+            align-self: stretch;
+            background: var(--color-greyscale-white, #FFF);
+            // **
+
+            .left-navigation {
+                display: flex;
+                height: 48px;
+                padding: var(--bolean-example-test-number, 0px);
+                align-items: center;
+                gap: var(--bolean-example-test-number, 0px);
+                flex: 1 0 0;
+                // **
+
+                .hamburger {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    // ** parent container only --- 3 nested
+                }
+
+                .search {
+                    // needs search icon --- material ?
+                }
+            } // end left navigation
+
+            .logo {
+                display: flex;
+                width: 76px;
+                height: 32px;
+                justify-content: center;
+                align-items: center;
+                // **
+
+                svg {
+                    width: 76px;
+                    height: 32px;
+                    flex-shrink: 0;
+                    // **
+                }
+            } // logo
+
+            .right-navigation {
+
+                display: flex;
+                padding: var(--bolean-example-test-number, 0px);
+                justify-content: flex-end;
+                align-items: center;
+                gap: var(--bolean-example-test-number, 0px);
+                flex: 1 0 0;
+                border-radius: var(--bolean-example-test-number, 0px);
+                // **
+
+                .account {
+                    display: flex;
+                    align-items: center;
+                    border-radius: 100px;
+                    //**
+
+                    .account-button-parent {
+                        display: flex;
+                        padding: 12px;
+                        justify-content: center;
+                        align-items: center;
+
+                        /// might need more children
+                        /// the text below is just for svg image - might need a better way - non figma stuff
+                       // display: block;
+                      //  text-indent: -9999px;
+                      //  width: 100px;
+                      //  height: 82px;
+                        background: url('./assets/profile-image.svg');
+                      //  background-size: 100px 82px;
+                    }
+
+                }
+
+                .component-two {
+
+                }
+            }
+
+        } // main navigation
+
+        // search input
+        .base-search {
+            display: flex;
+            width: 375px;
+            padding: 0px 8px 8px 8px;
+            flex-direction: column;
+            align-items: flex-start;
+            background: #FFF; // color var
+            // **
+
+                .frame-5747 {
+
+                    display: flex;
+                    padding: var(--bolean-example-test-number, 0px);
+                    align-items: flex-start;
+                    gap: var(--bolean-example-test-number, 0px);
+                    align-self: stretch;
+                    border-radius: var(--bolean-example-test-number, 0px);
+                    color: var(--text-secondary);
+                    background: var(--color-greyscale-grey-05);
+                    // icon default // is black --- need a var
+                    /// ***
+
+
+                // child item 1
+                    .base-search-input {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 8px;
+                        flex: 1 0 0;
+                        // icon default prop
+                        color: var(--text-secondary);
+                        background: var(--color-greyscale-grey-05);
+
+                        .text-input {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 8px;
+                            align-self: stretch;
+                            // icon default color
+                            color: var(--text-secondary);
+                            background: var(--color-greyscale-grey-05);
+                            //**
+
+                            .base-input {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                gap: 4px;
+                                align-self: stretch;
+                                // icon default prop
+                                color: var(--text-secondary);
+                                background: var(--color-greyscale-grey-05);
+                                // 2 assets
+
+                                .label {
+
+                                }
+
+                                .input {
+                                    display: flex;
+                                    height: 40px;
+                                    padding: 8px 16px;
+                                    align-items: center;
+                                    gap: 8px;
+                                    align-self: stretch;
+                                    border-radius: var(--bolean-example-test-number, 0px); // make variable
+                                    background: var(--color-greyscale-grey-05);
+
+                                    border-radius: var(--bolean-example-test-number, 0px); // make variable
+                                    background: var(--color-greyscale-grey-05);
+                                    // **
+
+                                    .input-content {
+                                        display: flex;
+                                        padding: var(--bolean-example-test-number, 0px);
+                                        align-items: center;
+                                        gap: 8px;
+                                        flex: 1 0 0;
+                                        border-radius: var(--bolean-example-test-number, 0px); // correct var
+
+                                        .material {
+
+                                        }
+
+                                        .frame-5700 {
+                                            display: flex;
+                                            padding: var(--bolean-example-test-number, 0px);
+                                            align-items: center;
+                                            gap: 16px;
+                                            flex: 1 0 0;
+                                            border-radius: var(--bolean-example-test-number, 0px); // 0
+
+                                            .text {
+
+                                            }
+
+                                            span {
+                                                width: 100%;
+                                            }
+
+                                            .icons-right {
+                                                display: flex;
+                                                padding: var(--bolean-example-test-number, 0px);
+                                                align-items: flex-start;
+                                                gap: 4px;
+                                                border-radius: var(--bolean-example-test-number, 0px);
+
+                                                /// 2 materials
+                                            }
+                                        }
+                                    } // input content
+
+                                }
+
+                                .message {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    gap: 4px;
+                                    align-self: stretch;
+
+                                    color: var(--text-secondary);
+                                    background: var(--color-greyscale-grey-05);
+                                }
+                            } // base input
+                        }
+
+                    }
+
+                    // child item 2
+                    .button-system-with-states {
+
+                    }
+                } // end frame-5747
+
+
+        } /// base search
+
+    } /// header
+
+    /// this is header variant, or at leadt, a variant to go in header (so use
+    /// so, will prbably have the same html structure but it adaps... but will make html for it
+
+    .drawer {
+        // layout
+        display: flex;
+        width: 375px;
+        height: 812px;
+        padding: var(--bolean-example-test-number, 0px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--bolean-example-test-number, 0px);
+
+        // style
+        border-radius: var(--bolean-example-test-number, 0px);
+        background: var(--color-greyscale-white, #FFF);
+
+        /* Drawer Vertical Right */
+        box-shadow: -25px 0px 25px 0px rgba(0, 0, 0, 0.03);
+
+        /// ***
+
+        .drawer-header {
+            display: flex;
+            padding: 16px 16px 16px 24px;
+            align-items: flex-start;
+            gap: 8px;
+            align-self: stretch;
+            background: var(--color-greyscale-white);
+            //*
+
+            .product-info {
+
+                display: flex;
+                padding: var(--bolean-example-test-number, 0px);
+                align-items: flex-start;
+                gap: 8px;
+                flex: 1 0 0;
+                align-self: stretch;
+                //border-radius: var(--bolean-example-test-number, 0px); // !! make var for it
+                border-radius: 0px;
+
+                .image-99 {
+                    width: 56px;
+                    height: 56px;
+                    border-radius: var(--bolean-example-test-number, 0px);
+                    background: url('./assets/image-99.png'), lightgray 50% / cover no-repeat;
+                }
+
+                .frame-796 {
+
+                    display: flex;
+                    padding: var(--bolean-example-test-number, 0px);
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 4px;
+                    flex: 1 0 0;
+                   // border-radius: var(--bolean-example-test-number, 0px);
+                    border-radius: 0px;
+
+                    //icon default: var();
+                    // **
+
+                    .frame-5774 {
+                        display: flex;
+                        padding: 0px;
+                        align-items: flex-start;
+                        gap: 4px;
+                        align-self: stretch;
+                       // border-radius: var(--bolean-example-test-number, 0px);
+                        border-radius: 0;
+                        //**
+
+                        .frame-5775 {
+                            display: flex;
+                            padding: var(--bolean-example-test-number, 0px);
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 4px;
+                            flex: 1 0 0;
+                            border-radius: 0px;
+                            //**
+
+                            .name-brand {
+                                display: flex;
+                                padding: 0px;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                gap: 2px;
+                                align-self: stretch;
+                                border-radius: 0px;
+                                //**
+                            }
+
+                            .art-nr {
+                                display: flex;
+                                padding: var(--bolean-example-test-number, 0px);
+                                flex-direction: column;
+                                align-items: flex-start;
+                                gap: 8px;
+                                align-self: stretch;
+                                border-radius: 0px;
+                                //**
+                            }
+
+                            .art-price-and-status-container {
+                                display: flex;
+                                padding: var(--bolean-example-test-number, 0px);
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                align-self: stretch;
+                                border-radius: var(--bolean-example-test-number, 0px);
+
+                                .art-price-and-status-container-left {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    align-self: stretch;
+
+                                    .main-price {
+                                        flex: 1 0 0;
+                                        color: var(--color-text-text-price-customer, #00838F);
+                                        /* Mobile/Title Medium */
+                                       // font-family: Breuer Condensed;
+                                        //// coming from here or main
+                                        font-size: 18px;
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        line-height: 24px; /* 133.333% */
+                                    }
+
+                                    .exl-moms {
+                                        color: var(--text-text-tertiary, #737373);
+                                        /* Mobile/Body Small */
+                                       // font-family: Breuer Condensed;
+                                        font-size: 14px;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        line-height: 20px;
+                                        letter-spacing: 0.28px;
+                                    }
+
+                                    .price-strikethrough {
+                                        color: var(--text-text-tertiary, #737373);
+                                        font-feature-settings: 'ss06' on, 'ss03' on, 'ss02' on;
+                                        /* Mobile/Figma-only/Body Small Strikethrough */
+                                       // font-family: Breuer Condensed;
+                                        font-size: 14px;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        line-height: 20px; /* 142.857% */
+                                        letter-spacing: 0.28px;
+                                    }
+                                }
+
+                                .art-price-and-status-container-right {
+
+                                    .art-price-and-status-container-right-inner {
+                                        display: flex;
+                                        height: 24px;
+                                        align-items: center;
+                                        gap: 8px;
+                                        .dot {
+                                            height: 8px;
+                                            width: 8px;
+                                            background: #138746;
+                                            border-radius: 50%;
+                                            display: inline-block;
+                                        }
+                                        .text {
+                                            color: var(--text-text-secondary, #4F4F4F);
+                                            font-feature-settings: 'ss06' on, 'ss03' on, 'ss02' on;
+                                            //font-family: Breuer Condensed;
+                                            font-size: 14px;
+                                            font-style: normal;
+                                            font-weight: 500;
+                                            line-height: 18px; /* 128.571% */
+                                            letter-spacing: 0.28px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .base-header-close {
+                            display: flex;
+                            padding: 8px;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 8px;
+
+                            .material-symbols-outlined {
+
+                            }
+                        }
+                    }
+
+
+                }
+
+            }
+        }
+        //// button section
+        .drawer-buttons-container {
+            display: flex;
+            padding-top: 8px;
+            align-items: flex-end;
+            gap: var(--bolean-example-test-number, 0px);
+            align-self: stretch;
+
+            .left-with-scrollbar {
+                display: flex;
+                width: 24px;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-start;
+                align-self: stretch;
+            }
+
+            .right-with-scrollbar {
+                display: flex;
+                width: 24px;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-start;
+                align-self: stretch;
+            }
+
+            .buttons-container {
+                display: flex;
+                padding: var(--bolean-example-test-number, 0px);
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                flex: 1 0 0;
+                border-radius: var(--bolean-example-test-number, 0px);
+
+                /// replace with design system styuff
+                button {
+                    display: flex;
+                    padding: 12px;
+                    justify-content: center;
+                    align-items: center;
+                    flex: 1 0 0;
+                    background: var(--color-greyscale-black, #000);
+                    width: 100%;
+                }
+
+                .login-text {
+                    color: var(--text-text-primary, #000);
+                    font-feature-settings: 'ss06' on, 'ss03' on, 'ss02' on;
+                    /* Mobile/Figma-only/Body Medium Underline */
+                    //font-family: Breuer Condensed;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 22px; /* 137.5% */
+                    letter-spacing: 0.32px;
+                  //  text-decoration-line: underline;
+
+                    a {
+                        color: var(--text-text-primary, #000);
+                    }
+                }
+            }
+        }
+    }
+
+
+    ///// Modal Mobile
+    .modal-mobile {
+        display: flex;
+        width: 375px;
+        height: 812px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+
+        .scan-barcode {
+            width: 375px;
+            height: 812px;
+            flex-shrink: 0;
+
+            .rectangle-980 {
+                width: 375px;
+                height: 812px;
+                flex-shrink: 0;
+                border-radius: 0px;
+                background: #000;
+
+                position: relative;
+
+                .modal-header-container {
+                    display: flex;
+                    width: 375px;
+                    padding: 16px 16px 16px 24px;
+                    align-items: center;
+
+                    .modal-header {
+                        display: flex;
+                        padding: 8px var(--bolean-example-test-number, 0px);
+                        align-items: center;
+                        gap: 8px;
+                        flex: 1 0 0;
+                        border-radius: var(--bolean-example-test-number, 0px);
+
+                        .display-sm {
+                            color: white;
+                            flex: 1 0 0; // ??
+                        }
+
+                        .material-symbols-outlined {
+                            color: white;
+
+                            display: flex;
+                            padding: 8px;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 8px;
+                        }
+                    }
+                }
+
+                .group-802 {
+                    width: 375px;
+                   // height: 812px;
+                    flex-shrink: 0;
+                    border-radius: var(--bolean-example-test-number, 0px);
+                    // **
+
+                    /// to align -- might need to change:
+                    justify-content: center;
+                    display: inline-grid;
+
+                    .kant-uppe {
+                        display: flex;
+                        width: 258px;
+                        padding: var(--bolean-example-test-number, 0px);
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        border-radius: var(--bolean-example-test-number, 0px);
+                    }
+
+                    .subtract {
+
+                    }
+
+                    .kant-nere {
+                        display: flex;
+                        width: 258px;
+                        padding: var(--bolean-example-test-number, 0px);
+                        justify-content: space-between;
+                        align-items: flex-end;
+                        border-radius: var(--bolean-example-test-number, 0px);
+                    }
+
+                } // this is for interior scanner
+
+                .scanner-text {
+                    width: 258px;
+                    height: 56.069px;
+                    flex-shrink: 0;
+                    margin: 0 auto;
+                    text-align: center;
+                    color: white;
+                    padding-top: 12px;
+                }
+
+                .swipe-container {
+                    position: absolute;
+                    bottom: 0;
+                    left:0;
+                    right:0;
+
+                    .swipe {
+                        width: 148px;
+                        height: 5.006px;
+                        flex-shrink: 0;
+                        border-radius: 5px;
+                        background: #D9D9D9;
+                        margin: 0 auto;
+                        margin-bottom: 12px; // dillemma
+                    }
+                }
+            } // rectangle 980
+        }
+    }
+} // end temp-page

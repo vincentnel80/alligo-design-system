@@ -1,0 +1,1062 @@
+
+$body-antialiased: true;
+body {
+    font-family: Roboto,Arial,Helvetica,sans-serif; // is this the correct place to declare? should i even use it
+   // font-family: breuercondensed,Roboto,Arial,Helvetica,sans-serif;
+    /// if body is antialised ---
+    font-stretch: condensed;
+    font-style: normal;
+
+    @if ($body-antialiased) {
+        -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
+        -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
+    }
+}
+// all calcs - or a global for all rem
+// vars, tokens
+
+// should this be 12 or 16 ???? default seems to be 16 but I set it as 10 ... but maybe calcs should be different
+$base-font-size: 16px; // Set your base font size here (default is 16px).
+$global-line-height: 1.5 !default;
+
+
+@function rem-calc($pixels) {
+    @return #{$pixels / $base-font-size}rem;
+}
+
+@function rem($pixels) {
+    @return #{$pixels / $base-font-size}rem;
+}
+
+@function line-height-rem($line-height-in-pixels) {
+    @return rem($line-height-in-pixels);
+}
+
+
+// font sixes pixels to rem
+
+//$paragraph-line-height: rem-calc(28px) !default;
+
+// good var name and what about token
+// what is !default ??
+// do i need default
+////// to Do 
+/// 1.) 
+/// font sizes (with default
+/// with rem?
+/// what about others?
+/// /*
+/*$font-size-12: rem-calc(12px) !default; // what is default
+$font-size-14: rem-calc(14px) !default;
+$font-size-16: rem-calc(16px) !default;
+$font-size-18: rem-calc(18px) !default;
+$font-size-20: rem-calc(20px) !default;
+$font-size-22: rem-calc(22px) !default;
+$font-size-24: rem-calc(24px) !default;
+$font-size-26: rem-calc(26px) !default;
+$font-size-28: rem-calc(28px) !default;
+$font-size-30: rem-calc(30px) !default;
+$font-size-32: rem-calc(32px) !default;
+$font-size-36: rem-calc(36px) !default;
+$font-size-40: rem-calc(40px) !default; /// not using ??
+$font-size-46: rem-calc(46px) !default;
+$font-size-66: rem-calc(66px) !default; */
+
+/////// TODO ------
+/// /// not using this i guess
+// Weight variables
+//$hairline-weight: 100;
+//$thin-weight:     200;
+//$light-weight:    300;
+/*$normal-weight-400:   400; // regular
+$medium-weight-500:   500; // medium
+$semibold-weight-600: 600; /// ??? modified
+$bold-weight-700:     700; // bold */
+//$xbold-weight:    800;
+//$black-weight:    900;
+
+// what weights are being used
+
+/// NEW NEW NEW NEW
+// new:
+// font weights
+$font-weight-default-400: 400;
+$font-weight-regular-500: 500;
+$font-weight-medium-600: 600;
+$font-weight-bold-700: 700;
+
+// line height
+// I dont think I am using this one now
+/*$line-height-12: line-height-rem(12px);
+$line-height-14: line-height-rem(14px);
+$line-height-16: line-height-rem(16px);
+$line-height-18: line-height-rem(18px);
+$line-height-20: line-height-rem(20px);
+$line-height-22: line-height-rem(22px);
+$line-height-24: line-height-rem(24px);
+$line-height-26: line-height-rem(26px);
+$line-height-28: line-height-rem(28px);
+$line-height-32: line-height-rem(32px);
+$line-height-34: line-height-rem(34px);
+$line-height-36: line-height-rem(36px);
+$line-height-40: line-height-rem(40px);
+$line-height-48: line-height-rem(48px);
+$line-height-66: line-height-rem(66px); */
+
+//letter spacing
+// to do make new section ??? yes no
+// what abaout spacing and vars
+// make as a token???
+
+///// NEWS FINAL VALS
+/// ^^use above ???
+/// 
+$value-0: 0px;
+$value-12: 12px;
+$value-14: 14px;
+$value-16: 16px;
+$value-18: 18px;
+$value-20: 20px;
+$value-22: 22px;
+$value-24: 24px;
+$value-26: 26px;
+$value-28: 28px;
+$value-30: 32px;
+$value-32: 32px;
+$value-34: 34px;
+$value-36: 36px;
+$value-40: 40px;
+$value-42: 42px;
+$value-46: 46px;
+$value-48: 48px;
+$value-56: 56px;
+$value-64: 64px;
+$value-66: 66px;
+
+
+//Font weights Mobile *** go over cause it seems not correct
+$font-weight-body-sm: $font-weight-default-400;
+$font-weight-body-md: $font-weight-default-400;
+$font-weight-body-lg: $font-weight-default-400;
+$font-weight-body-xl: $font-weight-default-400;
+$font-weight-alt-label-sm: $font-weight-regular-500;
+$font-weight-alt-label-md: $font-weight-regular-500;
+$font-weight-alt-label-lg: $font-weight-regular-500;
+$font-weight-label-sm: $font-weight-bold-700;
+$font-weight-label-md: $font-weight-bold-700;
+$font-weight-label-lg: $font-weight-bold-700;
+$font-weight-title-sm: $font-weight-bold-700;
+$font-weight-title-md: $font-weight-bold-700;
+$font-weight-title-lg: $font-weight-bold-700;
+$font-weight-headline-sm: $font-weight-bold-700;
+$font-weight-headline-md: $font-weight-bold-700;
+$font-weight-headline-lg: $font-weight-bold-700;
+$font-weight-headline-xl: $font-weight-bold-700;
+$font-weight-display-sm: $font-weight-bold-700;
+$font-weight-display-md: $font-weight-bold-700;
+$font-weight-display-lg: $font-weight-bold-700;
+
+
+// Font size - mobile - checked correct for mobile!!! ******
+$font-size-body-sm: $value-14;
+$font-size-body-md: $value-16;
+$font-size-body-lg: $value-18;
+$font-size-body-xl: $value-20;
+$font-size-alt-label-sm: $value-12;
+$font-size-alt-label-md: $value-14;
+$font-size-alt-label-lg: $value-16;
+$font-size-label-sm: $value-12;
+$font-size-label-md: $value-14;
+$font-size-label-lg: $value-16;
+$font-size-title-sm: $value-16;
+$font-size-title-md: $value-18;
+$font-size-title-lg: $value-20;
+$font-size-headline-sm: $value-22;
+$font-size-headline-md: $value-26;
+$font-size-headline-lg: $value-28;
+$font-size-headline-xl: $value-30;
+$font-size-display-sm: $value-22;
+$font-size-display-md: $value-28;
+$font-size-display-lg: $value-36;
+
+
+
+// Line height - Desktop Checked mobile -- correct!!! ****
+$line-height-body-sm: $value-20;
+$line-height-body-md: $value-22;
+$line-height-body-lg: $value-26; // Updated for mobile
+$line-height-body-xl: $value-28;
+$line-height-alt-label-sm: $value-12;
+$line-height-alt-label-md: $value-14;
+$line-height-alt-label-lg: $value-16;
+$line-height-label-sm: $value-12;
+$line-height-label-md: $value-14;
+$line-height-label-lg: $value-16;
+$line-height-title-sm: $value-22;
+$line-height-title-md: $value-24;
+$line-height-title-lg: $value-24;
+$line-height-headline-sm: $value-24;
+$line-height-headline-md: $value-32;
+$line-height-headline-lg: $value-32;
+$line-height-headline-xl: $value-34;
+$line-height-display-sm: $value-22;
+$line-height-display-md: $value-28;
+$line-height-display-lg: $value-36;
+
+// paragraph spacing
+/// is this correct - eric keeps on asking about it but 
+/// /// Checked for mobile, and all correct but there are a few issues ***** Come back to this
+$paragraph-spacing-body-sm: $value-12;
+$paragraph-spacing-body-md: $value-16;
+$paragraph-spacing-body-lg: $value-16;
+$paragraph-spacing-body-xl: $value-20; /// issue mobile --- this one doews not exist TO DO NB
+$paragraph-spacing-alt-label-sm: $value-12; /// issue mobile --- this one doews not exist TO DO NB
+$paragraph-spacing-alt-label-md: $value-14;  
+$paragraph-spacing-alt-label-lg: $value-16;
+$paragraph-spacing-label-sm: $value-12;
+$paragraph-spacing-label-md: $value-14; /// issue mobile --- this one doews not exist TO DO NB
+$paragraph-spacing-label-lg: $value-16; /// issue mobile --- this one doews not exist TO DO NB
+$paragraph-spacing-title-sm: $value-16;
+$paragraph-spacing-title-md: $value-18;
+$paragraph-spacing-title-lg: $value-16; /// issue mobile --- this one doews not exist TO DO NB
+$paragraph-spacing-headline-sm: $value-12;
+$paragraph-spacing-headline-md: $value-12;
+$paragraph-spacing-headline-lg: $value-12;
+$paragraph-spacing-headline-xl: $value-12;
+$paragraph-spacing-display-sm: $value-12;
+$paragraph-spacing-display-md: $value-12;
+$paragraph-spacing-display-lg: $value-18;
+
+// letter spacing - mobile checkeed correct ******
+$letter-spacing-body-sm: $value-28 * 0.01; // This will convert 28px to 0.28px
+$letter-spacing-body-md: $value-32 * 0.01;
+$letter-spacing-body-lg: $value-0; // Updated for mobile
+$letter-spacing-body-xl: $value-0;
+$letter-spacing-alt-label-sm: $value-48 * 0.01;
+$letter-spacing-alt-label-md: $value-56 * 0.01;
+$letter-spacing-alt-label-lg: $value-32 * 0.01;
+$letter-spacing-label-sm: $value-48 * 0.01;
+$letter-spacing-label-md: $value-42 * 0.01;
+$letter-spacing-label-lg: $value-32 * 0.01;
+$letter-spacing-title-sm: $value-0;
+$letter-spacing-title-md: $value-0;
+$letter-spacing-title-lg: $value-0;
+$letter-spacing-headline-sm: $value-0;
+$letter-spacing-headline-md: $value-0;
+$letter-spacing-headline-lg: $value-0;
+$letter-spacing-headline-xl: $value-0;
+$letter-spacing-display-sm: $value-0;
+$letter-spacing-display-md: $value-0;
+$letter-spacing-display-lg: $value-0;
+
+
+
+// mobile
+// Mobile Values - Huh ??? have I swapped it?
+// isnt this desktop? WTF !!!!
+@media (min-width: 768px) {
+
+    /*
+$font-weight-default-400: 400;
+$font-weight-regular-500: 500;
+$font-weight-medium-600: 600;
+$font-weight-bold-700: 700;
+*/
+
+
+// Font size - desktop ** checked desktop all good
+$font-size-body-sm: $value-14;
+$font-size-body-md: $value-16;
+$font-size-body-lg: $value-20;
+$font-size-body-xl: $value-24;
+$font-size-alt-label-sm: $value-14;
+$font-size-alt-label-md: $value-16;
+$font-size-alt-label-lg: $value-18;
+$font-size-label-sm: $value-14;
+$font-size-label-md: $value-16;
+$font-size-label-lg: $value-18;
+$font-size-title-sm: $value-16;
+$font-size-title-md: $value-20;
+$font-size-title-lg: $value-24;
+$font-size-headline-sm: $value-28;
+$font-size-headline-md: $value-32;
+$font-size-headline-lg: $value-36;
+$font-size-headline-xl: $value-46;
+$font-size-display-sm: $value-26;
+$font-size-display-md: $value-36;
+$font-size-display-lg: $value-66;
+
+// Line height desktop - checked all correct **
+    $line-height-body-sm: $value-20;
+    $line-height-body-md: $value-22;
+    $line-height-body-lg: $value-28;
+    $line-height-body-xl: $value-32;
+    $line-height-alt-label-sm: $value-14;
+    $line-height-alt-label-md: $value-16;
+    $line-height-alt-label-lg: $value-18;
+    $line-height-label-sm: $value-14;
+    $line-height-label-md: $value-16;
+    $line-height-label-lg: $value-18; // lrg to lg
+    $line-height-title-sm: $value-22;
+    $line-height-title-md: $value-24;
+    $line-height-title-lg: $value-28;
+    $line-height-headline-sm: $value-32;
+    $line-height-headline-md: $value-36;
+    $line-height-headline-lg: $value-40;
+    $line-height-headline-xl: $value-48;
+    $line-height-display-sm: $value-26;
+    $line-height-display-md: $value-36;
+    $line-height-display-lg: $value-66;
+
+    // paragraph spacing ** checked desktop all good
+    $paragraph-spacing-body-sm: $value-12;
+    $paragraph-spacing-body-md: $value-16;
+    $paragraph-spacing-body-lg: $value-20;
+    $paragraph-spacing-body-xl: $value-24;
+    $paragraph-spacing-alt-label-sm: $value-14;
+    $paragraph-spacing-alt-label-md: $value-16;
+    $paragraph-spacing-alt-label-lg: $value-18;
+    $paragraph-spacing-label-sm: $value-14;
+    $paragraph-spacing-label-md: $value-16;
+    $paragraph-spacing-label-lg: $value-18;
+    $paragraph-spacing-title-sm: $value-16;
+    $paragraph-spacing-title-md: $value-20;
+    $paragraph-spacing-title-lg: $value-24;
+    $paragraph-spacing-headline-sm: $value-12;
+    $paragraph-spacing-headline-md: $value-12;
+    $paragraph-spacing-headline-lg: $value-12;
+    $paragraph-spacing-headline-xl: $value-12;
+    $paragraph-spacing-display-sm: $value-12;
+    $paragraph-spacing-display-md: $value-12;
+    $paragraph-spacing-display-lg: $value-18;
+
+    // Letter spacing desktop
+    $letter-spacing-body-sm: $value-28 * 0.01;
+    $letter-spacing-body-md: $value-32 * 0.01;
+    $letter-spacing-body-lg: $value-0; 
+    $letter-spacing-body-xl: $value-0;
+    $letter-spacing-alt-label-sm: $value-56 * 0.01;
+    $letter-spacing-alt-label-md: $value-64 * 0.01;
+    $letter-spacing-alt-label-lg: $value-36 * 0.01;
+    $letter-spacing-label-sm: $value-56 * 0.01;
+    $letter-spacing-label-md: $value-48 * 0.01;
+    $letter-spacing-label-lg: $value-18 * 0.01;
+    $letter-spacing-title-sm: $value-0;
+    $letter-spacing-title-md: $value-0;
+    $letter-spacing-title-lg: $value-0;
+    $letter-spacing-headline-sm: $value-0;
+    $letter-spacing-headline-md: $value-0;
+    $letter-spacing-headline-lg: $value-0;
+    $letter-spacing-headline-xl: $value-0;
+    $letter-spacing-display-sm: $value-0;
+    $letter-spacing-display-md: $value-0;
+    $letter-spacing-display-lg: $value-0;
+
+
+  }
+/// 
+/// 
+
+/*
+// dont think i am using
+// weight: 100
+.hairline-weight {
+   // font-weight: $hairline-weight;
+}
+// weight: 200
+.thin-weight {
+   // font-weight: $thin-weight;
+}
+// weight: 300
+.light-weight {
+   // font-weight: $light-weight;
+}
+// weight: 400
+.normal-weight {
+    font-weight: $normal-weight-400 !important;
+}
+// weight: 500
+.medium-weight {
+    font-weight: $medium-weight-500 !important;
+}
+// weight: 600
+.semibold-weight {
+    font-weight: $semibold-weight-600;
+}
+// weight: 700
+.bold-weight {
+    font-weight: $bold-weight-700 !important;
+}
+// weight: 800
+.xbold-weight {
+   // font-weight: $xbold-weight;
+}
+// weight: 900
+.black-weight {
+    // font-weight: $black-weight;
+}
+*/
+// make correct mixin
+
+/*
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-bold-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-bolditalic-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-bolditalic-webfont.woff') format('woff');
+     font-weight: 700;
+        font-style: italic;
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-medium-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-mediumitalic-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-mediumitalic-webfont.woff') format('woff');
+
+
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-regular-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-regularitalic-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-regularitalic-webfont.woff') format('woff');
+    // new added
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-light-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'breuercondensed';
+    src: url('./StorybookFonts/breuercondensed-lightitalic-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-lightitalic-webfont.woff') format('woff');
+font-weight: 300;
+    font-style: italic;
+
+}
+*/
+// is this correct - go over
+// what is breircondensed regular, what is 
+@font-face {
+    font-family: breuercondensed;
+    src: local(BreuerCondensed-Regular),
+url('./StorybookFonts/breuercondensed-regular-webfont.woff2') format("woff2"),
+url('./StorybookFonts/breuercondensed-regular-webfont.woff') format("woff");
+    // url(/path/to/BreuerCondensed-Regular.ttf) format("truetype");
+font-weight: normal;
+    font-style: normal;
+    font-stretch: condensed;
+    // 400
+}
+@font-face {
+    font-family: breuercondensed;
+     src: local(BreuerCondensed-Medium),
+url('./StorybookFonts/breuercondensed-medium-webfont.woff2') format("woff2"),
+url('./StorybookFonts/breuercondensed-medium-webfont.woff') format("woff");
+    // url(/path/to/BreuerCondensed-Medium.ttf) format("truetype");
+font-weight: 500;
+    font-style: normal;
+    font-stretch: condensed; // yes or no
+}
+@font-face {
+    font-family: breuercondensed;
+     src: local(BreuerCondensed-Bold),
+url('./StorybookFonts/breuercondensed-bold-webfont.woff2') format("woff2"),
+url('./StorybookFonts/breuercondensed-bold-webfont.woff') format("woff");
+    // url(/path/to/BreuerCondensed-Bold.ttf) format("truetype");
+font-weight: bold;
+    font-style: normal;
+    font-stretch: condensed;
+    // 700
+}
+
+
+
+
+
+
+// Typeface classes
+.display-sm {
+    //font-family: BreuerCondensedBold;
+    font-family: breuercondensed;
+    font-weight: $font-weight-display-sm;
+    font-size: $font-size-display-sm;
+    line-height:$line-height-display-sm;
+    text-transform: uppercase;
+    margin-bottom: $paragraph-spacing-display-sm; // paragraph spacing
+    letter-spacing: $letter-spacing-display-sm;
+
+    @media (min-width: 768px) {
+       // font-size: $font-size-26; //d m
+    }
+}
+.display-md {
+    //font-family: BreuerCondensedBold;
+    font-family: breuercondensed; /// can i add in body?
+    font-weight: $font-weight-display-md;
+    font-size: $font-size-display-md;
+    line-height: $line-height-display-md;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-display-md; // needs rem calc --- which one is suitable
+    margin-bottom: $paragraph-spacing-display-md; 
+
+    @media (min-width: 768px) {
+      //  font-size: $font-size-36;
+    }
+}
+
+.display-lg {
+    font-family: breuercondensed;
+    font-size: $font-size-display-lg;
+    line-height: $line-height-display-lg;
+    font-weight: $font-weight-display-lg;
+    text-transform: uppercase; // should this be here?
+    letter-spacing: $letter-spacing-display-lg;
+    margin-bottom: $paragraph-spacing-display-lg;
+
+    @media (min-width: 768px) {
+    //    font-size: $font-size-66;
+    }
+}
+
+.headline-sm {
+    font-family: breuercondensed;
+    font-size: $font-size-headline-sm;
+    line-height: $line-height-headline-sm;
+    font-weight: $font-weight-headline-sm;
+    margin-bottom: $paragraph-spacing-headline-sm;
+    letter-spacing: $letter-spacing-headline-sm;
+
+    @media (min-width: 768px) {
+     //   font-size: $font-size-28;
+    }
+}
+
+.headline-md {
+    //font-family: BreuerCondensedBold;
+    font-family: breuercondensed;
+    font-size: $font-size-headline-md;
+    line-height: $line-height-headline-md;
+    font-weight: $font-weight-headline-md;
+    margin-bottom: $paragraph-spacing-headline-md;
+    letter-spacing: $letter-spacing-headline-md;
+
+        // Modifier class
+        &--blockquote {
+            text-transform: uppercase;
+        }
+
+    @media (min-width: 768px) {
+       // font-size: $font-size-32;
+       // line-height: $line-height-36;
+    }
+}
+.headline-lg {
+    font-family: breuercondensed;
+    font-size: $font-size-headline-lg;
+    line-height: $line-height-headline-lg;
+    font-weight: $font-weight-headline-lg;
+    margin-bottom: $paragraph-spacing-headline-lg;
+    letter-spacing: $letter-spacing-headline-lg;
+
+    @media (min-width: 768px) {
+      //  font-size: $font-size-36;
+       // line-height: $line-height-40;
+    }
+}
+
+.headline-xl {
+    font-family: breuercondensed;
+    font-size: $font-size-headline-xl;
+    line-height: $line-height-headline-xl;
+    font-weight: $font-weight-headline-xl;
+    margin-bottom: $paragraph-spacing-headline-xl;
+    letter-spacing: $letter-spacing-headline-xl;
+
+    @media (min-width: 768px) {
+       // font-size: $font-size-46;
+        //line-height: 48px;
+       // line-height: line-height-rem(48px);
+      //  line-height: $line-height-48;
+    }
+}
+
+.title-sm {
+    font-family: breuercondensed;
+    font-size: $font-size-title-sm;
+    line-height: $line-height-title-sm;
+    font-weight: $font-weight-title-sm;
+    margin-bottom: $paragraph-spacing-title-sm;
+    letter-spacing: $letter-spacing-title-sm;
+
+    @media (min-width: 768px) {
+      //  font-size: $font-size-16;
+      //  line-height: $line-height-22;
+    }
+}
+.title-md {
+    font-family: breuercondensed;
+    font-size: $font-size-title-md;
+    line-height: $line-height-title-md;
+    font-weight: $font-weight-title-md;
+    margin-bottom: $paragraph-spacing-title-md;
+    letter-spacing: $letter-spacing-title-md;
+
+    @media (min-width: 768px) {
+      //  font-size: $font-size-20;
+      //  line-height: $line-height-24;
+    }
+}
+.title-lg {
+    font-family: breuercondensed;
+    font-size: $font-size-title-lg;
+    line-height: $line-height-title-lg;
+    font-weight: $font-weight-title-lg;
+    margin-bottom: $paragraph-spacing-title-lg;
+    letter-spacing: $letter-spacing-title-lg;
+
+    @media (min-width: 768px) {
+      //  font-size: $font-size-24;
+    }
+}
+
+.label-sm {
+    font-family: breuercondensed;
+    font-size: $font-size-label-sm;
+    line-height: $line-height-label-sm;
+    font-weight: $font-weight-label-sm;
+    letter-spacing: $letter-spacing-label-sm;
+    text-transform: uppercase;
+    margin-bottom: $paragraph-spacing-label-sm;
+
+            // Modifier class
+            &--badge {
+                font-weight: 600; // real amount in figma but maybe needs lower val?
+                text-transform: none;
+            }
+
+    @media (min-width: 768px) {
+       // font-size: $font-size-14;
+    }
+}
+.label-md {
+    font-family: breuercondensed;
+    font-size: $font-size-label-md;
+    line-height: $line-height-label-md;
+    font-weight: $font-weight-label-md;
+    letter-spacing: $letter-spacing-label-md;
+    text-transform: uppercase;
+    margin-bottom: $paragraph-spacing-label-md;
+
+    @media (min-width: 768px) {
+       // font-size: $font-size-16;
+    }
+}
+
+
+
+
+.label-lg {
+    font-family: breuercondensed;
+    //font-size: 18px; /// 18 px is listed listed in Figma, listed in Zeplyn but makes incorrect button size - 16 makes correct one according to calcs
+    /// different line height /// but I guess 1 makes it ok
+    // maybe set line height here? experiment on typography pages to see what it does
+   // line-height: 16px; /// set this initially ? or control it elsewhere?
+   // letter-spacing: 0.02px; /// difference in figma and  !!!! ISSUES for Eric - list
+    font-weight: $font-weight-label-lg;
+    text-transform: uppercase;
+    font-size: $font-size-label-lg;
+    line-height: $line-height-label-lg;
+    margin-bottom: $paragraph-spacing-label-lg;
+    letter-spacing: $letter-spacing-label-lg;
+
+                // Modifier class
+                &--underline {
+                    text-decoration: underline;
+                }
+
+    @media (min-width: 768px) {
+       // font-size: $font-size-18;
+    }
+}
+.alt-label-sm {
+    font-family: breuercondensed;
+    font-size: $font-size-alt-label-sm;
+    line-height: $line-height-alt-label-sm;
+    font-weight: $font-weight-alt-label-sm;
+    letter-spacing: $letter-spacing-alt-label-sm;
+    margin-bottom: $paragraph-spacing-alt-label-sm;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+       // font-size: $font-size-14;
+    }
+}
+.alt-label-md {
+    font-family: breuercondensed;
+    font-size: $font-size-alt-label-md;
+    line-height: $line-height-alt-label-md;
+    font-weight: $font-weight-alt-label-md;
+    letter-spacing: $letter-spacing-alt-label-md;
+    margin-bottom: $paragraph-spacing-alt-label-md;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+       // font-size: $font-size-16;
+    }
+}
+.alt-label-lg {
+    font-family: breuercondensed;
+    font-size: $font-size-label-lg;
+    line-height: $line-height-alt-label-lg;
+    font-weight: $font-weight-alt-label-lg;
+    //letter-spacing: $letter-spacing-alt-label-lg;
+    letter-spacing: $letter-spacing-alt-label-lg;
+    margin-bottom: $paragraph-spacing-alt-label-lg;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+      //  font-size: $font-size-18;
+    }
+}
+
+.body-sm {
+    font-family: breuercondensed;
+    font-weight: $font-weight-body-sm;
+    font-size: $font-size-body-sm;
+    line-height: $line-height-body-sm;
+    letter-spacing: $letter-spacing-body-sm;
+    margin-bottom: $paragraph-spacing-body-sm;
+
+    // Modifier class for body-xl
+    &--bold {
+        font-weight: 700;
+    }
+
+    // Modifier class for body-xl
+    &--underline {
+        text-decoration: underline;
+    }
+
+    // Modifier class for body-xl
+    &--strikethrough {
+        text-decoration: line-through;
+    }
+
+    @media (min-width: 768px) {
+        //font-size: $font-size-14;
+    }
+
+
+}
+.body-md {
+    //font-family: BreuerCondensedRegular;
+    font-family: breuercondensed;
+    font-weight: $font-weight-body-md;
+    font-size: $font-size-body-md;
+    line-height: $line-height-body-md;
+    letter-spacing: $letter-spacing-body-md;
+    margin-bottom: $paragraph-spacing-body-md;
+
+            // Modifier class for body-xl
+            &--underline {
+                text-decoration: underline;
+            }
+
+        // Modifier class for body-xl
+        &--bold {
+            font-weight: 700;
+        }
+
+        // Modifier class for body-xl
+        &--bold-underline {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+                // Modifier class for body-xl
+                &--strikethrough {
+                    text-decoration: line-through; // not working
+                }
+
+    /// might not need @ media --- as they are the same
+    @media (min-width: 768px) {
+      //  font-size: $font-size-16;
+    }
+}
+
+.body-lg {
+    //font-family: BreuerCondensedRegular;
+    font-family: breuercondensed;
+    font-weight: $font-weight-body-lg;
+    font-size: $font-size-body-lg;
+    line-height: $line-height-body-lg;
+    letter-spacing: $letter-spacing-body-lg;
+    margin-bottom: $paragraph-spacing-body-lg;
+
+            // Modifier class for body-xl
+            &--underline {
+                text-decoration: underline;
+            }
+
+                    // Modifier class for body-xl
+        &--bold {
+            font-weight: 700;
+        }
+
+                // Modifier class for body-xl
+                &--bold-underline {
+                    font-weight: 700;
+                    text-decoration: underline;
+                }
+
+        // Modifier class for body-xl
+        &--strikethrough {
+            text-decoration: line-through;
+        }
+
+    @media (min-width: 768px) {
+     //   font-size: $font-size-20;
+    }
+}
+
+.body-xl {
+    //font-family: BreuerCondensedRegular;
+    font-family: breuercondensed;
+    font-size: $font-size-body-xl;
+    line-height: $line-height-body-xl;
+    font-weight: $font-weight-body-xl;
+    letter-spacing: $letter-spacing-body-xl;
+    margin-bottom: $paragraph-spacing-body-xl;
+
+        // Modifier class for body-xl
+        &--preamble {
+            font-weight: $font-weight-medium-600;
+        }
+
+                        // Modifier class
+                        &--underline {
+                            text-decoration: underline;
+                        }
+
+                                        // Modifier class
+                &--bold {
+                   font-weight: 700;
+                }
+
+                                // Modifier class
+                                &--strikethrough {
+                                    text-decoration: line-through;
+                                }
+
+    @media (min-width: 768px) {
+      //  font-size: $font-size-24;
+    }
+}
+
+/// ???
+.badges-change {
+    //font-family: BreuerCondensedRegular;
+    font-family: breuercondensed;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: $font-weight-regular-500;
+    letter-spacing: 0.24px;
+
+    @media (min-width: 768px) {
+        font-size: 14;
+       // line-height: $line-height-14;
+        letter-spacing: 0.28px;
+    }
+}
+/* vin
+$line-height-24: line-height-rem(24px); // d m
+$font-size-32: rem-calc(32px) !default; //d
+// add correct variables
+*/
+
+///// Modifiers
+/*.preamble-body-xl {
+    font-family: breuercondensed;
+    font-size: 20px;
+    line-height: 26px;
+    //font-weight: normal; //600 in figma (in fonts displayed settings, but in reality - 500 looks like a closer match)
+    font-weight: $font-weight-regular-500;
+
+    @media (min-width: 768px) {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}*/
+
+// To DO - Incomplete
+.sb-blockquote-label-medium {
+    font-family: BreuerCondensedBold;
+    font-size: 24px;
+    font-weight: $font-weight-bold-700;
+    line-height: 32px;
+    text-transform: uppercase;
+    font-style: normal;
+
+    @media (min-width:321px) and (max-width:768px) {
+        font-size: 26px;
+        line-height: 16px;
+        letter-spacing: 0.02px;
+    }
+    @media (min-width: 768px) {}
+}
+
+.sb-blockquote{
+    padding: 12px;
+    border-left:6px solid #D90000 ;
+    position: relative;
+    margin-top: 40px;
+}
+
+.sb-blockquote span{
+    display:block;
+    opacity: 80%;
+    margin-top:24px;
+}
+
+// -- BQ New
+.blockq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;  
+
+    .blockq-container-inner {
+        display: flex;
+        padding: 16px 32px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+        border-left: 4px solid var(--surface-accent-default, #C7D300);
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-bottom: 0
+        }
+
+        .bottom-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+     }
+}
+
+
+
+/*
+* Temporary overrides
+* Used to override current system styles, that are new design system styles.
+* These are not part of the new designs, and can be deleted when the new styles are implemented in the main system.
+*/
+
+/*
+.sb-info-block-container {
+    h1 {
+        margin: 0;
+        display: block;
+        vertical-align: bottom;
+    }
+
+    h2 {
+        margin-bottom: 0px
+    }
+
+    h3 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    h4 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    h5 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    h6 {
+        //margin-bottom: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+} */
+
+//// TO DO
+/// /*
+/// Snowfklake doodies
+/// misses out items, such as ... left hand block quate thingy.
+/// mobile and desktop all correct
+/// sorting out the line break stuff (paragraph space. how do i control that? ? 
+/// Font weights all good?
+/// The extra pages -g line height
+/// Text on all pages
+/// change the badge
+/// margin-tops of text (for paragraph spacing
+/// check that items are actuially switching and working caue it dfoes not seem like it is eg paragraph-spacing-body-xl
+/// why oh why does this dam shit lose styling???
+/// Question - how to handle paragraph spacing!!!
+/// 
+/// font-family: var(--font-global-serif, "Breuer Condensed");
+/// test out breakages
+/// headline-xlg for the font doody in document
+/// bim etc
+/// */
+
+
+
+
+
+
+
+
+

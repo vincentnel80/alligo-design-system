@@ -1,5 +1,0 @@
-                        &lt;button className={'button-base primary'}&gt;
-                        &lt;span className={'button-text label-lrg'}&gt;
-                        BUTTON TEXT
-                        &lt;/span&gt;
-                        &lt;/button&gt;

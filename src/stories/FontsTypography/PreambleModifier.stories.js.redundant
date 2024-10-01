@@ -1,0 +1,62 @@
+// Header.stories.js
+
+import React from 'react';
+//import Header from './Header.component';
+import PreambleModifier from '../../StorybookComponents/FontsTypography/PreambleModifier';
+
+// HTML Snippet for the Breadcrumb component
+const htmlSnippet = `
+<div class="body-xl body-xl--preamble">Lorem ipsum dolor sit amet</div>
+`;
+
+export default {
+    title: 'Typography/Preamble Modifier',
+    component: PreambleModifier,
+    parameters: {
+      layout: 'centered',
+      docs: {
+        description: {
+          component: 'Description of preamble text',
+        },
+        source: {
+          code: `<span class="body-xl body-xl--preamble">Lorem ipsum dolor sit amet/span>`,
+        },
+      },
+    },
+    argTypes: {
+      text: { 
+        control: 'text',
+        description: 'The text to display',
+        defaultValue: 'Sample Text'
+      },
+      /*level: { 
+        control: 'number', 
+        min: 1, 
+        max: 6, 
+        step: 1, 
+        defaultValue: 1
+      }, */
+      paddingBottom: {
+        options: ['20px', '40px'],
+        control: { type: 'select' },
+        description: 'Bottom padding of the header',
+      },
+    },
+    tags: ['autodocs'],
+  };
+  
+  const Template = (args) => <PreambleModifier {...args} />;
+  
+  export const Default = Template.bind({});
+  Default.args = {
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacus, ultrices pretium est turpis aenean rutrum dolor sit amet nullam dolor.',
+   // level: 1,
+    paddingBottom: '16px',
+  };
+  
+  export const CustomPadding = Template.bind({});
+  CustomPadding.args = {
+    text: 'Preamble with Custom Padding (if needed)',
+   // level: 1,
+    paddingBottom: '40px',
+  };

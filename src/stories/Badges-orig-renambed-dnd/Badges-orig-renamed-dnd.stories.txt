@@ -1,0 +1,12 @@
+import React from 'react';
+
+import Badges from '../../StorybookComponents/Badges/Badges';
+
+export default {
+    title: 'UX/Badges DND BKP',
+    component: Badges,
+};
+
+export const UXBadges = () => (
+    <Badges />
+);

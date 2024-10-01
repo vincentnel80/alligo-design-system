@@ -1,0 +1,178 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import './bullet.scss';
+import '../foundation-fonts-weights.scss'; // make global -- but saying that --- when I add it like this, it works, but when I use import, it fails ---
+
+/**
+ * 
+ * Bullet List information.
+ * its in folder fontsTypograpy
+ * // make into own component
+ */
+
+
+// if i dont add these, then it always comes back as undefined - why?
+  export const Bullet = ({ viewport = 'Desktop', variant = '' }) => {
+    return (
+     
+      <>
+        {viewport === 'Desktop' ? (
+          <>
+{/* <div class="outercontainer">
+  <ul class="list-level-1">
+    <li>
+      <div class="list-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
+        </svg>
+        <span class="body-lg">List Item Level 1</span>
+      </div>
+      <ul class="list-level-2">
+        <li>
+          <div class="list-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
+            </svg>
+            <span class="body-lg">List Item Level 2</span>
+          </div>
+          <ul class="list-level-3">
+            <li>
+              <div class="list-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
+                </svg>
+                <span class="body-lg">List Item Level 3</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+*/}
+
+{/* Base style for all lists */}
+<div class="outercontainer bullet-list">
+  <ul class="list-level-1">
+    <li>
+      <div class="list-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
+        </svg>
+        <span class="body-lg">List Item Level 1</span>
+      </div>
+      <ul class="list-level-2">
+        <li>
+          <div class="list-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
+            </svg>
+            <span class="body-lg">List Item Level 2</span>
+          </div>
+          <ul class="list-level-3">
+            <li>
+              <div class="list-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
+                </svg>
+                <span class="body-lg">List Item Level 3</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<ol class="list-level-1">
+  <li class="body-lg">
+    List Item Level 1
+    <ol class="list-level-2">
+      <li class="body-lg">
+        List Item Level 2
+        <ol class="list-level-3">
+          <li class="body-lg">List Item Level 3</li>
+        </ol>
+      </li>
+      <li class="body-lg">List Item Level 2</li>
+    </ol>
+  </li>
+  <li class="body-lg">List Item Level 1</li>
+</ol>
+
+
+
+
+            {/* remove instances to do<div className={`${marginBottom}-temp`}></div>*/}
+          </>
+        ) : (
+          <>
+
+<div class="outercontainer">
+  <ul class="list-level-1">
+    <li>
+      <div class="list-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
+        </svg>
+        <span class="body-lg">List Item Level 1</span>
+      </div>
+      <ul class="list-level-2">
+        <li>
+          <div class="list-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
+            </svg>
+            <span class="body-lg">List Item Level 2</span>
+          </div>
+          <ul class="list-level-3">
+            <li>
+              <div class="list-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
+                </svg>
+                <span class="body-lg">List Item Level 3</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+        {/*     <div className={`${marginBottom}-temp`}></div> */}
+          </>
+        )}
+      </>
+
+    );
+  };
+
+  Bullet.propTypes = {
+    /**
+     * Summary text to be displayed
+     */
+   // summary: PropTypes.string.isRequired, // assuming summary is a required string
+
+  
+    /**
+     * Additional property A, type can vary based on usage
+     */
+  
+    /**
+     * Padding value for the component
+     */
+   //padding: PropTypes.string, // assuming padding is an optional string like '10px'
+  };
+
+// add shir here, or in title???
+/*Title.defaultProps = {
+  backgroundColor: 'transparent',
+ // textColor: '#000',
+  //fontSize: '14px / 16px',
+ // separator: '/',
+}; */

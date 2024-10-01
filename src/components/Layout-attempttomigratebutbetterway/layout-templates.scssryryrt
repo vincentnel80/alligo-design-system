@@ -1,0 +1,263 @@
+/*
+* Storybook page containers
+* Only used for storybook layout
+*/
+
+.sb-page-container {
+    max-width: 1440px !important;
+}
+
+.sb-page-container-mobile {
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+}
+
+.sb-maincontent {
+    margin: 20px 10px 20px;
+    max-width: 1200px;
+
+    @media (min-width: 768px) {
+        margin: 80px 120px 80px;
+    }
+}
+
+.sb-maincontent-mobile-only {
+    max-width: 379px;
+    margin: 20px 10px 20px;
+}
+
+// Main into header and text
+.sb-main-intro-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 32px;
+}
+
+.sb-main-intro-headline-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sb-design-status-label {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 8px;
+   // padding: 4px 5px 4px 5px;
+
+    &.draft {
+        /// del this
+       // background-color: var(--warning-medium);
+    }
+}
+.sb-main-intro-description-text {
+    max-width: 690px;
+    margin-top: 16px;
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    // used to override system default p
+    p:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+/// Sub-Header component with Underline
+.sb-secondary-intro-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.sb-secondary-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    justify-content: flex-start;
+    align-self: stretch;
+    width: 1200px;
+    align-items: flex-start;
+}
+
+.hr-line-division {
+    width: 100%;
+    max-width: 1200px;
+    margin: 16px 0 0 0;
+    border-bottom: 1px solid #CCCCCC;
+    clear: both;
+}
+
+.sb-secondary-content-wrapper {
+    max-width: 950px;
+    margin-top: 24px;
+
+    p {
+        margin-bottom: 1.125rem;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+//// Single small header with no underline
+.sb-desc-content-container {
+    margin-bottom: -16px;
+    margin-top: 32px;
+}
+.sb-desc-title-wrapper {
+
+}
+.sb-desc-content-text {
+    margin-top: 8px;
+}
+
+//// Column header component
+.sb-grid-header-container {
+    background-color: #FAFAFA; /// color variable
+    border-top: 1px solid #E5E5E5; // grey 10
+    border-bottom: 1px solid #E5E5E5; // grey 10
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 16px;
+
+    .alt-label-lg:last-child {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+
+        .alt-label-lg:last-child {
+            display: block;
+        }
+    }
+}
+
+.sb-grid-header-container-4-col {
+    background-color: #FAFAFA; /// color variable
+    border-top: 1px solid #E5E5E5; // grey 10
+    border-bottom: 1px solid #E5E5E5; // grey 10
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 16px;
+
+    .alt-label-lg:last-child {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+
+        .alt-label-lg:last-child {
+            display: block;
+        }
+    }
+}
+
+
+///// Storybook Grid Container
+.sb-grid-container {
+    display: grid;
+    gap: 32px;
+    padding: 0 16px 0 16px;
+}
+
+.sb-grid-row {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid #E5E5E5; // grey 10
+    padding-bottom: 25px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.sb-grid-row-4-col {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid #E5E5E5; // grey 10
+    padding-bottom: 25px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.sb-grid-item-example {
+    padding-top: 0;
+
+    p {
+      //  margin-bottom: 12px; changed - to accomidate paragraph spacing
+      margin-top: 0px;
+    }
+    p:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.sb-grid-item-desc {
+    .title-md {
+        display: block;
+        padding-bottom: 8px;
+    }
+}
+
+.sb-grid-item-token {
+    display:none;
+
+    @media (min-width: 768px) {
+        display:block;
+    }
+}
+
+//// storybook Articles
+.sb-info-block-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 0px 16px 0;
+    gap: 16px;
+}
+
+/// used to override SB - put it somewhere in a SB overrieds only folder
+p {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+h1 {
+    display: block;
+    //font-size: 2em;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}

@@ -1,0 +1,49 @@
+// to do set global font to breir... and then a fallback
+// then remove all font-family?
+/// you need to make mabile and desktop cars for this
+
+.badge-number {
+    width: 20px;
+    height: 20px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    border-radius: 100%;
+    background-color: var(--color-greyscale-black);
+
+    .numeric-content {
+        //width: 10px;
+        width: fit-content;
+       // width: max-content;
+        height: 13px;
+        flex-grow: 0;
+        font-family: breuercondensed; /// should this be global??
+        font-size: 14px;
+        font-weight: bold; // ? 700 in figma ? is there a var for this,
+        font-stretch: condensed; // ?
+        font-style: normal; // ?
+        line-height: 1;
+        letter-spacing: normal; // ?
+        text-align: center;
+        color: var(--alligo-neutral-00);
+        font-feature-settings: 'clig' off, 'liga' off;
+        // F
+        text-transform: uppercase;
+    }
+}
+
+// these are for SB only... define the above in @media
+.badge-number-large {
+
+}
+
+.badge-number-large {
+
+}
+
+
+//Small
+

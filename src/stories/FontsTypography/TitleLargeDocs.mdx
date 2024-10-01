@@ -1,0 +1,30 @@
+import { Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { useState } from 'react';
+import { Desktop, Mobile } from './TitleLarge.stories';
+
+<Meta title="Typography/Title Large" component={Desktop} />
+
+# Title Large
+
+This component demonstrates the `TitleLarge` typography variant. You can switch between desktop and mobile views using the buttons below.
+
+<div style={{ marginBottom: '20px' }}>
+  <button onClick={() => setView('desktop')} style={{ marginRight: '10px' }}>
+    Desktop
+  </button>
+  <button onClick={() => setView('mobile')}>
+    Mobile
+  </button>
+</div>
+
+{view === 'desktop' ? (
+  <>
+    <Story name="Desktop" />
+    <ArgsTable story="Desktop" />
+  </>
+) : (
+  <>
+    <Story name="Mobile" />
+    <ArgsTable story="Mobile" />
+  </>
+)}

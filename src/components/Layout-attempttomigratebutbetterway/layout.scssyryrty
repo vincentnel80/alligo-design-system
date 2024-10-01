@@ -1,0 +1,263 @@
+// New Design System breakpoints
+// New breakpoints to be added into main system
+
+$breakpoints: (
+    "mobile": 0,
+    "tablet": 640px,
+    "desktop-small": 769px,
+    "desktop": 1024px,
+    "desktop-xl": 1201px // might not need
+);
+
+// Define the breakpoint mixin
+@mixin breakpoint($size) {
+    @if map-has-key($breakpoints, $size) {
+        @media (min-width: map-get($breakpoints, $size)) {
+            @content;
+        }
+    } @else {
+        @error "Invalid breakpoint name: #{$size}.";
+    }
+}
+// End new Design System breakpoints
+
+// Storybook related styles - these will not be used in the main system
+// custom override for p elements in header
+.sb-main-intro-description-text p:nth-child(n + 2) {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+// Arrow mixin - used in layout example grid
+@mixin rotate($angle) {
+    -moz-transform: rotate($angle);
+    -ms-transform: rotate($angle);
+    -webkit-transform: rotate($angle);
+    transform: rotate($angle);
+}
+
+@mixin arrow($arrowSize: 20px, $arrowBorderSize: 3px, $arrowBarWidth: 2px, $arrowBarHeight: 25px) {
+    display: inline-block;
+    height: $arrowSize;
+    position: relative;
+    width: $arrowSize;
+
+    &::after {
+        border-bottom-style: solid;
+        border-bottom-width: $arrowBorderSize;
+        border-right-style: solid;
+        border-right-width: $arrowBorderSize;
+        content: '';
+        display: inline-block;
+        height: $arrowSize;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: $arrowSize;
+    }
+
+    // Triangle shape state
+    &.is-triangle::after {
+        border-style: solid;
+        border-width: 0 0 $arrowSize $arrowSize;
+        height: 0;
+        width: 0;
+    }
+
+    // Check shape state
+    &.is-check::after {
+        width: $arrowSize / 2;
+    }
+
+    // Arrow Bar
+    &.arrow-bar::before {
+        bottom: 1px;
+        content: '';
+        height: $arrowBarHeight;
+        position: absolute;
+        right: 0;
+        transform-origin: bottom;
+        width: $arrowBarWidth;
+        @include rotate(-45deg);
+    }
+
+    // States
+    &.is-top {
+        @include rotate(225deg);
+    }
+
+    &.is-right {
+        @include rotate(315deg);
+    }
+
+    &.is-bottom {
+        @include rotate(45deg);
+    }
+
+    &.is-left {
+        @include rotate(135deg);
+    }
+}
+
+@mixin arrowColor($color) {
+    &,
+    .arrow {
+        &::after {
+            border-color: $color;
+        }
+
+        &.is-triangle::after {
+            border-color: transparent;
+            border-bottom-color: $color;
+        }
+
+        &::before {
+            background-color: $color;
+        }
+    }
+}
+
+.arrow {
+    @include arrow(12px, 2px, 2px, 20px);
+    @include arrowColor(black);
+}
+
+// Mobile layout
+.layout-info-container {
+    width: 375px;
+}
+
+.grid-container-arrows {
+    display: grid;
+    column-gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-item-arrows {
+    text-align: center;
+    .grid-item-arrows-inner {
+        float: right;
+        margin-right: 40px;
+    }
+}
+
+.main-container {
+    width: 375px;
+}
+
+.grid-container {
+    display: grid;
+    column-gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #F6F6F6;
+    text-align: center;
+    padding: 0 16px 0 16px;
+}
+
+.grid-item {
+    font-size: 30px;
+    align-items: center;
+    height: 200px;
+    background: #737373;
+    opacity: 0.1;
+}
+// end mobile layout
+
+// Tablet layout
+.layout-info-container-tablet {
+    width: 770px;
+}
+
+.grid-container-arrows-tablet {
+    display: grid;
+    column-gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.main-container-tablet {
+    width: 770px;
+}
+
+.grid-container-tablet {
+    display: grid;
+    column-gap: 16px;
+    grid-template-columns: repeat(8, 1fr);
+    background-color: #F6F6F6;
+    text-align: center;
+    padding: 0 32px 0 32px;
+}
+
+.grid-item-tablet {
+    font-size: 30px;
+    align-items: center;
+    height: 200px;
+    background: #737373;
+    opacity: 0.1;
+}
+// End tablet layout
+
+// Desktop small layout
+.layout-info-container-desktop-sml {
+    width: 1023px;
+}
+
+.grid-container-arrows-desktop-sml {
+    display: grid;
+    column-gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.main-container-desktop-sml {
+    width: 1023px;
+}
+
+.grid-container-desktop-sml {
+    display: grid;
+    column-gap: 24px;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: #F6F6F6;
+    text-align: center;
+    padding: 0 32px 0 32px;
+}
+
+.grid-item-desktop-sml {
+    font-size: 30px;
+    align-items: center;
+    height: 200px;
+    background: #737373;
+    opacity: 0.1;
+}
+// end desktop small layout
+
+// Desktop large layout
+.layout-info-container-desktop {
+    width: 1200px;
+}
+
+.grid-container-arrows-desktop {
+    display: grid;
+    column-gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.main-container-desktop {
+    width: 1200px;
+}
+
+.grid-container-desktop {
+    display: grid;
+    column-gap: 24px;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: #F6F6F6;
+    text-align: center;
+    padding: 0 40px 0 40px;
+}
+
+.grid-item-desktop {
+    font-size: 30px;
+    align-items: center;
+    height: 200px;
+    background: #737373;
+    opacity: 0.1;
+}
+// end desktop large layout

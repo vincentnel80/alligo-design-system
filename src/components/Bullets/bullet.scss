@@ -1,0 +1,266 @@
+// ovveride p (from storybook)
+p {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+//options: ['', 'space-16-small', 'space-24-small', 'space-32-small'], // go over
+
+// CSS for 3 level 
+
+
+
+// make lists for ol, ul, etc
+// what is happening with the above? - get global fonts
+
+// this is to deactivate ::marker
+// global
+// storybook styles
+ul, li {
+  list-style-type: none; /* Removes default bullet or marker */
+  padding-inline-start: 0px;
+}
+
+
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  unicode-bidi: isolate;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  unicode-bidi: isolate;
+}
+
+// issues
+// color
+// margin -eft
+// padding top and bottom
+
+// mobile
+
+
+// maybe start with base ... then add variants? so base
+.outercontainer {
+  display: flex;
+  width: 342px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+
+
+
+  //* may or may not be best - to override locally, (keep in mind styles must be usable anywhere in system eventually
+  //px, rem etc 
+  // ul, li etc etc
+
+  // this causes touble locally
+  /* bul {
+    padding-left: 0px; 
+  } */
+
+  .list-level-1 {
+    padding-left: 0px; // to bypass global ul
+  }
+
+.list-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: stretch;
+  padding-bottom: 9px;
+
+  color: black; // needs to be global ... only here cause other ul is overriding
+}
+
+}
+
+// needs desktop large, mobile large
+//desktop medium
+// mobile medium
+
+// Base Bullet List Styles
+.bullet-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: var(--color-text-primary, #000);
+  
+  // Shared styles for all variants
+  .list-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+    svg {
+      fill: #595959;
+    }
+    span {
+      font-family: "breuercondensed";
+    }
+  }
+}
+
+// Desktop Large Variant
+.bullet-list--desktop-large {
+  font-size: 24px;
+  line-height: 32px; // Adjusted for large screens
+  .list-wrapper span {
+    font-size: 24px; // Specific adjustment
+  }
+}
+
+// Desktop Medium Variant
+.bullet-list--desktop-medium {
+  font-size: 20px;
+  line-height: 28px;
+  .list-wrapper span {
+    font-size: 20px;
+  }
+}
+
+// Mobile Large Variant
+.bullet-list--mobile-large {
+  font-size: 18px;
+  line-height: 26px;
+  .list-wrapper span {
+    font-size: 18px;
+  }
+}
+
+// Mobile Medium Variant
+.bullet-list--mobile-medium {
+  font-size: 16px;
+  line-height: 22px;
+  .list-wrapper span {
+    font-size: 16px;
+  }
+}
+
+// base styles
+
+//variants
+// check - desktop large
+// dot - desktop large
+// numbered list - desktop large
+
+///
+/// 
+/// // Base Bullet List Styles
+/// THESE ARE ALL NEW IE added after first ---- so first is still applicable
+.bullet-list {
+  list-style-type: none;
+  margin-left: 20px;
+  color: var(--color-text-primary, #000);
+  
+  .list-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+    svg {
+      fill: #595959;
+    }
+    span {
+      font-family: "breuercondensed";
+    }
+  }
+
+  .list-level-2 {
+    margin-left: 20px; // Indentation for level 2
+  }
+
+  .list-level-3 {
+    margin-left: 20px; // Indentation for level 3
+  }
+}
+
+// Desktop Large Variant
+.bullet-list--desktop-large {
+  font-size: 24px;
+  line-height: 32px;
+
+  .list-wrapper span {
+    font-size: 24px;
+  }
+}
+
+// Desktop Medium Variant
+.bullet-list--desktop-medium {
+  font-size: 20px;
+  line-height: 28px;
+
+  .list-wrapper span {
+    font-size: 20px;
+  }
+}
+
+// Mobile Large Variant
+.bullet-list--mobile-large {
+  font-size: 18px;
+  line-height: 26px;
+
+  .list-wrapper span {
+    font-size: 18px;
+  }
+}
+
+// Mobile Medium Variant
+.bullet-list--mobile-medium {
+  font-size: 16px;
+  line-height: 22px;
+
+  .list-wrapper span {
+    font-size: 16px;
+  }
+}
+
+// Check Style for Desktop Large
+.bullet-list--check-desktop-large {
+  .list-wrapper svg {
+    fill: green;  // Custom checkmark style
+  }
+}
+
+// Dot Style for Desktop Large
+.bullet-list--dot-desktop-large {
+  list-style-type: disc;
+
+  .list-wrapper svg {
+    display: none;  // Hide SVG for dot style
+  }
+}
+
+// Numbered List for Desktop Large
+.bullet-list--numbered-desktop-large {
+  list-style-type: decimal;
+
+  .list-wrapper svg {
+    display: none;  // Hide SVG for numbered list
+  }
+}
+
+ol {
+  list-style-type: decimal; /* Ensures ordered list numbers */
+  margin-left: 20px;
+}
+
+.list-level-1, .list-level-2, .list-level-3 {
+  list-style-type: decimal; /* Ensures numbers for all levels */
+  margin-left: 20px; /* Adjusts indentation for nesting */
+}

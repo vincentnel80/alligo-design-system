@@ -1,0 +1,12 @@
+import React from 'react';
+
+import Template from '../../StorybookComponents/Template/Template';
+
+export default {
+    title: 'UX/Template',
+    component: Template,
+};
+
+export const TemplateExample = () => (
+    <Template />
+);

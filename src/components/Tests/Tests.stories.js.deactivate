@@ -1,0 +1,12 @@
+import React from 'react';
+
+import Tests from './Tests';
+
+export default {
+    title: 'Components/Tests',
+    component: Tests,
+};
+
+export const tests = () => (
+    <Tests />
+);

@@ -1,0 +1,165 @@
+
+// SB only template display
+// mobile
+.body-xl-mob {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-xl, "breuercondensed");
+  font-size: var(--font-size-body-xl, 20px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-xl, 400);
+  line-height: var(--line-height-body-xl, 26px); /* 130% */
+  letter-spacing: var(--letter-spacing-body-xl, 0px);
+}
+
+.body-lg-mob {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-lg, "breuercondensed");
+  font-size: var(--font-size-body-lg, 18px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-lg, 400);
+  line-height: var(--line-height-body-lg, 26px); /* 144.444% */
+  letter-spacing: var(--letter-spacing-body-lg, 0px);
+}
+
+.body-md-mob {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-md, "breuercondensed");
+  font-size: var(--font-size-body-md, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-md, 400);
+  line-height: var(--line-height-body-md, 22px); /* 137.5% */
+  letter-spacing: var(--letter-spacing-body-md, 0.32px);
+}
+
+.body-sm-mob {
+  color: var(--color-text-primary, #000);
+  font-family: var(--Font-global-serif, "breuercondensed");
+  font-size: var(--font-size-body-sm, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-sm, 400);
+  line-height: var(--line-height-body-sm, 20px); /* 142.857% */
+  letter-spacing: var(--letter-spacing-body-sm, 0.28px);
+}
+
+/* Media Query for Desktop Small and Up */
+
+.body-xl-dt {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-xl, "breuercondensed");
+  font-size: var(--font-size-body-xl, 24px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-xl, 400);
+  line-height: var(--line-height-body-xl, 32px); /* 133.333% */
+  letter-spacing: var(--letter-spacing-body-xl, 0px);
+}
+
+.body-lg-dt {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-lg, "breuercondensed");
+  font-size: var(--font-size-body-lg, 20px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-lg, 400);
+  line-height: var(--line-height-body-lg, 28px); /* 140% */
+  letter-spacing: var(--letter-spacing-body-lg, 0px);
+
+}
+
+.body-md-dt {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-md, "breuercondensed");
+  font-size: var(--font-size-body-md, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-md, 400);
+  line-height: var(--line-height-body-md, 24px); /* 150% */
+  letter-spacing: var(--letter-spacing-body-md, 0.32px);
+
+}
+
+// temp modifier: needs rework name is incorrect
+.body-xl--preamble-dt {
+  font-weight: 500 !important;
+}
+
+.body-xl--underline-dt {
+  text-decoration: underline !important;
+}
+
+.body-xl--bold-dt {
+  font-weight: 600 !important;
+}
+
+.body-xl--strikethrough-dt {
+  text-decoration: line-through !important;
+}
+
+// make all in one -- so lose mob etc
+
+.body-xl--preamble-mob {
+  font-weight: 500 !important;
+}
+
+.body-xl--underline-mob {
+  text-decoration: underline !important;
+}
+
+.body-xl--bold-mob {
+  font-weight: 600 !important;
+}
+
+.body-xl--strikethrough-mob {
+  text-decoration: line-through !important;
+}
+
+.body-lg--underline-dt {
+  text-decoration: underline !important;
+}
+
+.body-lg--bold-dt {
+  font-weight: 500 !important; //??? check
+}
+
+.body-sm-dt {
+
+  color: var(--color-text-primary, #000);
+  font-family: var(--Font-global-serif, "breuercondensed");
+  font-size: var(--font-size-body-sm, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-sm, 400);
+  line-height: var(--line-height-body-sm, 20px); /* 142.857% */
+  letter-spacing: var(--letter-spacing-body-sm, 0.28px);
+
+}
+
+// make a global one ?? in a new file?
+
+.space-16-small-temp {
+  background-color: #ccc;
+  width: 16px;
+  height: 16px;
+}
+
+.space-24-small-temp {
+  background-color: #ccc;
+  width: 24px;
+  height: 24px;
+}
+
+.space-32-large-temp {
+  background-color: #ccc;
+  width: 32px;
+  height: 32px;
+}
+
+// ovveride p (from storybook)
+p {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+//options: ['', 'space-16-small', 'space-24-small', 'space-32-small'], // go over
+
+// this is to hide first story - but it needs th s
+// hide body Xl first story

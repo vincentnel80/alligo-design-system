@@ -1,0 +1,742 @@
+// Import Fonts
+// Import Colors
+// Import spacings ??
+
+//@import 'mixins/fonts';
+//@import '../FontsTypography/foundation-fonts-weights.scss';
+
+/// notes
+/*
+if i dont set this, on smaller buttons the width is slightly too little
+.Content {
+    width:
+}
+*/
+
+
+//@import "system-colors";
+
+@import '../Colors/colors.scss';
+
+//// this is for rem calc ... how to use?
+/// maybe make new page???
+$font-base: 16px;
+
+@function rem-calc($pixel) {
+    $rem: $pixel / $font-base;
+
+    @return #{$rem}rem;
+}
+/// I guess I need a class for paddings etc etc---- mixins.....
+/////
+
+
+
+    //
+    .button-base {
+        //width: 127px;
+        height: 56px;
+        flex-grow: 0;
+        /// I wll need display flex or inline flex if i will be using this and not inline block
+        //display: flex;
+       /* display: inline-block;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; */
+        display: inline-block;
+        padding: 16px;
+        background: var(--color-greyscale-black);
+
+        /// mine
+        cursor: pointer;
+        transition: all 150ms ease-out; // is this correct
+
+        .text-wrapper {
+           // width: 95px;
+            height: 24px;
+            flex-grow: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px; //// does it need a gap at this stage? what about @ import?
+            padding: 3px 8px;
+
+            .content {
+                //width: 79px; /// taking this out break ... so the font width is not correct
+                //width: 79px;
+                height: 18px; // it needs to be this value with true text
+                flex-grow: 0; /// needed if parent has it, and also, this one is not set to flex
+                //font-family: Breuer; add correct
+                //// needs to inherit
+                // !!!!! font-size: 18px; // 18 from figma, and zeplyn, but it makes calces incorrect. !!!! *** NB and need to set to 16px
+                font-size: 18px;
+                //font-weight: bold;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.18px;
+                font-weight: 700;
+                text-align: center;
+                color: var(--color-greyscale-white);
+                // from figma color: var(--text-text-primary-inverted, #FFF);
+            }
+        }
+
+        &:hover {
+            background: var(--color-greyscale-grey-80); /// correct one?
+        }
+    } /// end button base
+
+    /// good to write it in here? is it a wast, or should i rather do an include?
+    /// or just .medium
+    // decendance vs inheritance
+
+    /// buttons
+    /// sizes - desktop mobile
+    // sizes 4 x sizes
+
+    /// make a large too /// or use that from base? ... no.... i guess make a var for that.... hmmmm
+    /// cause it breaks from patterns ---- and ... confusing in future....
+    /// so base + extras
+    .medium {
+        padding: 12px;
+        height: 48px;
+    }
+
+    .small {
+        padding: 8px;
+        height: 40px;
+
+        .text-wrapper {
+            // width: 95px;
+            height: 24px;
+            gap: 8px; /// ?????? ???????????
+            padding: 4px 8px;
+
+            .content {
+               // width: 73px; /// taking this out break ... so the font width is not correct
+                height: 16px; // it needs to be this value with true text
+                //font-family: Breuer; add correct
+                font-size: 16px;
+                letter-spacing: 0.48px;
+            }
+        }
+    }
+
+// issue with button small
+    /// do you button-base.whatever... or can xs just be free stadning?
+    /// or should i use an include?
+    .xs {
+       // width: 85px;
+        padding: 6px;
+        height: 32px;
+
+        .material-symbols-outlined {
+            width: 20px !important;
+            height: 20px !important;
+            font-size: 20px !important;
+        }
+
+        .text-wrapper {
+            // width: 95px;
+          //  width: 73px;
+            height: 20px;
+            gap: 8px; // ?????????????
+            padding: 3px 4px;
+
+            .content {
+              //  width: 66px; ////// should be 65 but it bREAKS --- I HAVE A SEVER FONT ISSUE!
+              //  width: 65px; /// taking this out break ... so the font width is not correct
+                height: 14px; // it needs to be this value with true text
+                //font-family: Breuer; add correct
+                font-size: 14px;
+                letter-spacing: 0.56px;
+                text-align: center;
+                color: var(--text-white-100); // repeated above in parent??? what about @include
+                line-height: 15px; // check in orig fonts... on small seems like fonts are not aligned properly
+            }
+        }
+    }
+
+    //// Size - Mobile (used to display in SB, but will need to add in @media queries)
+.large-mob-sb {
+
+    padding: 12px;
+    height: 48px;
+
+    //// I am putting this in here --- but --- considor adding these in base ... one class to rul them all
+    .material-symbols-outlined {
+       // width: 20px !important;
+       // height: 20px !important;
+    }
+
+    .text-wrapper {
+       // height: 24px; // do I need this? (and do i need it in parent???
+        gap: 8px; // ?????????????
+        padding: 4px 8px;
+
+        .content {
+           // height: 16px; // it needs to be this value with true text
+            //font-family: Breuer; add correct
+            height: 16px;
+            font-size: 16px;
+            letter-spacing: 0.32px;
+            text-align: center;
+            color: var(--text-white-100); // repeated above in parent??? what about @include
+           // line-height: 16px; // check in orig fonts... on small seems like fonts are not aligned properly
+        }
+    }
+
+}
+
+.medium-mob-sb {
+    padding: 8px;
+    height: 40px;
+
+    //// I am putting this in here --- but --- considor adding these in base ... one class to rul them all
+    .material-symbols-outlined {
+      //  width: 20px !important;
+      //  height: 20px !important;
+    }
+
+    .text-wrapper {
+        // height: 24px; // do I need this? (and do i need it in parent???
+        gap: 8px; // ?????????????
+        padding: 4px 8px;
+
+        .content {
+            // height: 16px; // it needs to be this value with true text
+            height: 16px;
+            font-size: 16px;
+            letter-spacing: 0.32px;
+        }
+    }
+}
+
+
+.small-mob-sb {
+    padding: 4px;
+    height: 32px;
+
+    //// I am putting this in here --- but --- considor adding these in base ... one class to rul them all
+    .material-symbols-outlined {
+     //   width: 20px !important;
+     //  height: 20px !important;
+    }
+
+    .text-wrapper {
+        // height: 24px; // do I need this? (and do i need it in parent???
+        gap: 8px; // ?????????????
+        padding: 5px 8px;
+
+        .content {
+            height: 14px;
+            font-size: 14px;
+            letter-spacing: 0.42px;
+        }
+    }
+}
+
+.xs-mob-sb {
+    padding: 6px;
+    height: 32px;
+
+    //// I am putting this in here --- but --- considor adding these in base ... one class to rul them all
+    .material-symbols-outlined {
+        width: 20px !important;
+        height: 20px !important;
+        font-size: 20px !important;
+    }
+
+    .text-wrapper {
+        height: 20px; // do I need this? (and do i need it in parent??? sometimes works with or without
+        gap: 8px; // ?????????????
+        padding: 4px;
+
+        .content {
+            height: 12px;
+            font-size: 12px;
+            letter-spacing: 0.48px;
+        }
+    }
+}
+
+    // default
+    .primary {
+        background: var(--color-greyscale-black);
+
+        .text-wrapper {
+            .content {
+                color: var(--color-greyscale-white);
+            }
+        }
+
+        &:hover {
+            background: var(--color-greyscale-grey-80); /// correct one?
+        }
+    }
+
+    ///////
+    //// Primary Variations with Icons
+    // left right
+/// inherits from base
+    .variant-material {
+       // background: var(--color-greyscale-black); // from base
+
+        ///
+        //new added here or top -- is it different from base
+        // width: 175px;
+        //height: 56px;
+        flex-grow: 0;
+        //display: flex;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+       // padding: 16px; // needed only for size? maybe size overrides this
+        //background-color: black;
+        ///
+        position: relative; /// added this: in case icon is added... is there better way {To Do}
+
+        // neededdddedddddd
+        .material-symbols-outlined {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+            color: white;
+            font-weight: 300;
+        }
+
+       /* .text-wrapper {
+            .content {
+                color: var(--color-greyscale-white);
+            }
+        } */
+
+       /* &:hover {
+            background: var(--color-greyscale-grey-80); /// correct one?
+        } */
+    }
+
+    /// inclue above or includeive
+    .variant-number {
+
+        position: relative; // unique to this one - if indeed the badge gets imported
+
+
+
+       /* .IconRealReal {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+            color: white;
+        } */
+
+        /// badge --- import
+        /* .Ellipse-62 {
+             width: 8px;
+             height: 8px;
+             border-radius: 50%;
+             margin-left: -8px;
+             margin-top: -16px;
+             // background-color: var(--alert-red-danger); /// use real color
+             background-color: $red-00; // not correct fix to above
+         }
+         */
+
+       /* .TextRealReal {
+            // width: 95px;
+            height: 24px;
+            flex-grow: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 3px 8px;
+
+            .ContentRealReal {
+                // width: 79px;
+                height: 18px;
+                flex-grow: 0;
+                font-family: breuercondensed;
+                font-size: 18px;
+                font-weight: bold;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.18px;
+                text-align: center;
+                color: white;
+            }
+        } */
+    }
+    /// bade out of cariant number --- to make it global
+.badge-number {
+    display: flex;
+    width: auto;
+    height: 20px;
+    padding: 0px 5px;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100px;
+    background: red;
+
+    /// positioning
+    // margin-top: 0;
+    // margin-bottom: 0;
+    //  right: 0;
+    left: 0; // new
+    top: 0;
+    margin-top: 4px; // new
+    margin-left: 21px; // new
+    position: absolute;
+
+    .numeric-content {
+        // layout
+        display: flex;
+        min-width: 10px;
+        min-height: 13px;
+        flex-direction: column;
+        justify-content: center;
+
+        // typography
+        color: #FFF;
+        text-align: center;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: breuercondensed;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 14px; /* 100% */
+        text-transform: uppercase;
+        color: white;
+        direction: rtl !important;
+    }
+}
+
+
+
+
+    .variant-dot {
+        .material-symbols-outlined {
+            position: relative; // unique to this one - if indeed the badge gets imported
+
+            /// the dot component needs to be brought in
+            .badge-dot-wrapper {
+                display: flex;
+               // width: 8px; /// comes from badge
+               // height: 8px;
+                // padding: 0px 5px;
+
+                //// in case needed again but is coming from bade dot component
+              //  justify-content: center;
+              //  align-items: center;
+
+              //  border-radius: 100px;
+              //  background: red;
+                /////
+
+                /// positioning
+                // margin-top: 0;
+                // margin-bottom: 0;
+                //  right: 0;
+                //  left: 0; // new
+                top: 0;
+                right: 0;
+                // margin-top: 4px; // new
+                // margin-left: 21px; // new
+                position: absolute;
+            }
+        }
+    }
+
+//////
+
+
+    /////
+
+
+
+    .ButtonDesktopPrimaryLargeRealReal {
+        // width: 175px;
+        height: 56px;
+        flex-grow: 0;
+        //display: flex;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        background-color: black;
+
+        .material-symbols-outlined {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+            color: white;
+            font-weight: 300;
+        }
+
+        .text-wrapper  {
+            // width: 95px;
+            height: 24px;
+            flex-grow: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 3px 8px;
+
+            .content {
+                // width: 79px;
+                height: 18px;
+                flex-grow: 0;
+                font-family: breuercondensed;
+                font-size: 18px;
+                font-weight: bold;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.18px;
+                text-align: center;
+                color: white;
+            }
+        }
+    }
+
+    .variant-dot {
+
+
+
+
+
+    }
+
+
+    ////
+    /////
+    /////
+    /////
+
+
+    // primary inverted
+    .primary-inverted {
+        background: var(--color-greyscale-white);
+
+        .material-symbols-outlined {
+            color: var(--color-greyscale-black);
+        }
+
+        .text-wrapper {
+            .content {
+                /// needs correct assosication --- text primary inverted
+                color: var(--color-greyscale-black);
+            }
+        }
+
+        &:hover {
+            background: var(--color-greyscale-grey-10);
+        }
+    }
+    // secondary
+    .secondary {
+      //  padding: 15px;
+        /// inner border
+        /// inner border, to not add pixels outside container and add space
+        -webkit-box-shadow:inset 0px 0px 0px 1px $black; /// is this correct ah yes, i remember
+        -moz-box-shadow:inset 0px 0px 0px 1px $black;
+        box-shadow:inset 0px 0px 0px 1px $black;
+       // border: solid 1px $black;
+        background: transparent;
+
+        .material-symbols-outlined {
+            color: black;
+        }
+
+        .text-wrapper {
+            .content {
+                color: var(--color-greyscale-black);
+            }
+        }
+
+        &:hover {
+            /// which one ??????
+           // background: rgba(0, 0, 0, 0.05);
+            background: var(--color-greyscale-grey-05);
+            //background: rgba(0, 0, 0, 0.05);
+        }
+    }
+    // secondary inverted
+    .secondary-inverted {
+
+        background: transparent;
+       /// border: 1px solid var(--color-greyscale-white, #FFF);
+        -webkit-box-shadow:inset 0px 0px 0px 1px $white; /// is this correct ah yes, i remember
+        -moz-box-shadow:inset 0px 0px 0px 1px $white;
+        box-shadow:inset 0px 0px 0px 1px $white;
+        .text-wrapper {
+            .content {
+                color: var(--color-greyscale-white);
+            }
+        }
+
+        &:hover {
+            /// which one ??????
+            // background: rgba(0, 0, 0, 0.05);
+           // background: var(--color-greyscale-grey-05);
+            //background: rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.20); // is there a token? is this transparent? QUESTION
+        }
+
+    }
+    // blank
+    .blank {
+        background: transparent;
+
+        .material-symbols-outlined {
+            color: var(--color-greyscale-black);
+        }
+
+        .text-wrapper {
+            .content {
+                /// needs correct assosication --- text primary inverted
+                color: var(--color-greyscale-black);
+            }
+        }
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.05); // is there a token? is this transparent? QUESTION grey o5 perhaps ??
+        }
+    }
+    // blank inverted
+    .blank-inverted {
+        background: transparent;
+
+        .text-wrapper {
+            .content {
+                /// needs correct assosication --- text primary inverted
+                color: var(--color-greyscale-white);
+            }
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.20); // is there a token? is this transparent? QUESTION grey o5 perhaps ??
+        }
+    }
+    /// <!--- end button states (above will be used) -->
+
+    /// start New icon variants ///
+
+    /// large - no red dot
+    // Q --- should I @ include extend from here? or just use base and whatever in the html? examples of when to use extended and why not just add
+
+
+
+/// still using??
+.buttons-container {
+
+    /// contains corresponding width
+    $button-sizes: (
+        xs: 18px,
+        small: 24px,
+        medium: 32px,
+        large: 40px
+    );
+
+    $button-colors: (
+        primary: #007bff,
+        secondary: #6c757d,
+        success: #28a745,
+        danger: #dc3545,
+        warning: #ffc107
+    );
+
+    @mixin button($size, $color) {
+        $button-width: map-get($button-sizes, $size);
+        $button-background: map-get($button-colors, $color);
+        $button-hover-background: darken($button-background, 10%);
+
+        display: inline-block;
+        padding: 0 12px;
+        height: $button-width;
+        line-height: $button-width;
+        border-radius: $button-width / 2;
+        background-color: $button-background;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: $button-hover-background;
+        }
+    }
+
+    // Usage example:
+    .button-large {
+        @include button(xs, primary);
+    }
+
+    .button-xs {
+        @include button(medium, warning);
+    }
+
+
+    /// sass experiement
+
+}
+
+/// tech
+/*
+          font-size: rem-calc(16px);
+          margin-right: rem-calc(4px);
+          vertical-align: text-bottom;
+ */
+/// Helper
+
+/// gradient checkerboard
+.checkerboard {
+    background-image: linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+
+///// Ikea
+
+.hnf-header__cart-counter {
+    background-color: var(--info-default);
+    color: var(--text-primary-inverted);
+    border-radius: 50px;
+    //line-height: .95rem;
+    line-height: 14px; /* 100% */
+    margin-top: 0;
+    margin-bottom: 0;
+    right: 0;
+    top: 0;
+   // position: absolute;
+    min-width: 20px;
+    height: 20px;
+    text-align: center;
+    //font-size: .65rem; /// good eg?
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-style: normal;
+    font-family: breuercondensed;
+
+    //padding: 2px;
+    padding: 5px;
+    // too much (makes it 25) --- so...... i need to sort this out
+    ///
+    // 2.5 is it enough?
+    //padding: 2.5px;
+}

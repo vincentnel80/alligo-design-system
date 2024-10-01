@@ -1,0 +1,93 @@
+// Storybook only
+/// add in pixels instead of inline styles
+// better classname
+// maybe include in globals ???
+// but this is for storybook only so make a note
+
+// used in badges - basic
+.some-page-wrapper {
+    margin: 15px;
+    //background-color: red;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.blue-column {
+   // background-color: blue;
+}
+
+.green-column {
+   // background-color: green;
+}
+
+/// this is the global
+    /// place in or out??
+    /// if out it wont be nested and will be useable by all
+    // step for now, just use nested
+    .sb-display-wrapper {
+        margin: 15px;
+        //background-color: red;
+    }
+
+    .sb-display-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .badge-product {
+            margin-bottom: 20px;
+        }
+
+        .badge-discount {
+            margin-bottom: 20px;
+        }
+
+        .badge-purchase-info {
+            margin-bottom: 20px;
+        }
+
+        .badge-number {
+            margin-bottom: 20px;
+        }
+    }
+
+    .sb-display-column {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+
+        .badge-dot {
+            margin-bottom: 21px;
+        }
+
+        .badge-basic {
+            margin-bottom: 20px;
+        }
+    }
+
+/// badges-dots
+// uses global above
+
+
+// Product
+// but also global ??
+/// use an include ??
+

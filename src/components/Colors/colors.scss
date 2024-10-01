@@ -1,0 +1,674 @@
+// Main System Essential Color Values
+//LIBRARY LIBRARY
+
+// Opacities --
+// define as scss or --vars
+$opacity-50: 0.5;
+$opacity-20: 0.2;
+$opacity-12: 0.12;
+$opacity-10: 0.1;
+$opacity-5: 0.05;
+$opacity-0: 0;
+
+/*
+opacity-black-50
+opacity-black-20
+opacity-black-12
+opacity-black-10
+opacity-black-5
+opacity-white-20
+opacity-black-0
+*/
+
+// Neutral
+// nicknames
+//// PRIMITIVE: COLOR
+/// //PRIMITIVE: COLOR/NEUTRAL
+$black: #000000;
+$grey-90: #222222;
+$grey-80: #333333;
+$grey-70: #4F4F4F;
+$grey-60: #595959;
+$grey-50: #737373;
+$grey-40: #999999;
+$grey-30: #B2B2B2;
+$grey-20: #CCCCCC;
+$grey-15: #DAD9D7;
+$grey-10: #E5E5E5;
+$grey-05: #F6F6F6;
+$grey-02: #FAFAFA;
+$white: #FFFFFF;
+
+/// //PRIMITIVE: COLOR/NEUTRAL/Opacity
+/// /// option 1 (Option 2 will be to add the color directly as a surface color or RGB percentage??
+$opacity-black-50: rgba($black, $opacity-50);
+$opacity-black-20: rgba($black, $opacity-20);
+$opacity-black-12: rgba($black, $opacity-12);
+$opacity-black-10: rgba($black, $opacity-10);
+$opacity-black-5: rgba($black, $opacity-5);
+$opacity-white-20: rgba($white, $opacity-20);
+$opacity-white-0: rgba($white, $opacity-0);
+
+// PRIMITIVE: COLOR/ System
+/*dark_cyan #00838f
+blue_focus #455efb
+blue 0066ff
+blue_medium d0e9ff
+blue_light e2f1ff
+green 248616
+green_medium daf6d0
+green_light edffe7
+yellow  fac000
+yellow_medium  ffe167
+yellow_light  fff5c2
+red d90000
+red_medium ffbdc0
+red_light ffebeb*/
+
+$dark_cyan: #00838f;
+$blue_focus: #455efb;
+$blue: #0066ff;
+$blue_medium: #d0e9ff;
+$blue_light: #e2f1ff;
+$green: #248616;
+$green_medium: #daf6d0;
+$green_light: #edffe7;
+$yellow: #fac000;
+$yellow_medium: #ffe167;
+$yellow_light: #fff5c2;
+$red: #d90000;
+$red_medium: #ffbdc0;
+$red_light: #ffebeb;
+
+
+// Primitive: Color / Text --- I think this needs a redo --- shall i make as toekn, or var?
+$highest-emphasis: #000000;
+$high-emphasis: #4f4f4f;
+$medium-emphasis: #737373;
+$highest-emphasis-inverted:  #ffffff;
+$high-emphasis-inverted: #ffffffc7;
+$medium-emphasis-inverted: $grey-40;
+
+// he has not added in all the texts --- I think this needs a redo --- shall i make as toekn, or var?
+//So I need to make this us
+
+// Primitive: Color/Brand/Swedol so, for primitived - do i show it as vard or tokens, what is the difference of tokens and vars?
+// TO DO Variable vs Token
+$swedol-accent-brand: #c7d300;
+$swedol-accent-light: #f4f6cc;
+$swedol-accent-dark: #8b9400;
+// Primitive: Color/Brand/Tools
+$tools-accent-brand: #cd1125;
+$tools-accent-light: #fbe5e5;
+$tools-accent-dark: #980000;
+// Primitive: Color/Brand/Grolls
+$grolls-accent-brand: #f57500;
+$grolls-accent-light: #fdeedd;
+$grolls-accent-dark: #ac5200;
+// Primitive: Color/Brand/Univern
+$univern-accent-brand: #637797;
+$univern-accent-light: #e9eef1;
+$univern-accent-dark: #41526d;
+
+
+//// I am confused abou tthis section that I made before the holiday. Why did I do it? go over and delete if not required
+/// 
+// Semantic: Design Tokens
+// background
+// background-primary
+/// htese items are in library, dont seem to be in the document
+///
+///  
+/*primary
+secondary
+
+//Surface
+accent-default
+accent-light
+accent-dark
+accent-hamburger
+raised-primary
+raised-secondary
+disabled
+navigation-hover
+black
+neutral-darker
+neutral-dark
+neutral-strong
+neutral
+neutral-weak
+neutral-weaker
+neautral-weakest
+neutral-ghost
+action-1
+action-2
+opacity-black-50
+opacity-black-20
+opacity-black-12
+opacity-black-10
+opacity-black-5
+opacity-white-20
+opacity-white-0
+information-default
+information-weak
+information-weaker
+success-default
+success-weak
+success-weaker
+warning-default
+warning-weak
+warning-weaker
+danger-default
+danger-weak
+danger-weaker
+//text
+primary
+secondary
+tertiary
+primary-inverted
+secondary-inverted
+tertiary-inverted
+price-customer
+price-guest
+disabled
+action-primary
+action-primary-hover
+action-secondary
+action-secondary-hover
+action-tertiary
+action-tertiary-hover
+action-primary-inverted
+action-primary-inverted-hover
+success
+danger-default
+information-default
+//icon
+primary
+inverted
+
+*/
+
+
+///// end - why did i make this?
+/// Question - exact tokens?
+
+
+
+
+/// opacities
+
+// Reds
+$red-00: #D90000;
+$red-03: #F7CCCC;
+$red-04: #FCE9E9;
+$red-05: #CD1125;
+$red-06: #FBE5E5;
+$red-07: #980000;
+
+// Oranges
+$orange-00: #F57500;
+$orange-01: #FDEEDD;
+$orange-02: #AC5200;
+
+// yellows
+$yellow-00: #FFBA00;
+$yellow-01: #FFE399;
+$yellow-02: #FFF1CC;
+$yellow-03: #C7D300;
+$yellow-04: #F4F6CC;
+$yellow-05: #8B9400;
+
+// Blues
+$blue-00: #0066FF;
+$blue-01: #D0E9FF;
+$blue-02: #E2F1FF;
+$blue-03: #1877F2;
+
+// Slate
+$slate-00: #637797;
+$slate-01: #E9EEF1;
+$slate-02: #41526D;
+
+// Greens
+$green-00: #138746;
+$green-01: #D6F1E2;
+$green-02: #E8F6EE;
+$green-03: #00838F;
+
+//// Do opacities::
+
+// tokens
+/*
+text-primary
+text-secondary
+text-tertiary
+text-primary-inverted
+text-secondary-inverted
+
+ */
+:root {
+    // text vars
+    --text-highest-emphasis: #{$black};
+    --text-high-emphasis: #{$grey-70};
+    --text-medium-emphasis: #{$grey-50};
+    --text-white-100: #{$white};
+    --text-white-78: transparentize(#{$white}, 0.78); // can figma token handle it this way? -- go over --- what is this??? looks good
+    --text-success: #{$green-00};
+    --text-danger: #{$red-00};
+    --text-price-customer: #{$green-03};
+    --text-price-guest: #{$red-00};
+    --text-information: #{$blue-00};
+    //alert vars
+    /// toeksn dont match -- eg these are fom erik but in Zeplyn: --alert-danger-default (add alert or not)
+    --info-default: #{$blue-00};
+    --info-medium: #{$blue-01};
+    --info-light: #{$blue-02};
+    --success-default: #{$green-00};
+    --success-medium: #{$green-01};
+    --success-light: #{$green-02};
+    --warning-default: #{$yellow-00};
+    --warning-medium: #{$yellow-01};
+    --warning-light: #{$yellow-02};
+    --danger-default: #{$red-00};
+    --danger-medium: #{$red-03};
+    --danger-light: #{$red-04};
+
+    /// these dont have eg $text-highest-emphasis: $black; and should i make it that way?
+    // Border
+    --border-primary: #{$grey-10};
+    --border-secondary: #{$grey-05};
+
+        // Surface
+    --surface-primary: #{$white};
+    --surface-secondary: #{$grey-05};
+        // text
+    --text-primary: var(--text-highest-emphasis);
+    --text-secondary: var(--text-high-emphasis);
+    --text-tertiary: var(--text-medium-emphasis);
+    --text-primary-inverted: var(--text-white-100);
+    --text-secondary-inverted: var(--text-white-78);
+
+        // Icon
+    --icon-default: #{$black};
+    --icon-inverted: #{$white};
+
+    //// colors
+    /// neutral
+    /// these are made by me
+    //// in Figma, but not defined by erik in tokens--- so debatable but it it in Nor, and ... its the first line
+    /// so... its a color, but then you can use these to make new tokens such as what erik made
+    /// these are from ---- badges ... should i make colors for this or add
+    // maybe change this to badges eg-- $grey-10 badge --greyscale-grey-50:
+
+// look at nord's root
+    --alligo-neutral-00: #{$white};
+    --color-greyscale-black: #{$black};
+    --color-greyscale-white: #{$white};
+    --color-greyscale-grey-90: #{$grey-90};
+    --color-greyscale-grey-80: #{$grey-80};
+    --color-greyscale-grey-70: #{$grey-70};
+    --color-greyscale-grey-60: #{$grey-60};
+    --color-greyscale-grey-50: #{$grey-50};
+    --color-greyscale-grey-40: #{$grey-40};
+    --color-greyscale-grey-20: #{$grey-20};
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    --color-greyscale-grey-15: #{$grey-15};
+    --color-greyscale-grey-10: #{$grey-10};
+    --color-greyscale-grey-05: #{$grey-05};
+    --color-greyscale-grey-02: #{$grey-02};
+
+
+}
+.selector {
+    color: var(--text-highest-emphasis); /* Use the "--main-color" variable as the color for this selector */
+    background-color: var(--text-high-emphasis); /* Use the same variable for the background-color */
+}
+//vars
+// 1.) color vars. Greyscale. eg Grey-90 --- make sure to use those...current might not be correct
+//2.) Text vars
+$text-highest-emphasis: $black;
+//--main-color: #007bff; /* Define a variable named "--main-color" with a value of "#007bff" (a blue color) */
+$text-high-emphasis: $grey-70;
+$text-medium-emphasis: $grey-50;
+$text-white-100: $white;
+/// decision --- vars like this, or color tokens??
+// i'm guessing vars like this --
+// do i use transparentize, lighten($clr-primary, 5%);, darken($clr-primary, 5%); or rgba(255, 255, 255, 0.78);
+//$text-white-78: rgba(255, 255, 255, 0.78); // white / 78% transparency option a
+//$text-white-78: transparentize($white, 0.22); 22 or 0.78
+// this also equates to Grey-05 --- so should I use that?
+// this is hext colour #FFFFFFC7 --- white with 78 use that --- hmmmm
+$text-white-78: transparentize($white, 0.78); // still results in above once compiled rgba(255, 255, 255, 0.78);
+$text-success: $green-00;
+$text-danger: $red-00;
+$text-price-customer: $green-03;
+$text-price-guest: $red-00;
+$text-information: $blue-00;
+//3.) alert vars
+$info-default: $blue-00;
+$info-medium: $blue-01;
+$info-light: $blue-02;
+$success-default: $green-00;
+$success-medium: $green-01;
+$success-light: $green-02;
+$warning-default: $yellow-00;
+$warning-medium: $yellow-01;
+$warning-light: $yellow-02;
+$danger-default: $red-00;
+$danger-medium: $red-03;
+$danger-light: $red-04;
+//4.) /// Theme vars
+
+/// Tokens
+
+
+
+// End System Essential Color Values
+
+
+// Storybook Essential + Main System optional
+
+$colors: (
+    univern: (
+        brand: $slate-00,
+        light: $slate-01,
+        dark: $slate-02,
+    ),
+    grolls: (
+        brand: $orange-00,
+        light: $orange-01,
+        dark: $orange-02,
+    ),
+    swedol: (
+        brand: $yellow-03,
+        light: $yellow-04,
+        dark: $yellow-05,
+    ),
+    tools: (
+        brand: $red-05,
+        light: $red-06,
+        dark: $red-07,
+    ),
+    blue: (
+        0: $blue-00,
+        1: $blue-01,
+        2: $blue-02,
+        3: $blue-03,
+    ),
+    green: (
+        0: $green-00,
+        1: $green-01,
+        2: $green-02,
+        3: $green-03,
+    ),
+    neutral: (
+        black: $black,
+        white: $white,
+        90: $grey-90,
+        80: $grey-80,
+        70: $grey-70,
+        60: $grey-60,
+        50: $grey-50,
+        40: $grey-40,
+        20: $grey-20,
+        15: $grey-15,
+        10: $grey-10,
+        5: $grey-05,
+        2: $grey-02,
+    ),
+    red: (
+        0: $red-00,
+        3: $red-03,
+        4: $red-04,
+    ),
+    yellow: (
+        0: $yellow-00,
+        1: $yellow-01,
+        2: $yellow-02,
+    ),
+);
+
+$properties: (
+    color: 'color',
+    bg-color: 'background-color'
+);
+
+
+@each $color-set-name, $color-set in $colors {
+    @each $color-index ,$color in $color-set {
+        @each $property-index, $property in $properties{
+            .#{$property-index}-#{$color-set-name}-#{$color-index}{
+                #{$property}: $color;
+            }
+        }
+    }
+}
+
+@function clr($name, $shade: default) {
+    $color: map-get(map-get($colors, $name), $shade);
+    @return $color;
+}
+
+// base style for color example block
+.bg-color-base {
+    display: block;
+    min-height: 98px;
+    padding:16px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+// End Storybook Essential + Main System optional
+
+/// Redo new Colors
+/// Work from here
+
+
+// look above if there is a better way
+// I am using this, as of now
+
+
+:root {
+
+    // examples going forward - for variable and fallback
+    // $yellow-01: color-border-input-default; outside root
+    //$yellow-01: yellow-variable-name; // Example SCSS variable outside root
+    // --color-border-input-default: var(--#{$yellow-01}, #E5E5E5); // inside root
+
+    // 2 with variable 
+    //  --alligo-neutral-00: #{$white};
+
+/*
+--color-backround-primary: #{$white};
+--color-background-secondary: #{$grey-05};
+// surface
+--color-surface-raised-primary: #{$white};
+--color-surface-raised-secondary: #{$grey-05}; 
+--color-surface-disabled: #{$grey-10};
+--color-surface-navigation-hover: #{$grey-02};
+
+
+--color-surface-100: var(--);
+--color-surface-90: var(--);
+--color-surface-80: var(--);
+--color-surface-70: var(--);
+--color-surface-60: var(--);
+--color-surface-50: var(--);
+--color-surface-40: var(--);
+--color-surface-30: var(--);
+--color-surface-20: var(--);
+--color-surface-15: var(--);
+--color-surface-10: var(--);
+--color-surface-05: var(--);
+--primitive-color-neutral-black
+--primitive-color-neutral-white
+
+--color-surface-information-default
+background: var(--color-surface-information-weak, #D0E9FF);
+background: var(--color-surface-information-weaker, #E2F1FF);
+background: var(--color-surface-success-default, #248616);
+background: var(--color-surface-success-weak, #DAF6D0);
+background: var(--color-surface-success-weaker, #EDFFE7);
+background: var(--color-surface-warning-default, #FAC000);
+background: var(--color-surface-warning-weak, #FFE167);
+background: var(--color-surface-warning-weaker, #FFF5C2);
+background: var(--color-surface-danger-default, #D90000);
+background: var(--color-surface-danger-weak, #FFBDC0);
+background: var(--color-surface-danger-weaker, #FFEBEB);
+
+background: var(--color-surface-opacity-black-50, rgba(0, 0, 0, 0.50));
+background: var(--color-surface-opacity-black-20, rgba(0, 0, 0, 0.20));
+background: var(--surface-opacity-black-12, rgba(0, 0, 0, 0.12));
+background: var(--color-surface-opacity-black-10, rgba(0, 0, 0, 0.10));
+background: var(--color-surface-opacity-black-05, rgba(0, 0, 0, 0.05));
+background: var(--color-surface-opacity-white-20, rgba(255, 255, 255, 0.20));
+background: rgba(255, 255, 255, 0.00);
+
+// Text
+background: var(--color-text-primary, #000);
+background: var(--color-text-secondary); ??
+background: var(--color-text-tertiary, #737373);
+background: var(--color-text-primary-inverted, #FFF);
+background: var(--color-text-secondary-inverted, rgba(255, 255, 255, 0.78));
+background: var(--color-text-tertiary-inverted, #999);
+background: var(--color-text-price-customer, #00838F);
+background: var(--color-text-price-guest, #D90000);
+background: var(--primitive-color-neutral-grey-40, #999); ?? (should be --color-text-disabled)
+background: var(--color-text-action-primary, #000);
+background: var(--color-text-action-primary-hover, #737373);
+background: var(--color-text-action-secondary, #4F4F4F);
+background: var(--color-text-action-secondary-hover, #737373);
+background: var(--color-text-action-tertiary, #737373);
+background: var(--color-text-action-tertiary-hover, #999);
+background: var(--color-text-primary-inverted, #FFF);
+background: var(--color-text-secondary-inverted, rgba(255, 255, 255, 0.78));
+background: var(--color-text-success, #248616);
+background: var(--color-text-danger-default, #D90000);
+background: var(--color-text-information-default, #06F);
+
+// icon
+background: var(--color-icon-primary, #000);
+background: var(--color-icon-inverted, #FFF);
+
+// Border
+background: var(--color-border-primary, #E5E5E5);
+background: var(--color-background-secondary, #F6F6F6);
+background: var(--color-border-disabled, #DAD9D7); ?? border tertiary or border disabled
+background: var(--color-surface-80, #333); ?? border dark
+background: var(--primitive-color-neutral-black, #000); ?? border selected
+background: var(--color-border-selected-weaker, #CCC);
+background: var(--color-border-hover, #333);
+background: var(--color-border-disabled, #DAD9D7);
+background: var(--color-border-input_control-default, #737373); ?? incorrect _
+background: var(--color-border-input-default, #E5E5E5);
+background: var(--color-border-action-1, #000);
+background: var(--primitive-color-neutral-white, #FFF);
+background: var(--color-border-action-3, rgba(0, 0, 0, 0.10));
+background: var(--color-border-focus, #455EFB);
+background: var(--color-border-information-default, #06F);
+background: var(--color-border-information-weak, #D0E9FF);
+background: var(--color-border-success-default, #248616);
+background: var(--color-surface-success-weak, #DAF6D0);
+background: var(--color-border-warning-default, #FAC000);
+background: var(--color-surface-warning-weak, #FFE167);
+background: var(--color-border-danger-default, #D90000);
+background: var(--color-surface-danger-weak, #FFBDC0); ?? --color-border-danger-weak
+
+//Theme / Concept brand accents ??? all of these
+background: var(--primitive-color-brand-swedol-swedol-accent-brand, #C7D300);
+background: var(--primitive-color-brand-swedol-swedol-accent-light, #F4F6CC);
+background: var(--primitive-color-brand-swedol-swedol-accent-dark, #8B9400);
+background: var(--primitive-color-brand-tools-tools-accent-brand, #CD1125);
+background: var(--primitive-color-brand-tools-tools-accent-light, #FBE5E5);
+background: var(--primitive-color-brand-tools-tools-accent-dark, #980000);
+background: var(--primitive-color-brand-grolls-grolls-accent-brand, #F57500);
+background: var(--primitive-color-brand-grolls-grolls-accent-light, #FDEEDD);
+background: var(--primitive-color-brand-grolls-grolls-accent-dark, #AC5200);
+
+
+
+// -------- prev -- not using I guess?
+--surface-black: var(--);
+--surface-neutral-darker: var(--);
+--surface-neutral-strong: var(--);
+--surface-neutral: var(--);
+--surface-neutral-weak: var(--);
+--surface-bar_handle: var(--);
+--surface-neutral-weaker: var(--);
+--surface-neutral-weakest: var(--);
+--surface-neutral-ghost: var(--);
+--surface-action-1: var(--);
+--surface-action_2: var(--);
+--surface-information-default: var(--);
+--surface-info-weak: var(--);
+--surface-info-weaker: var(--);
+--surface-success-default: var(--);
+--surface-success-weak: var(--);
+--border-success-weaker: var(--);
+--surface-warning-default: var(--);
+--surface-warning-weak: var(--);
+--surface-warning-weaker: var(--);
+--surface-danger-default: var(--);
+--surface-danger-weak: var(--);
+--surface-danger-weaker: var(--);
+--surface-opacity-black-50: var(--);
+--surface-opacity-black-20: var(--);
+--surface-opacity-black-12: var(--);
+--surface-opacity-black-10: var(--);
+--surface-opacity-black-05: var(--);
+--surface-opacity-white-20: var(--);
+--surface-opacity-white-0: var(--);
+--text-primary: var(--);
+--text-secondary: var(--);
+--text-tertiary: var(--);
+--text-primary-inverted: var(--);
+--text-secondary-inverted: var(--);
+--text-tertiary-inverted: var(--);
+--text-price-customer: var(--);
+--text-danger: var(--);
+--text-disabled: var(--);
+--text-action-primary: var(--);
+--text-action-primary-hover: var(--);
+--text-action-secondary: var(--);
+--text-action-secondary-hover: var(--);
+--text-action-tertiary: var(--);
+--text-action-tertiary-hover: var(--);
+--text-action-primary-inverted: var(--);
+--text-action-primary-inverted-hover: var(--);
+--text-success-default: var(--);
+--text-danger-default: var(--);
+--text-information-default: var(--);
+--icon-primary: var(--);
+--icon-primary-inverted: var(--);
+--border-primary: var(--);
+--border-secondary: var(--);
+--border-tertiary: var(--);
+--border-dark: var(--);
+--border-selected: var(--);
+--border-active-weak: var(--);
+--border-hover: var(--);
+--border-disabled: var(--);
+--border-input_control-default: var(--);
+--border-input-default: var(--);
+--border-action-1: var(--);
+--border-action-2: var(--);
+--border-action-3: var(--);
+--border-information-default: var(--);
+--border-information-weak: var(--);
+--border-success-default: var(--);
+--border-success-weak: var(--);
+--border-warning-default: var(--);
+--border-warning-weak: var(--);
+--border-danger-default: var(--);
+--border-danger-weak: var(--);
+--swedol-accent-default: var(--);
+--swedol-accent-light: var(--);
+--swedol-accent-dark: var(--);
+--tools-accent-default: var(--);
+--tools-accent-light: var(--);
+--tools-accent-dark: var(--);
+--grolls-accent-default: var(--);
+--grolls-accent-light: var(--);
+--grolls-accent-dark: var(--); */
+
+
+}

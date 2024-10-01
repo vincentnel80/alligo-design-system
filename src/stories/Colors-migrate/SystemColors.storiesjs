@@ -1,0 +1,12 @@
+import React from 'react';
+
+import SystemColors from '../../StorybookComponents/Colors/SystemColors';
+
+export default {
+    title: 'Foundation/System Colors',
+    component: SystemColors,
+};
+
+export const systemColors = () => (
+    <SystemColors />
+);

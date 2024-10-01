@@ -1,0 +1,12 @@
+import React from 'react';
+
+import Badges from './Badges';
+
+export default {
+    title: 'Components/Badges',
+    component: Badges,
+};
+
+export const badges = () => (
+    <Badges />
+);
