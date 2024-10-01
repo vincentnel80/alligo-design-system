@@ -1,0 +1,62 @@
+// Header.stories.js
+
+import React from 'react';
+//import Header from './Header.component';
+//import Display from '../../StorybookComponents/FontsTypography/Display/Display';
+
+// HTML Snippet for the Breadcrumb component
+const htmlSnippet = `
+<span class="display-lg">Lorem ipsum dolor Loret Amet Tema Apa</span>
+`;
+
+export default {
+    title: 'Typography/Display',
+    component: Display,
+    parameters: {
+      layout: 'centered',
+      docs: {
+        description: {
+          component: 'Add in a brief description about H1 Large',
+        },
+        source: {
+          code: `<span class="display-lg">Lorem ipsum dolor Loret Amet Tema Apa</span>`,
+        },
+      },
+    },
+    argTypes: {
+      text: { 
+        control: 'text',
+        description: 'The text to display',
+        defaultValue: 'Sample Text'
+      },
+     /* level: { 
+        control: 'number', 
+        min: 1, 
+        max: 6, 
+        step: 1, 
+        defaultValue: 1
+      }, */
+      paddingBottom: {
+        options: ['16px', '40px'],
+        control: { type: 'select' },
+        description: 'Bottom padding of the header',
+      },
+    },
+    tags: ['autodocs'],
+  };
+  
+  const Template = (args) => <Header {...args} />;
+  
+  export const Default = Template.bind({});
+  Default.args = {
+    text: 'Lorem ipsum dolor Loret Amet Tema Apa',
+   // level: 1,
+    paddingBottom: '16px',
+  };
+  
+  export const CustomPadding = Template.bind({});
+  CustomPadding.args = {
+    text: 'H1 Display Large with Custom Padding',
+   // level: 1,
+    paddingBottom: '40px',
+  };

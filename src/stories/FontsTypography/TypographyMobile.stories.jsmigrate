@@ -1,0 +1,12 @@
+import React from 'react';
+
+import TypographyMobile from '../../StorybookComponents/FontsTypography/TypographyMobile';
+
+export default {
+    title: 'Foundation/Typography',
+    component: TypographyMobile,
+};
+
+export const MobileTypography = () => (
+    <TypographyMobile />
+);

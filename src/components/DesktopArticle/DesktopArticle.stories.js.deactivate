@@ -1,0 +1,12 @@
+import React from 'react';
+
+import DesktopArticle from './DesktopArticle';
+
+export default {
+    title: 'Foundation/Typography',
+    component: DesktopArticle,
+};
+
+export const ArticleDesktop = () => (
+    <DesktopArticle />
+);

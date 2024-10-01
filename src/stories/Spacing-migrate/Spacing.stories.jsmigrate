@@ -1,0 +1,12 @@
+import React from 'react';
+
+import Spacing from '../../StorybookComponents/Spacing/Spacing';
+
+export default {
+    title: 'Foundation/Spacing',
+    component: Spacing,
+};
+
+export const SystemSpacing = () => (
+    <Spacing />
+);

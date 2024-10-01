@@ -1,0 +1,244 @@
+import { Bullet } from '../../StorybookComponents/FontsTypography/Bullets/Bullet';
+import CustomDocsContainer from './CustomDocsContainer';
+
+// Dynamic HTML snippet generator function
+const generateHtmlSnippet = (args) => {
+  const { fontName = 'body-lg', summary, modifier = '', marginBottom = '' } = args;  // Default values
+ // return `<p class="${fontName} ${fontName}--${modifier} ${marginBottom}">${summary}</p>`;
+  return `<ul class="govuk-list govuk-list--bullet">
+  <li>apples
+    <ul>
+      <li>Granny Smith
+        <ul>
+          <li>Green</li>
+          <li>Red</li>
+        </ul>
+      </li>
+      <li>Fuji</li>
+    </ul>
+  </li>
+  <li>oranges
+    <ul>
+      <li>Navel</li>
+      <li>Mandarin</li>
+    </ul>
+  </li>
+  <li>pears
+    <ul>
+      <li>Bartlett</li>
+      <li>Anjou</li>
+    </ul>
+  </li>
+</ul>
+`;
+};
+
+export default {
+  title: 'Typography/Bullet',
+  component: Bullet,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      container: CustomDocsContainer,
+      source: {
+        transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+      },
+    },
+  },
+  argTypes: { 
+    viewport: {
+      control: { type: 'select' }, 
+      options: ['Desktop', 'Mobile'],
+      defaultValue: 'Desktop',
+    },
+    fontName: {
+      control: { type: 'select' },
+      options: ['body-sm', 'body-md', 'body-lg', 'body-xl'],
+      defaultValue: 'body-xl',
+    },
+    modifier: {
+      control: { type: 'select' },
+      options: ['', 'preamble', 'underline', 'bold', 'strikethrough'],
+      defaultValue: 'preamble',
+      // Conditionally disable the modifier control based on the value of fontName
+      table: {
+        disable: true, // initially disabled in the docs table
+      },
+    },
+    marginBottom: {
+      control: { type: 'select' },
+      options: ['', 'space-16-small', 'space-24-small', 'space-32-large'], // go over
+      defaultValue: '',
+    },
+  },
+  // Custom logic to enable or disable the modifier based on fontName
+  decorators: [
+    (Story, context) => {
+      const { args } = context;
+      const modifierControl = context.argTypes.modifier;
+      modifierControl.table.disable = args.fontName !== 'body-xl';
+      return <Story {...args} />;
+    },
+  ],
+  tags: ['autodocs'],
+};
+
+const summaryText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.';
+
+const Template = (args) => <Bullet {...args} />;
+
+// Dynamic generation of the Default story
+export const Default = Template.bind({});
+Default.args = {
+  summary: summaryText,
+  fontName: 'body-xl',  // Set a default fontName
+  marginBottom: '',  // Set a default marginBottom
+};
+
+Default.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+// Other variants like HeadlineLarge, HeadlineMedium, etc.
+export const BulletListDesktopLarge = Template.bind({});
+BulletListDesktopLarge.args = {
+  ...Default.args,
+  fontName: 'body-xl',
+};
+BulletListDesktopLarge.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const BulletListMobileLarge = Template.bind({});
+BulletListMobileLarge.args = {
+  ...Default.args,
+  fontName: 'body-lg',
+};
+BulletListMobileLarge.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const BulletListDesktopMedium = Template.bind({});
+BulletListDesktopMedium.args = {
+  ...Default.args,
+  fontName: 'body-md',
+};
+BulletListDesktopMedium.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const BulletListMobileMedium = Template.bind({});
+BulletListMobileMedium.args = {
+  ...Default.args,
+  fontName: 'body-sm',
+};
+BulletListMobileMedium.parameters = {
+  docs: {
+    code: null,  // This will hide the "Show Code" button
+  },
+};
+
+export const BulletDotDesktopLarge = Template.bind({});
+BulletDotDesktopLarge.args = {
+  ...Default.args,
+  fontName: 'body-xl body-xl--preamble',
+};
+BulletDotDesktopLarge.parameters = {
+  docs: {
+    code: null,  // This will hide the "Show Code" button
+  },
+};
+
+export const BulletDotMobileLarge = Template.bind({});
+BulletDotMobileLarge.args = {
+  ...Default.args,
+  fontName: 'body-xl body-xl--underline',
+};
+BulletDotMobileLarge.parameters = {
+  docs: {
+    code: null,  // This will hide the "Show Code" button
+  },
+};
+
+export const BulletDotDesktopMedium = Template.bind({});
+BulletDotDesktopMedium.args = {
+  ...Default.args,
+  fontName: 'body-xl body-xl--bold',
+};
+BulletDotDesktopMedium.parameters = {
+  docs: {
+    code: null,  // This will hide the "Show Code" button
+  },
+};
+
+export const BulletDotMobileMedium = Template.bind({});
+BulletDotMobileMedium.args = {
+  ...Default.args,
+  fontName: 'body-lg body-lg--underline',
+};
+BulletDotMobileMedium.parameters = {
+  docs: {
+    code: null,  // This will hide the "Show Code" button
+  },
+};
+
+export const BulletNumberDesktopeLarge = Template.bind({});
+BulletNumberDesktopeLarge.args = {
+  ...Default.args,
+  fontName: 'body-lg body-lg--bold',
+};
+BulletNumberDesktopeLarge.parameters = {
+  docs: {
+    code: null,  // This will hide the "Show Code" button
+  },
+};
+
+export const BulletNumberMobileLarge = Template.bind({});
+BulletNumberMobileLarge.args = {
+  ...Default.args,
+  fontName: 'body-lg body-lg--bold',
+};
+BulletNumberMobileLarge.parameters = {
+  docs: {
+    code: null,  // This will hide the "Show Code" button
+  },
+};
+
+export const BulletNumberDesktopMedium = Template.bind({});
+BulletNumberDesktopMedium.args = {
+  ...Default.args,
+  fontName: 'body-lg body-lg--bold',
+};
+BulletNumberDesktopMedium.parameters = {
+  docs: {
+    code: null,  // This will hide the "Show Code" button
+  },
+};
+
+export const BulletNumberMobileMedium = Template.bind({});
+BulletNumberMobileMedium.args = {
+  ...Default.args,
+  fontName: 'body-lg body-lg--bold',
+};
+BulletNumberMobileMedium.parameters = {
+  docs: {
+    code: null,  // This will hide the "Show Code" button
+  },
+};
+// body LG modifiers

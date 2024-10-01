@@ -1,0 +1,12 @@
+import React from 'react';
+
+import TypographyDesktop from '../../StorybookComponents/FontsTypography/TypographyDesktop';
+
+export default {
+    title: 'Foundation/Typography',
+    component: TypographyDesktop,
+};
+
+export const DesktopTypography = () => (
+    <TypographyDesktop />
+);

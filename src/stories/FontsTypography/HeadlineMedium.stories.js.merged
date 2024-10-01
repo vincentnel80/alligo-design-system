@@ -1,0 +1,62 @@
+// Header.stories.js
+
+import React from 'react';
+//import Header from './Header.component';
+import HeadlineMedium from '../../StorybookComponents/FontsTypography/HeadlineMedium';
+
+// HTML Snippet for the Breadcrumb component
+const htmlSnippet = `
+<h3 class="headline-m">Lorem ipsum dolor</h3>
+`;
+
+export default {
+    title: 'Typography/Headline Medium',
+    component: HeadlineMedium,
+    parameters: {
+      layout: 'centered',
+      docs: {
+        description: {
+          component: 'A customizable header component for different heading levels.',
+        },
+        source: {
+          code: `<h3 class="headline-m">Lorem ipsum dolor</h3>`,
+        },
+      },
+    },
+    argTypes: {
+      text: { 
+        control: 'text',
+        description: 'The text to display',
+        defaultValue: 'Sample Text'
+      },
+     /* level: { 
+        control: 'number', 
+        min: 1, 
+        max: 6, 
+        step: 1, 
+        defaultValue: 1
+      }, */
+      paddingBottom: {
+        options: ['120px', '40px'],
+        control: { type: 'select' },
+        description: 'Bottom padding of the header',
+      },
+    },
+    tags: ['autodocs'],
+  };
+  
+  const Template = (args) => <HeadlineMedium {...args} />;
+  
+  export const Default = Template.bind({});
+  Default.args = {
+    text: 'Lorem ipsum dolor',
+    //level: 1,
+    paddingBottom: '12px',
+  };
+  
+  export const CustomPadding = Template.bind({});
+  CustomPadding.args = {
+    text: 'Lorem ipsum dolor',
+   // level: 1,
+    paddingBottom: '40px',
+  };

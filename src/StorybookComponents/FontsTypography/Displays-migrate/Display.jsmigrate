@@ -1,0 +1,55 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import './display.scss';
+
+/**
+ * Display text info to go here
+ */
+
+
+// if i dont add these, then it always comes back as undefined - why?
+  export const Display = ({ fontName = 'display-lg', viewport = 'Desktop', summary, marginBottom = '', modifier = '' }) => {
+    console.log(summary,"summary");
+    return (
+     
+      <>
+        {viewport === 'Desktop' ? (
+          <>
+            <p className={`${fontName} display-xl--${modifier}-dt ${marginBottom}`}>{summary}</p>
+            <div className={`${marginBottom}-temp`}></div>
+          </>
+        ) : (
+          <>
+            <p className={`${fontName}-mob body-xl--${modifier}-mob ${marginBottom}`}>{summary}</p>
+            <div className={`${marginBottom}-temp`}></div>
+          </>
+        )}
+      </>
+
+    );
+  };
+
+  Display.propTypes = {
+    /**
+     * Summary text to be displayed
+     */
+    summary: PropTypes.string.isRequired, // assuming summary is a required string
+
+  
+    /**
+     * Additional property A, type can vary based on usage
+     */
+  
+    /**
+     * Padding value for the component
+     */
+   //padding: PropTypes.string, // assuming padding is an optional string like '10px'
+  };
+
+// add shir here, or in title???
+/*Title.defaultProps = {
+  backgroundColor: 'transparent',
+ // textColor: '#000',
+  //fontSize: '14px / 16px',
+ // separator: '/',
+}; */

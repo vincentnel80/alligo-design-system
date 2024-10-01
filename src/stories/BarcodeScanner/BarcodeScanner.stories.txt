@@ -1,0 +1,12 @@
+import React from 'react';
+
+import BarcodeScanner from '../../StorybookComponents/BarcodeScanner/BarcodeScanner';
+
+export default {
+    title: 'Components/BarcodeScanner',
+    component: BarcodeScanner,
+};
+
+export const barcodeScanner = () => (
+    <BarcodeScanner />
+);

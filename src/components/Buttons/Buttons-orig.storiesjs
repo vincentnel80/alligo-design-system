@@ -1,0 +1,12 @@
+import React from 'react';
+
+import Buttons from '../../StorybookComponents/Buttons/Buttons';
+
+export default {
+    title: 'UX/Buttons',
+    component: Buttons,
+};
+
+export const UXButtons = () => (
+    <Buttons />
+);

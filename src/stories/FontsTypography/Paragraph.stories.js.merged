@@ -1,0 +1,64 @@
+// Header.stories.js
+
+import React from 'react';
+//import Header from './Header.component';
+import Paragraph from '../../StorybookComponents/FontsTypography/Paragraph';
+
+// HTML Snippet for the Breadcrumb component
+const htmlSnippet = `
+<p class="body-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacus, ultrices pretium est turpis aenean rutrum. Morbi sed semper convallis turpis arcu porta morbi sed. 
+Scelerisque sit varius ut sociis feugiat. Sit eget euismod diam tortor fermentum nulla facilisi facilisis.</p>
+`;
+
+export default {
+    title: 'Typography/Paragraph',
+    component: Paragraph,
+    parameters: {
+      layout: 'centered',
+      docs: {
+        description: {
+          component: 'A customizable Paragraph component for different heading levels.',
+        },
+        source: {
+          code: `<p class="body-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacus, ultrices pretium est turpis aenean rutrum. Morbi sed semper convallis turpis arcu porta morbi sed. 
+Scelerisque sit varius ut sociis feugiat. Sit eget euismod diam tortor fermentum nulla facilisi facilisis.</p>`,
+        },
+      },
+    },
+    argTypes: {
+      text: { 
+        control: 'text',
+        description: 'The text to display',
+        defaultValue: 'Sample Text'
+      },
+     /* level: { 
+        control: 'number', 
+        min: 1, 
+        max: 6, 
+        step: 1, 
+        defaultValue: 1
+      }, */
+      paddingBottom: {
+        options: ['32px', '40px'],
+        control: { type: 'select' },
+        description: 'Bottom padding of the header',
+      },
+    },
+    tags: ['autodocs'],
+  };
+  
+  const Template = (args) => <Paragraph {...args} />;
+  
+  export const Default = Template.bind({});
+  Default.args = {
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacus, ultrices pretium est turpis aenean rutrum. Morbi sed semper convallis turpis arcu porta morbi sed. Scelerisque sit varius ut sociis feugiat. Sit eget euismod diam tortor fermentum nulla facilisi facilisis.',
+   // level: 1,
+    paddingBottom: '32px',
+  };
+  
+  export const CustomPadding = Template.bind({});
+  CustomPadding.args = {
+    text: 'Paragraph with Custom Padding',
+    level: 1,
+    paddingBottom: '40px',
+  };

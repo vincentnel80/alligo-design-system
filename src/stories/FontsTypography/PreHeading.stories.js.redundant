@@ -1,0 +1,64 @@
+// Header.stories.js
+
+import React from 'react';
+//import Header from './Header.component';
+import PreHeading from '../../StorybookComponents/FontsTypography/PreHeading';
+
+// HTML Snippet for the Breadcrumb component
+const htmlSnippet = `
+<span class="alt-label-lg">Laurem Ipsum</span>
+`;
+
+export default {
+    title: 'Typography/Pre-heading',
+    component: PreHeading,
+    parameters: {
+      layout: 'centered',
+      docs: {
+        description: {
+          component: 'Pre-heading / Kicker (Alt-label Large)',
+        },
+        source: {
+          code: `<span class="alt-label-lg">Laurem Ipsum</span>`,
+        },
+      },
+    },
+    argTypes: {
+      text: { 
+        control: 'text',
+        description: 'The text to display',
+        defaultValue: 'Sample Text'
+      },
+    /*  level: { 
+        control: 'number', 
+        min: 1, 
+        max: 6, 
+        step: 1, 
+        defaultValue: 1
+      }, */
+      paddingBottom: {
+        options: ['12px'],
+        control: { type: 'select' },
+        description: 'Bottom padding of the header',
+      },
+    },
+    tags: ['autodocs'],
+  };
+  
+  const Template = (args) => <PreHeading {...args} />;
+  
+  export const Default = Template.bind({});
+  Default.args = {
+    text: 'Laurem Ipsum',
+   // level: 1,
+    paddingBottom: '12px',
+  };
+  
+  /*
+  export const CustomPadding = Template.bind({});
+  CustomPadding.args = {
+    text: 'Header with Custom Padding',
+    level: 1,
+    paddingBottom: '40px',
+  };
+  */

@@ -1,0 +1,980 @@
+// Import colors
+
+//@import '../../../../StyleConfig/foundation-sites/scss/util/util';
+// import Icons - but like cesar did -- for --- invoice library -- material icons class
+// remake colors
+//frontend/applications/StyleConfig/src/assets/scss/app.scss
+//@import '../StyleConfig/src/assets/scss/mixins/material';
+//@import 'mixins/fonts';
+
+/// colors
+@import '../Colors/colors.scss';
+
+//// colors
+/// these are from ---- bades ... should i make colors for this or add
+
+
+
+
+//// STATES EXPERIMENT
+/// Desktop and mobile --- need breakpoints
+/// same sizes... handle in SB and in css
+
+/// is this the most enhanced way? ... or to make a base and use that with just color and sizes?????
+$status-dot-sizes: (
+    small: 6px,
+    medium: 8px,
+    large: 10px
+);
+
+
+$status-dot-colors: (
+    primary: #007bff,
+    secondary: #6c757d,
+    success: $green-00,
+    danger: $red-00,
+    warning: $yellow-00,
+    information: $blue-00,
+    neutral: $grey-20
+);
+
+// something better for button width
+@mixin status($size, $color) {
+    $button-width: map-get($status-dot-sizes, $size);
+    $button-background: map-get($status-dot-colors, $color);
+
+    border-radius: 50%;
+    width: $button-width;
+    height: $button-width;
+    background: $button-background;
+    display: inline-block;
+   /* margin-right: 10px;
+    margin-top: 5px; */
+}
+
+// Usage example:
+/// large
+/// problem to resolve
+/// 1.) different sizes, + text sizes, paddings
+/// 2.) Icon or not
+/// 3 different colors
+/// 4 different emphasis
+// how does BEM work?
+//  plp-status__dot (base
+// .plp-status--green
+// .plp status size
+
+/// large icons
+.status-danger {
+    @include status(large, danger);
+}
+.status-warning {
+    @include status(large, warning);
+}
+.status-success {
+    @include status(large, success);
+}
+.status-info {
+    @include status(large, information);
+}
+
+.status-neutral {
+    @include status(large, neutral);
+}
+
+/// medium icons
+
+/// issue - how to easily accomodate sizes
+.status-danger-md {
+    @include status(medium, danger);
+}
+.status-warning-md {
+    @include status(medium, warning);
+}
+.status-success-md {
+    @include status(medium, success);
+}
+.status-info-md {
+    @include status(medium, information);
+}
+.status-neutral-md {
+    @include status(medium, neutral);
+}
+
+/// small
+.status-danger-sm {
+    @include status(small, danger);
+}
+.status-warning-sm {
+    @include status(small, warning);
+}
+.status-success-sm {
+    @include status(small, success);
+}
+.status-info-sm {
+    @include status(small, information);
+}
+.status-neutral-sm {
+    @include status(small, neutral);
+}
+
+/// states experiment 2
+
+/* success: $green-00,
+ danger: $red-00,
+ warning: $yellow-00,
+ information: $blue-00 */
+
+// use tokens
+$colors: (
+    success: (
+        brand: $green-00,
+    ),
+    warning: (
+        brand: $yellow-00,
+    ),
+    danger: (
+        brand: $red-00,
+    ),
+    info: (
+        brand: $blue-00,
+    ),
+);
+
+$properties: (
+    color: 'color',
+    bg-color: 'background-color'
+);
+
+
+@each $color-set-name, $color-set in $colors {
+    @each $color-index ,$color in $color-set {
+        @each $property-index, $property in $properties{
+            .#{$property-index}-#{$color-set-name}-#{$color-index}{
+                #{$property}: $color;
+            }
+        }
+    }
+}
+
+@function clr($name, $shade: default) {
+    $color: map-get(map-get($colors, $name), $shade);
+    @return $color;
+}
+
+
+////
+
+/// deal with
+.bg-color-grey-50 {
+    background-color: #737373;
+    ///
+   // How to handle various text colors
+    color: white;
+}
+
+.bg-color-grey-20 {
+    background-color: #CCCCCC;
+    color: black;
+}
+
+.bg-color-grey-05 {
+    background-color: #F6F6F6;
+    border: 1px solid #E5E5E5;
+    color: black;
+}
+
+
+//// Standard assortment
+.top-container {
+    /// can also use inline flex
+    display: inline-block;
+    .inner-test {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box; /// ??? what is this
+        background: #F6F6F6;
+        border: 1px solid #E5E5E5;
+        gap: 4px;
+
+        height: 20px; //2.5rem;
+        padding: 3px 3px; //0 1.5rem;
+
+        /// ikea
+        /*  -webkit-padding-start: 1rem;
+          padding-inline-start: 1rem;
+          */
+        ///
+
+        .material-symbols-outlined {
+            font-size: 14px;
+        }
+    }
+
+    /// mobile
+    .inner-test-mobile {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box; /// ??? what is this
+        background: #F6F6F6;
+        border: 1px solid #E5E5E5;
+        gap: 4px;
+
+        height: 18px; //2.5rem;
+        padding: 3px 3px; //0 1.5rem;
+
+        /// ikea
+        /*  -webkit-padding-start: 1rem;
+          padding-inline-start: 1rem;
+          */
+        ///
+        .label-sm {
+            font-size: 12px !important;
+            line-height: 12px !important;
+        }
+
+        .material-symbols-outlined {
+            font-size: 12px;
+        }
+    }
+}
+
+
+/// Totallt new
+.BadgeBadge-Base-New {
+   // width: 67px;
+    width: max-content;
+    //width: fit-content;
+    height: 20px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 4px;
+   //background-color: var(--alert-success-default);
+    background: var(--greyscale-grey-50); /// use tokens or vars?
+
+    .material-symbols-outlined {
+        font-size: 14px;
+        color: var(--text-white-100);
+    }
+
+    .Neutral {
+       // width: 41px;
+        height: 14px;
+        flex-grow: 0;
+        //font-family: Breuer;
+        font-family: breuercondensed;
+        font-size: 14px;
+        font-weight: 500;
+        font-stretch: condensed;
+        font-style: normal;
+        line-height: 1; // or 14px works out
+        letter-spacing: 0.28px;
+        text-align: center;
+        color: var(--text-white-100);
+        //color: var(--text-text-white-100, var(--color-text-text-white-100, #FFF)); from figma
+    }
+}
+
+// end totally new
+
+/// parent
+.badges-container {
+
+
+
+    /// better name
+    //// flex is not adding padding
+    //correct divs
+    .badge-base {
+        //margin-top: 20px; /// not needed
+        //// its not addapting
+        //width: 100%; /// sizes .... in map or mixin
+        height: 20px; // rem calc)
+        padding: 3px 4px;
+       ///// text-align: center; if not using flex --- so maybe second class
+        //background: $grey-50; /// colors in base?
+        color: $white; // in base? // use token?
+        //letter-spacing: 0.02em;
+
+        /// currently in system
+        /*.material-icons {
+            font-size: 14px;
+        }*/
+
+        .material-symbols-outlined {
+            font-size: 14px;
+        }
+
+        /// this is for icons
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        justify-content: center;
+    }
+
+   /* success: $green-00,
+    danger: $red-00,
+    warning: $yellow-00,
+    information: $blue-00 */
+
+    .neutral {
+        background: $grey-50; /// colors in base?
+        color: $white; // in base?
+    }
+
+    .neutral-emphasis-medium {
+        background: $grey-20; /// colors in base?
+        color: $black; // in base?
+    }
+
+    .neutral-emphasis-light {
+        background: $grey-05; /// colors in base?
+        color: $black; // in base?
+        border: 1px solid $grey-10;
+    }
+
+    /// idea but not working
+    .badge-sb-size {
+        width: 39px;
+        height: 18px;
+
+        font-size: 12px !important;
+        line-height: 12px !important;
+    }
+    //// NEEDED --- SB ---- Show Mobile
+    ///// but built into classes with @media
+
+    .info {
+        background: $blue-00; /// colors in base?
+        color: $white; // in base?
+    }
+
+    .info-emphasis-medium {
+        background: $blue-01; /// colors in base?
+        color: $black; // in base?
+    }
+
+    .info-emphasis-light {
+        background: $blue-02; /// colors in base?
+        border: 1px solid $blue-01;
+        color: $black; // in base?
+    }
+
+    .success {
+        background: $green-00; /// colors in base?
+        color: $white; // in base?
+    }
+
+    .success-emphasis-medium {
+        background: $green-01; /// colors in base?
+        color: $black; // in base?
+    }
+
+    .success-emphasis-light {
+        background: $green-02; /// colors in base?
+        border: 1px solid $green-01;
+        color: $black; // in base?
+    }
+
+    .warning {
+        background: $yellow-00; /// colors in base?
+        color: $black; // in base?
+    }
+
+    .warning-emphasis-medium {
+        background: $yellow-01; /// colors in base?
+        color: $black; // in base?
+    }
+
+    .warning-emphasis-light {
+        background: $yellow-02; /// colors in base?
+        border: 1px solid $yellow-01;
+        color: $black; // in base?
+    }
+
+    .danger {
+        background: $red-00; /// colors in base?
+        color: $white; // in base?
+    }
+
+    .danger-emphasis-medium {
+        background: $red-03; /// colors in base?
+        color: $black; // in base?
+    }
+
+    .danger-emphasis-light {
+        background: $red-04; /// colors in base?
+        border: 1px solid $red-03;
+        color: $black; // in base?
+    }
+
+    /// TO DO
+    /// 1 - make base
+    // Issue - text not vertically aligned when using real styles from figma
+    // how will it work in comparison the the parent? removing vert align makes it not work
+    // react component or not?
+
+    .badge {
+        /* Version=Desktop, State=Neutral, Emphasis=Heavy, Icon=No */
+       // background-color: #737373; // grey 50
+        //color: white;
+       /// padding: 3px 4px; If I keep this, it makes it bigger ... so measure
+        text-align: center;
+        min-width: 44px; // width or min width?
+        height: 20px;
+
+        display: inline-block; // is this correct?
+        vertical-align: middle; /// this aligns the item to parent but not internally
+///
+       // font-family: 'Breuer Condensed';
+      //  font-style: normal;
+        font-weight: 600; /// overwrite the defined text??
+       // font-size: 14px;
+        line-height: 20px;
+        /* identical to box height, or 100% */
+
+        letter-spacing: 0.28px; /// default font has px
+      //  font-feature-settings: 'ss02' on, 'ss03' on, 'ss06' on;
+
+        /// only here to override the main --- but -- how does it work in system?
+        p {
+            display: block;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+    }
+
+
+
+    //// Dots
+
+    /// this is the container of dots... but you need to chose if you will add it here, or in the components stylesheet
+    .column {
+        float: left;
+        width: 20%;
+
+        .flex-col-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 21px;
+            align-items: center;
+        }
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+
+    //// Desktop
+/// I need a real one for the system
+    // fake ones for preview purposes
+
+
+    // real - go over
+    .indicator-circle {
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+
+    .indicator-circle-desktop {
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+
+    .indicator-circle-tablet {
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+
+    .indicator-circle-mobile {
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+    // BG colors - add real colors
+
+    .bg-red {
+        /// alert red danger
+        background: #D90000;
+    }
+    .bg-yellow {
+        // Alert / yellow Warning
+        background: #FFBA00;
+    }
+
+    .bg-green {
+        // alert green success
+        background: #138746;
+    }
+
+    .bg-blue {
+        // alert blue info
+        background: #0066FF;
+    }
+
+    .bg-gray {
+        // Greyscale 20
+        background: #CCCCCC;
+    }
+
+    /// Mobile
+    //// End dots
+
+
+    /// Bra Köp Labels
+    ///
+    /* Version=Desktop */
+
+
+    .material-symbols-outlined {
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+    }
+
+
+    .bra-kop-container {
+        margin-top: 5px;
+        /* Auto layout */
+        .bra-kop-wrapper-outer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 8px;
+
+            /// Bra kop component
+            .bra-kop-wrapper-inner {
+                /* Badge/Badge Purchase Base */
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 0px;
+                min-width: 60px;
+                height: 20px;
+
+                .bra-kop-left {
+                    /* Badge/Badge Base */
+                    /* Auto layout */
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    ////
+                    ///overides
+                    font-family: 'BreuerCondensedRegular';
+                    color: white; // use color var
+                    /// end overrides
+                    padding: 3px 0px 3px 5px;
+                    gap: 4px;
+                    min-width: 50px;
+                    height: 20px;
+                    /* Alert/Red - Danger */
+                    background: #D90000;
+                }
+
+                .bra-kop-beak {
+                    width: 0;
+                    height: 0;
+                    /* border-top: 60px solid transparent;
+                     border-bottom: 60px solid transparent;
+                     border-left: 60px solid red; */
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-left: 10px solid #D90000; // the right point
+                }
+            }
+
+            // right text
+            .bra-kop-righttext {
+                width: 406px;
+                height: 20px;
+                /* Desktop/Body Small */
+                font-family: 'Breuer Condensed';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+                /* identical to box height, or 143% */
+                letter-spacing: 0.02em;
+                font-feature-settings: 'ss02' on, 'ss03' on, 'ss06' on;
+                /* Text/Text High Emphasis */
+                color: #4F4F4F;
+            }
+        }
+    }
+
+    /// bra köp mobile
+    .bra-kop-container-mobile {
+        margin-top: 5px;
+        /* Auto layout */
+        .bra-kop-wrapper-outer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 4px;
+
+            /// Bra kop component
+            .bra-kop-wrapper-inner {
+                /* Badge/Badge Purchase Base */
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 0px;
+                min-width: 44px;
+                height: 18px;
+
+                .bra-kop-left {
+                    /* Badge/Badge Base */
+                    /* Auto layout */
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    ////
+                    ///overides
+                    font-family: 'BreuerCondensedRegular';
+                    color: white; // use color var
+                    /// end overrides
+                    padding: 3px 0px 3px 5px;
+                    gap: 4px;
+                    min-width: 44px;
+                    height: 20px;
+                    /* Alert/Red - Danger */
+                    background: #D90000;
+
+                    .label-sm {
+                        font-size: 12px;
+                        line-height: 12px;
+                    }
+                }
+
+                .bra-kop-beak {
+                    width: 0;
+                    height: 0;
+                    /* border-top: 60px solid transparent;
+                     border-bottom: 60px solid transparent;
+                     border-left: 60px solid red; */
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-left: 10px solid #D90000; // the right point
+                }
+            }
+
+            // right text
+            .bra-kop-righttext {
+                width: 406px;
+                height: 20px;
+                /* Desktop/Body Small */
+                font-family: 'Breuer Condensed';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+                /* identical to box height, or 143% */
+                letter-spacing: 0.02em;
+                font-feature-settings: 'ss02' on, 'ss03' on, 'ss06' on;
+                /* Text/Text High Emphasis */
+                color: #4F4F4F;
+            }
+        }
+    }
+
+    /// Product assortment badges
+    /// remember - this is just the container dowv (as in layout - so, this will change and component should work irrespective
+    .assortment-badges-container-sb {
+        margin-top: 12px;
+
+
+        //// new
+.grid-badges-new {
+
+   // .product-badge-new {
+        .product-badge-container-flex {
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+
+            .discount-container {
+                background: #d90000;
+                height: 20px;
+                padding-right: 0.3125rem;
+                padding-left: 0.3125rem;
+               // text-align: center;
+
+                p {
+                  /*  font-family: "breuercondensed",Arial,Helvetica,Roboto,sans-serif;
+                    font-size: .875rem;
+                    line-height: 1.25rem;
+                    letter-spacing: .4px;
+                    margin-bottom: 0.75rem;
+                    margin: 0.125rem; */
+                    color: white;
+                    display: inline-block;
+                    text-transform: uppercase;
+
+                    /// ovverides
+                    //display: block;
+                    line-height: 15px; // overide label
+
+                    margin: 0.125rem;
+
+                    //// not correct ??
+                    //line-height: 31px; //// needed to use this to vertical center, as.... p was causing issues (due to it being in system
+                }
+            }
+
+            .outlet-content {
+                background: #000;
+                height: 20px;
+                padding-right: 0.3125rem;
+                padding-left: 0.3125rem;
+                text-rendering: optimizeLegibility; /// ???
+                -webkit-font-smoothing: antialiased; /// ???
+
+                p {
+                  /*  font-family: "breuercondensed",Arial,Helvetica,Roboto,sans-serif;
+                    font-size: .875rem;
+                    line-height: 1.25rem;
+                    letter-spacing: .4px;
+                    margin-bottom: 0.75rem;
+                    color: #fff;
+                    font-weight: 700;
+                    margin: 0;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    */
+                    color: white;
+                    display: inline-block; /// maybe can use
+                    text-transform: uppercase;
+                    text-rendering: optimizeLegibility; //// ???
+                    -webkit-font-smoothing: antialiased; /// ???
+                    margin: 0.125rem; /// use rem insteam
+                    line-height: 15px; // overide label
+
+                    //// overrides
+
+
+                    //line-height: 31px; /// temp
+
+                }
+            }
+
+        }
+   // }
+
+}
+
+        .grid-badges-new-mobile {
+
+            // .product-badge-new {
+            .product-badge-container-flex {
+                text-align: center;
+                display: flex;
+                flex-direction: row;
+
+                .discount-container {
+                    background: #d90000;
+                    height: 20px;
+                    padding-right: 0.3125rem;
+                    padding-left: 0.3125rem;
+                    // text-align: center;
+
+                    p {
+                        /*  font-family: "breuercondensed",Arial,Helvetica,Roboto,sans-serif;
+                          font-size: .875rem;
+                          line-height: 1.25rem;
+                          letter-spacing: .4px;
+                          margin-bottom: 0.75rem;
+                          margin: 0.125rem; */
+                        color: white;
+                        display: inline-block;
+                        text-transform: uppercase;
+
+                        /// ovverides
+                        //display: block;
+                        line-height: 17px !important; // overide label
+                        font-size: 12px !important;
+
+                        margin: 0.125rem;
+
+                        //// not correct ??
+                        //line-height: 31px; //// needed to use this to vertical center, as.... p was causing issues (due to it being in system
+                    }
+                }
+
+                .outlet-content {
+                    background: #000;
+                    height: 20px;
+                    padding-right: 0.3125rem;
+                    padding-left: 0.3125rem;
+                    text-rendering: optimizeLegibility; /// ???
+                    -webkit-font-smoothing: antialiased; /// ???
+
+                    p {
+                        /*  font-family: "breuercondensed",Arial,Helvetica,Roboto,sans-serif;
+                          font-size: .875rem;
+                          line-height: 1.25rem;
+                          letter-spacing: .4px;
+                          margin-bottom: 0.75rem;
+                          color: #fff;
+                          font-weight: 700;
+                          margin: 0;
+                          text-transform: uppercase;
+                          display: inline-block;
+                          */
+                        color: white;
+                        display: inline-block; /// maybe can use
+                        text-transform: uppercase;
+                        text-rendering: optimizeLegibility; //// ???
+                        -webkit-font-smoothing: antialiased; /// ???
+                        margin: 0.125rem; /// use rem insteam
+                        line-height: 17px !important; // overide label
+                        font-size: 12px !important;
+
+                        //// overrides
+
+
+                        //line-height: 31px; /// temp
+
+                    }
+                }
+
+            }
+            // }
+
+        }
+
+        /// end new
+
+
+
+        /// black single
+        .product-outlet {
+            background: #000;
+            color: #fff;
+            height: 30px;
+            padding-right: 0.3125rem;
+            padding-left: 0.3125rem;
+            text-align: center;
+            display: inline-block;
+            line-height: 1.8rem;
+        }
+
+        // end black single
+
+
+        .discount-badge-container {
+            /* Version=Desktop, Name=Discount, Stacking=No, Only Icon=No */
+            /* Badge/Badge Base */
+            width: 71px;
+            height: 20px;
+            padding-right: 0.3125rem;
+            padding-left: 0.3125rem;
+            /* Alert/Red - Danger */
+            background: #D90000;
+
+            // maybe add real class as p alone means users are forced to use a p
+            p {
+                /* Neutral */
+              //  width: 61px;
+               // height: 14px;
+                /* Desktop/Label Small */
+               // font-family: 'Breuer Condensed';
+                font-style: normal;
+              //  font-weight: 700;
+                font-size: 14px;
+                line-height: 14px;
+                /* identical to box height, or 100% */
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+
+
+               /* display: inline-block;
+                margin: 0; */
+                /* override  p */
+                margin-block-start: 0;
+                margin-block-end: 0;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                color: #FFFFFF;
+            }
+        }
+
+       /// from sys - test
+        .product-badge.discount-badge {
+            text-align: center;
+            left: 0;
+            bottom: 0;
+            display: flex;
+        }
+        /// end from sys test
+
+        .product-badge.discount-badge .content {
+            background: #d90000;
+            height: 30px;
+            padding-right: 0.3125rem;
+            padding-left: 0.3125rem;
+        }
+
+        .product-badge.discount-badge p {
+            font-family: "breuercondensed",Arial,Helvetica,Roboto,sans-serif;
+            font-size: .875rem;
+            line-height: 1.25rem;
+            letter-spacing: .4px;
+            margin-bottom: 0.75rem;
+            color: #fff;
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+    }
+    /// End Assortment badges
+
+    .jsx-minicart-header-icon-count {
+        background: #d90000;
+        border: 2px solid #000;
+        border-radius: 100px;
+        color: #fff;
+        font-size: .875rem;
+        font-weight: 700;
+        left: 50%;
+        letter-spacing: .2px;
+        line-height: .8125rem;
+        min-width: 1.5625rem;
+        padding: 4px 6px;
+        position: absolute;
+        text-align: center;
+        top: -50%;
+    }
+
+}

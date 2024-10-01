@@ -1,0 +1,71 @@
+import { Meta, Story, Preview, Props, Description, Title } from '@storybook/addon-docs/blocks';
+import { Breadcrumb } from './Breadcrumbs';
+import { Badge } from '@storybook/components';
+
+<Meta title="Example/Breadcrumb" component={Breadcrumb} />
+
+<Title>Breadcrumb Component</Title>
+
+<Description>
+  The Breadcrumb component is used for displaying a breadcrumb trail, helping users navigate the hierarchical structure of a website.
+</Description>
+
+<Badge style={{ backgroundColor: '#e7f5ff', color: '#0366d6', marginRight: '8px' }}>
+  <a href="https://www.figma.com/file/YOUR_FIGMA_FILE_LINK" target="_blank" style={{ color: 'inherit', textDecoration: 'none' }}>
+    View on Figma
+  </a>
+</Badge>
+
+## Examples
+
+### Base
+<Preview>
+  <Story name="Base">
+    <Breadcrumb items={[
+      { label: 'Home', link: '#' },
+      { label: 'Category', link: '#' },
+      { label: 'Subcategory', link: '#' },
+      { label: 'Current Page', link: '#' },
+    ]} />
+  </Story>
+</Preview>
+
+### onHover
+<Preview>
+  <Story name="onHover">
+    <Breadcrumb items={[
+      { label: 'Home', link: '#' },
+      { label: 'Category', link: '#' },
+      { label: 'Subcategory', link: '#' },
+      { label: 'Hover Page', link: '#' },
+    ]} />
+  </Story>
+</Preview>
+
+### Clicked
+<Preview>
+  <Story name="Clicked">
+    <Breadcrumb items={[
+      { label: 'Home', link: '#' },
+      { label: 'Category', link: '#' },
+      { label: 'Subcategory', link: '#' },
+      { label: 'Clicked Page', link: '#' },
+    ]} />
+  </Story>
+</Preview>
+
+### Small
+<Preview>
+  <Story name="Small">
+    <Breadcrumb items={[
+      { label: 'Home', link: '#' },
+      { label: 'Category', link: '#' },
+      { label: 'Subcategory', link: '#' },
+      { label: 'Current Page', link: '#' },
+    ]} fontSize="12px" />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Breadcrumb} />

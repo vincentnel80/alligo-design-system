@@ -1,0 +1,12 @@
+import React from 'react';
+
+import Links from '../../StorybookComponents/Links/Links';
+
+export default {
+    title: 'UX/Links',
+    component: Links,
+};
+
+export const UXLinks = () => (
+    <Links />
+);

@@ -1,0 +1,334 @@
+// Add modifiers here
+// Font weights
+$font-weight-default-400: 400;
+$font-weight-regular-500: 500;
+$font-weight-medium-600: 600;
+$font-weight-bold-700: 700;
+
+// NEWS FINAL VALS
+$value-0: 0px;
+$value-12: 12px;
+$value-14: 14px;
+$value-16: 16px;
+$value-18: 18px;
+$value-20: 20px;
+$value-22: 22px;
+$value-24: 24px;
+$value-26: 26px;
+$value-28: 28px;
+$value-30: 30px;
+$value-32: 32px;
+$value-34: 34px;
+$value-36: 36px;
+$value-40: 40px;
+$value-42: 42px;
+$value-46: 46px;
+$value-48: 48px;
+$value-56: 56px;
+$value-64: 64px;
+$value-66: 66px;
+
+// Font weights Mobile
+$font-weight-body-sm: $font-weight-default-400;
+$font-weight-body-md: $font-weight-default-400;
+$font-weight-body-lg: $font-weight-default-400;
+$font-weight-body-xl: $font-weight-default-400;
+$font-weight-alt-label-sm: $font-weight-regular-500;
+$font-weight-alt-label-md: $font-weight-regular-500;
+$font-weight-alt-label-lg: $font-weight-regular-500;
+$font-weight-label-sm: $font-weight-bold-700;
+$font-weight-label-md: $font-weight-bold-700;
+$font-weight-label-lg: $font-weight-bold-700;
+$font-weight-title-sm: $font-weight-bold-700;
+$font-weight-title-md: $font-weight-bold-700;
+$font-weight-title-lg: $font-weight-bold-700;
+$font-weight-headline-sm: $font-weight-bold-700;
+$font-weight-headline-md: $font-weight-bold-700;
+$font-weight-headline-lg: $font-weight-bold-700;
+$font-weight-headline-xl: $font-weight-bold-700;
+$font-weight-display-sm: $font-weight-bold-700;
+$font-weight-display-md: $font-weight-bold-700;
+$font-weight-display-lg: $font-weight-bold-700;
+
+// Font size - mobile
+$font-size-body-sm: $value-14;
+$font-size-body-md: $value-16;
+$font-size-body-lg: $value-18;
+$font-size-body-xl: $value-20;
+$font-size-alt-label-sm: $value-12;
+$font-size-alt-label-md: $value-14;
+$font-size-alt-label-lg: $value-16;
+$font-size-label-sm: $value-12;
+$font-size-label-md: $value-14;
+$font-size-label-lg: $value-16;
+$font-size-title-sm: $value-16;
+$font-size-title-md: $value-18;
+$font-size-title-lg: $value-20;
+$font-size-headline-sm: $value-22;
+$font-size-headline-md: $value-26;
+$font-size-headline-lg: $value-28;
+$font-size-headline-xl: $value-30;
+$font-size-display-sm: $value-22;
+$font-size-display-md: $value-28;
+$font-size-display-lg: $value-36;
+
+// Line height - mobile
+$line-height-body-sm: $value-20;
+$line-height-body-md: $value-22;
+$line-height-body-lg: $value-26;
+$line-height-body-xl: $value-28;
+$line-height-alt-label-sm: $value-12;
+$line-height-alt-label-md: $value-14;
+$line-height-alt-label-lg: $value-16;
+$line-height-label-sm: $value-12;
+$line-height-label-md: $value-14;
+$line-height-label-lg: $value-16;
+$line-height-title-sm: $value-22;
+$line-height-title-md: $value-24;
+$line-height-title-lg: $value-24;
+$line-height-headline-sm: $value-24;
+$line-height-headline-md: $value-32;
+$line-height-headline-lg: $value-32;
+$line-height-headline-xl: $value-34;
+$line-height-display-sm: $value-22;
+$line-height-display-md: $value-28;
+$line-height-display-lg: $value-36;
+
+// Paragraph spacing - mobile
+$paragraph-spacing-body-sm: $value-12;
+$paragraph-spacing-body-md: $value-16;
+$paragraph-spacing-body-lg: $value-16;
+$paragraph-spacing-body-xl: $value-20;
+$paragraph-spacing-alt-label-sm: $value-12;
+$paragraph-spacing-alt-label-md: $value-14;
+$paragraph-spacing-alt-label-lg: $value-16;
+$paragraph-spacing-label-sm: $value-12;
+$paragraph-spacing-label-md: $value-14;
+$paragraph-spacing-label-lg: $value-16;
+$paragraph-spacing-title-sm: $value-16;
+$paragraph-spacing-title-md: $value-18;
+$paragraph-spacing-title-lg: $value-16;
+$paragraph-spacing-headline-sm: $value-12;
+$paragraph-spacing-headline-md: $value-12;
+$paragraph-spacing-headline-lg: $value-12;
+$paragraph-spacing-headline-xl: $value-12;
+$paragraph-spacing-display-sm: $value-12;
+$paragraph-spacing-display-md: $value-12;
+$paragraph-spacing-display-lg: $value-18;
+
+// Letter spacing - mobile
+$letter-spacing-body-sm: $value-28 * 0.01; // 0.28px
+$letter-spacing-body-md: $value-32 * 0.01; // 0.32px
+$letter-spacing-body-lg: $value-0;
+$letter-spacing-body-xl: $value-0;
+$letter-spacing-alt-label-sm: $value-48 * 0.01; // 0.48px
+$letter-spacing-alt-label-md: $value-56 * 0.01; // 0.56px
+$letter-spacing-alt-label-lg: $value-32 * 0.01; // 0.32px
+$letter-spacing-label-sm: $value-48 * 0.01; // 0.48px
+$letter-spacing-label-md: $value-42 * 0.01; // 0.42px
+$letter-spacing-label-lg: $value-32 * 0.01; // 0.32px
+$letter-spacing-title-sm: $value-0;
+$letter-spacing-title-md: $value-0;
+$letter-spacing-title-lg: $value-0;
+$letter-spacing-headline-sm: $value-0;
+$letter-spacing-headline-md: $value-0;
+$letter-spacing-headline-lg: $value-0;
+$letter-spacing-headline-xl: $value-0;
+$letter-spacing-display-sm: $value-0;
+$letter-spacing-display-md: $value-0;
+$letter-spacing-display-lg: $value-0;
+
+// Mixin for font styles
+// transform needed or will it cause problems?
+@mixin font-style($weight, $size, $line-height, $letter-spacing, $transform: none, $margin-bottom: 0) {
+  font-family: breuercondensed;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-transform: $transform;
+  margin-bottom: $margin-bottom;
+}
+
+// Apply styles to common tags
+@mixin apply-to-tags($class-name, $weight, $size, $line-height, $letter-spacing, $transform: none, $margin-bottom: 0) {
+  .#{$class-name} {
+    @include font-style($weight, $size, $line-height, $letter-spacing, $transform, $margin-bottom);
+
+    h1, h2, h3, div, span, p {
+      @include font-style($weight, $size, $line-height, $letter-spacing, $transform, $margin-bottom);
+    }
+  }
+}
+
+// Typeface classes
+@include apply-to-tags(display-sm, $font-weight-display-sm, $font-size-display-sm, $line-height-display-sm, $letter-spacing-display-sm, uppercase);
+@include apply-to-tags(display-md, $font-weight-display-md, $font-size-display-md, $line-height-display-md, $letter-spacing-display-md, uppercase);
+@include apply-to-tags(display-lg, $font-weight-display-lg, $font-size-display-lg, $line-height-display-lg, $letter-spacing-display-lg, uppercase);
+@include apply-to-tags(headline-sm, $font-weight-headline-sm, $font-size-headline-sm, $line-height-headline-sm, $letter-spacing-headline-sm);
+@include apply-to-tags(headline-md, $font-weight-headline-md, $font-size-headline-md, $line-height-headline-md, $letter-spacing-headline-md);
+@include apply-to-tags(headline-lg, $font-weight-headline-lg, $font-size-headline-lg, $line-height-headline-lg, $letter-spacing-headline-lg);
+@include apply-to-tags(headline-xl, $font-weight-headline-xl, $font-size-headline-xl, $line-height-headline-xl, $letter-spacing-headline-xl);
+@include apply-to-tags(title-sm, $font-weight-title-sm, $font-size-title-sm, $line-height-title-sm, $letter-spacing-title-sm);
+@include apply-to-tags(title-md, $font-weight-title-md, $font-size-title-md, $line-height-title-md, $letter-spacing-title-md);
+@include apply-to-tags(title-lg, $font-weight-title-lg, $font-size-title-lg, $line-height-title-lg, $letter-spacing-title-lg);
+@include apply-to-tags(label-sm, $font-weight-label-sm, $font-size-label-sm, $line-height-label-sm, $letter-spacing-label-sm, uppercase);
+@include apply-to-tags(label-md, $font-weight-label-md, $font-size-label-md, $line-height-label-md, $letter-spacing-label-md, uppercase);
+@include apply-to-tags(label-lg, $font-weight-label-lg, $font-size-label-lg, $line-height-label-lg, $letter-spacing-label-lg, uppercase);
+@include apply-to-tags(alt-label-sm, $font-weight-alt-label-sm, $font-size-alt-label-sm, $line-height-alt-label-sm, $letter-spacing-alt-label-sm, uppercase);
+@include apply-to-tags(alt-label-md, $font-weight-alt-label-md, $font-size-alt-label-md, $line-height-alt-label-md, $letter-spacing-alt-label-md, uppercase);
+@include apply-to-tags(alt-label-lg, $font-weight-alt-label-lg, $font-size-alt-label-lg, $line-height-alt-label-lg, $letter-spacing-alt-label-lg, uppercase);
+@include apply-to-tags(body-sm, $font-weight-body-sm, $font-size-body-sm, $line-height-body-sm, $letter-spacing-body-sm);
+@include apply-to-tags(body-md, $font-weight-body-md, $font-size-body-md, $line-height-body-md, $letter-spacing-body-md);
+@include apply-to-tags(body-lg, $font-weight-body-lg, $font-size-body-lg, $line-height-body-lg, $letter-spacing-body-lg);
+@include apply-to-tags(body-xl, $font-weight-body-xl, $font-size-body-xl, $line-height-body-xl, $letter-spacing-body-xl);
+
+// Blockquote Container
+.blockq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+
+  .blockq-container-inner {
+    display: flex;
+    padding: 16px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    border-left: 4px solid var(--surface-accent-default, #C7D300);
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .bottom-text-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+  }
+}
+
+// Desktop styles
+@media (min-width: 768px) {
+  $font-size-body-sm: $value-14;
+  $font-size-body-md: $value-16;
+  $font-size-body-lg: $value-20;
+  $font-size-body-xl: $value-24;
+  $font-size-alt-label-sm: $value-14;
+  $font-size-alt-label-md: $value-16;
+  $font-size-alt-label-lg: $value-18;
+  $font-size-label-sm: $value-14;
+  $font-size-label-md: $value-16;
+  $font-size-label-lg: $value-18;
+  $font-size-title-sm: $value-16;
+  $font-size-title-md: $value-20;
+  $font-size-title-lg: $value-24;
+  $font-size-headline-sm: $value-28;
+  $font-size-headline-md: $value-32;
+  $font-size-headline-lg: $value-36;
+  $font-size-headline-xl: $value-46;
+  $font-size-display-sm: $value-26;
+  $font-size-display-md: $value-36;
+  $font-size-display-lg: $value-66;
+
+  $line-height-body-sm: $value-20;
+  $line-height-body-md: $value-22;
+  $line-height-body-lg: $value-28;
+  $line-height-body-xl: $value-32;
+  $line-height-alt-label-sm: $value-14;
+  $line-height-alt-label-md: $value-16;
+  $line-height-alt-label-lg: $value-18;
+  $line-height-label-sm: $value-14;
+  $line-height-label-md: $value-16;
+  $line-height-label-lg: $value-18;
+  $line-height-title-sm: $value-22;
+  $line-height-title-md: $value-24;
+  $line-height-title-lg: $value-28;
+  $line-height-headline-sm: $value-32;
+  $line-height-headline-md: $value-36;
+  $line-height-headline-lg: $value-40;
+  $line-height-headline-xl: $value-48;
+  $line-height-display-sm: $value-26;
+  $line-height-display-md: $value-36;
+  $line-height-display-lg: $value-66;
+
+  $paragraph-spacing-body-sm: $value-12;
+  $paragraph-spacing-body-md: $value-16;
+  $paragraph-spacing-body-lg: $value-20;
+  $paragraph-spacing-body-xl: $value-24;
+  $paragraph-spacing-alt-label-sm: $value-14;
+  $paragraph-spacing-alt-label-md: $value-16;
+  $paragraph-spacing-alt-label-lg: $value-18;
+  $paragraph-spacing-label-sm: $value-14;
+  $paragraph-spacing-label-md: $value-16;
+  $paragraph-spacing-label-lg: $value-18;
+  $paragraph-spacing-title-sm: $value-16;
+  $paragraph-spacing-title-md: $value-20;
+  $paragraph-spacing-title-lg: $value-24;
+  $paragraph-spacing-headline-sm: $value-12;
+  $paragraph-spacing-headline-md: $value-12;
+  $paragraph-spacing-headline-lg: $value-12;
+  $paragraph-spacing-headline-xl: $value-12;
+  $paragraph-spacing-display-sm: $value-12;
+  $paragraph-spacing-display-md: $value-12;
+  $paragraph-spacing-display-lg: $value-18;
+
+  $letter-spacing-body-sm: $value-28 * 0.01; // 0.28px
+  $letter-spacing-body-md: $value-32 * 0.01; // 0.32px
+  $letter-spacing-body-lg: $value-0;
+  $letter-spacing-body-xl: $value-0;
+  $letter-spacing-alt-label-sm: $value-56 * 0.01; // 0.56px
+  $letter-spacing-alt-label-md: $value-64 * 0.01; // 0.64px
+  $letter-spacing-alt-label-lg: $value-36 * 0.01; // 0.36px
+  $letter-spacing-label-sm: $value-56 * 0.01; // 0.56px
+  $letter-spacing-label-md: $value-48 * 0.01; // 0.48px
+  $letter-spacing-label-lg: $value-18 * 0.01; // 0.18px
+  $letter-spacing-title-sm: $value-0;
+  $letter-spacing-title-md: $value-0;
+  $letter-spacing-title-lg: $value-0;
+  $letter-spacing-headline-sm: $value-0;
+  $letter-spacing-headline-md: $value-0;
+  $letter-spacing-headline-lg: $value-0;
+  $letter-spacing-headline-xl: $value-0;
+  $letter-spacing-display-sm: $value-0;
+  $letter-spacing-display-md: $value-0;
+  $letter-spacing-display-lg: $value-0;
+}
+
+// Font-Face
+/// place in a global location - whatever you chose - then delete the rest
+@font-face {
+  font-family: breuercondensed;
+  src: local('BreuerCondensed-Regular'),
+    url('./StorybookFonts/breuercondensed-regular-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: condensed;
+}
+
+@font-face {
+  font-family: breuercondensed;
+  src: local('BreuerCondensed-Medium'),
+    url('./StorybookFonts/breuercondensed-medium-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: condensed;
+}
+
+@font-face {
+  font-family: breuercondensed;
+  src: local('BreuerCondensed-Bold'),
+    url('./StorybookFonts/breuercondensed-bold-webfont.woff2') format('woff2'),
+    url('./StorybookFonts/breuercondensed-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: condensed;
+}

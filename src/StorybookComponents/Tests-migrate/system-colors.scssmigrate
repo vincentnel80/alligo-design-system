@@ -1,0 +1,74 @@
+// Storybook Color grid
+// not to be used in main system
+
+.color-value-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.col-color-value {
+    flex: 1;
+    min-height: 22px;
+}
+.col-color-value:first-child {
+    width: 11px;
+    height: 16px;
+    flex:initial;
+    margin-right: 8px;
+}
+
+.col-color-value:nth-child(2) {
+    width: 16px;
+    flex:initial;
+    margin-right: 25px;
+}
+
+.color-grid-container {
+    display: grid;
+    gap: 32px;
+    padding: 0 16px 0 16px;
+
+}
+
+.color-grid-row {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 25px;
+
+    @media screen and (max-width:768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.color-grid-row:last-child {
+    border-bottom: 0;
+}
+
+.content-grid-row-inner-color {
+    padding-top: 0;
+}
+
+.content-grid-row-inner-description {
+    span {
+        display: block;
+    }
+}
+
+.bullet-white {
+    width: 11px;
+    height: 16px;
+    background: url(../Icons/ComponentIcons/bullet-white.svg);
+    background-size: 11px 16px;
+    background-repeat: no-repeat;
+    margin-top: -1px;
+}
+.bullet-black {
+    width: 11px;
+    height: 16px;
+    background: url(../Icons/ComponentIcons/bullet-black.svg);
+    background-size: 11px 16px;
+    background-repeat: no-repeat;
+    margin-top: -1px;
+}

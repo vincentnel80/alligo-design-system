@@ -6,6 +6,7 @@ const config = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    "@storybook/addon-viewport",
     '@storybook/addon-docs',
   ],
   framework: {
@@ -16,6 +17,15 @@ const config = {
       },
     },
   },
+  swc: () => ({
+    jsc: {
+      transform: {
+        react: {
+          runtime: 'automatic'
+        }
+      }
+    }
+  }),
   docs: {
     autodocs: "tag",
   },
