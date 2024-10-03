@@ -4,52 +4,53 @@ import './body.scss';
 
 /**
  * Body is used for longer passages of text in the UI . Usually in order to populate paragraphs. The body style is also adjusted to be readable at smaller sizes.
- * Body X-Large is used for short intro passages of longer texts and non recurrent text passages.
+ * Body X-Large is used for short intro passages of longer texts and non-recurrent text passages.
  */
 
-
-// if i dont add these, then it always comes back as undefined - why?
-  export const Body = ({ fontName = 'body-xl', viewport = 'Desktop', summary, marginBottom = '', modifier = '' }) => {
-    return (
-     
-      <>
-        {viewport === 'Desktop' ? (
-          <>
-            <p className={`${fontName}-dt body-xl--${modifier}-dt ${marginBottom}`}>{summary}</p>
-            <div className={`${marginBottom}-temp`}></div>
-          </>
-        ) : (
-          <>
-            <p className={`${fontName}-mob body-xl--${modifier}-mob ${marginBottom}`}>{summary}</p>
-            <div className={`${marginBottom}-temp`}></div>
-          </>
-        )}
-      </>
-
-    );
-  };
-
-  Body.propTypes = {
-    /**
-     * Summary text to be displayed
-     */
-    summary: PropTypes.string.isRequired, // assuming summary is a required string
-
+export const Body = ({ 
+  fontName = 'body-xl', 
+  viewport = 'Desktop', 
+  summary, 
+  marginBottom = '', 
+  modifier = '' 
+}) => {
+  // Conditionally apply the -mob or -dt suffix for mobile or desktop viewport
+  const computedFontName = viewport === 'Mobile' ? `${fontName}-mob` : `${fontName}-dt`;
   
-    /**
-     * Additional property A, type can vary based on usage
-     */
-  
-    /**
-     * Padding value for the component
-     */
-   //padding: PropTypes.string, // assuming padding is an optional string like '10px'
-  };
+  // Combine font name with the modifier (if any)
+  const classNames = `${computedFontName} ${modifier} ${marginBottom}`;
 
-// add shir here, or in title???
-/*Title.defaultProps = {
-  backgroundColor: 'transparent',
- // textColor: '#000',
-  //fontSize: '14px / 16px',
- // separator: '/',
-}; */
+  return (
+    <>
+      <p className={classNames}>{summary}</p>
+      <div className={`${marginBottom}-temp`}></div>
+    </>
+  );
+};
+
+Body.propTypes = {
+  /**
+   * Summary text to be displayed
+   */
+  summary: PropTypes.string.isRequired, // assuming summary is a required string
+
+  /**
+   * Font name for the body text
+   */
+  fontName: PropTypes.string,
+
+  /**
+   * Viewport, determines whether Desktop or Mobile styles are applied
+   */
+  viewport: PropTypes.oneOf(['Desktop', 'Mobile']),
+
+  /**
+   * Modifier class for additional styling (e.g., bold, italic, etc.)
+   */
+  modifier: PropTypes.string,
+
+  /**
+   * Margin bottom spacing
+   */
+  marginBottom: PropTypes.string,
+};

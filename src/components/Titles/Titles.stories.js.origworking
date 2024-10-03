@@ -1,0 +1,148 @@
+import { Title } from '../../StorybookComponents/Titles/Title';
+import CustomDocsContainer from './CustomDocsContainer';
+//import BreadcrumbDocs from './BreadcrumbDocs.mdx';
+
+// HTML Snippet for the Breadcrumb component
+const htmlSnippet = `
+<div class="title-lg">Lorem ipsum Dolor sit amet</div>
+`;
+
+const htmlSnippetTitleLarge = `
+<div class="title-lg">Lorem ipsum Dolor sit amet</div>
+`;
+
+const htmlSnippetTitleMedium = `
+<div class="title-md">Lorem ipsum Dolor sit amet</div>
+`;
+
+const htmlSnippetTitleSmall = `
+<div class="title-sm">Lorem ipsum Dolor sit amet</div>
+`;
+
+export default {
+  title: 'Typography/Title',
+  component: Title,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      container: CustomDocsContainer,
+     // page: BreadcrumbDocs,
+      source: {
+        code: htmlSnippet,
+      },
+    },
+  },
+  argTypes: { 
+    viewport: {
+      control: { type: 'select' }, // Automatically inferred when 'options' is defined
+      options: ['Desktop', 'Mobile'],
+      defaultValue: 'Desktop', // Sets the default value to 'Desktop'
+    },
+    fontName: {
+      options: ['title-sm', 'title-md', 'title-lg'],
+      control: { type: 'select' }, // Automatically inferred when 'options' is defined
+      defaultValue: 'title-lg', // Sets the default value to an empty string
+    },
+    position: {
+      control: 'radio',
+      options: ['left', 'right', 'center'],
+    },
+    marginBottom: {
+      options: ['','space-4-small','space-8-small', 'space-12-small'],
+      control: { type: 'select' }, // Automatically inferred when 'options' is defined
+      defaultValue: '', // Sets the default value to an empty string
+    },
+  },
+  tags: ['autodocs'],
+};
+
+const summaryText = 'Laurem Ipsum Laurem Ipsum';
+/*const paragraphs = [
+  'If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.',
+  'We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post.',
+]; */
+
+//const Template: Story<React.ComponentProps<typeof Details>> = (args) => <Details {...args} />;
+const Template = (args) => <Title {...args} />;
+
+export const Default = Template.bind({});
+Default.args = {
+  summary: summaryText,
+ // children: paragraphs[0],
+};
+
+/**
+ * Information on Title Base
+ * /// default or base
+ */
+/*export const Base = {
+  args: {
+      summary: summaryText,
+      // children: paragraphs[0],
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: htmlSnippet,
+      },
+    },
+  },
+}; */
+
+/**
+ * Information on title large
+ */
+export const TitleLarge = {
+  args: {
+    ...Default.args,
+    summary: summaryText,
+      fontName: 'title-lg',
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: htmlSnippetTitleLarge,
+        state: 'closed', // This will hide the "Show code" button and the code panel
+      },
+    },
+  },
+};
+
+/**
+ * Information on Title Medium
+ */
+export const TitleMedium = {
+  args: {
+    ...Default.args,
+    summary: summaryText,
+      fontName: 'title-md'
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: htmlSnippetTitleMedium,
+        state: 'closed', // This will hide the "Show code" button and the code panel
+      },
+    },
+  },
+};
+
+/**
+ * Information on Title Small
+ */
+export const TitleSmall = {
+  args: {
+    ...Default.args,
+    summary: summaryText,
+      fontName: 'title-sm'
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: htmlSnippetTitleSmall,
+        state: 'closed', // This will hide the "Show code" button and the code panel
+      },
+    },
+  },
+};
+

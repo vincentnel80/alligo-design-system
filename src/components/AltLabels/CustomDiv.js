@@ -27,8 +27,7 @@ const CustomDiv = () => {
             </thead>
             <tbody>
               <tr>
-                <td>Titles are smaller than headline styles, and should be used for medium-emphasis text that remains relatively short. For example, like the text inside components.
-Consider using title styles to divide secondary passages of text or secondary regions of content. Used for smaller H tag sizes.
+                <td>Alt-Label styles (Alternative) are smaller, utilitarian styles, used for things like the text inside components, labeling formfields and user info. The style should be considered as a compliment to the Label style.
                 </td>
               </tr>
             </tbody>

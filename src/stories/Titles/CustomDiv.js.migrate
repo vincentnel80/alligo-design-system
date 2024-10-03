@@ -27,7 +27,9 @@ const CustomDiv = () => {
             </thead>
             <tbody>
               <tr>
-                <td>Body is used for longer passages of text in the UI . Usually in order to populate paragraphs. The body style is also adjusted to be readable at smaller sizes. Body X-Large is used for short intro passages of longer texts and non recurrent text passages.</td>
+                <td>Titles are smaller than headline styles, and should be used for medium-emphasis text that remains relatively short. For example, like the text inside components.
+Consider using title styles to divide secondary passages of text or secondary regions of content. Used for smaller H tag sizes.
+                </td>
               </tr>
             </tbody>
           </table>

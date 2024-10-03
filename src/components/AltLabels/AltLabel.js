@@ -8,25 +8,28 @@ import './alt-label.scss';
 
 
 // if i dont add these, then it always comes back as undefined - why?
-  export const AltLabel = ({ fontName = 'alt-label-lg', viewport = 'Desktop', summary, marginBottom = '', modifier = '' }) => {
-    return (
-     
-      <>
-        {viewport === 'Desktop' ? (
-          <>
-            <p className={`${fontName} alt-label--${modifier}-dt ${marginBottom}`}>{summary}</p>
-            <div className={`${marginBottom}-temp`}></div>
-          </>
-        ) : (
-          <>
-            <p className={`${fontName}-mob body-xl--${modifier}-mob ${marginBottom}`}>{summary}</p>
-            <div className={`${marginBottom}-temp`}></div>
-          </>
-        )}
-      </>
+// To Do - vin - key notes - there are no modifiers here, so delete everything concerning that
+// delete the extra docs that are not being used
+export const AltLabel = ({ 
+  fontName = 'alt-label-lg', 
+  viewport = 'Desktop', 
+  summary, 
+  marginBottom = '', 
+  modifier = '' 
+}) => {
+  // Conditionally apply the -mob or -dt suffix for mobile or desktop viewport
+  const computedFontName = viewport === 'Mobile' ? `${fontName}-mob` : `${fontName}-dt`;
+  
+  // Combine font name with the modifier (if any)
+  const classNames = `${computedFontName} ${modifier} ${marginBottom}`;
 
-    );
-  };
+  return (
+    <>
+      <p className={classNames}>{summary}</p>
+      <div className={`${marginBottom}-temp`}></div>
+    </>
+  );
+};
 
   AltLabel.propTypes = {
     /**

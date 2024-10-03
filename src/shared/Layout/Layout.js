@@ -3,7 +3,11 @@ import React from 'react';
 import MainIntroComponent from "./TemplateComponents/MainIntroComponent";
 import SecondaryIntroComponent from "./TemplateComponents/SecondaryIntroComponent";
 
-import './layout.scss';
+import './layout.scss'; // ?? vin
+import './layout-templates.scss';  // ?? 
+
+import '../../globalStyles/foundation-fonts-weights.scss';  // ?? 
+
 
 const Layout = () => {
 

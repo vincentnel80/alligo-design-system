@@ -1,4 +1,5 @@
 import '../src/index.scss';
+import '../src/globalStyles/main.scss'; // global vin
 import * as DocBlock from "@storybook/blocks";
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 

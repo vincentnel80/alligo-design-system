@@ -1,3 +1,6 @@
+// vin
+// rename: split up, package, turn into mixins, vars, package and bundle into 1 etc etc --- in depth best practice
+
 // Add modifiers here
 // Font weights
 $font-weight-default-400: 400;
@@ -183,6 +186,157 @@ $letter-spacing-display-lg: $value-0;
 @include apply-to-tags(body-lg, $font-weight-body-lg, $font-size-body-lg, $line-height-body-lg, $letter-spacing-body-lg);
 @include apply-to-tags(body-xl, $font-weight-body-xl, $font-size-body-xl, $line-height-body-xl, $letter-spacing-body-xl);
 
+// modifiers
+// what is best way to handle modifiers?
+// for storybook template
+// for internal system
+.headline-md--blockquote {
+// stuff here for mobile
+text-transform: uppercase;
+
+ /* @media (min-width: 768px) {
+    text-transform: uppercase; // so no need for this
+  } */
+}
+
+.label-sm--badge {
+  font-weight: 600 !important;
+  //text-transform: normal;
+}
+
+.label-lg--underline {
+  text-decoration: underline !important;
+}
+
+.body-xl--preamble {
+  font-weight: 600 !important;
+}
+
+.body-xl--italic {
+  font-style: italic !important;
+}
+
+.body-xl--underline {
+  text-decoration: underline !important;
+}
+
+.body-xl--strikethrough {
+  text-decoration: line-through !important;
+}
+
+.body-xl--bold {
+  font-weight: 700 !important;
+}
+
+.body-xl--bold-italic {
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+
+.body-xl--bold-underline {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+}
+
+.body-xl--bold-strikethrough {
+  font-weight: 700 !important;
+  text-decoration: line-through !important;
+}
+
+.body-lg--italic {
+  font-style: italic !important;
+}
+
+.body-lg--underline {
+  text-decoration: underline !important;
+}
+
+.body-lg--strikethrough {
+  text-decoration: line-through !important;
+}
+
+.body-lg--bold {
+  font-weight: 700 !important;
+}
+
+.body-lg--bold-italic {
+  font-style: italic !important; // why omportant - to do vin find way to get rid
+  font-weight: 700 !important;
+}
+
+.body-lg--bold-underline {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+}
+
+.body-lg--bold-strikethrough {
+  font-weight: 700 !important;
+  text-decoration: line-through !important;
+}
+
+.body-md--italic {
+  font-style: italic !important;
+}
+
+.body-md--underline {
+  text-decoration: underline !important;
+}
+
+.body-md--strikethrough {
+  text-decoration: line-through !important;
+}
+
+.body-md--bold {
+  font-weight: 700 !important;
+}
+
+.body-md--bold-italic {
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+
+.body-md--bold-underline {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+}
+
+.body-md--bold-strikethrough {
+  font-weight: 700 !important;
+  text-decoration: line-through !important;
+}
+
+.body-sm--italic {
+  font-style: italic !important;
+}
+
+.body-sm--underline {
+  text-decoration: underline !important;
+}
+
+.body-sm--strikethrough {
+  text-decoration: line-through !important;
+}
+
+.body-sm--bold {
+  font-weight: 700 !important;
+}
+
+.body-sm--bold-italic {
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+
+.body-sm--bold-underline {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+}
+
+.body-sm--bold-strikethrough {
+  font-weight: 700 !important;
+  text-decoration: line-through !important;
+}
+
+
 // Blockquote Container
 .blockq-container {
   display: flex;
@@ -299,36 +453,4 @@ $letter-spacing-display-lg: $value-0;
   $letter-spacing-display-sm: $value-0;
   $letter-spacing-display-md: $value-0;
   $letter-spacing-display-lg: $value-0;
-}
-
-// Font-Face
-/// place in a global location - whatever you chose - then delete the rest
-@font-face {
-  font-family: breuercondensed;
-  src: local('BreuerCondensed-Regular'),
-    url('../fonts/breuercondensed-regular-webfont.woff2') format('woff2'),
-    url('../fonts/breuercondensed-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: condensed;
-}
-
-@font-face {
-  font-family: breuercondensed;
-  src: local('BreuerCondensed-Medium'),
-    url('../fonts/breuercondensed-medium-webfont.woff2') format('woff2'),
-    url('../fonts/breuercondensed-medium-webfont.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: condensed;
-}
-
-@font-face {
-  font-family: breuercondensed;
-  src: local('BreuerCondensed-Bold'),
-    url('../fonts/breuercondensed-bold-webfont.woff2') format('woff2'),
-    url('../fonts/breuercondensed-bold-webfont.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: condensed;
 }

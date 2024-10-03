@@ -1,14 +1,30 @@
+import React, { useEffect } from 'react';
 import { Body } from './Body';
 import CustomDocsContainer from './CustomDocsContainer';
 
 // Dynamic HTML snippet generator function
 const generateHtmlSnippet = (args) => {
   const { fontName = 'body-xl', summary, modifier = '', marginBottom = '' } = args;  // Default values
-  return `<p class="${fontName} ${fontName}--${modifier} ${marginBottom}">${summary}</p>`;
+  
+  // Conditionally add modifier and marginBottom if they have values
+  const classes = [fontName];
+  if (modifier) classes.push(modifier);
+  if (marginBottom) classes.push(marginBottom);
+
+  // Join the classes array into a string, filtering out any empty values
+  return `<p class="${classes.join(' ')}">${summary}</p>`;
+};
+
+// Define available modifiers for each fontName
+const fontModifiers = {
+  'body-sm': ['', 'body-sm--italic', 'body-sm--underline', 'body-sm--strikethrough', 'body-sm--bold', 'body-sm-bold--italic', 'body-sm-bold--underline', 'body-sm-bold--strikethrough'],
+  'body-md': ['', 'body-md--bold', 'body-md--italic', 'body-md--underline', 'body-md--strikethrough', 'body-md--bold-italic', 'body-md--bold-underline', 'body-md--bold-strikethrough'],
+  'body-lg': ['', 'body-lg--bold', 'body-lg--italic', 'body-lg--underline', 'body-lg--strikethrough', 'body-lg--bold-italic', 'body-lg--bold-underline', 'body-lg--bold-strikethrough'],
+  'body-xl': ['', 'body-xl--preamble', 'body-xl--bold', 'body-xl--italic', 'body-xl--underline', 'body-xl--strikethrough', 'body-xl--bold-italic', 'body-xl--bold-underline', 'body-xl--bold-strikethrough'],
+  // Add other font names and their corresponding modifiers if needed
 };
 
 export default {
-  //title: 'Typography/Body',
   title: 'Foundation/Typography/Components/Body',
   component: Body,
   parameters: {
@@ -28,31 +44,31 @@ export default {
     },
     fontName: {
       control: { type: 'select' },
-      options: ['body-sm', 'body-md', 'body-lg', 'body-xl'],
+      options: ['body-sm', 'body-md', 'body-lg', 'body-xl'],  // Available font names
       defaultValue: 'body-xl',
     },
     modifier: {
       control: { type: 'select' },
-      options: ['', 'preamble', 'underline', 'bold', 'strikethrough'],
-      defaultValue: 'preamble',
-      // Conditionally disable the modifier control based on the value of fontName
-      table: {
-        disable: true, // initially disabled in the docs table
-      },
+      options: fontModifiers['body-xl'],  // Set initial options for body-xl
+      defaultValue: 'body-xl--preamble',
     },
     marginBottom: {
       control: { type: 'select' },
-      options: ['', 'space-16-small', 'space-24-small', 'space-32-large'], // go over
+      options: ['', 'space-16-small', 'space-24-small', 'space-32-large'],  // margin-bottom options
       defaultValue: '',
     },
   },
-  // Custom logic to enable or disable the modifier based on fontName
   decorators: [
     (Story, context) => {
-      const { args } = context;
+      const { fontName } = context.args;
       const modifierControl = context.argTypes.modifier;
-      modifierControl.table.disable = args.fontName !== 'body-xl';
-      return <Story {...args} />;
+
+      useEffect(() => {
+        // Dynamically update the options based on the selected fontName
+        modifierControl.options = fontModifiers[fontName] || [''];
+      }, [fontName]);  // Re-run when fontName changes
+
+      return <Story {...context.args} />;
     },
   ],
   tags: ['autodocs'],
@@ -62,155 +78,28 @@ const summaryText = 'Swedol caters to the needs of professional users as a multi
 
 const Template = (args) => <Body {...args} />;
 
-// Dynamic generation of the Default story
-// after session with Erik, default is redundant and make an actual text
-/*export const Default = Template.bind({});
-Default.args = {
-  summary: summaryText,
-  fontName: 'body-xl',  // Set a default fontName
-  marginBottom: '',  // Set a default marginBottom
-};
-
-Default.parameters = {
-  docs: {
-    disable: true,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
-    },
-  },
-}; */
-
-// Dynamic generation of the Default story - now replaced with body x large
+// Define different story variants
 export const BodyXLarge = Template.bind({});
 BodyXLarge.args = {
   summary: summaryText,
-  fontName: 'body-xl',  // Set a default fontName
-  marginBottom: '',  // Set a default marginBottom
+  fontName: 'body-xl',  // Default fontName for BodyXLarge
+  marginBottom: '',
 };
-
-BodyXLarge.parameters = {
-  docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
-    },
-  },
-};
-
-// Other variants like HeadlineLarge, HeadlineMedium, etc.
-/*export const BodyXLarge = Template.bind({});
-BodyXLarge.args = {
-  ...Default.args,
-  fontName: 'body-xl',
-};
-BodyXLarge.parameters = {
-  docs: {
-    disable: true,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args), // the above will hide this. to reactivate, delete "disable: true"
-    },
-  },
-}; */
 
 export const BodyLarge = Template.bind({});
 BodyLarge.args = {
-  //...Default.args, // will change all of this
-  ...BodyXLarge.args, // will change all of this
-  fontName: 'body-lg',
-};
-BodyLarge.parameters = {
-  docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
-    },
-  },
+  ...BodyXLarge.args,
+  fontName: 'body-lg',  // Default fontName for BodyLarge
 };
 
 export const BodyMedium = Template.bind({});
 BodyMedium.args = {
   ...BodyXLarge.args,
-  fontName: 'body-md',
-};
-BodyMedium.parameters = {
-  docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
-    },
-  },
+  fontName: 'body-md',  // Default fontName for BodyMedium
 };
 
 export const BodySmall = Template.bind({});
 BodySmall.args = {
   ...BodyXLarge.args,
-  fontName: 'body-sm',
+  fontName: 'body-sm',  // Default fontName for BodySmall
 };
-BodySmall.parameters = {
-  docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    code: null,  // This will hide the "Show Code" button
-  },
-};
-
-export const BodyXLargeModifierPreamble = Template.bind({});
-BodyXLargeModifierPreamble.args = {
-  ...BodyXLarge.args,
-  fontName: 'body-xl body-xl--preamble',
-};
-BodyXLargeModifierPreamble.parameters = {
-  docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    code: null,  // This will hide the "Show Code" button
-  },
-};
-
-export const BodyXLargeModifierUnderline = Template.bind({});
-BodyXLargeModifierUnderline.args = {
-  ...BodyXLarge.args,
-  fontName: 'body-xl body-xl--underline',
-};
-BodyXLargeModifierUnderline.parameters = {
-  docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    code: null,  // This will hide the "Show Code" button
-  },
-};
-
-export const BodyXLargeModifierBold = Template.bind({});
-BodyXLargeModifierBold.args = {
-  ...BodyXLarge.args,
-  fontName: 'body-xl body-xl--bold',
-};
-BodyXLargeModifierBold.parameters = {
-  docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    code: null,  // This will hide the "Show Code" button
-  },
-};
-
-export const BodyLargeModifierUnderline = Template.bind({});
-BodyLargeModifierUnderline.args = {
-  ...BodyXLarge.args,
-  fontName: 'body-lg body-lg--underline',
-};
-BodyLargeModifierUnderline.parameters = {
-  docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    code: null,  // This will hide the "Show Code" button
-  },
-};
-
-export const BodyLargeModifierBold = Template.bind({});
-BodyLargeModifierBold.args = {
-  ...BodyXLarge.args,
-  fontName: 'body-lg body-lg--bold',
-};
-BodyLargeModifierBold.parameters = {
-  docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    code: null,  // This will hide the "Show Code" button
-  },
-};
-
-// body LG modifiers

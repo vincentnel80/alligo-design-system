@@ -3,6 +3,13 @@
 * Only used for storybook layout
 */
 
+//@import "../../globalStyles/foundation-fonts-weights"; 
+//@import is not working for some reason - but works if I import directly
+
+
+// import fonts? correct here?
+
+
 .sb-page-container {
     max-width: 1440px !important;
 }

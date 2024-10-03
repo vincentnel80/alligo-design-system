@@ -4,7 +4,7 @@
 .body-xl-mob {
   color: var(--color-text-primary, #000);
   font-family: var(--font-family-body-xl, "breuercondensed");
-  font-size: var(--font-size-body-xl, 20px);
+  font-size: 20px;
   font-style: normal;
   font-weight: var(--font-weight-body-xl, 400);
   line-height: var(--line-height-body-xl, 26px); /* 130% */
@@ -76,19 +76,19 @@
 }
 
 // temp modifier: needs rework name is incorrect
-.body-xl--preamble-dt {
+.body-xl--preamble-mob {
   font-weight: 500 !important;
 }
 
-.body-xl--underline-dt {
+.body-xl--underline-mob {
   text-decoration: underline !important;
 }
 
-.body-xl--bold-dt {
+.body-xl--bold-mob {
   font-weight: 600 !important;
 }
 
-.body-xl--strikethrough-dt {
+.body-xl--strikethrough-mob {
   text-decoration: line-through !important;
 }
 
@@ -110,15 +110,21 @@
   text-decoration: line-through !important;
 }
 
-.body-lg--underline-dt {
+.body-lg--underline-mob {
   text-decoration: underline !important;
+  // no longer needed
 }
 
-.body-lg--bold-dt {
+.body-lg--bold-mob {
   font-weight: 500 !important; //??? check
 }
 
-.body-sm-dt {
+.body-xl--italic-mob {
+  font-style: italic !important;
+}
+
+/*
+.body-sm-mob {
 
   color: var(--color-text-primary, #000);
   font-family: var(--Font-global-serif, "breuercondensed");
@@ -126,9 +132,9 @@
   font-style: normal;
   font-weight: var(--font-weight-body-sm, 400);
   line-height: var(--line-height-body-sm, 20px); /* 142.857% */
-  letter-spacing: var(--letter-spacing-body-sm, 0.28px);
+  /*letter-spacing: var(--letter-spacing-body-sm, 0.28px);
 
-}
+} */
 
 // make a global one ?? in a new file?
 
