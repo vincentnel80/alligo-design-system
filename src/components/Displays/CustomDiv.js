@@ -27,8 +27,8 @@ const CustomDiv = () => {
             </thead>
             <tbody>
               <tr>
-                <td>Titles are smaller than headline styles, and should be used for medium-emphasis text that remains relatively short. For example, like the text inside components.
-Consider using title styles to divide secondary passages of text or secondary regions of content. Used for smaller H tag sizes.
+                <td>Display styles are reserved for short, important text or numerals. For example within a content area to further separate related content and establish hierarchy. Good use is for example heading text in banners, headlines for campaigns and content that want to draw extra attention. When embedded in a specific UI region, or nested within components to mark sections of content and banners etc Display works well. Do not overuse.
+When placed on top of page, article or in plain text etc, Display Large displays the H1 content. Display Large is never used in conjunction with Headline X-Large and vice versa.
                 </td>
               </tr>
             </tbody>

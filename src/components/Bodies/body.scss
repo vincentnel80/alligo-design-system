@@ -75,6 +75,16 @@
 
 }
 
+.body-sm-dt {
+  color: var(--color-text-primary, #000);
+  font-family: var(--Font-global-serif, "breuercondensed");
+  font-size: var(--font-size-body-sm, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-sm, 400);
+  line-height: var(--line-height-body-sm, 20px);
+  letter-spacing: var(--letter-spacing-body-sm, 0.28px);
+}
+
 // temp modifier: needs rework name is incorrect
 .body-xl--preamble-mob {
   font-weight: 500 !important;

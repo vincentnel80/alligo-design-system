@@ -33,7 +33,7 @@ export default {
     },
     modifier: {
       control: { type: 'select' },
-      options: ['', 'preamble', 'underline', 'bold', 'strikethrough'],
+      options: ['', 'label-sm--badge'],
       defaultValue: 'preamble',
       // Conditionally disable the modifier control based on the value of fontName
       table: {

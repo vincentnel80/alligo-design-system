@@ -8,25 +8,26 @@ import './display.scss';
 */
 
 
-// if i dont add these, then it always comes back as undefined - why?
-  export const Display = ({ fontName = 'display-lg', viewport = 'Desktop', summary, marginBottom = '', modifier = '' }) => {
-    console.log(summary,"summary");
-    return (
-     
-      <>
-        {viewport === 'Desktop' ? (
-          <>
-            <p className={`${fontName} display-xl--${modifier}-dt ${marginBottom}`}>{summary}</p>
-            <div className={`${marginBottom}-temp`}></div>
-          </>
-        ) : (
-          <>
-            <p className={`${fontName}-mob body-xl--${modifier}-mob ${marginBottom}`}>{summary}</p>
-            <div className={`${marginBottom}-temp`}></div>
-          </>
-        )}
-      </>
+// if i dont add these, then it always comes back as undefined - why
 
+  export const Display = ({ 
+    fontName = 'display-lg', 
+    viewport = 'Desktop', 
+    summary, 
+    marginBottom = '', 
+    modifier = '' 
+  }) => {
+    // Conditionally apply the -mob or -dt suffix for mobile or desktop viewport
+    const computedFontName = viewport === 'Mobile' ? `${fontName}-mob` : `${fontName}-dt`;
+    
+    // Combine font name with the modifier (if any)
+    const classNames = `${computedFontName} ${modifier} ${marginBottom}`;
+  
+    return (
+      <>
+        <p className={classNames}>{summary}</p>
+        <div className={`${marginBottom}-temp`}></div>
+      </>
     );
   };
 
