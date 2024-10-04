@@ -1,16 +1,10 @@
 import { AltLabel } from './AltLabel';
 import CustomDocsContainer from './CustomDocsContainer';
 
+// Dynamic HTML snippet generator function
 const generateHtmlSnippet = (args) => {
   const { fontName = 'alt-label-lg', summary, modifier = '', marginBottom = '' } = args;  // Default values
-  
-  // Conditionally add modifier and marginBottom if they have values
-  const classes = [fontName];
-  if (modifier) classes.push(modifier);
-  if (marginBottom) classes.push(marginBottom);
-
-  // Join the classes array into a string, filtering out any empty values
-  return `<p class="${classes.join(' ')}">${summary}</p>`;
+  return `<p class="${fontName} ${fontName}--${modifier} ${marginBottom}">${summary}</p>`;
 };
 
 export default {

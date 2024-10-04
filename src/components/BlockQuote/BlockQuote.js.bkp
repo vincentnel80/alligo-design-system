@@ -1,0 +1,55 @@
+// BlockQuote.component.js
+
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import './body.scss';
+
+/**
+ * 
+* sdfgsfsddfsfd
+ */
+
+/**
+ * BlockQuote component for displaying headings
+ * @param {Object} props - Props for the component
+ * @param {string} props.text - The text to display
+ * @param {1|2|3|4|5|6} props.level - The heading level
+ * @param {string} props.paddingBottom - The bottom padding of the header
+ * @returns {JSX.Element} The rendered header
+ */
+const BlockQuote = ({ text, level, paddingBottom }) => {
+    const Tag = `h3`;
+    return (
+      <div class="blockq-container">
+        <div class="blockq-container-inner">
+      <Tag
+        style={{ paddingBottom }}
+        className="headline-md headline-md--blockquote"
+      >
+        {text}
+      </Tag>
+      <div class="bottom-text-wrapper">
+        <span class="label-sm"> NAME SURNAME</span>
+        <span class="body-sm">TItle</span>
+      </div>
+      </div>
+      </div>
+    );
+  };
+  
+  BlockQuote.propTypes = {
+    /** The text to display */
+    text: PropTypes.string.isRequired,
+    /** The heading level */
+    //level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+    /** The bottom padding */
+    paddingBottom: PropTypes.string,
+  };
+  
+  BlockQuote.defaultProps = {
+   // level: 1,
+    paddingBottom: '16px',
+  };
+  
+  export default BlockQuote;

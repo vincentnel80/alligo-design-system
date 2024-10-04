@@ -1,53 +1,45 @@
-// BlockQuote.component.js
-
 import React from 'react';
 import PropTypes from 'prop-types';
+import './blockquote.scss';
 
-/**
- * 
-* sdfgsfsddfsfd
- */
+export const BlockQuote = ({ 
+  summary, 
+  name = 'NAME SURNAME', 
+  title = 'Title', 
+  marginBottom = '', 
+  theme = 'Swedol' 
+}) => {
+  // Apply conditional theme class for the background color
+  const containerStyle = {
+    borderLeft: `4px solid ${theme === 'Swedol' ? '#C7D300' : '#CD1125'}`,
+  };
 
-/**
- * BlockQuote component for displaying headings
- * @param {Object} props - Props for the component
- * @param {string} props.text - The text to display
- * @param {1|2|3|4|5|6} props.level - The heading level
- * @param {string} props.paddingBottom - The bottom padding of the header
- * @returns {JSX.Element} The rendered header
- */
-const BlockQuote = ({ text, level, paddingBottom }) => {
-    const Tag = `h3`;
-    return (
-      <div class="blockq-container">
-        <div class="blockq-container-inner">
-      <Tag
-        style={{ paddingBottom }}
-        className="headline-md headline-md--blockquote"
-      >
-        {text}
-      </Tag>
-      <div class="bottom-text-wrapper">
-        <span class="label-sm"> NAME SURNAME</span>
-        <span class="body-sm">TItle</span>
+  return (
+    <div className="blockq-container">
+      <div className="blockq-container-inner" style={containerStyle}>
+        <div className="headline-md headline-md--blockquote">
+          "{summary}"
+        </div>
+        <div className="bottom-text-wrapper">
+          <span className="label-sm">{name}</span>
+          <span className="body-sm">{title}</span>
+        </div>
       </div>
-      </div>
-      </div>
-    );
-  };
-  
-  BlockQuote.propTypes = {
-    /** The text to display */
-    text: PropTypes.string.isRequired,
-    /** The heading level */
-    //level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
-    /** The bottom padding */
-    paddingBottom: PropTypes.string,
-  };
-  
-  BlockQuote.defaultProps = {
-   // level: 1,
-    paddingBottom: '16px',
-  };
-  
-  export default BlockQuote;
+      {marginBottom && <div className={`${marginBottom}-temp`}></div>}
+    </div>
+  );
+};
+
+BlockQuote.propTypes = {
+  summary: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  title: PropTypes.string,
+  marginBottom: PropTypes.string,
+  theme: PropTypes.oneOf(['Swedol', 'Tools']),
+};
+
+BlockQuote.defaultProps = {
+  name: 'NAME SURNAME',
+  title: 'Title',
+  theme: 'Swedol',
+};

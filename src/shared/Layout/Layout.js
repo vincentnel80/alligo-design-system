@@ -6,7 +6,8 @@ import SecondaryIntroComponent from "./TemplateComponents/SecondaryIntroComponen
 import './layout.scss'; // ?? vin
 import './layout-templates.scss';  // ?? 
 
-import '../../globalStyles/foundation-fonts-weights.scss';  // ?? 
+import '../../globalStyles/foundation-fonts-weights.scss';  // ??  -- in relation to main??? 
+// vin to do - gold standard in templates + their html structure
 
 
 const Layout = () => {

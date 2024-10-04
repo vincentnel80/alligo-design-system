@@ -3,7 +3,7 @@ import React from 'react';
 import ElevationsShadows from './ElevationsShadows';
 
 export default {
-    title: 'Foundation/ShadowsAndElevation',
+    title: 'Foundation/Shadows and Elevation',
     component: ElevationsShadows,
 };
 
