@@ -12,12 +12,20 @@ import '../../globalStyles/foundation-fonts-weights.scss'; // make global -- but
 // if i dont add these, then it always comes back as undefined - why?
 export const Bullet = ({ viewport, variant, levels, listLevel1, listLevel2, listLevel3 }) => {
   return (
-    <div className={`outercontainer bullet-list bullet-list--${variant}`}>
+    <>
+    <div className={`outercontainer bullet-list ${variant}`}>
       <ul className="list-level-1">
         <li className="list-wrapper">
+        {variant.includes('check') && (
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959" />
           </svg>
+        )}
+        {variant.includes('dot') && (
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <circle cx="4" cy="4" r="4" fill="black"/>
+          </svg>
+        )}
           <span className="body-lg">{listLevel1}</span>
         </li>
 
@@ -25,9 +33,16 @@ export const Bullet = ({ viewport, variant, levels, listLevel1, listLevel2, list
         {levels > 1 && (
           <ul className="list-level-2">
             <li className="list-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959" />
-              </svg>
+            {variant.includes('check') && (
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959" />
+          </svg>
+        )}
+        {variant.includes('dot') && (
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <circle cx="4" cy="4" r="4" fill="black"/>
+          </svg>
+        )}
               <span className="body-lg">{listLevel2}</span>
             </li>
 
@@ -35,9 +50,16 @@ export const Bullet = ({ viewport, variant, levels, listLevel1, listLevel2, list
             {levels > 2 && (
               <ul className="list-level-3">
                 <li className="list-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959" />
-                  </svg>
+        {variant.includes('check') && (
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959" />
+          </svg>
+        )}
+        {variant.includes('dot') && (
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <circle cx="4" cy="4" r="4" fill="black"/>
+          </svg>
+        )}
                   <span className="body-lg">{listLevel3}</span>
                 </li>
               </ul>
@@ -46,6 +68,72 @@ export const Bullet = ({ viewport, variant, levels, listLevel1, listLevel2, list
         )}
       </ul>
     </div>
+
+{/* 
+<div class="outercontainer bullet-list bullet-list--dot dot">
+<ul class="list-level-1">
+  <li>
+    <div class="list-wrapper">
+    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+      <circle cx="4" cy="4" r="4" fill="black"/>
+    </svg>
+      <span class="body-lg">List Item Level 1</span>
+    </div>
+    <ul class="list-level-2">
+      <li>
+        <div class="list-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <circle cx="4" cy="4" r="4" fill="black"/>
+          </svg>
+          <span class="body-lg">List Item Level 2</span>
+        </div>
+        <ul class="list-level-3">
+          <li>
+            <div class="list-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                <circle cx="4" cy="4" r="4" fill="black"/>
+              </svg>
+              <span class="body-lg">List Item Level 3</span>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+*/}
+
+{/* 
+<div class="outercontainer bullet-list bullet-list--number number">
+  <ol class="list-level-1">
+    <li>
+      <div class="list-wrapper">
+        
+        <span class="body-lg">List Item Level 1</span>
+      </div>
+      <ol class="list-level-2">
+        <li>
+          <div class="list-wrapper">
+       
+            <span class="body-lg">List Item Level 2</span>
+          </div>
+          <ol class="list-level-3">
+            <li>
+              <div class="list-wrapper">
+        
+                <span class="body-lg">List Item Level 3</span>
+              </div>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</div>
+*/}
+</>
   );
 };
 

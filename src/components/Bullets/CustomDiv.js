@@ -27,8 +27,7 @@ const CustomDiv = () => {
             </thead>
             <tbody>
               <tr>
-                <td>Titles are smaller than headline styles, and should be used for medium-emphasis text that remains relatively short. For example, like the text inside components.
-Consider using title styles to divide secondary passages of text or secondary regions of content. Used for smaller H tag sizes.
+                <td>Bullets are comprised of 3 variant: Check, dot (bullet) and number, as well as sizes for mobile and desktop.
                 </td>
               </tr>
             </tbody>

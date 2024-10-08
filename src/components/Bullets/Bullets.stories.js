@@ -86,20 +86,20 @@ export default {
       // Define the variant options based on the selected viewport
       const variantOptions = {
         Desktop: [
-          'Check: Desktop Large',
-          'Check: Desktop Medium',
-          'Dot: Desktop Large',
-          'Dot: Desktop Medium',
-          'Number: Desktop Large',
-          'Number: Desktop Medium',
+          'check-desktop-large',
+          'check-desktop-medium',
+          'dot-desktop-large',
+          'dot-desktop-medium',
+          'number-desktop-large',
+          'number-desktop-medium',
         ],
         Mobile: [
-          'Check: Mobile Large',
-          'Check: Mobile Medium',
-          'Dot: Mobile Large',
-          'Dot: Mobile Medium',
-          'Number: Mobile Large',
-          'Number: Mobile Medium',
+          'check-mobile-large',
+          'check-mobile-medium',
+          'dot-mobile-large',
+          'dot-mobile-medium',
+          'number-mobile-large',
+          'number-mobile-medium',
         ],
       };
 
@@ -116,7 +116,7 @@ const Template = (args) => <Bullet {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   viewport: 'Desktop',
-  variant: 'Check: Desktop Large',
+  variant: 'check-desktop-large',
   levels: 3,
   listLevel1: 'List Item Level 1',
   listLevel2: 'List Item Level 2',
