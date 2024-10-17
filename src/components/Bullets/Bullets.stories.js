@@ -135,7 +135,7 @@ export const DesktopLargeCheck = Template.bind({});
 DesktopLargeCheck.args = {
   viewport: 'Desktop',
   variant: 'check-desktop-large',
-  marginBottom: '',  // Set a default marginBottom
+  marginBottom: 'None',  // Set a default marginBottom
   levels: 3,
   listLevel1: 'List Item Level 1',
   listLevel2: 'List Item Level 2',
