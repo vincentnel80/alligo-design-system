@@ -150,6 +150,101 @@ DesktopLargeCheck.parameters = {
   },
 };
 
+export const DesktopMediumCheck = Template.bind({});
+DesktopMediumCheck.args = {
+  viewport: 'Desktop',
+  variant: 'check-desktop-medium',
+  marginBottom: 'None',  // Set a default marginBottom
+  levels: 3,
+  listLevel1: 'List Item Level 1',
+  listLevel2: 'List Item Level 2',
+  listLevel3: 'List Item Level 3',
+};
+
+DesktopMediumCheck.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const DesktopLargeDot = Template.bind({});
+DesktopLargeDot.args = {
+  viewport: 'Desktop',
+  variant: 'dot-desktop-large',
+  marginBottom: 'None',  // Set a default marginBottom
+  levels: 3,
+  listLevel1: 'List Item Level 1',
+  listLevel2: 'List Item Level 2',
+  listLevel3: 'List Item Level 3',
+};
+
+DesktopLargeDot.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const DesktopMediumDot = Template.bind({});
+DesktopMediumDot.args = {
+  viewport: 'Desktop',
+  variant: 'dot-desktop-medium',
+  marginBottom: 'None',  // Set a default marginBottom
+  levels: 3,
+  listLevel1: 'List Item Level 1',
+  listLevel2: 'List Item Level 2',
+  listLevel3: 'List Item Level 3',
+};
+
+DesktopMediumDot.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const DesktopLargeNumber = Template.bind({});
+DesktopLargeNumber.args = {
+  viewport: 'Desktop',
+  variant: 'number-desktop-large',
+  marginBottom: 'None',  // Set a default marginBottom
+  levels: 3,
+  listLevel1: 'List Item Level 1',
+  listLevel2: 'List Item Level 2',
+  listLevel3: 'List Item Level 3',
+};
+
+DesktopLargeNumber.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const DesktopMediumNumber = Template.bind({});
+DesktopMediumNumber.args = {
+  viewport: 'Desktop',
+  variant: 'number-desktop-medium',
+  marginBottom: 'None',  // Set a default marginBottom
+  levels: 3,
+  listLevel1: 'List Item Level 1',
+  listLevel2: 'List Item Level 2',
+  listLevel3: 'List Item Level 3',
+};
+
+DesktopMediumNumber.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
 // Mobile variants
 export const MobileLargeCheck = Template.bind({});
 MobileLargeCheck.args = {
