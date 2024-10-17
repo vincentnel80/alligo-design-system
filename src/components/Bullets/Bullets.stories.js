@@ -4,7 +4,7 @@ import CustomDocsContainer from './CustomDocsContainer';
 // Dynamic HTML snippet generator function
 const generateHtmlSnippet = (args) => {
   const { variant = '' } = args;
-  return `<div class="outercontainer">
+  return <div class="outercontainer">
   <ul class="list-level-1">
     <li>
       <div class="list-wrapper">
@@ -35,11 +35,11 @@ const generateHtmlSnippet = (args) => {
       </ul>
     </li>
   </ul>
-</div>`;
+</div>;
 };
 
 export default {
-  title: 'Foundation/Typography/Components/Bullet Lists',
+  title: 'Components/Bullet Lists',
   component: Bullet,
   parameters: {
     layout: 'centered',
@@ -54,29 +54,41 @@ export default {
     viewport: {
       control: { type: 'select' }, 
       options: ['Desktop', 'Mobile'],
-      defaultValue: 'Desktop',
+      defaultValue: 'Desktop',  // Set Desktop as the default viewport
+      description: 'Select the viewport type to switch between desktop and mobile layouts.',
     },
     variant: {
       control: { type: 'select' },
-      options: ['Check: Desktop Large', 'Dot: Desktop Large', 'Number: Desktop Large'],  // Placeholder, will be dynamically populated
-      defaultValue: 'Check: Desktop Large',
+      options: ['check-desktop-large', 'check-desktop-medium', 'dot-desktop-large', 'dot-desktop-medium', 'number-desktop-large', 'number-desktop-medium'],  // Default to Desktop variants initially
+      defaultValue: 'check-desktop-large',  // Set default variant for Desktop
+      description: 'The variant styles that will be applied to the bullet list.',
+    },
+    marginBottom: {
+      control: { type: 'select' },
+      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'],
+      defaultValue: 'None',
+      description: 'Used to create bottom margin on the bullet list, in various sizes.',
     },
     levels: {
       control: { type: 'select' },  
       options: [1, 2, 3],  
       defaultValue: 3,
+      description: 'The numbers of nested levels within the list.',
     },
     listLevel1: {
       control: 'text',
       defaultValue: 'List Item Level 1',
+      description: 'Text of the first bullet level.',
     },
     listLevel2: {
       control: 'text',
       defaultValue: 'List Item Level 2',
+      description: 'Text of the second bullet level.',
     },
     listLevel3: {
       control: 'text',
       defaultValue: 'List Item Level 3',
+      description: 'Text of the third bullet level.',
     },
   },
   decorators: [
@@ -105,6 +117,12 @@ export default {
 
       // Dynamically update the variant control options based on viewport
       context.argTypes.variant.options = variantOptions[viewport];
+
+      // Ensure the correct default variant is selected based on the viewport
+      if (!variantOptions[viewport].includes(context.args.variant)) {
+        context.args.variant = variantOptions[viewport][0];  // Set the first variant of the selected viewport as default
+      }
+
       return <Story {...context.args} />;
     },
   ],
@@ -113,17 +131,18 @@ export default {
 
 const Template = (args) => <Bullet {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const DesktopLargeCheck = Template.bind({});
+DesktopLargeCheck.args = {
   viewport: 'Desktop',
   variant: 'check-desktop-large',
+  marginBottom: '',  // Set a default marginBottom
   levels: 3,
   listLevel1: 'List Item Level 1',
   listLevel2: 'List Item Level 2',
   listLevel3: 'List Item Level 3',
 };
 
-Default.parameters = {
+DesktopLargeCheck.parameters = {
   docs: {
     source: {
       transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
@@ -131,12 +150,14 @@ Default.parameters = {
   },
 };
 
-// Other variants like HeadlineLarge, HeadlineMedium, etc.
-export const BulletListDesktopLarge = Template.bind({});
-BulletListDesktopLarge.args = {
-  ...Default.args,
+// Mobile variants
+export const MobileLargeCheck = Template.bind({});
+MobileLargeCheck.args = {
+  ...DesktopLargeCheck.args,
+  viewport: 'Mobile',
+  variant: 'check-mobile-large',
 };
-BulletListDesktopLarge.parameters = {
+MobileLargeCheck.parameters = {
   docs: {
     source: {
       transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
@@ -144,11 +165,13 @@ BulletListDesktopLarge.parameters = {
   },
 };
 
-export const BulletListMobileLarge = Template.bind({});
-BulletListMobileLarge.args = {
-  ...Default.args,
+export const MobileMediumCheck = Template.bind({});
+MobileMediumCheck.args = {
+  ...DesktopLargeCheck.args,
+  viewport: 'Mobile',
+  variant: 'check-mobile-medium',
 };
-BulletListMobileLarge.parameters = {
+MobileMediumCheck.parameters = {
   docs: {
     source: {
       transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
@@ -156,4 +179,58 @@ BulletListMobileLarge.parameters = {
   },
 };
 
-// Additional variants for Desktop Medium, Mobile Medium, etc.
+export const MobileLargeDot = Template.bind({});
+MobileLargeDot.args = {
+  ...DesktopLargeCheck.args,
+  viewport: 'Mobile',
+  variant: 'dot-mobile-large',
+};
+MobileLargeDot.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const MobileMediumDot = Template.bind({});
+MobileMediumDot.args = {
+  ...DesktopLargeCheck.args,
+  viewport: 'Mobile',
+  variant: 'dot-mobile-medium',
+};
+MobileMediumDot.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const MobileLargeNumber = Template.bind({});
+MobileLargeNumber.args = {
+  ...DesktopLargeCheck.args,
+  viewport: 'Mobile',
+  variant: 'number-mobile-large',
+};
+MobileLargeNumber.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const MobileMediumNumber = Template.bind({});
+MobileMediumNumber.args = {
+  ...DesktopLargeCheck.args,
+  viewport: 'Mobile',
+  variant: 'number-mobile-medium',
+};
+MobileMediumNumber.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
