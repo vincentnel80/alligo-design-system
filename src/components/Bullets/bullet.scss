@@ -1,5 +1,7 @@
 
 // needs these ovveride
+// notes::after// seperate SB styles from real styles, maybe move SB specific styles into globals
+
 
 ul, li {
   list-style-type: none; /* Removes default bullet or marker */
@@ -20,9 +22,10 @@ ul {
 
 .outercontainer {
   display: flex;
-  width: 342px;
+  //width: 342px;
   flex-direction: column;
   align-items: flex-start;
+  padding: 0px;
   //gap: 22px;
 
   @media (min-width: 768px) {}
@@ -110,14 +113,35 @@ ul {
       }
     }
 
+    &:last-child {
+      padding-bottom: 0;
+    }
+
   }
 
   .list-level-2 {
     margin-left: 20px; // Indentation for level 2
+
+    .list-wrapper {
+      padding-bottom: 8px; // Default bottom padding for level 2 items
+
+      // Target the last child of the second level and remove bottom padding
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
   }
 
   .list-level-3 {
     margin-left: 20px; // Indentation for level 3
+    .list-wrapper {
+      padding-bottom: 20px; // Default bottom padding for level 2 items
+
+      // Target the last child of the second level and remove bottom padding
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
   }
 }
 
@@ -169,6 +193,8 @@ ol {
 
   ol, li::marker {
     list-style-type: decimal; /* Removes default bullet or marker */
+    font-family: 'breuercondensed'; // this one works - so remove previous
+    
   }
 
   .list-wrapper {
@@ -536,7 +562,6 @@ ol {
   
       @media (min-width: 768px) {}
   
-  
     }
   }
   .number-mobile-large {
@@ -546,7 +571,8 @@ ol {
     }
   
     ol, li::marker {
-      list-style-type: decimal; /* Removes default bullet or marker */
+      list-style-type: decimal; /* Removes default bullet or marker */ // is this needed
+     // font-family: 'breuercondensed'; // 1 does nothing
     }
   
     .list-wrapper {

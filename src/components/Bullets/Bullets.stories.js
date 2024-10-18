@@ -2,41 +2,50 @@ import { Bullet } from './Bullet';
 import CustomDocsContainer from './CustomDocsContainer';
 
 // Dynamic HTML snippet generator function
+// Dynamic HTML snippet generator function
 const generateHtmlSnippet = (args) => {
-  const { variant = '' } = args;
-  return <div class="outercontainer">
-  <ul class="list-level-1">
+  const { variant = '', levels = 3, marginBottom = 'None', listLevel1, listLevel2, listLevel3 } = args;
+
+  // Determine if the variant is for a numbered list
+  const isNumberVariant = variant.includes('number');
+
+  // Generate list item content based on the levels
+  const generateListItems = (level, text) => `
     <li>
       <div class="list-wrapper">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
-        </svg>
-        <span class="body-lg">List Item Level 1</span>
+        ${!isNumberVariant && variant.includes('check') ? `
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
+          </svg>
+        ` : ''}
+        ${!isNumberVariant && variant.includes('dot') ? `
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <circle cx="4" cy="4" r="4" fill="black"/>
+          </svg>
+        ` : ''}
+        <span class="body-lg">${text}</span>
       </div>
-      <ul class="list-level-2">
-        <li>
-          <div class="list-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
-            </svg>
-            <span class="body-lg">List Item Level 2</span>
-          </div>
-          <ul class="list-level-3">
-            <li>
-              <div class="list-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M9.5501 17.65L4.2251 12.325L5.2751 11.25L9.5501 15.525L18.7251 6.34998L19.7751 7.42498L9.5501 17.65Z" fill="#595959"/>
-                </svg>
-                <span class="body-lg">List Item Level 3</span>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      ${level < levels ? `<${isNumberVariant ? 'ol' : 'ul'} class="list-level-${level + 1}">
+        ${generateListItems(level + 1, args[`listLevel${level + 1}`])}
+      </${isNumberVariant ? 'ol' : 'ul'}>` : ''}
     </li>
-  </ul>
-</div>;
+  `;
+
+  // Conditionally add the marginBottom class if it's not 'None'
+  const marginBottomClass = marginBottom !== 'None' ? ` ${marginBottom}` : '';
+
+  // Return a string of HTML dynamically based on variant, levels, and marginBottom
+  return `
+    <div class="outercontainer bullet-list ${variant}${marginBottomClass}">
+      <${isNumberVariant ? 'ol' : 'ul'} class="list-level-1">
+        ${generateListItems(1, listLevel1)}
+      </${isNumberVariant ? 'ol' : 'ul'}>
+    </div>
+  `;
 };
+
+
+
 
 export default {
   title: 'Components/Bullet Lists',
@@ -60,7 +69,7 @@ export default {
     variant: {
       control: { type: 'select' },
       options: ['check-desktop-large', 'check-desktop-medium', 'dot-desktop-large', 'dot-desktop-medium', 'number-desktop-large', 'number-desktop-medium'],  // Default to Desktop variants initially
-      defaultValue: 'check-desktop-large',  // Set default variant for Desktop
+      defaultValue: 'dot-desktop-large',  // Set default variant for Desktop
       description: 'The variant styles that will be applied to the bullet list.',
     },
     marginBottom: {
@@ -98,18 +107,18 @@ export default {
       // Define the variant options based on the selected viewport
       const variantOptions = {
         Desktop: [
-          'check-desktop-large',
-          'check-desktop-medium',
           'dot-desktop-large',
           'dot-desktop-medium',
+          'check-desktop-large',
+          'check-desktop-medium',
           'number-desktop-large',
           'number-desktop-medium',
         ],
         Mobile: [
-          'check-mobile-large',
-          'check-mobile-medium',
           'dot-mobile-large',
           'dot-mobile-medium',
+          'check-mobile-large',
+          'check-mobile-medium',
           'number-mobile-large',
           'number-mobile-medium',
         ],
@@ -134,7 +143,7 @@ const Template = (args) => <Bullet {...args} />;
 export const DesktopLargeCheck = Template.bind({});
 DesktopLargeCheck.args = {
   viewport: 'Desktop',
-  variant: 'check-desktop-large',
+  variant: 'dot-desktop-large',
   marginBottom: 'None',  // Set a default marginBottom
   levels: 3,
   listLevel1: 'List Item Level 1',
@@ -149,6 +158,7 @@ DesktopLargeCheck.parameters = {
     },
   },
 };
+
 
 export const DesktopMediumCheck = Template.bind({});
 DesktopMediumCheck.args = {
@@ -187,6 +197,13 @@ DesktopLargeDot.parameters = {
     },
   },
 };
+// it's up to you process the information and see the items go into the control. We will see you there in the future and not get into
+// the habit to be controlled intot he vertical shift
+// we will not be there
+// we will not do that.
+// Coljander coljander loop deur die bos my ma en pa eet lekker kos, die kinders verstuk aan 
+// ** ** ** ** ** ** ** ** ** ** ** **
+
 
 export const DesktopMediumDot = Template.bind({});
 DesktopMediumDot.args = {
@@ -246,33 +263,6 @@ DesktopMediumNumber.parameters = {
 };
 
 // Mobile variants
-export const MobileLargeCheck = Template.bind({});
-MobileLargeCheck.args = {
-  ...DesktopLargeCheck.args,
-  viewport: 'Mobile',
-  variant: 'check-mobile-large',
-};
-MobileLargeCheck.parameters = {
-  docs: {
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
-    },
-  },
-};
-
-export const MobileMediumCheck = Template.bind({});
-MobileMediumCheck.args = {
-  ...DesktopLargeCheck.args,
-  viewport: 'Mobile',
-  variant: 'check-mobile-medium',
-};
-MobileMediumCheck.parameters = {
-  docs: {
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
-    },
-  },
-};
 
 export const MobileLargeDot = Template.bind({});
 MobileLargeDot.args = {
@@ -301,6 +291,35 @@ MobileMediumDot.parameters = {
     },
   },
 };
+
+export const MobileLargeCheck = Template.bind({});
+MobileLargeCheck.args = {
+  ...DesktopLargeCheck.args,
+  viewport: 'Mobile',
+  variant: 'check-mobile-large',
+};
+MobileLargeCheck.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const MobileMediumCheck = Template.bind({});
+MobileMediumCheck.args = {
+  ...DesktopLargeCheck.args,
+  viewport: 'Mobile',
+  variant: 'check-mobile-medium',
+};
+MobileMediumCheck.parameters = {
+  docs: {
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
 
 export const MobileLargeNumber = Template.bind({});
 MobileLargeNumber.args = {
