@@ -194,6 +194,13 @@ ol {
   ol, li::marker {
     list-style-type: decimal; /* Removes default bullet or marker */
     font-family: 'breuercondensed'; // this one works - so remove previous
+
+
+// do these vars actually exist ? if not - make it so --- to do vin
+    font-size: var(--font-size-body-lg, 20px);
+    font-weight: var(--font-weight-body-lg, 400);
+    line-height: var(--line-height-body-lg, 28px);
+    letter-spacing: var(--letter-spacing-body-lg, 0px);
     
   }
 
@@ -555,6 +562,13 @@ ol {
   
     ol, li::marker {
       list-style-type: decimal; /* Removes default bullet or marker */
+
+      font-size: var(--font-size-body-lg, 20px);
+      font-style: normal;
+      font-weight: var(--font-weight-body-lg, 400);
+      line-height: var(--line-height-body-lg, 28px); /* 140% */
+      letter-spacing: var(--letter-spacing-body-lg, 0px);
+
     }
   
     .list-wrapper {
@@ -572,6 +586,10 @@ ol {
   
     ol, li::marker {
       list-style-type: decimal; /* Removes default bullet or marker */ // is this needed
+      font-size: var(--font-size-body-lg, 18px);
+font-weight: var(--font-weight-body-lg, 400);
+line-height: var(--line-height-body-lg, 26px); /* 144.444% */
+letter-spacing: var(--letter-spacing-body-lg, 0px);
      // font-family: 'breuercondensed'; // 1 does nothing
     }
   
@@ -585,6 +603,14 @@ ol {
 
   }
   .number-desktop-medium {
+
+    ol, li::marker {
+      font-size: var(--font-size-body-md, 16px);
+      font-weight: var(--font-weight-body-md, 400);
+      line-height: var(--line-height-body-md, 24px); /* 150% */
+      letter-spacing: var(--letter-spacing-body-md, 0.32px);
+    }
+
     .list-wrapper {
       display: flex;
       gap: 8px;
@@ -604,6 +630,14 @@ ol {
     }
   }
   .number-mobile-medium {
+
+    ol, li::marker {
+      font-size: var(--font-size-body-md, 16px);
+      font-weight: var(--font-weight-body-md, 400);
+      line-height: var(--line-height-body-md, 22px); /* 137.5% */
+      letter-spacing: var(--letter-spacing-body-md, 0.32px);
+    }
+
     .list-wrapper {
       display: flex;
       gap: 8px;
