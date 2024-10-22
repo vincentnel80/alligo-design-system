@@ -505,6 +505,12 @@ ol {
         width: 8px;
         height: 8px;
       }
+
+      .body-lg {
+        font-size: 18px ;
+        line-height: 26px ; 
+        letter-spacing: var(--letter-spacing-body-lg, 0px);
+      }
   
     }
   }
@@ -595,6 +601,12 @@ letter-spacing: var(--letter-spacing-body-lg, 0px);
   
     .list-wrapper {
       padding-left: 10px;
+
+      .body-lg {
+        font-size: 18px ;
+        line-height: 26px ; 
+        letter-spacing: var(--letter-spacing-body-lg, 0px);
+      }
   
       @media (min-width: 768px) {}
   
