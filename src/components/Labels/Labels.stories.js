@@ -107,3 +107,76 @@ LabelLarge.args = {
   marginBottom: 'None',
   modifier: 'None',
 };
+
+LabelLarge.parameters = {
+  docs: {
+    disable: false,
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+// NB add in modifier and then only on actual stories for that do it
+export const LabelMedium = Template.bind({});
+LabelMedium.args = {
+  ...LabelLarge.args,
+  size: 'label-md',
+  modifier: 'None',
+};
+
+LabelMedium.parameters = {
+  docs: {
+    disable: false,
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const LabelSmall = Template.bind({});
+LabelSmall.args = {
+  ...LabelLarge.args,
+  size: 'label-sm',
+};
+
+LabelSmall.parameters = {
+  docs: {
+    disable: false,
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const LabelSmallBadge = Template.bind({});
+LabelSmallBadge.args = {
+  ...LabelLarge.args,
+  size: 'label-sm',
+  modifier: 'label-sm--badge',
+};
+
+LabelSmallBadge.parameters = {
+  docs: {
+    disable: false,
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const LabelLargeUnderline = Template.bind({});
+LabelLargeUnderline.args = {
+  ...LabelLarge.args,
+  size: 'label-lg',
+  modifier: 'label-lg--underline',
+};
+
+LabelLargeUnderline.parameters = {
+  docs: {
+    disable: false,
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
