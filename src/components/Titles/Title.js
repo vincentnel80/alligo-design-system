@@ -9,19 +9,19 @@ Consider using title styles to divide secondary passages of text or secondary re
 // if i dont add these, then it always comes back as undefined - why?
 
 
-  export const Title = ({ items, backgroundColor, textColor, fontSize, separator, fontName = 'title-lg', viewport = 'Desktop', summary, marginBottom = '' }) => {
-    console.log(viewport,"viewport");
+  export const Title = ({ items, backgroundColor, textColor, fontSize, separator, size = 'title-lg', version = 'Desktop', summary, marginBottom = '' }) => {
+    console.log(version,"version");
     return (
      
       <>
-      {viewport === 'Desktop' ? (
+      {version === 'Desktop' ? (
         <>
-         <div className={`${fontName}-dt ${marginBottom}`}>{summary}</div>
+         <div className={`${size}-dt ${marginBottom}`}>{summary}</div>
          <div className={`${marginBottom}-temp`}></div>
          </>
       ) : (
         <>
-        <div className={`${fontName}-mob ${marginBottom}`}>{summary}</div>
+        <div className={`${size}-mob ${marginBottom}`}>{summary}</div>
         <div className={`${marginBottom}-temp`}></div>
         </>
       )}

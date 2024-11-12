@@ -8,14 +8,14 @@ import './body.scss';
  */
 
 export const Body = ({ 
-  fontName = 'body-xl', 
-  viewport = 'Desktop', 
+  size = 'body-lg', 
+  version = 'Desktop', 
   summary, 
-  marginBottom = '', 
-  modifier = '' 
+  marginBottom = 'None', 
+  modifier = 'None' 
 }) => {
-  // Conditionally apply the -mob or -dt suffix for mobile or desktop viewport
-  const computedFontName = viewport === 'Mobile' ? `${fontName}-mob` : `${fontName}-dt`;
+  // Conditionally apply the -mob or -dt suffix for mobile or desktop version
+  const computedFontName = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
   
   // Combine font name with the modifier (if any)
   const classNames = `${computedFontName} ${modifier} ${marginBottom}`;
@@ -35,14 +35,14 @@ Body.propTypes = {
   summary: PropTypes.string.isRequired, // assuming summary is a required string
 
   /**
-   * Font name for the body text
+   * Font size for the body text
    */
-  fontName: PropTypes.string,
+  size: PropTypes.oneOf(['body-sm', 'body-md', 'body-lg', 'body-xl']),
 
   /**
    * Viewport, determines whether Desktop or Mobile styles are applied
    */
-  viewport: PropTypes.oneOf(['Desktop', 'Mobile']),
+  version: PropTypes.oneOf(['Desktop', 'Mobile']),
 
   /**
    * Modifier class for additional styling (e.g., bold, italic, etc.)

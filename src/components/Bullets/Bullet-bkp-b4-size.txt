@@ -10,12 +10,12 @@ import '../../globalStyles/foundation-fonts-weights.scss'; // make global -- but
 
 
 // if i dont add these, then it always comes back as undefined - why?
-export const Bullet = ({ version,  marginBottom = 'None', variant= 'dot-desktop-',size= 'large', levels, listLevel1, listLevel2, listLevel3 }) => {
+export const Bullet = ({ viewport,  marginBottom = 'None', variant= 'dot-desktop-',size= 'large', levels, listLevel1, listLevel2, listLevel3 }) => {
   const isNumberVariant = variant.includes('number'); // Check if the variant is for a numbered list
   console.log(marginBottom,"marginBottom");
   return (
   <>
-    <div className={`outercontainer bullet-list ${variant}-${size}`}>
+    <div className={`outercontainer bullet-list ${variant} ${size}`}>
         {/* Conditionally render ordered list (ol) for numbered variants */}
         {isNumberVariant ? (
           <>
@@ -107,7 +107,7 @@ export const Bullet = ({ version,  marginBottom = 'None', variant= 'dot-desktop-
 };
 
 Bullet.propTypes = {
-  version: PropTypes.oneOf(['Desktop', 'Mobile']),
+  viewport: PropTypes.oneOf(['Desktop', 'Mobile']),
   size: PropTypes.oneOf(['large', 'medium']),
   variant: PropTypes.string.isRequired,  // Example: define the expected type
   marginBottom: PropTypes.string,
@@ -118,7 +118,7 @@ Bullet.propTypes = {
 };
 // Set default values for the props in Bullet component
 Bullet.defaultProps = {
-  version: 'Desktop',
+  viewport: 'Desktop',
   size: 'large',
   variant: 'dot-desktop-large',
   marginBottom: 'None',

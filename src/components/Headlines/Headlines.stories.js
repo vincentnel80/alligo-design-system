@@ -3,8 +3,8 @@ import CustomDocsContainer from './CustomDocsContainer';
 
 // Dynamic HTML snippet generator function
 const generateHtmlSnippet = (args) => {
-  const { fontName = 'headline-lg', summary, marginBottom = '' } = args;  // Default values
-  return `<div class="${fontName} ${marginBottom}">${summary}</div>`;
+  const { size = 'headline-lg', summary, marginBottom = '' } = args;  // Default values
+  return `<div class="${size} ${marginBottom}">${summary}</div>`;
 };
 
 export default {
@@ -21,37 +21,39 @@ export default {
     },
   },
   argTypes: { 
-    viewport: {
+    version: {
       control: { type: 'select' }, 
       options: ['Desktop', 'Mobile'],
       defaultValue: 'Desktop',
     },
-    fontName: {
+    size: {
       control: { type: 'select' },
       options: ['headline-sm', 'headline-md', 'headline-lg', 'headline-xl'],
       defaultValue: 'headline-lg',
     },
+    /// there is only 1 mofifier --- so how to handle
     modifier: {
       control: { type: 'select' },
       options: ['', 'blockquote'],
+      //defaultValue: 'blockquote',
       defaultValue: 'blockquote',
-      // Conditionally disable the modifier control based on the value of fontName
+      // Conditionally disable the modifier control based on the value of size
       table: {
         disable: true, // initially disabled in the docs table
       },
     },
     marginBottom: {
       control: { type: 'select' },
-      options: ['', 'space-8-small', 'space-12-small', 'space-16-small'],
-      defaultValue: '',
+      options: ['None', 'space-8-small', 'space-12-small', 'space-16-small'],
+      defaultValue: 'None',
     },
   },
-  // Custom logic to enable or disable the modifier based on fontName
+  // Custom logic to enable or disable the modifier based on size
   decorators: [
     (Story, context) => {
       const { args } = context;
       const modifierControl = context.argTypes.modifier;
-      modifierControl.table.disable = args.fontName !== 'headline-md';
+      modifierControl.table.disable = args.size !== 'headline-md';
       return <Story {...args} />;
     },
   ],
@@ -65,8 +67,9 @@ const Template = (args) => <Headline {...args} />;
 // Dynamic generation of the Default story
 export const Default = Template.bind({});
 Default.args = {
+  version: 'Desktop',
+  size: 'headline-lg',  // Set a default size
   summary: summaryText,
-  fontName: 'headline-lg',  // Set a default fontName
   marginBottom: '',  // Set a default marginBottom
 };
 
@@ -82,7 +85,7 @@ Default.parameters = {
 export const HeadlineXLarge = Template.bind({});
 HeadlineXLarge.args = {
   ...Default.args,
-  fontName: 'headline-xl',
+  size: 'headline-xl',
 };
 HeadlineXLarge.parameters = {
   docs: {
@@ -95,7 +98,7 @@ HeadlineXLarge.parameters = {
 export const HeadlineLarge = Template.bind({});
 HeadlineLarge.args = {
   ...Default.args,
-  fontName: 'headline-lg',
+  size: 'headline-lg',
 };
 HeadlineLarge.parameters = {
   docs: {
@@ -108,7 +111,7 @@ HeadlineLarge.parameters = {
 export const HeadlineMedium = Template.bind({});
 HeadlineMedium.args = {
   ...Default.args,
-  fontName: 'headline-md',
+  size: 'headline-md',
 };
 HeadlineMedium.parameters = {
   docs: {
@@ -121,7 +124,7 @@ HeadlineMedium.parameters = {
 export const HeadlineSmall = Template.bind({});
 HeadlineSmall.args = {
   ...Default.args,
-  fontName: 'headline-sm',
+  size: 'headline-sm',
 };
 HeadlineSmall.parameters = {
   docs: {
@@ -132,7 +135,7 @@ HeadlineSmall.parameters = {
 export const HeadlineMediumModifier = Template.bind({});
 HeadlineMediumModifier.args = {
   ...Default.args,
-  fontName: 'headline-md headline-md--blockquote',
+  size: 'headline-md headline-md--blockquote',
 };
 HeadlineMediumModifier.parameters = {
   docs: {

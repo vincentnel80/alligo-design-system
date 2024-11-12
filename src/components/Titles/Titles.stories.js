@@ -3,8 +3,8 @@ import CustomDocsContainer from './CustomDocsContainer';
 
 // Dynamic HTML snippet generator function
 const generateHtmlSnippet = (args) => {
-  const { fontName = 'title-lg', summary, marginBottom = '' } = args;  // Default values
-  return `<div class="${fontName} ${marginBottom}">${summary}</div>`;
+  const { size = 'title-lg', summary, marginBottom = '' } = args;  // Default values
+  return `<div class="${size} ${marginBottom}">${summary}</div>`;
 };
 
 export default {
@@ -22,20 +22,20 @@ export default {
     },
   },
   argTypes: { 
-    viewport: {
+    version: {
       control: { type: 'select' }, 
       options: ['Desktop', 'Mobile'],
       defaultValue: 'Desktop',
     },
-    fontName: {
+    size: {
       options: ['title-sm', 'title-md', 'title-lg'],
       control: { type: 'select' },
       defaultValue: 'title-lg',
     },
     marginBottom: {
-      options: ['', 'space-4-small', 'space-8-small', 'space-12-small'],
+      options: ['None', 'space-4-small', 'space-8-small', 'space-12-small'],
       control: { type: 'select' },
-      defaultValue: '',
+      defaultValue: 'None',
     },
   },
   tags: ['autodocs'],
@@ -48,9 +48,10 @@ const Template = (args) => <Title {...args} />;
 // Dynamic generation of the Default story
 export const Default = Template.bind({});
 Default.args = {
+  version: 'Desktop',
+  size: 'title-lg',  // Set a default size
   summary: summaryText,
-  fontName: 'title-lg',  // Set a default fontName
-  marginBottom: '',  // Set a default marginBottom
+  marginBottom: 'None',  // Set a default marginBottom
 };
 
 Default.parameters = {
@@ -66,7 +67,7 @@ Default.parameters = {
 export const TitleLarge = Template.bind({});
 TitleLarge.args = {
   ...Default.args,
-  fontName: 'title-lg',
+  size: 'title-lg',
 };
 TitleLarge.parameters = {
   docs: {
@@ -79,7 +80,7 @@ TitleLarge.parameters = {
 export const TitleMedium = Template.bind({});
 TitleMedium.args = {
   ...Default.args,
-  fontName: 'title-md',
+  size: 'title-md',
 };
 TitleMedium.parameters = {
   docs: {
@@ -92,7 +93,7 @@ TitleMedium.parameters = {
 export const TitleSmall = Template.bind({});
 TitleSmall.args = {
   ...Default.args,
-  fontName: 'title-sm',
+  size: 'title-sm',
 };
 TitleSmall.parameters = {
   docs: {

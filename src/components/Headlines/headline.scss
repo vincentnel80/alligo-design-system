@@ -75,12 +75,12 @@ letter-spacing: var(--letter-spacing-headline-xl, 0px);
   font-weight: var(--font-weight-headline-md, 700);
   line-height: var(--line-height-headline-md, 36px); /* 112.5% */
   letter-spacing: var(--letter-spacing-headline-md, 0px);
-
 }
 
 // temp modifier: needs rework name is incorrect
+// below is not doing anything
 .headline-md--blockquote-dt {
-  text-transform: uppercase !important;
+  //text-transform: uppercase !important;
 }
 
 .headline-sm-dt {

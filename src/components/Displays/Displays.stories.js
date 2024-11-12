@@ -5,10 +5,10 @@ import CustomDocsContainer from './CustomDocsContainer';
 
 
 const generateHtmlSnippet = (args) => {
-  const { fontName = 'display-lg', summary, modifier = '', marginBottom = '' } = args;  // Default values
+  const { size = 'display-lg', summary, modifier = 'None', marginBottom = 'None' } = args;  // Default values
   
   // Conditionally add modifier and marginBottom if they have values
-  const classes = [fontName];
+  const classes = [size];
   if (modifier) classes.push(modifier);
   if (marginBottom) classes.push(marginBottom);
 
@@ -30,32 +30,32 @@ export default {
     },
   },
   argTypes: { 
-    viewport: {
+    version: {
       control: { type: 'select' }, 
       options: ['Desktop', 'Mobile'],
       defaultValue: 'Desktop',
     },
-    fontName: {
+    size: {
       control: { type: 'select' },
       options: ['display-sm', 'display-md', 'display-lg'],
       defaultValue: 'display-lg',
     },
     modifier: {
       control: { type: 'select' },
-      options: ['', 'preamble', 'underline', 'bold', 'strikethrough'],
+      options: ['None', 'preamble', 'underline', 'bold', 'strikethrough'],
       defaultValue: 'preamble',
-      // Conditionally disable the modifier control based on the value of fontName
+      // Conditionally disable the modifier control based on the value of size
       table: {
         disable: true, // initially disabled in the docs table
       },
     },
     marginBottom: {
       control: { type: 'select' },
-      options: ['', 'space-16-small', 'space-24-small', 'space-32-large'], // go over
-      defaultValue: '',
+      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'], // go over
+      defaultValue: 'None',
     },
   },
-  // Custom logic to enable or disable the modifier based on fontName
+  // Custom logic to enable or disable the modifier based on size
   /// there are no modifiers for this vin
     /// there are no modifiers for this vin
       /// there are no modifiers for this vin
@@ -64,7 +64,7 @@ export default {
     (Story, context) => {
       const { args } = context;
       const modifierControl = context.argTypes.modifier;
-      modifierControl.table.disable = args.fontName !== 'body-xl';
+      modifierControl.table.disable = args.size !== 'body-xl';
       return <Story {...args} />;
     },
   ],
@@ -80,7 +80,7 @@ const Template = (args) => <Display {...args} />;
 /*export const Default = Template.bind({});
 Default.args = {
   summary: summaryText,
-  fontName: 'body-xl',  // Set a default fontName
+  size: 'body-xl',  // Set a default size
   marginBottom: '',  // Set a default marginBottom
 };
 
@@ -96,9 +96,10 @@ Default.parameters = {
 // Dynamic generation of the Default story - now replaced with body x large
 export const DisplayLarge = Template.bind({});
 DisplayLarge.args = {
-  fontName: 'display-lg',
+  version: 'Desktop',
+  size: 'display-lg',
   summary: 'Clearance sale',
-  marginBottom: '',
+  marginBottom: 'None',
 };
 
 DisplayLarge.parameters = {
@@ -114,7 +115,7 @@ DisplayLarge.parameters = {
 /*export const BodyXLarge = Template.bind({});
 BodyXLarge.args = {
   ...Default.args,
-  fontName: 'body-xl',
+  size: 'body-xl',
 };
 BodyXLarge.parameters = {
   docs: {
@@ -127,9 +128,9 @@ BodyXLarge.parameters = {
 
 export const DisplayMedium = Template.bind({});
 DisplayMedium.args = {
-  fontName: 'display-md',
+  size: 'display-md',
   summary: 'Up to 30% on everything from Milwaukee',
-  marginBottom: '',
+  marginBottom: 'None',
 };
 DisplayMedium.parameters = {
   docs: {
@@ -142,9 +143,9 @@ DisplayMedium.parameters = {
 
 export const DisplaySmall = Template.bind({});
 DisplaySmall.args = {
-  fontName: 'display-sm',
+  size: 'display-sm',
   summary: 'Up to 30% on everything from Milwaukee',
-  marginBottom: '',
+  marginBottom: 'None',
 };
 DisplaySmall.parameters = {
   docs: {

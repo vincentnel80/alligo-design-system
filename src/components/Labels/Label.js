@@ -9,31 +9,79 @@ import './labels.scss';
 
 
 // if i dont add these, then it always comes back as undefined - why?
-  export const Label = ({ fontName = 'label-lg', viewport = 'Desktop', summary, marginBottom = '', modifier = '' }) => {
-    return (
-     
-      <>
-        {viewport === 'Desktop' ? (
-          <>
-            <p className={`${fontName} label--${modifier}-dt ${marginBottom}`}>{summary}</p>
-            <div className={`${marginBottom}-temp`}></div>
-          </>
-        ) : (
-          <>
-            <p className={`${fontName}-mob label-xl--${modifier}-mob ${marginBottom}`}>{summary}</p>
-            <div className={`${marginBottom}-temp`}></div>
-          </>
-        )}
-      </>
+export const Label = ({ size = 'label-lg', version = 'Desktop', summary, marginBottom = 'None', modifier = 'None' }) => {
+  // Conditionally set modifier based on size
+  const allowedModifier = 
+    size === 'label-lg' && modifier === 'label-lg--underline'
+      ? modifier
+      : size === 'label-sm' && modifier === 'label-sm--badge'
+      ? modifier
+      : 'None';
 
-    );
-  };
+  return (
+    <>
+      {version === 'Desktop' ? (
+        <>
+          <p className={`${size} ${size}-dt ${allowedModifier !== 'None' ? `${allowedModifier}-dt` : ''} ${marginBottom}`}>
+            {summary}
+          </p>
+          <div className={`${marginBottom}-temp`}></div>
+        </>
+      ) : (
+        <>
+          <p className={`${size} ${size}-mob ${allowedModifier !== 'None' ? `${allowedModifier}-mob` : ''} ${marginBottom}`}>
+            {summary}
+          </p>
+          <div className={`${marginBottom}-temp`}></div>
+        </>
+      )}
+    </>
+  );
+};
+
+
+  /*
+  if version : desktop or mobile + label-sm only show modifier none or label-sm-badge
+
+  if verssion : desktop or mobile + label-lg only show modifier none or label-lg--underline
+
+if   if verssion : desktop or mobile + label-md then 
+
+/////
+  if label-sm is selected only allow modifier none or label-sm--badge to be in the styles
+
+ label-lg only allow modifier none or label-lg--underline
+
+
+
+  */
 
   Label.propTypes = {
+
+      /**
+   * Viewport, determines whether Desktop or Mobile styles are applied
+   */
+  version: PropTypes.oneOf(['Desktop', 'Mobile']),
+
+      /**
+   * Font size for the body text
+   */
+  size: PropTypes.oneOf(['label-sm', 'label-md', 'label-lg']),
+  
+/**
+ * Summary text to be displayed
+ */
+summary: PropTypes.string.isRequired, // assuming summary is a required string
+
+  /**
+   * Modifier class for additional styling (e.g., bold, italic, etc.)
+   */
+  modifier: PropTypes.string,
+
     /**
-     * Summary text to be displayed
-     */
-    summary: PropTypes.string.isRequired, // assuming summary is a required string
+   * Margin bottom spacing
+   */
+    marginBottom: PropTypes.string,
 
   
     /**

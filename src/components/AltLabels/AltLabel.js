@@ -11,17 +11,17 @@ import './alt-label.scss';
 // To Do - vin - key notes - there are no modifiers here, so delete everything concerning that
 // delete the extra docs that are not being used
 export const AltLabel = ({ 
-  fontName = 'alt-label-lg', 
-  viewport = 'Desktop', 
+  version = 'Desktop', 
+  size = 'alt-label-lg', 
   summary, 
-  marginBottom = '', 
+  marginBottom = 'None', 
   modifier = '' 
 }) => {
-  // Conditionally apply the -mob or -dt suffix for mobile or desktop viewport
-  const computedFontName = viewport === 'Mobile' ? `${fontName}-mob` : `${fontName}-dt`;
+  // Conditionally apply the -mob or -dt suffix for mobile or desktop version
+  const computedSize = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
   
   // Combine font name with the modifier (if any)
-  const classNames = `${computedFontName} ${modifier} ${marginBottom}`;
+  const classNames = `${computedSize} ${modifier} ${marginBottom}`;
 
   return (
     <>

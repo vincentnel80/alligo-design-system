@@ -2,26 +2,19 @@ import React, { useEffect } from 'react';
 import { Body } from './Body';
 import CustomDocsContainer from './CustomDocsContainer';
 
-// Dynamic HTML snippet generator function
 const generateHtmlSnippet = (args) => {
-  const { fontName = 'body-xl', summary, modifier = '', marginBottom = '' } = args;  // Default values
-  
-  // Conditionally add modifier and marginBottom if they have values
-  const classes = [fontName];
+  const { size = 'body-xl', summary, modifier = '', marginBottom = '' } = args;  
+  const classes = [size];
   if (modifier) classes.push(modifier);
   if (marginBottom) classes.push(marginBottom);
-
-  // Join the classes array into a string, filtering out any empty values
   return `<p class="${classes.join(' ')}">${summary}</p>`;
 };
 
-// Define available modifiers for each fontName
 const fontModifiers = {
-  'body-sm': ['', 'body-sm--italic', 'body-sm--underline', 'body-sm--strikethrough', 'body-sm--bold', 'body-sm-bold--italic', 'body-sm-bold--underline', 'body-sm-bold--strikethrough'],
-  'body-md': ['', 'body-md--bold', 'body-md--italic', 'body-md--underline', 'body-md--strikethrough', 'body-md--bold-italic', 'body-md--bold-underline', 'body-md--bold-strikethrough'],
-  'body-lg': ['', 'body-lg--bold', 'body-lg--italic', 'body-lg--underline', 'body-lg--strikethrough', 'body-lg--bold-italic', 'body-lg--bold-underline', 'body-lg--bold-strikethrough'],
-  'body-xl': ['', 'body-xl--preamble', 'body-xl--bold', 'body-xl--italic', 'body-xl--underline', 'body-xl--strikethrough', 'body-xl--bold-italic', 'body-xl--bold-underline', 'body-xl--bold-strikethrough'],
-  // Add other font names and their corresponding modifiers if needed
+  'body-sm': ['None', 'body-sm--italic', 'body-sm--underline', 'body-sm--strikethrough', 'body-sm--bold', 'body-sm-bold--italic', 'body-sm-bold--underline', 'body-sm-bold--strikethrough'],
+  'body-md': ['None', 'body-md--bold', 'body-md--italic', 'body-md--underline', 'body-md--strikethrough', 'body-md--bold-italic', 'body-md--bold-underline', 'body-md--bold-strikethrough'],
+  'body-lg': ['None', 'body-lg--bold', 'body-lg--italic', 'body-lg--underline', 'body-lg--strikethrough', 'body-lg--bold-italic', 'body-lg--bold-underline', 'body-lg--bold-strikethrough'],
+  'body-xl': ['None', 'body-xl--preamble', 'body-xl--bold', 'body-xl--italic', 'body-xl--underline', 'body-xl--strikethrough', 'body-xl--bold-italic', 'body-xl--bold-underline', 'body-xl--bold-strikethrough'],
 };
 
 export default {
@@ -37,36 +30,52 @@ export default {
     },
   },
   argTypes: { 
-    viewport: {
+    version: {
       control: { type: 'select' }, 
       options: ['Desktop', 'Mobile'],
       defaultValue: 'Desktop',
     },
-    fontName: {
+    breakpoint: {
+      description: '', 
+      table: {
+        type: { summary: 'Information' },
+       // defaultValue: { summary: 'breakpoint-md & breakpoint-lg' },
+       defaultValue: '',
+      },
+      control: false, 
+    },
+    size: {
       control: { type: 'select' },
-      options: ['body-sm', 'body-md', 'body-lg', 'body-xl'],  // Available font names
-      defaultValue: 'body-xl',
+      options: ['body-sm', 'body-md', 'body-lg', 'body-xl'],  
+      defaultValue: 'body-lg',
     },
     modifier: {
       control: { type: 'select' },
-      options: fontModifiers['body-xl'],  // Set initial options for body-xl
-      defaultValue: 'body-xl--preamble',
+      options: fontModifiers['body-xl'],  
+      defaultValue: 'None',
     },
     marginBottom: {
       control: { type: 'select' },
-      options: ['', 'space-16-small', 'space-24-small', 'space-32-large'],  // margin-bottom options
-      defaultValue: '',
+      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'],  
+      defaultValue: 'None',
     },
+
   },
   decorators: [
     (Story, context) => {
-      const { fontName } = context.args;
+      const { size, version } = context.args;
       const modifierControl = context.argTypes.modifier;
 
       useEffect(() => {
-        // Dynamically update the options based on the selected fontName
-        modifierControl.options = fontModifiers[fontName] || [''];
-      }, [fontName]);  // Re-run when fontName changes
+        modifierControl.options = fontModifiers[size] || [''];
+      }, [size]);  
+
+      useEffect(() => {
+        // Update breakpoint description based on the selected version
+        context.argTypes.breakpoint.description = version === 'Desktop' 
+          ? 'breakpoint-md & breakpoint-lg'
+          : 'breakpoint-xs & breakpoint-sm';
+      }, [version]);
 
       return <Story {...context.args} />;
     },
@@ -78,28 +87,30 @@ const summaryText = 'Swedol caters to the needs of professional users as a multi
 
 const Template = (args) => <Body {...args} />;
 
-// Define different story variants
 export const BodyXLarge = Template.bind({});
 BodyXLarge.args = {
+  version: 'Desktop',
+  breakpoint: '',
   summary: summaryText,
-  fontName: 'body-xl',  // Default fontName for BodyXLarge
-  marginBottom: '',
+  size: 'body-lg',
+  modifier: 'None',
+  marginBottom: 'None',
 };
 
 export const BodyLarge = Template.bind({});
 BodyLarge.args = {
   ...BodyXLarge.args,
-  fontName: 'body-lg',  // Default fontName for BodyLarge
+  size: 'body-lg',
 };
 
 export const BodyMedium = Template.bind({});
 BodyMedium.args = {
   ...BodyXLarge.args,
-  fontName: 'body-md',  // Default fontName for BodyMedium
+  size: 'body-md',
 };
 
 export const BodySmall = Template.bind({});
 BodySmall.args = {
   ...BodyXLarge.args,
-  fontName: 'body-sm',  // Default fontName for BodySmall
+  size: 'body-sm',
 };

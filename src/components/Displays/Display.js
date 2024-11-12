@@ -11,17 +11,17 @@ import './display.scss';
 // if i dont add these, then it always comes back as undefined - why
 
   export const Display = ({ 
-    fontName = 'display-lg', 
-    viewport = 'Desktop', 
+    version = 'Desktop', 
+    size = 'display-lg', 
     summary, 
-    marginBottom = '', 
-    modifier = '' 
+    marginBottom = 'None', 
+    modifier = 'None' 
   }) => {
-    // Conditionally apply the -mob or -dt suffix for mobile or desktop viewport
-    const computedFontName = viewport === 'Mobile' ? `${fontName}-mob` : `${fontName}-dt`;
+    // Conditionally apply the -mob or -dt suffix for mobile or desktop version
+    const computedSize = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
     
     // Combine font name with the modifier (if any)
-    const classNames = `${computedFontName} ${modifier} ${marginBottom}`;
+    const classNames = `${computedSize} ${modifier} ${marginBottom}`;
   
     return (
       <>

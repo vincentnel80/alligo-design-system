@@ -3,7 +3,7 @@ import CustomDocsContainer from './CustomDocsContainer';
 
 // Dynamic HTML snippet generator function
 const generateHtmlSnippet = (args) => {
-  const { summary, name, title, marginBottom = '', theme = 'Swedol' } = args;
+  const { summary, name, title, marginBottom = '', theme = 'Swedol', alignment = 'left' } = args;
   
   // Return HTML snippet with dynamic values
   return `
@@ -21,7 +21,7 @@ const generateHtmlSnippet = (args) => {
 };
 
 export default {
-  title: 'Foundation/Typography/Components/BlockQuote',
+  title: 'Components/Block Quote',
   component: BlockQuote,
   parameters: {
     layout: 'centered',
@@ -33,6 +33,12 @@ export default {
     },
   },
   argTypes: { 
+    version: {
+      control: { type: 'select' }, 
+      options: ['Desktop', 'Mobile'],
+      defaultValue: 'Desktop',
+      description: 'The version size for the component',
+    },
     summary: {
       control: 'text',
       description: 'The main quote text to display',
@@ -48,15 +54,16 @@ export default {
       description: 'The title to display',
       defaultValue: 'Title',
     },
-    viewport: {
-      control: { type: 'select' }, 
-      options: ['Desktop', 'Mobile'],
-      defaultValue: 'Desktop',
-    },
     marginBottom: {
       control: { type: 'select' },
-      options: ['', 'space-16-small', 'space-24-small', 'space-32-large'],
+      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'],
       defaultValue: '',
+    },
+    alignment: {
+      control: { type: 'select' }, 
+      options: ['left', 'center', 'right'],
+      defaultValue: 'left',
+      description: 'alignment for the component',
     },
     theme: {
       control: { type: 'select' },
@@ -69,16 +76,18 @@ export default {
 
 const Template = (args) => <BlockQuote {...args} />;
 
-export const BlockQuoteSwedol = Template.bind({});
-BlockQuoteSwedol.args = {
+export const BlockQuoteDesktop = Template.bind({});
+BlockQuoteDesktop.args = {
+  version: 'Desktop',  // Default version
   summary: 'It has to start somewhere, it has to start sometime. What better place than here, what better time than now?',
-  name: 'NAME SURNAME',
+  name: 'Name Surname',
   title: 'Title',
   theme: 'Swedol',
-  marginBottom: '',
+  marginBottom: 'None',
+  alignment: 'left',
 };
 
-BlockQuoteSwedol.parameters = {
+BlockQuoteDesktop.parameters = {
   docs: {
     disable: false,
     source: {
@@ -87,16 +96,18 @@ BlockQuoteSwedol.parameters = {
   },
 };
 
-export const BlockQuoteTools = Template.bind({});
-BlockQuoteTools.args = {
+// New Mobile Component Example
+export const BlockQuoteMobile = Template.bind({});
+BlockQuoteMobile.args = {
   summary: 'It has to start somewhere, it has to start sometime. What better place than here, what better time than now?',
   name: 'NAME SURNAME',
   title: 'Title',
-  theme: 'Tools',
-  marginBottom: '',
+  theme: 'Swedol',
+  marginBottom: 'None',
+  version: 'Mobile',  // Set to Mobile for this variant
 };
 
-BlockQuoteTools.parameters = {
+BlockQuoteMobile.parameters = {
   docs: {
     disable: false,
     source: {

@@ -3,8 +3,8 @@ import CustomDocsContainer from './CustomDocsContainer';
 
 // Dynamic HTML snippet generator function
 const generateHtmlSnippet = (args) => {
-  const { fontName = 'alt-label-lg', summary, modifier = '', marginBottom = '' } = args;  // Default values
-  return `<p class="${fontName} ${fontName}--${modifier} ${marginBottom}">${summary}</p>`;
+  const { version = "Desktop", size = 'alt-label-lg', summary, modifier = '', marginBottom = '' } = args;  // Default values
+  return `<p class="${size} ${size}--${modifier} ${marginBottom}">${summary}</p>`;
 };
 
 export default {
@@ -21,12 +21,12 @@ export default {
     },
   },
   argTypes: { 
-    viewport: {
+    version: {
       control: { type: 'select' }, 
       options: ['Desktop', 'Mobile'],
       defaultValue: 'Desktop',
     },
-    fontName: {
+    size: {
       control: { type: 'select' },
       options: ['alt-label-sm', 'alt-label-md', 'alt-label-lg'],
       defaultValue: 'alt-label-lg',
@@ -42,8 +42,8 @@ export default {
     },
     marginBottom: {
       control: { type: 'select' },
-      options: ['', 'space-16-small', 'space-24-small', 'space-32-large'], // go over
-      defaultValue: '',
+      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'], // go over
+      defaultValue: 'None',
     },
   },
   // Custom logic to enable or disable the modifier based on fontName
@@ -55,7 +55,7 @@ export default {
     (Story, context) => {
       const { args } = context;
       const modifierControl = context.argTypes.modifier;
-      modifierControl.table.disable = args.fontName !== 'body-xl';
+      modifierControl.table.disable = args.size !== 'body-xl';
       return <Story {...args} />;
     },
   ],
@@ -66,30 +66,14 @@ const summaryText = 'NAME OF COMPANY SIGNATORY CONTACT PERSON';
 
 const Template = (args) => <AltLabel {...args} />;
 
-// Dynamic generation of the Default story
-// after session with Erik, default is redundant and make an actual text
-/*export const Default = Template.bind({});
-Default.args = {
-  summary: summaryText,
-  fontName: 'body-xl',  // Set a default fontName
-  marginBottom: '',  // Set a default marginBottom
-};
-
-Default.parameters = {
-  docs: {
-    disable: true,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
-    },
-  },
-}; */
 
 // Dynamic generation of the Default story - now replaced with body x large
 export const AltLabelLarge = Template.bind({});
 AltLabelLarge.args = {
+  version: 'Desktop',
+  size: 'alt-label-lg',  // Set a default fontName
   summary: summaryText,
-  fontName: 'alt-label-lg',  // Set a default fontName
-  marginBottom: '',  // Set a default marginBottom
+  marginBottom: 'None',  // Set a default marginBottom
 };
 
 AltLabelLarge.parameters = {
@@ -120,8 +104,8 @@ export const AltLabelMedium = Template.bind({});
 AltLabelMedium.args = {
   //...Default.args, // will change all of this
   ...AltLabelMedium.args, // will change all of this
+  size: 'alt-label-md',
   summary: summaryText,
-  fontName: 'alt-label-md',
 };
 AltLabelMedium.parameters = {
   docs: {
@@ -135,8 +119,8 @@ AltLabelMedium.parameters = {
 export const AltLabelSmall = Template.bind({});
 AltLabelSmall.args = {
   ...AltLabelSmall.args,
+  size: 'alt-label-sm',
   summary: summaryText,
-  fontName: 'alt-label-sm',
 };
 AltLabelSmall.parameters = {
   docs: {

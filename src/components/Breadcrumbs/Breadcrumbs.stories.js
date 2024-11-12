@@ -26,7 +26,7 @@ const htmlSnippet = `
 `;
 
 export default {
-  title: 'Components/Breadcrumbs',
+  title: 'Components/Breadcrumb',
   component: Breadcrumbs,
   parameters: {
     layout: 'centered',

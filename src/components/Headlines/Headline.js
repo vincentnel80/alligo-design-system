@@ -9,18 +9,18 @@ Headline X-Large is well suited for H1 content. Headline X-Large is never to be 
 
 
 // if i dont add these, then it always comes back as undefined - why?
-  export const Headline = ({ fontName = 'headline-lg', viewport = 'Desktop', summary, marginBottom = '', modifier = 'blockquote' }) => {
+  export const Headline = ({ size = 'headline-lg', version = 'Desktop', summary, marginBottom = 'None', modifier = 'blockquote' }) => {
     return (
      
       <>
-      {viewport === 'Desktop' ? (
+      {version === 'Desktop' ? (
         <>
-         <div className={`${fontName}-dt ${modifier === 'blockquote' ? 'headline-md--blockquote-dt' : ''} ${marginBottom}`}>{summary}</div>
+         <div className={`${size}-dt ${modifier === 'blockquote' ? 'headline-md--blockquote-dt' : ''} ${marginBottom}`}>{summary}</div>
          <div className={`${marginBottom}-temp`}></div>
          </>
       ) : (
         <>
-        <div className={`${fontName}-mob ${modifier === 'blockquote' ? 'headline-md--blockquote-dt' : ''} ${marginBottom}`}>{summary}</div>
+        <div className={`${size}-mob ${modifier === 'blockquote' ? 'headline-md--blockquote-dt' : ''} ${marginBottom}`}>{summary}</div>
         <div className={`${marginBottom}-temp`}></div>
         </>
       )}

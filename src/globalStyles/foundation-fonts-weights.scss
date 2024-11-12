@@ -192,7 +192,7 @@ $letter-spacing-display-lg: $value-0;
 // for internal system
 .headline-md--blockquote {
 // stuff here for mobile
-text-transform: uppercase;
+//text-transform: uppercase;
 
  /* @media (min-width: 768px) {
     text-transform: uppercase; // so no need for this
@@ -336,37 +336,6 @@ text-transform: uppercase;
   text-decoration: line-through !important;
 }
 
-
-// Blockquote Container
-.blockq-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-self: stretch;
-
-  .blockq-container-inner {
-    display: flex;
-    padding: 16px 32px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    align-self: stretch;
-    border-left: 4px solid var(--surface-accent-default, #C7D300);
-
-    h3 {
-      margin-top: 0;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .bottom-text-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 4px;
-    }
-  }
-}
 
 // Desktop styles
 @media (min-width: 768px) {

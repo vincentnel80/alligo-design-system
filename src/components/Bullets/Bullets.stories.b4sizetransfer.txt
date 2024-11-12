@@ -47,7 +47,7 @@ const generateHtmlSnippet = (args) => {
 
 
 export default {
-  title: 'Components/Bullet List',
+  title: 'Components/Bullet Lists',
   component: Bullet,
   parameters: {
     layout: 'centered',
@@ -59,11 +59,11 @@ export default {
     },
   },
   argTypes: { 
-    version: {
+    viewport: {
       control: { type: 'select' }, 
       options: ['Desktop', 'Mobile'],
-      defaultValue: 'Desktop',  // Set Desktop as the default version
-      description: 'Select the version type to switch between desktop and mobile layouts.',
+      defaultValue: 'Desktop',  // Set Desktop as the default viewport
+      description: 'Select the viewport type to switch between desktop and mobile layouts.',
     },
     size: {
       control: { type: 'select' },
@@ -73,8 +73,8 @@ export default {
     },
     variant: {
       control: { type: 'select' },
-      options: ['check-desktop', 'dot-desktop', 'number-desktop'],  // Default to Desktop variants initially
-      defaultValue: 'dot-desktop',  // Set default variant for Desktop
+      options: ['check-desktop-large', 'check-desktop-medium', 'dot-desktop-large', 'dot-desktop-medium', 'number-desktop-large', 'number-desktop-medium'],  // Default to Desktop variants initially
+      defaultValue: 'dot-desktop-large',  // Set default variant for Desktop
       description: 'The variant styles that will be applied to the bullet list.',
     },
     marginBottom: {
@@ -107,28 +107,34 @@ export default {
   },
   decorators: [
     (Story, context) => {
-      const { version } = context.args;
+      const { viewport } = context.args;
 
-      // Define the variant options based on the selected version
+      // Define the variant options based on the selected viewport
       const variantOptions = {
         Desktop: [
-          'dot-desktop',
-          'check-desktop',
-          'number-desktop',
+          'dot-desktop-large',
+          'dot-desktop-medium',
+          'check-desktop-large',
+          'check-desktop-medium',
+          'number-desktop-large',
+          'number-desktop-medium',
         ],
         Mobile: [
-          'dot-mobile',
-          'check-mobile',
-          'number-mobile',
+          'dot-mobile-large',
+          'dot-mobile-medium',
+          'check-mobile-large',
+          'check-mobile-medium',
+          'number-mobile-large',
+          'number-mobile-medium',
         ],
       };
 
-      // Dynamically update the variant control options based on version
-      context.argTypes.variant.options = variantOptions[version];
+      // Dynamically update the variant control options based on viewport
+      context.argTypes.variant.options = variantOptions[viewport];
 
-      // Ensure the correct default variant is selected based on the version
-      if (!variantOptions[version].includes(context.args.variant)) {
-        context.args.variant = variantOptions[version][0];  // Set the first variant of the selected version as default
+      // Ensure the correct default variant is selected based on the viewport
+      if (!variantOptions[viewport].includes(context.args.variant)) {
+        context.args.variant = variantOptions[viewport][0];  // Set the first variant of the selected viewport as default
       }
 
       return <Story {...context.args} />;
@@ -141,9 +147,9 @@ const Template = (args) => <Bullet {...args} />;
 
 export const DesktopLargeCheck = Template.bind({});
 DesktopLargeCheck.args = {
-  version: 'Desktop',
+  viewport: 'Desktop',
   size: 'large',
-  variant: 'dot-desktop',
+  variant: 'dot-desktop-large',
   marginBottom: 'None',  // Set a default marginBottom
   levels: 3,
   listLevel1: 'List Item Level 1',
@@ -162,9 +168,9 @@ DesktopLargeCheck.parameters = {
 
 export const DesktopMediumCheck = Template.bind({});
 DesktopMediumCheck.args = {
-  version: 'Desktop',
+  viewport: 'Desktop',
   size: 'medium',
-  variant: 'check-desktop',
+  variant: 'check-desktop-medium',
   marginBottom: 'None',  // Set a default marginBottom
   levels: 3,
   listLevel1: 'List Item Level 1',
@@ -182,9 +188,9 @@ DesktopMediumCheck.parameters = {
 
 export const DesktopLargeDot = Template.bind({});
 DesktopLargeDot.args = {
-  version: 'Desktop',
+  viewport: 'Desktop',
   size: 'large',
-  variant: 'dot-desktop',
+  variant: 'dot-desktop-large',
   marginBottom: 'None',  // Set a default marginBottom
   levels: 3,
   listLevel1: 'List Item Level 1',
@@ -209,9 +215,9 @@ DesktopLargeDot.parameters = {
 
 export const DesktopMediumDot = Template.bind({});
 DesktopMediumDot.args = {
-  version: 'Desktop',
+  viewport: 'Desktop',
   size: 'medium',
-  variant: 'dot-desktop',
+  variant: 'dot-desktop-medium',
   marginBottom: 'None',  // Set a default marginBottom
   levels: 3,
   listLevel1: 'List Item Level 1',
@@ -229,9 +235,9 @@ DesktopMediumDot.parameters = {
 
 export const DesktopLargeNumber = Template.bind({});
 DesktopLargeNumber.args = {
-  version: 'Desktop',
+  viewport: 'Desktop',
   size: 'large',
-  variant: 'number-desktop',
+  variant: 'number-desktop-large',
   marginBottom: 'None',  // Set a default marginBottom
   levels: 3,
   listLevel1: 'List Item Level 1',
@@ -249,9 +255,9 @@ DesktopLargeNumber.parameters = {
 
 export const DesktopMediumNumber = Template.bind({});
 DesktopMediumNumber.args = {
-  version: 'Desktop',
+  viewport: 'Desktop',
   size: 'medium',
-  variant: 'number-desktop',
+  variant: 'number-desktop-medium',
   marginBottom: 'None',  // Set a default marginBottom
   levels: 3,
   listLevel1: 'List Item Level 1',
@@ -272,9 +278,9 @@ DesktopMediumNumber.parameters = {
 export const MobileLargeDot = Template.bind({});
 MobileLargeDot.args = {
   ...DesktopLargeCheck.args,
-  version: 'Mobile',
+  viewport: 'Mobile',
   size: 'large',
-  variant: 'dot-mobile',
+  variant: 'dot-mobile-large',
 };
 MobileLargeDot.parameters = {
   docs: {
@@ -287,9 +293,9 @@ MobileLargeDot.parameters = {
 export const MobileMediumDot = Template.bind({});
 MobileMediumDot.args = {
   ...DesktopLargeCheck.args,
-  version: 'Mobile',
+  viewport: 'Mobile',
   size: 'medium',
-  variant: 'dot-mobile',
+  variant: 'dot-mobile-medium',
 };
 MobileMediumDot.parameters = {
   docs: {
@@ -302,9 +308,9 @@ MobileMediumDot.parameters = {
 export const MobileLargeCheck = Template.bind({});
 MobileLargeCheck.args = {
   ...DesktopLargeCheck.args,
-  version: 'Mobile',
+  viewport: 'Mobile',
   size: 'large',
-  variant: 'check-mobile',
+  variant: 'check-mobile-large',
 };
 MobileLargeCheck.parameters = {
   docs: {
@@ -317,9 +323,9 @@ MobileLargeCheck.parameters = {
 export const MobileMediumCheck = Template.bind({});
 MobileMediumCheck.args = {
   ...DesktopLargeCheck.args,
-  version: 'Mobile',
+  viewport: 'Mobile',
   size: 'medium',
-  variant: 'check-mobile',
+  variant: 'check-mobile-medium',
 };
 MobileMediumCheck.parameters = {
   docs: {
@@ -333,9 +339,9 @@ MobileMediumCheck.parameters = {
 export const MobileLargeNumber = Template.bind({});
 MobileLargeNumber.args = {
   ...DesktopLargeCheck.args,
-  version: 'Mobile',
+  viewport: 'Mobile',
   size: 'large',
-  variant: 'number-mobile',
+  variant: 'number-mobile-large',
 };
 MobileLargeNumber.parameters = {
   docs: {
@@ -348,9 +354,9 @@ MobileLargeNumber.parameters = {
 export const MobileMediumNumber = Template.bind({});
 MobileMediumNumber.args = {
   ...DesktopLargeCheck.args,
-  version: 'Mobile',
+  viewport: 'Mobile',
   size: 'medium',
-  variant: 'number-mobile',
+  variant: 'number-mobile-medium',
 };
 MobileMediumNumber.parameters = {
   docs: {
