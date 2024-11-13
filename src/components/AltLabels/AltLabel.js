@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import './alt-label.scss';
 
 /**
- * Alt-Label styles (Alternative) are smaller, utilitarian styles, used for things like the text inside components, labeling formfields and user info. The style should be considered as a compliment to the Label style.
+ * Alt-Label styles (Alternative) are smaller, utilitarian styles, used for things like the text inside components, labeling formfields and user info. 
+ * The style should be considered as a compliment to the Label style.
  */
 
 
@@ -32,26 +33,29 @@ export const AltLabel = ({
 };
 
   AltLabel.propTypes = {
+      /**
+   * Determines whether Desktop or Mobile styles are applied
+   */
+  version: PropTypes.oneOf(['Desktop', 'Mobile']),
+
+    /**
+   * Current breakpoint viewed, based on version
+   */
+    breakpoint: PropTypes.string,
+
+  /**
+   * Font size for the text
+   */
+  size: PropTypes.oneOf(['alt-label-sm', 'alt-label-md', 'alt-label-lg']),
+
     /**
      * Summary text to be displayed
      */
     summary: PropTypes.string.isRequired, // assuming summary is a required string
 
-  
     /**
-     * Additional property A, type can vary based on usage
-     */
-  
-    /**
-     * Padding value for the component
-     */
-   //padding: PropTypes.string, // assuming padding is an optional string like '10px'
-  };
+   * Margin bottom spacing
+   */
+    marginBottom: PropTypes.string,
 
-// add shir here, or in title???
-/*Title.defaultProps = {
-  backgroundColor: 'transparent',
- // textColor: '#000',
-  //fontSize: '14px / 16px',
- // separator: '/',
-}; */
+  };

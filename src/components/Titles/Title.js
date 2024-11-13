@@ -4,12 +4,12 @@ import './title.scss';
 
 /**
  * Titles are smaller than headline styles, and should be used for medium-emphasis text that remains relatively short. For example, like the text inside components.
-Consider using title styles to divide secondary passages of text or secondary regions of content. Used for smaller H tag sizes.
+ * 
+ * Consider using title styles to divide secondary passages of text or secondary regions of content. Used for smaller H tag sizes.
  */
-// if i dont add these, then it always comes back as undefined - why?
 
 
-  export const Title = ({ items, backgroundColor, textColor, fontSize, separator, size = 'title-lg', version = 'Desktop', summary, marginBottom = '' }) => {
+  export const Title = ({ size = 'title-lg', version = 'Desktop', summary, marginBottom = 'None' }) => {
     console.log(version,"version");
     return (
      
@@ -31,26 +31,29 @@ Consider using title styles to divide secondary passages of text or secondary re
   };
 
   Title.propTypes = {
+
+  /**
+   * Determines whether Desktop or Mobile styles are applied
+   */
+  version: PropTypes.oneOf(['Desktop', 'Mobile']),
+
+  /**
+   * Current breakpoint viewed, based on version
+   */
+  breakpoint: PropTypes.string,
+
+  /**
+   * Font size for the text
+   */
+  size: PropTypes.oneOf(['title-sm', 'title-md', 'title-lg']),
     /**
      * Summary text to be displayed
      */
     summary: PropTypes.string.isRequired, // assuming summary is a required string
 
-  
-    /**
-     * Additional property A, type can vary based on usage
-     */
-  
-    /**
-     * Padding value for the component
-     */
-   //padding: PropTypes.string, // assuming padding is an optional string like '10px'
-  };
+  /**
+   * Margin bottom spacing
+   */
+  marginBottom: PropTypes.string,
 
-// add shir here, or in title???
-/*Title.defaultProps = {
-  backgroundColor: 'transparent',
- // textColor: '#000',
-  //fontSize: '14px / 16px',
- // separator: '/',
-}; */
+  };

@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { BlockQuote } from './BlockQuote';
 import CustomDocsContainer from './CustomDocsContainer';
 
@@ -39,6 +40,14 @@ export default {
       defaultValue: 'Desktop',
       description: 'The version size for the component',
     },
+    breakpoint: {
+      description: '', 
+      table: {
+        type: { summary: 'Information' },
+       defaultValue: '',
+      },
+      control: false, 
+    },
     summary: {
       control: 'text',
       description: 'The main quote text to display',
@@ -71,6 +80,19 @@ export default {
       defaultValue: 'Swedol',
     },
   },
+  decorators: [
+    (Story, context) => {
+      const { version } = context.args;
+ 
+      useEffect(() => {
+        context.argTypes.breakpoint.description = version === 'Desktop' 
+          ? 'breakpoint-md & breakpoint-lg'
+          : 'breakpoint-xs & breakpoint-sm';
+      }, [version]);
+
+      return <Story {...context.args} />;
+    },
+  ],
   tags: ['autodocs'],
 };
 
@@ -79,6 +101,7 @@ const Template = (args) => <BlockQuote {...args} />;
 export const BlockQuoteDesktop = Template.bind({});
 BlockQuoteDesktop.args = {
   version: 'Desktop',  // Default version
+  breakpoint: '',
   summary: 'It has to start somewhere, it has to start sometime. What better place than here, what better time than now?',
   name: 'Name Surname',
   title: 'Title',

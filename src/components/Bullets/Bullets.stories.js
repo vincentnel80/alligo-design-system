@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Bullet } from './Bullet';
 import CustomDocsContainer from './CustomDocsContainer';
 
@@ -43,9 +44,6 @@ const generateHtmlSnippet = (args) => {
   `;
 };
 
-
-
-
 export default {
   title: 'Components/Bullet List',
   component: Bullet,
@@ -62,19 +60,27 @@ export default {
     version: {
       control: { type: 'select' }, 
       options: ['Desktop', 'Mobile'],
-      defaultValue: 'Desktop',  // Set Desktop as the default version
+      defaultValue: 'Desktop',
       description: 'Select the version type to switch between desktop and mobile layouts.',
+    },
+    breakpoint: {
+      description: '', 
+      table: {
+        type: { summary: 'Information' },
+       defaultValue: '',
+      },
+      control: false, 
     },
     size: {
       control: { type: 'select' },
-      options: ['large', 'medium'],  // Default to Desktop variants initially
-      defaultValue: 'large',  // Set default size for Desktop
+      options: ['large', 'medium'],
+      defaultValue: 'large',
       description: 'The size of font',
     },
     variant: {
       control: { type: 'select' },
-      options: ['check-desktop', 'dot-desktop', 'number-desktop'],  // Default to Desktop variants initially
-      defaultValue: 'dot-desktop',  // Set default variant for Desktop
+      options: ['check-desktop', 'dot-desktop', 'number-desktop'],
+      defaultValue: 'dot-desktop',
       description: 'The variant styles that will be applied to the bullet list.',
     },
     marginBottom: {
@@ -131,6 +137,13 @@ export default {
         context.args.variant = variantOptions[version][0];  // Set the first variant of the selected version as default
       }
 
+      useEffect(() => {
+        // Update breakpoint description based on the selected version
+        context.argTypes.breakpoint.description = version === 'Desktop' 
+          ? 'breakpoint-md & breakpoint-lg'
+          : 'breakpoint-xs & breakpoint-sm';
+      }, [version]);
+
       return <Story {...context.args} />;
     },
   ],
@@ -142,6 +155,7 @@ const Template = (args) => <Bullet {...args} />;
 export const DesktopLargeCheck = Template.bind({});
 DesktopLargeCheck.args = {
   version: 'Desktop',
+  breakpoint: '',
   size: 'large',
   variant: 'dot-desktop',
   marginBottom: 'None',  // Set a default marginBottom

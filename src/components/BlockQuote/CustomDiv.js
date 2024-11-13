@@ -95,10 +95,12 @@ const CustomDiv = () => {
             <tbody>
               <tr>
                 <td>
-                  <a href="https://www.figma.com/design/42MgqJjV9vfplwQnrUB62r/ALLIGO-Design-System?node-id=247-806&node-type=CANVAS&m=dev" target="_blank" class="figma-link-container">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma Icon" class="figma-icon"/>
-                  <span class="figma-link-text">View on Figma</span>
+                  <div class="figma-icon">
+                  <a href="https://www.figma.com/design/42MgqJjV9vfplwQnrUB62r/ECO-Design-System?node-id=3848-192965&node-type=instance&m=dev" target="_blank" class="figma-link-container">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma Icon" class="figma-icon-new"/>
+                  <span class="alt-label-lg figma-link-text">View on Figma</span>
                   </a>
+                  </div>
                 </td>
               </tr>
             </tbody>

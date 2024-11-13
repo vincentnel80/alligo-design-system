@@ -1,11 +1,18 @@
+import React, { useEffect } from 'react';
 import { AltLabel } from './AltLabel';
 import CustomDocsContainer from './CustomDocsContainer';
 
 // Dynamic HTML snippet generator function
 const generateHtmlSnippet = (args) => {
-  const { version = "Desktop", size = 'alt-label-lg', summary, modifier = '', marginBottom = '' } = args;  // Default values
-  return `<p class="${size} ${size}--${modifier} ${marginBottom}">${summary}</p>`;
+  const { version = 'Desktop', size = 'alt-label-lg', summary, marginBottom = 'None' } = args;  // Default values
+  const marginBottomClass = marginBottom !== 'None' ? marginBottom : '';
+
+  // Join classes and filter out any empty strings to avoid extra spaces
+  const classNames = [size, marginBottomClass].filter(Boolean).join(' ');
+
+  return `<p class="${classNames}">${summary}</p>`;
 };
+
 
 export default {
   //title: 'Typography/Alt Label',
@@ -26,19 +33,18 @@ export default {
       options: ['Desktop', 'Mobile'],
       defaultValue: 'Desktop',
     },
+    breakpoint: {
+      description: '', 
+      table: {
+        type: { summary: 'Information' },
+       defaultValue: '',
+      },
+      control: false, 
+    },
     size: {
       control: { type: 'select' },
       options: ['alt-label-sm', 'alt-label-md', 'alt-label-lg'],
       defaultValue: 'alt-label-lg',
-    },
-    modifier: {
-      control: { type: 'select' },
-      options: ['', 'preamble', 'underline', 'bold', 'strikethrough'],
-      defaultValue: 'preamble',
-      // Conditionally disable the modifier control based on the value of fontName
-      table: {
-        disable: true, // initially disabled in the docs table
-      },
     },
     marginBottom: {
       control: { type: 'select' },
@@ -53,9 +59,16 @@ export default {
         /// there are no modifiers for this vin
   decorators: [
     (Story, context) => {
+      const { version } = context.args;
       const { args } = context;
-      const modifierControl = context.argTypes.modifier;
-      modifierControl.table.disable = args.size !== 'body-xl';
+
+      useEffect(() => {
+        // Update breakpoint description based on the selected version
+        context.argTypes.breakpoint.description = version === 'Desktop' 
+          ? 'breakpoint-md & breakpoint-lg'
+          : 'breakpoint-xs & breakpoint-sm';
+      }, [version]);
+
       return <Story {...args} />;
     },
   ],
@@ -71,6 +84,7 @@ const Template = (args) => <AltLabel {...args} />;
 export const AltLabelLarge = Template.bind({});
 AltLabelLarge.args = {
   version: 'Desktop',
+  breakpoint: '',
   size: 'alt-label-lg',  // Set a default fontName
   summary: summaryText,
   marginBottom: 'None',  // Set a default marginBottom
@@ -85,20 +99,6 @@ AltLabelLarge.parameters = {
   },
 };
 
-// Other variants like HeadlineLarge, HeadlineMedium, etc.
-/*export const BodyXLarge = Template.bind({});
-BodyXLarge.args = {
-  ...Default.args,
-  fontName: 'body-xl',
-};
-BodyXLarge.parameters = {
-  docs: {
-    disable: true,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args), // the above will hide this. to reactivate, delete "disable: true"
-    },
-  },
-}; */
 
 export const AltLabelMedium = Template.bind({});
 AltLabelMedium.args = {
@@ -130,6 +130,3 @@ AltLabelSmall.parameters = {
     },
   },
 };
-
-
-// body LG modifiers

@@ -2,13 +2,25 @@ import React, { useEffect } from 'react';
 import { Body } from './Body';
 import CustomDocsContainer from './CustomDocsContainer';
 
-const generateHtmlSnippet = (args) => {
+/*const generateHtmlSnippet = (args) => {
   const { size = 'body-xl', summary, modifier = '', marginBottom = '' } = args;  
   const classes = [size];
   if (modifier) classes.push(modifier);
   if (marginBottom) classes.push(marginBottom);
   return `<p class="${classes.join(' ')}">${summary}</p>`;
+}; */
+
+const generateHtmlSnippet = (args) => {
+  const { size = 'body-xl', summary, modifier = 'None', marginBottom = 'None' } = args;  
+  const classes = [size];
+
+  // Only add modifier and marginBottom if they are not 'None'
+  if (modifier !== 'None') classes.push(modifier);
+  if (marginBottom !== 'None') classes.push(marginBottom);
+
+  return `<p class="${classes.join(' ')}">${summary}</p>`;
 };
+
 
 const fontModifiers = {
   'body-sm': ['None', 'body-sm--italic', 'body-sm--underline', 'body-sm--strikethrough', 'body-sm--bold', 'body-sm-bold--italic', 'body-sm-bold--underline', 'body-sm-bold--strikethrough'],

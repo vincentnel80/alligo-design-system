@@ -1,23 +1,34 @@
+import React, { useEffect } from 'react';
 import { Display } from './Display';
 import CustomDocsContainer from './CustomDocsContainer';
 
 // Dynamic HTML snippet generator function
 
 
-const generateHtmlSnippet = (args) => {
-  const { size = 'display-lg', summary, modifier = 'None', marginBottom = 'None' } = args;  // Default values
+/* const generateHtmlSnippet = (args) => {
+  const { size = 'display-lg', summary, modifier = 'None', marginBottom = 'None' } = args; 
   
-  // Conditionally add modifier and marginBottom if they have values
   const classes = [size];
   if (modifier) classes.push(modifier);
   if (marginBottom) classes.push(marginBottom);
+
+  return `<p class="${classes.join(' ')}">${summary}</p>`;
+}; */
+
+const generateHtmlSnippet = (args) => {
+  const { size = 'display-lg', summary, modifier = 'None', marginBottom = 'None' } = args;  // Default values
+  
+  // Conditionally add modifier and marginBottom if they are not 'None'
+  const classes = [size];
+  if (modifier !== 'None') classes.push(modifier);
+  if (marginBottom !== 'None') classes.push(marginBottom);
 
   // Join the classes array into a string, filtering out any empty values
   return `<p class="${classes.join(' ')}">${summary}</p>`;
 };
 
+
 export default {
-  //title: 'Typography/Display',
   title: 'Foundation/Typography/Components/Display',
   component: Display,
   parameters: {
@@ -34,6 +45,14 @@ export default {
       control: { type: 'select' }, 
       options: ['Desktop', 'Mobile'],
       defaultValue: 'Desktop',
+    },
+    breakpoint: {
+      description: '', 
+      table: {
+        type: { summary: 'Information' },
+       defaultValue: '',
+      },
+      control: false, 
     },
     size: {
       control: { type: 'select' },
@@ -62,9 +81,18 @@ export default {
         /// there are no modifiers for this vin
   decorators: [
     (Story, context) => {
+      const { size, version } = context.args;
       const { args } = context;
       const modifierControl = context.argTypes.modifier;
       modifierControl.table.disable = args.size !== 'body-xl';
+
+      useEffect(() => {
+        // Update breakpoint description based on the selected version
+        context.argTypes.breakpoint.description = version === 'Desktop' 
+          ? 'breakpoint-md & breakpoint-lg'
+          : 'breakpoint-xs & breakpoint-sm';
+      }, [version]);
+
       return <Story {...args} />;
     },
   ],
@@ -97,6 +125,7 @@ Default.parameters = {
 export const DisplayLarge = Template.bind({});
 DisplayLarge.args = {
   version: 'Desktop',
+  breakpoint: '',
   size: 'display-lg',
   summary: 'Clearance sale',
   marginBottom: 'None',

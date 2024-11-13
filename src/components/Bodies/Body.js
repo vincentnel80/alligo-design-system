@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import './body.scss';
 
 /**
- * Body is used for longer passages of text in the UI . Usually in order to populate paragraphs. The body style is also adjusted to be readable at smaller sizes.
+ * Body is used for longer passages of text in the UI. 
+ * Usually in order to populate paragraphs. The body style is also adjusted to be readable at smaller sizes.
+ * 
+ * 
  * Body X-Large is used for short intro passages of longer texts and non-recurrent text passages.
  */
 
@@ -40,7 +43,7 @@ Body.propTypes = {
   size: PropTypes.oneOf(['body-sm', 'body-md', 'body-lg', 'body-xl']),
 
   /**
-   * Viewport, determines whether Desktop or Mobile styles are applied
+   * Determines whether Desktop or Mobile styles are applied
    */
   version: PropTypes.oneOf(['Desktop', 'Mobile']),
 

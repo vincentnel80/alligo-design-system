@@ -5,7 +5,8 @@ import HeadersDesktop from './HeadersDesktop';
 
 import './headers.scss';
 
-const Headers = () => <div className={'sb-page-container'}>
+const Headers = () => (
+<div className={'sb-page-container'}>
     <main className={'sb-maincontent'}>
 
         <MainIntroComponent
@@ -390,120 +391,9 @@ const Headers = () => <div className={'sb-page-container'}>
                 </div>
                 <HeadersDesktop />
 
-                <hr className={'hr-line-division'} style={{marginTop: '30px'}}/>
-                <div className={"sb-desc-content-container"}>
-                    <div className={"sb-desc-title-wrapper"}>
-                        <span className={"title-lg"}>Site Seach</span>
-                    </div>
-                </div>
-                {/* Start search */}
-                <div style={{marginTop: '30px'}}></div>
-
-                <div style={{marginTop: '30px'}}></div>
-                <div className="sb-main-intro-headline-wrapper" style={{paddingBottom: '10px'}}>
-                    <div className="title-md">Mobile</div>
-                    <div className="sb-design-status-label draft">
-                        <div className="badge-basic variant-warning-light">
-                            <span className="badge-message">Draft</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={'new-search-container'}>
-                    { /* search nav button */ }
-                    <div className={'search-nav-button'}>
-                        <span className={'icon'}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M14.0001 17.65L8.3501 12L14.0001 6.34998L15.0501 7.39998L10.4501 12L15.0501 16.6L14.0001 17.65Z" fill="black"/>
-                            </svg>
-                        </span>
-                    </div>
-                    {/* Search input */}
-                    <div className={'input-container'}>
-                        <span className={'input-search-icon'}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M19.5499 20.575L13.2499 14.3C12.7499 14.7167 12.1749 15.0417 11.5249 15.275C10.8749 15.5083 10.2082 15.625 9.5249 15.625C7.80824 15.625 6.35824 15.0333 5.1749 13.85C3.99157 12.6667 3.3999 11.2167 3.3999 9.5C3.3999 7.8 3.99157 6.354 5.1749 5.162C6.35824 3.97067 7.80824 3.375 9.5249 3.375C11.2249 3.375 12.6666 3.96667 13.8499 5.15C15.0332 6.33333 15.6249 7.78333 15.6249 9.5C15.6249 10.2167 15.5082 10.9 15.2749 11.55C15.0416 12.2 14.7249 12.7667 14.3249 13.25L20.5999 19.525L19.5499 20.575ZM9.5249 14.125C10.8082 14.125 11.8959 13.675 12.7879 12.775C13.6792 11.875 14.1249 10.7833 14.1249 9.5C14.1249 8.21667 13.6792 7.125 12.7879 6.225C11.8959 5.325 10.8082 4.875 9.5249 4.875C8.2249 4.875 7.12924 5.325 6.2379 6.225C5.3459 7.125 4.8999 8.21667 4.8999 9.5C4.8999 10.7833 5.3459 11.875 6.2379 12.775C7.12924 13.675 8.2249 14.125 9.5249 14.125Z" fill="black"/>
-                            </svg>
-                        </span>
-                        {/* body-md - use current defined class, or overwrite */}
-                        <span className={'input-text body-md'}>| Björnkläder...</span>
-                        <span className={'barcode-icon'}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M2.41699 6.02099V2.41699H6.02099V3.49999H3.49999V6.02099H2.41699ZM2.41699 17.583V13.979H3.49999V16.5H6.02099V17.583H2.41699ZM13.979 17.583V16.5H16.5V13.979H17.583V17.583H13.979ZM16.5 6.02099V3.49999H13.979V2.41699H17.583V6.02099H16.5ZM13.771 13.771H14.646V14.646H13.771V13.771ZM13.771 12H14.646V12.896H13.771V12ZM12.896 12.896H13.771V13.771H12.896V12.896ZM12 13.771H12.896V14.646H12V13.771ZM11.125 12.896H12V13.771H11.125V12.896ZM12.896 11.125H13.771V12H12.896V11.125ZM12 12H12.896V12.896H12V12ZM11.125 11.125H12V12H11.125V11.125ZM15.146 4.85399V8.87499H11.125V4.85399H15.146ZM8.87499 11.125V15.146H4.85399V11.125H8.87499ZM8.87499 4.85399V8.87499H4.85399V4.85399H8.87499ZM8.12499 14.396V11.875H5.60399V14.396H8.12499ZM8.12499 8.12499V5.60399H5.60399V8.12499H8.12499ZM14.396 8.12499V5.60399H11.875V8.12499H14.396Z" fill="black"/>
-                            </svg>
-                        </span>
-                    </div> {/* input container */}
-                </div> {/* new-search-container */}
-                {/* new algolia search below */}
-                {/* new algolia search items */}
-                <div className={'algolia-searchdrawer'}>
-                    <div className={'drawer-header'}>
-                        <span>Produktrekommendationer</span>
-                    </div>
-
-                    {/* Product Line singular */}
-                    <div className={'singular-container'}>
-                        <div className={'image-container'}>
-                            <img alt="Turtle Wax Pro Greenline Prewash-T BIO 25 L"
-                                 className="jsx-minicart-list-item-thumb-image"
-                                 src="https://placehold.co/75x18" />
-                        </div>
-                        <div className={'product-info-container'}>
-                            <div className={'product-info-container-brand'}>
-                                Ampro
-                            </div>
-                            <span className={'product-info-container-prod-name'}>
-                            <span className="ais-Highlight none">
-                                <mark className="ais-Highlight-highlighted bold">SPÅRSKRUV</mark>
-                                <span className="ais-Highlight-nonHighlighted">MEJSEL XT...</span>
-                            </span>
-
-                        </span>
-                            <div className={'product-info-container-show-product'}>
-                                Visa produkter
-                            </div>
-                        </div>
-                    </div>
-                    <div className={'singular-container'}>
-                        <div className={'image-container'}>
-                            <img alt="Turtle Wax Pro Greenline Prewash-T BIO 25 L"
-                                 className="jsx-minicart-list-item-thumb-image"
-                                 src="https://placehold.co/75x18" />
-                        </div>
-                        <div className={'product-info-container'}>
-                            <div className={'product-info-container-brand'}>
-                                Ampro
-                            </div>
-                            <span className={'product-info-container-prod-name'}>
-                            <span className="ais-Highlight none">
-                                <mark className="ais-Highlight-highlighted bold">SPÅRSKRUV</mark>
-                                <span className="ais-Highlight-nonHighlighted">MEJSEL XT...</span>
-                            </span>
-
-                        </span>
-                            <div className={'product-info-container-show-product'}>
-                                Visa produkter
-                            </div>
-                        </div>
-                    </div>
-                    {/* End Product Line singular */}
-
-
-                </div>{/* End Product Line singular */}
-
-
-
-
             </div> {/* alligo-page-wrapper */}
         </div> {/* alligo-page-body */}
-
-
-
-
-
-
-
     </main>
-</div>;
+</div>);
 
 export default Headers;

@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { ButtonsUpdated } from './ButtonsUpdated';
 import CustomDocsContainer from './CustomDocsContainer';
 
@@ -36,6 +37,15 @@ export default {
       options: ['Desktop', 'Mobile'],
       defaultValue: 'Desktop',
       description: 'The version size for the component',
+    },
+    breakpoint: {
+      description: '', 
+      table: {
+        type: { summary: 'Information' },
+       // defaultValue: { summary: 'breakpoint-md & breakpoint-lg' },
+       defaultValue: '',
+      },
+      control: false, 
     },
     buttonType: {
       control: { type: 'select' },
@@ -76,6 +86,20 @@ export default {
       defaultValue: 'Button Text',
     },
   },
+  decorators: [
+    (Story, context) => {
+      const { version } = context.args;
+
+      useEffect(() => {
+        // Update breakpoint description based on the selected version
+        context.argTypes.breakpoint.description = version === 'Desktop' 
+          ? 'breakpoint-md & breakpoint-lg'
+          : 'breakpoint-xs & breakpoint-sm';
+      }, [version]);
+
+      return <Story {...context.args} />;
+    },
+  ],
   tags: ['autodocs'],
 };
 
@@ -84,6 +108,7 @@ const Template = (args) => <ButtonsUpdated {...args} />;
 export const ButtonsUpdatedDesktop = Template.bind({});
 ButtonsUpdatedDesktop.args = {
   version: 'Desktop',  // Default vversioniewport
+  breakpoint: '',
   title: 'Button Text',
 };
 

@@ -5,7 +5,13 @@ import '../../globalStyles/foundation-fonts-weights.scss'; // make global -- but
 
 /**
  * 
-* The bullet list component supports up to three levels of nested lists, providing both mobile and desktop variants for flexible design. Each variant offers different bullet styles to suit various contexts: checkmarks, dots, and numbers. For desktop displays, the available styles include 'Check: Desktop Large', 'Check: Desktop Medium', 'Dot: Desktop Large', 'Dot: Desktop Medium', 'Number: Desktop Large', and 'Number: Desktop Medium'. On mobile, the corresponding styles are 'Check: Mobile Large', 'Check: Mobile Medium', 'Dot: Mobile Large', 'Dot: Mobile Medium', 'Number: Mobile Large', and 'Number: Mobile Medium'. This structure ensures consistent, responsive behavior across devices while maintaining a variety of visual presentation options for users. In order to use, copy the entire code block and delte that which is not required. make sure to account for the levels
+* The bullet list component supports up to three levels of nested lists, providing both mobile and desktop variants for flexible design.
+* Each variant offers different bullet styles to suit various contexts: checkmarks, dots, and numbers. 
+* For desktop displays, the available styles include 'Check: Desktop Large', 'Check: Desktop Medium', 'Dot: Desktop Large', 'Dot: Desktop Medium', 'Number: Desktop Large', and 'Number: Desktop Medium'. 
+* 
+* On mobile, the corresponding styles are 'Check: Mobile Large', 'Check: Mobile Medium', 'Dot: Mobile Large', 'Dot: Mobile Medium', 'Number: Mobile Large', and 'Number: Mobile Medium'. This structure ensures consistent, responsive behavior across devices while maintaining a variety of visual presentation options for users.
+*
+* In order to use, copy the entire code block and delte that which is not required. make sure to account for the levels
  */
 
 
