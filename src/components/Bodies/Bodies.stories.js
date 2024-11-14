@@ -104,7 +104,7 @@ BodyXLargeDesktop.args = {
   version: 'Desktop',
   breakpoint: '',
   summary: summaryText,
-  size: 'body-xl',
+  size: 'body-lg',
   modifier: 'None',
   marginBottom: 'None',
 };
