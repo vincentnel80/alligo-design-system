@@ -10,12 +10,6 @@ const CustomDiv = () => {
         <button onClick={() => setActiveTab('Usage')} style={{ marginRight: '10px' }}>
           Usage
         </button>
-        <button onClick={() => setActiveTab('Style')} style={{ marginRight: '10px' }}>
-          Style
-        </button>
-        <button onClick={() => setActiveTab('Accessibility')} style={{ marginRight: '10px' }}>
-          Accessibility
-        </button>
         <button onClick={() => setActiveTab('Resources')}>
           Resources
         </button>
@@ -28,59 +22,6 @@ const CustomDiv = () => {
             <tbody>
               <tr>
                 <td>Alt-Label styles (Alternative) are smaller, utilitarian styles, used for things like the text inside components, labeling formfields and user info. The style should be considered as a compliment to the Label style.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        )}
-        {activeTab === 'Style' && (
-          <table>
-            <thead>
-              <tr>
-                <th>Element</th>
-                <th>Token</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Link</td>
-                <td>--text-text-medium-emphasis</td>
-              </tr>
-              <tr>
-                <td>Link:hover</td>
-                <td>--greyscale-black</td>
-              </tr>
-              <tr>
-                <td>Link:active</td>
-                <td>--greyscale-black</td>
-              </tr>
-              <tr>
-                <td>Slash</td>
-                <td>--text-text-medium-emphasis</td>
-              </tr>
-              <tr>
-                <td>Current page</td>
-                <td>--greyscale-black, font-weight:700</td>
-              </tr>
-              <tr>
-                <td>Spacing</td>
-                <td>--space-8--small, --space-9--small</td>
-              </tr>
-            </tbody>
-          </table>
-        )}
-                {activeTab === 'Accessibility' && (
-          <table>
-            <thead>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-
-                  Semantic Navigation Landmark: The 'nav' element is used to define a section of the page intended for navigation. This helps assistive technologies identify it as a navigation area.
-                  ARIA Label: The aria-label="Breadcrumb" attribute provides an accessible name for the navigation landmark, indicating to screen readers that this section is a breadcrumb navigation. This helps users understand the purpose of this navigation.
-
-                  Current Page Indication: The aria-current="page" attribute is used to indicate that the "End crumb" item is the current page. This is an important accessibility feature because it provides context to users about their current location within the breadcrumb navigation.
                 </td>
               </tr>
             </tbody>

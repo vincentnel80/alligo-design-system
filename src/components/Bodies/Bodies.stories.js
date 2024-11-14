@@ -99,30 +99,30 @@ const summaryText = 'Swedol caters to the needs of professional users as a multi
 
 const Template = (args) => <Body {...args} />;
 
-export const BodyXLarge = Template.bind({});
-BodyXLarge.args = {
+export const BodyXLargeDesktop = Template.bind({});
+BodyXLargeDesktop.args = {
   version: 'Desktop',
   breakpoint: '',
   summary: summaryText,
-  size: 'body-lg',
+  size: 'body-xl',
   modifier: 'None',
   marginBottom: 'None',
 };
 
-export const BodyLarge = Template.bind({});
-BodyLarge.args = {
-  ...BodyXLarge.args,
+export const BodyLargeDesktop = Template.bind({});
+BodyLargeDesktop.args = {
+  ...BodyXLargeDesktop.args,
   size: 'body-lg',
 };
 
-export const BodyMedium = Template.bind({});
-BodyMedium.args = {
-  ...BodyXLarge.args,
+export const BodyMediumDesktop = Template.bind({});
+BodyMediumDesktop.args = {
+  ...BodyXLargeDesktop.args,
   size: 'body-md',
 };
 
-export const BodySmall = Template.bind({});
-BodySmall.args = {
-  ...BodyXLarge.args,
+export const BodySmallDesktop = Template.bind({});
+BodySmallDesktop.args = {
+  ...BodyXLargeDesktop.args,
   size: 'body-sm',
 };

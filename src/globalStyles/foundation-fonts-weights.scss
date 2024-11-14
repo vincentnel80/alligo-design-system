@@ -209,7 +209,8 @@ $letter-spacing-display-lg: $value-0;
 }
 
 .body-xl--preamble {
-  font-weight: 600 !important;
+  //font-weight: 600 !important; figma says 600, but have to step down to 500
+  font-weight: 500 !important;
 }
 
 .body-xl--italic {
