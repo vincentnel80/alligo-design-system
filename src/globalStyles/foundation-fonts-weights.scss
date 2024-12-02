@@ -226,21 +226,22 @@ $letter-spacing-display-lg: $value-0;
 }
 
 .body-xl--bold {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .body-xl--bold-italic {
   font-style: italic !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .body-xl--bold-underline {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-decoration: underline !important;
+  text-underline-offset: 6px;
 }
 
 .body-xl--bold-strikethrough {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-decoration: line-through !important;
 }
 
@@ -257,21 +258,22 @@ $letter-spacing-display-lg: $value-0;
 }
 
 .body-lg--bold {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .body-lg--bold-italic {
   font-style: italic !important; // why omportant - to do vin find way to get rid
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .body-lg--bold-underline {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-decoration: underline !important;
+  text-underline-offset: 6px; /* Adjust offset as needed */
 }
 
 .body-lg--bold-strikethrough {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-decoration: line-through !important;
 }
 
@@ -288,21 +290,22 @@ $letter-spacing-display-lg: $value-0;
 }
 
 .body-md--bold {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .body-md--bold-italic {
   font-style: italic !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .body-md--bold-underline {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-decoration: underline !important;
+  text-underline-offset: 5px; /* Adjust offset as needed */
 }
 
 .body-md--bold-strikethrough {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-decoration: line-through !important;
 }
 
@@ -319,21 +322,23 @@ $letter-spacing-display-lg: $value-0;
 }
 
 .body-sm--bold {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .body-sm--bold-italic {
   font-style: italic !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .body-sm--bold-underline {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-decoration: underline !important;
+  text-underline-offset: 4px; /* Adjust offset as needed */
+  
 }
 
 .body-sm--bold-strikethrough {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-decoration: line-through !important;
 }
 

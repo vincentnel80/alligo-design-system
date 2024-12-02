@@ -145,14 +145,76 @@
     }
   }
 
+  // These override storyblok styles default styles buw will need to see how it behaves in the system
+/*
+  .css-1qq744x {
+    display: block !important;
+    
+  }
+
   .left {
-float: left;
+    float: left !important;
   }
 
   .right {
-float: right;
+    float: right !important;
   }
 
   .center {
 align-items: center;
   }
+*/
+
+/// here or in main - its just to overwrite the parent
+
+.css-1if7k1k {
+  width: 100%;
+}
+
+// the above and this one switch for some reason
+.css-1lslclb {
+  height: auto !important;
+}
+
+.left {
+  float: none !important;
+}
+
+.center {
+  //float: right !important;
+  .blockq-container--sb-desktop .blockq-container-inner {
+    align-items: center !important;
+  }
+
+  .blockq-container--sb-desktop .blockq-container-inner .bottom-text-wrapper {
+    align-items: center !important;
+  }
+}
+
+.right {
+  //min-width: 513px;
+  min-width: 938px; // need to resolve this
+  float: right !important;
+  align-content: right !important;
+  -webkit-align-items: right !important;
+  -webkit-box-align: right !important;
+  -ms-flex-align: right !important;
+  align-items: right !important;
+
+
+  .blockq-container--sb-desktop .blockq-container-inner {
+    align-items: flex-end !important;
+  }
+
+  .blockq-container--sb-desktop .blockq-container-inner .bottom-text-wrapper {
+    align-items:  flex-end !important;
+  }
+
+}
+/*
+.alignment-container{
+  width: 100%;
+  //display: block ;
+  box-sizing: border-box;
+  overflow: hidden; 
+}*/

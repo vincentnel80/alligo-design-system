@@ -21,6 +21,28 @@ export default {
     layout: 'centered',
     docs: {
       container: CustomDocsContainer,
+      description: {
+        component: `
+
+Labels are smaller, utilitarian styles, used for things like the text inside components, text inside buttons, labeling form fields and user info. Label styles are a bolder version of Alt-Label and therefore higher empasis than the Alt version.
+
+<div class="content-block content-block--callout callout-primary" role="alert">
+  <div class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      <polyline points="11 12 12 12 12 16 13 16"></polyline>
+    </svg>
+  </div>
+  <div class="body-md content">
+Disclaimer: The look of fonts in the Storybook Panel may appear slightly different from fonts registered on the live site (via css) due to a font rendering error / issue in Storybook.
+
+Generally, in order for fonts to appear correctly on the live site, the font-weight needs to be "stepped down" by 100, from the font-weight value listed in Figma.
+  </div>
+</div>
+        `,
+      },
       source: {
         transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
       },

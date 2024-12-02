@@ -24,8 +24,9 @@ export const BlockQuote = ({
   // add in demo text or not??
   if (version === 'Mobile') {
     return (
-      <div className="blockq-container blockq-container--sb-mobile"  style={{alignment}}>
-        <div className="blockq-container-inner" style={containerStyle}>
+      <div className={`alignment-container ${alignment}`}>
+      <div className="blockq-container blockq-container--sb-mobile">
+        <div className="blockq-container-inner needshere">
           <div className="headline-md headline-md--blockquote">
             {summary}
           </div>
@@ -34,15 +35,18 @@ export const BlockQuote = ({
             <span className="body-sm">{title}</span>
           </div>
         </div>
+        {/* alignment container */}
         {marginBottom && <div className={`${marginBottom}-temp`}></div>}
+      </div>
       </div>
     );
   }
 
   // Default Desktop version
   return (
-    <div className="blockq-container blockq-container--sb-desktop" style={{alignment}}>
-      <div className="blockq-container-inner" style={containerStyle}>
+    <div className={`alignment-container ${alignment}`}>
+    <div className="blockq-container blockq-container--sb-desktop">
+      <div className="blockq-container-inner">
         <div className="headline-md headline-md--blockquote">
           {summary}
         </div>
@@ -51,7 +55,9 @@ export const BlockQuote = ({
           <span className="body-sm">{title}</span>
         </div>
       </div>
+      {/* should margin be here* ?? */}
       {marginBottom && <div className={`${marginBottom}-temp`}></div>}
+    </div>
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import '../../globalStyles/main.scss';
+
 const CustomDiv = () => {
   const [activeTab, setActiveTab] = useState('Tab1');
 

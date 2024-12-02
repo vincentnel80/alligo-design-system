@@ -75,3 +75,37 @@
     color: black !important;
     margin-bottom: 16px;
   }
+
+  /// for blue warning
+  .content-block--callout.callout-primary {
+    color: #0F62FE !important;
+}
+
+.content-block--callout.callout-primary {
+  background-color: #EDF5FF !important;
+  border: 1px solid #D0E2FF !important;
+}
+
+.content-block--callout {
+  padding: 16px;
+  border-radius: 4px;
+  display: flex;
+  gap: 12px;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px;
+
+  .content {
+    p {
+      font-size: 16px !important;
+      line-height: 24px !important;
+      font-weight: 400 !important;
+      margin-bottom: 16px !important;
+      color: #0F62FE !important;
+
+      &:last-child {
+        margin-bottom: 0 !important; /* Example: Remove the margin */
+      }
+    }
+  }
+}
