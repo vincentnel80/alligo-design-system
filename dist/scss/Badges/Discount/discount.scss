@@ -1,0 +1,138 @@
+// Questions:
+/*
+
+ */
+// To Do
+/*
+pix to rem
+use defined heights
+use defined font vars
+// alphabetical order
+// default fonts not aligning centrally --- seems to be weid spacing so i have to add in 1 px
+// sort out @media
+/// make SB specific
+// best names
+ */
+
+.badge-discount {
+   // width: 71px;
+    width: fit-content;
+    height: 20px;
+    /////flex-grow: 0;
+    display: flex;
+    //flex-direction: row;
+    //justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 5px;
+    background: var(--danger-default);
+
+    .discount-title {
+        //width: 61px;
+      /*  height: 14px;
+        flex-grow: 0;
+        font-family: breuercondensed; /// this is being drawn in from label-sm ... do i need other items below?
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: condensed;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: 0.56px;
+        text-align: center;
+        color: var(--text-white-100);
+        text-transform: uppercase;
+        */
+        color: var(--text-white-100);
+       // font-size: 12px; /// draws from base / yes - no?
+       // font-weight: 700; // use var (this one is defined in fonts so maybe dont need to use??
+
+        letter-spacing: 0.48px;
+        margin-left: -0.46px;
+       // text-transform: uppercase; // is it defined in fonts and getting drawn in here?
+        //font-stretch: condensed; // is it defined in fonts and getting drawn in here?
+       // font-style: normal; // is it defined in fonts and getting drawn in here?
+        font-feature-settings: 'ss03' on, 'ss02' on;
+        padding-top: 1px; // needed as font is weird ??? font issue -- should it not just align centrally
+    }
+
+    @media (min-width: 768px) {
+        /* font-size: 14px;
+         line-height: 14px;*/
+        /*font-size: $font-size-14;
+        line-height: $line-height-14;
+        */
+
+        padding: 3px 5px;
+        .discount-title {
+          //  font-size: 14px;
+            letter-spacing: 0.56px; // custom to here
+            margin-left: -0.19px;
+        }
+    }
+}
+
+.badge-discount-variant-double {
+    display: inline-flex;
+    align-items: flex-start;
+}
+
+.badge-discount-variant-stacked {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.badge-discount-red {
+    background: var(--danger-default);
+}
+
+.badge-discount-black {
+    background: var(--color-greyscale-black);
+}
+
+
+///// sb only
+/// not for main styles, only to show mobile
+.badge-discount-sb-mobile {
+    // width: 71px;
+  //  width: fit-content;
+ //   height: 20px;
+    /////flex-grow: 0;
+   // display: flex;
+    //flex-direction: row;
+    //justify-content: flex-start;
+   // align-items: center;
+   // gap: 4px;
+   // padding: 4px 5px;
+   // background: var(--danger-default);
+
+    .discount-title {
+        //width: 61px;
+        // height: 14px;
+          //flex-grow: 0;
+         // font-family: breuercondensed; /// this is being drawn in from label-sm ... do i need other items below?
+          font-size: 12px !important;
+         // font-weight: bold;
+          //font-stretch: condensed;
+          //font-style: normal;
+          line-height: 12px !important;
+          letter-spacing: 0.48px !important;
+         // text-align: center;
+         // color: var(--text-white-100);
+         // text-transform: uppercase;
+
+       // color: var(--text-white-100);
+        // font-size: 12px; /// draws from base / yes - no?
+        // font-weight: 700; // use var (this one is defined in fonts so maybe dont need to use??
+
+        letter-spacing: 0.48px;
+        margin-left: -0.46px;
+        // text-transform: uppercase; // is it defined in fonts and getting drawn in here?
+        //font-stretch: condensed; // is it defined in fonts and getting drawn in here?
+        // font-style: normal; // is it defined in fonts and getting drawn in here?
+      //  font-feature-settings: 'ss03' on, 'ss02' on;
+     //   padding-top: 1px; // needed as font is weird ??? font issue -- should it not just align centrally
+    }
+}
+
+

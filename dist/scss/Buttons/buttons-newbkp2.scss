@@ -1,0 +1,1501 @@
+// Import Fonts
+// Import Colors
+// Import spacings ??
+
+//@import 'mixins/fonts';
+//@import '../FontsTypography/foundation-fonts-weights.scss';
+
+/// notes
+/*
+if i dont set this, on smaller buttons the width is slightly too little
+.Content {
+    width:
+}
+*/
+
+
+//@import "system-colors";
+
+@import '../Colors/colors.scss';
+
+//// this is for rem calc ... how to use?
+/// maybe make new page???
+$font-base: 16px;
+
+@function rem-calc($pixel) {
+    $rem: $pixel / $font-base;
+
+    @return #{$rem}rem;
+}
+/// I guess I need a class for paddings etc etc---- mixins.....
+/////
+
+// start new-button-container
+.new-button-container {
+
+    //
+    .button-base-real {
+        //width: 127px;
+        height: 56px;
+        flex-grow: 0;
+        /// I wll need display flex or inline flex if i will be using this and not inline block
+        //display: flex;
+       /* display: inline-block;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; */
+        display: inline-block;
+        padding: 16px;
+        background: var(--color-greyscale-black);
+
+        /// mine
+        cursor: pointer;
+        transition: all 150ms ease-out; // is this correct
+
+        .text-container {
+           // width: 95px;
+            height: 24px;
+            flex-grow: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px; //// does it need a gap at this stage? what about @ import?
+            padding: 3px 8px;
+
+            .Content {
+                //width: 79px; /// taking this out break ... so the font width is not correct
+                //width: 79px;
+                height: 18px; // it needs to be this value with true text
+                flex-grow: 0; /// needed if parent has it, and also, this one is not set to flex
+                //font-family: Breuer; add correct
+                //// needs to inherit
+                // !!!!! font-size: 18px; // 18 from figma, and zeplyn, but it makes calces incorrect. !!!! *** NB and need to set to 16px
+                font-size: 18px;
+                //font-weight: bold;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.18px;
+                font-weight: 700;
+                text-align: center;
+                color: var(--color-greyscale-white);
+                // from figma color: var(--text-text-primary-inverted, #FFF);
+            }
+        }
+
+        &:hover {
+            background: var(--color-greyscale-grey-80); /// correct one?
+        }
+    } /// end button base
+
+    /// good to write it in here? is it a wast, or should i rather do an include?
+    /// or just .medium
+    // decendance vs inheritance
+
+    /// buttons
+    /// sizes - desktop mobile
+    // sizes 4 x sizes
+
+    /// make a large too /// or use that from base? ... no.... i guess make a var for that.... hmmmm
+    /// cause it breaks from patterns ---- and ... confusing in future....
+    /// so base + extras
+    .medium {
+        padding: 12px;
+        height: 48px;
+    }
+
+    .small {
+        padding: 8px;
+        height: 40px;
+
+        .text-container {
+            // width: 95px;
+            height: 24px;
+            gap: 8px; /// ?????? ???????????
+            padding: 4px 8px;
+
+            .Content {
+               // width: 73px; /// taking this out break ... so the font width is not correct
+                height: 16px; // it needs to be this value with true text
+                //font-family: Breuer; add correct
+                font-size: 16px;
+                letter-spacing: 0.48px;
+            }
+        }
+    }
+
+// issue with button small
+    /// do you button-base.whatever... or can xs just be free stadning?
+    /// or should i use an include?
+    .xs {
+       // width: 85px;
+        padding: 6px;
+        height: 32px;
+
+        .text-container {
+            // width: 95px;
+          //  width: 73px;
+            height: 20px;
+            gap: 8px; // ?????????????
+            padding: 3px 4px;
+
+            .Content {
+              //  width: 66px; ////// should be 65 but it bREAKS --- I HAVE A SEVER FONT ISSUE!
+              //  width: 65px; /// taking this out break ... so the font width is not correct
+                height: 14px; // it needs to be this value with true text
+                //font-family: Breuer; add correct
+                font-size: 14px;
+                letter-spacing: 0.56px;
+                text-align: center;
+                color: var(--text-white-100); // repeated above in parent??? what about @include
+                line-height: 15px; // check in orig fonts... on small seems like fonts are not aligned properly
+            }
+        }
+    }
+
+    // default
+    .primary-real {
+        background: var(--color-greyscale-black);
+
+        .text-container {
+            .Content {
+                color: var(--color-greyscale-white);
+            }
+        }
+
+        &:hover {
+            background: var(--color-greyscale-grey-80); /// correct one?
+        }
+    }
+    // primary inverted
+    .primary-inverted-real {
+        background: var(--color-greyscale-white);
+
+        .text-container {
+            .Content {
+                /// needs correct assosication --- text primary inverted
+                color: var(--color-greyscale-black);
+            }
+        }
+
+        &:hover {
+            background: var(--color-greyscale-grey-10);
+        }
+    }
+    // secondary
+    .secondary-real {
+      //  padding: 15px;
+        /// inner border
+        /// inner border, to not add pixels outside container and add space
+        -webkit-box-shadow:inset 0px 0px 0px 1px $black; /// is this correct ah yes, i remember
+        -moz-box-shadow:inset 0px 0px 0px 1px $black;
+        box-shadow:inset 0px 0px 0px 1px $black;
+       // border: solid 1px $black;
+        background: transparent;
+
+        .text-container {
+            .Content {
+                color: var(--color-greyscale-black);
+            }
+        }
+
+        &:hover {
+            /// which one ??????
+           // background: rgba(0, 0, 0, 0.05);
+            background: var(--color-greyscale-grey-05);
+            //background: rgba(0, 0, 0, 0.05);
+        }
+    }
+    // secondary inverted
+    .secondary-inverted-real {
+
+        background: transparent;
+       /// border: 1px solid var(--color-greyscale-white, #FFF);
+        -webkit-box-shadow:inset 0px 0px 0px 1px $white; /// is this correct ah yes, i remember
+        -moz-box-shadow:inset 0px 0px 0px 1px $white;
+        box-shadow:inset 0px 0px 0px 1px $white;
+        .text-container {
+            .Content {
+                color: var(--color-greyscale-white);
+            }
+        }
+
+        &:hover {
+            /// which one ??????
+            // background: rgba(0, 0, 0, 0.05);
+           // background: var(--color-greyscale-grey-05);
+            //background: rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.20); // is there a token? is this transparent? QUESTION
+        }
+
+    }
+    // blank
+    .blank-real {
+        background: transparent;
+
+        .text-container {
+            .Content {
+                /// needs correct assosication --- text primary inverted
+                color: var(--color-greyscale-black);
+            }
+        }
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.05); // is there a token? is this transparent? QUESTION grey o5 perhaps ??
+        }
+    }
+    // blank inverted
+
+    .blank-inverted-real {
+        background: transparent;
+
+        .text-container {
+            .Content {
+                /// needs correct assosication --- text primary inverted
+                color: var(--color-greyscale-white);
+            }
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.20); // is there a token? is this transparent? QUESTION grey o5 perhaps ??
+        }
+    }
+    /// <!--- end button states (above will be used) -->
+
+    /// start New icon variants ///
+
+    /// large - no red dot
+    // Q --- should I @ include extend from here? or just use base and whatever in the html? examples of when to use extended and why not just add
+
+    .ButtonDesktopPrimaryLargeRealReal {
+       // width: 175px;
+        height: 56px;
+        flex-grow: 0;
+        //display: flex;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        background-color: black;
+
+        .IconRealReal {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+            color: white;
+        }
+
+        .TextRealReal {
+           // width: 95px;
+            height: 24px;
+            flex-grow: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 3px 8px;
+
+            .ContentRealReal {
+               // width: 79px;
+                height: 18px;
+                flex-grow: 0;
+                font-family: breuercondensed;
+                font-size: 18px;
+                font-weight: bold;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.18px;
+                text-align: center;
+                color: white;
+            }
+        }
+    }
+
+
+    /// medium
+    .ButtonDesktopPrimaryMediumRealReal {
+        height: 48px;
+        padding: 12px;
+
+        position: relative; // unique to this one
+
+        .Ellipse-62 {
+            display: flex;
+            width: auto;
+            height: 20px;
+            padding: 0px 5px;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 100px;
+            background: red;
+
+            /// positioning
+        // margin-top: 0;
+            // margin-bottom: 0;
+          //  right: 0;
+            left: 0; // new
+            top: 0;
+            margin-top: 4px; // new
+            margin-left: 21px; // new
+            position: absolute;
+
+            .content {
+
+                // layout
+                display: flex;
+                min-width: 10px;
+                min-height: 13px;
+                flex-direction: column;
+                justify-content: center;
+
+                // typography
+                color: #FFF;
+                text-align: center;
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-family: breuercondensed;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 14px; /* 100% */
+                text-transform: uppercase;
+                color: white;
+            }
+        }
+
+        .IconRealReal {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+            color: white;
+        }
+
+        /// badge --- import
+       /* .Ellipse-62 {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: -8px;
+            margin-top: -16px;
+            // background-color: var(--alert-red-danger); /// use real color
+            background-color: $red-00; // not correct fix to above
+        }
+        */
+
+        .TextRealReal {
+            // width: 95px;
+            height: 24px;
+            flex-grow: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 3px 8px;
+
+            .ContentRealReal {
+                // width: 79px;
+                height: 18px;
+                flex-grow: 0;
+                font-family: breuercondensed;
+                font-size: 18px;
+                font-weight: bold;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.18px;
+                text-align: center;
+                color: white;
+            }
+        }
+    }
+
+    /// small
+
+    .ButtonDesktopPrimarySmallRealReal {
+        height: 40px;
+        padding: 8px;
+
+        .IconRealReal {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+            color: white;
+            position: relative; // unique to this one
+
+            .Ellipse-62 {
+                display: flex;
+                width: 8px;
+                height: 8px;
+                // padding: 0px 5px;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 100px;
+                background: red;
+
+                /// positioning
+                // margin-top: 0;
+                // margin-bottom: 0;
+                //  right: 0;
+              //  left: 0; // new
+                top: 0;
+                right: 0;
+               // margin-top: 4px; // new
+               // margin-left: 21px; // new
+                position: absolute;
+            }
+        }
+
+        /// badge --- import
+        /* .Ellipse-62 {
+             width: 8px;
+             height: 8px;
+             border-radius: 50%;
+             margin-left: -8px;
+             margin-top: -16px;
+             // background-color: var(--alert-red-danger); /// use real color
+             background-color: $red-00; // not correct fix to above
+         }
+         */
+
+        .TextRealReal {
+            // width: 95px;
+            height: 24px;
+            flex-grow: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 8px;
+
+            .ContentRealReal {
+                // width: 79px;
+                height: 16px;
+                flex-grow: 0;
+                font-family: breuercondensed;
+                font-size: 16px;
+                font-weight: 700;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 1; // or 16
+                letter-spacing: 0.48px;
+                text-align: center;
+                color: white;
+            }
+        }
+    }
+
+    //// XS
+    /// how to handle all external imports of components
+    /// will it break?
+    .ButtonDesktopPrimaryXSRealReal {
+        height: 32px;
+        padding: 6px;
+
+        .IconRealReal {
+            width: 20px;
+            height: 20px;
+            flex-grow: 0;
+            object-fit: contain;
+            color: white;
+            position: relative; // unique to this one
+
+            .Ellipse-62 {
+                display: flex;
+                width: 8px;
+                height: 8px;
+                // padding: 0px 5px;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 100px;
+                background: red;
+
+                /// positioning
+                // margin-top: 0;
+                // margin-bottom: 0;
+                //  right: 0;
+                //  left: 0; // new
+                top: 0;
+                right: 0;
+                // margin-top: 4px; // new
+                // margin-left: 21px; // new
+                position: absolute;
+            }
+        }
+
+
+        .TextRealReal {
+            // width: 95px;
+            height: 24px;
+            flex-grow: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 3px 4px;
+
+            .ContentRealReal {
+                // width: 79px;
+                height: 14px;
+                flex-grow: 0;
+                font-family: breuercondensed;
+                font-size: 16px;
+                font-weight: 700;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 1; // or 1 /// 1 or the number which is good?
+                letter-spacing: 0.48px;
+                text-align: center;
+                color: white;
+            }
+        }
+    }
+
+
+// + with
+
+    /// End new icon variants ( above will be used
+
+    //// NOTES --- need to handle toggle
+
+    //// system buttons
+
+
+
+    //// anything below here is not used and can be gotten rid of
+    ///// Trash
+    .VersionDesktop-VariantPrimary-SizeLarge {
+        max-width: 175px; // or from parent ??? // like, what if peeople add new text... max width cant be set
+        height: 56px;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        background-color: var(--color-greyscale-black);
+
+        /// mine
+        cursor: pointer;
+        transition: all 150ms ease-out; // is this correct
+
+        .material-symbols-outlined {
+            color: var(--color-greyscale-white);
+            font-size: 24px;
+
+            // needed for dot
+            position: relative;
+        }
+
+        /// badge --- import
+        .Ellipse-62 {
+            width: 8px;
+            height: 8px;
+            background-color: red; // get correct color
+            border-radius: 50%;
+
+            /// figma
+            display: flex;
+            width: 8px;
+            height: 8px;
+            justify-content: center;
+            align-items: center;
+
+            /// figma
+            position: absolute;
+            left: 24px;
+            top: 8px;
+        }
+
+        img.IconLeft {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+        }
+
+        img.IconRight {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+        }
+
+        .Text {
+            //width: 95px;
+            //height: 24px;
+            flex-grow: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 3px 8px;
+
+            ///// this one gets the text of the item -- eg label large... this might need to be taken out
+            .Content {
+                width: 79px;
+                height: 18px;
+                flex-grow: 0;
+                font-family: BreuerCondensedBold;
+                font-size: 18px;
+                font-weight: bold;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.18px;
+                text-align: center;
+                color: var(--color-greyscale-white);
+            }
+        }
+        &:hover {
+            background: var(--color-greyscale-grey-80); /// correct one?
+        }
+    } /// end large
+
+    /// medium
+    .VersionDesktop-VariantPrimary-SizeMedium {
+        max-width: 167px; // or from parent ??? // !!
+        height: 48px; /// !!
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px; // !!
+        background-color: var(--color-greyscale-black);
+
+        /// mine
+        cursor: pointer;
+        transition: all 150ms ease-out; // is this correct
+
+        .material-symbols-outlined {
+            color: var(--color-greyscale-white);
+            font-size: 24px;
+
+            // needed for dot
+            position: relative;
+        }
+
+        /// badge --- import
+        .Ellipse-62 {
+            width: 8px;
+            height: 8px;
+            background-color: red; // get correct color
+            border-radius: 50%;
+
+            /// figma
+            display: flex;
+            width: 8px;
+            height: 8px;
+            justify-content: center;
+            align-items: center;
+
+            /// figma
+            position: absolute;
+            left: 24px;
+            top: 8px;
+        }
+
+        img.IconLeft {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+        }
+
+        img.IconRight {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+        }
+
+        .Text {
+            //width: 95px;
+            //height: 24px;
+            flex-grow: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 3px 8px;
+
+            ///// this one gets the text of the item -- eg label large... this might need to be taken out
+            .Content {
+                width: 79px; /// determined by the imported font
+                height: 18px;
+                flex-grow: 0;
+                font-family: BreuerCondensedBold;
+                font-size: 18px;
+                font-weight: bold;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.18px;
+                text-align: center;
+                color: $white;
+            }
+        }
+        &:hover {
+            background: $grey-80; /// correct one?
+        }
+    } /// end large
+
+
+
+} // end new-button-container
+
+/// still using??
+.buttons-container {
+
+    /// contains corresponding width
+    $button-sizes: (
+        xs: 18px,
+        small: 24px,
+        medium: 32px,
+        large: 40px
+    );
+
+    $button-colors: (
+        primary: #007bff,
+        secondary: #6c757d,
+        success: #28a745,
+        danger: #dc3545,
+        warning: #ffc107
+    );
+
+    @mixin button($size, $color) {
+        $button-width: map-get($button-sizes, $size);
+        $button-background: map-get($button-colors, $color);
+        $button-hover-background: darken($button-background, 10%);
+
+        display: inline-block;
+        padding: 0 12px;
+        height: $button-width;
+        line-height: $button-width;
+        border-radius: $button-width / 2;
+        background-color: $button-background;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: $button-hover-background;
+        }
+    }
+
+    // Usage example:
+    .button-large {
+        @include button(xs, primary);
+    }
+
+    .button-xs {
+        @include button(medium, warning);
+    }
+
+
+    /// sass experiement
+
+    // desktop (and I guess large) - need to make for mobile
+    // desktopp size largest
+ .button-base {
+     height: 48px;
+     padding: 15px 20px; //--- px or rem
+     cursor: pointer;
+     border: 1px solid transparent; // used to ovverde system default
+     transition: all 150ms ease-out;
+
+     .button-text {
+         font-size: 18px;
+         line-height: 1;
+         letter-spacing: 0.18px;
+         text-align: center;
+     }
+ }
+    // mobile button base
+
+    .variant-base-large {
+        /// should I import the primary button above?? into this one
+        padding: 16px 15px; //--- px or rem
+        height: 56px;
+        display: flex;
+        align-items: center;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: all 150ms ease-out;
+
+        .material-symbols-outlined {
+            color: $white;
+        }
+
+        .button-text {
+            line-height: 1;
+            letter-spacing: 0.18px;
+            text-align: center;
+            padding-left: 8px;
+            padding-right: 8px;
+            color: $white;
+        }
+        // keep it here or add it to each one --- what are repurcussions?? which one will overwrite the other???
+        &:hover {
+            background: $grey-80;
+        }
+    }
+
+    //// Primary Default -- base button ??
+    // use base in conjunction
+    .primary {
+        background: $black;
+
+        .button-text {
+            color: $white;
+        }
+
+        &:hover {
+            background: $grey-80;
+            color: rgba($white, .8);
+        }
+        /// End base
+    } // end base
+
+    .primary-medium {
+        background: $black;
+        padding: 12px;
+
+        .button-text {
+            text-align: center;
+            /* Desktop/Label Large */
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 18px;
+            letter-spacing: 0.18px;
+            text-transform: uppercase;
+            color: $white;
+        }
+
+        &:hover {
+            background: $grey-80;
+            color: rgba($white, .8);
+        }
+        /// End base
+    } // end base
+
+
+    // Desktop Primary Inverted
+    .primary-inverted {
+        background: $white;
+
+        .button-text {
+            color: $black;
+        }
+
+        &:hover {
+            background: $grey-05;
+        }
+        /// End base
+    } // end base
+    // End Desktop Primary Inverted
+
+// Desktop Secondary Default
+    .secondary {
+        background: $white;
+        border: 1px solid $black;
+
+        .button-text {
+            color: $black;
+            /// comment --- font defaults not being hit (and not overriding system defaults
+        }
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+    // End Desktop Secondary Default
+    }
+
+    /// Secondary Inverted :
+    .secondary-inverted {
+        background: transparent;
+        border: 1px solid $white;
+
+        .button-text {
+            color: $white;
+            /// comment --- font defaults not being hit (and not overriding system defaults
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        // End Desktop Secondary Default
+    }
+    /// End Secondary Inverted : ToDo
+
+    // Blank-Default
+    .blank {
+
+        background: transparent; // to override system style
+
+        .button-text {
+            color: $black;
+            /// comment --- font defaults not being hit (and not overriding system defaults
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    }
+    // End blank Default
+
+    /// Blank Inverted
+    .blank-inverted {
+        background: transparent; // to override system style
+        .button-text {
+            color: $white;
+            /// comment --- font defaults not being hit (and not overriding system defaults
+        }
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        // End Desktop Secondary Default
+    }
+    /// End blank inverted
+
+
+    /// SECTION 2 Variants
+
+    //1.) // issue not sure if I need the onhover state stuff
+    /// keep this as gold standard .... an can be used for system ... but ... try the base
+   /* .variant-primary-large {
+        padding: 16px 15px; //--- px or rem
+        height: 56px;
+        display: flex;
+        align-items: center;
+        background: $black;
+        //background-color: rgba( $black, .1 );
+
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: all 150ms ease-out;
+
+        .material-icons {
+            color: $white;
+        }
+
+        .button-text {
+            font-family: 'BreuerCondensedBold';
+            font-size: 18px;
+            font-weight: bold;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.18px;
+            text-align: center;
+            //color: var(--text-text-highest-emphasis); /// check correct to use here
+            color: $white;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        &:hover {
+            background: $grey-80;
+        }
+        /// not using active - what does active do - I forgot
+        // &:active {
+             transform: scale(0.98);
+
+             box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+
+         }
+        // looses focus on click
+        &:focus {
+            background: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: $black;
+
+            .button-text {
+                color: $black;
+            }
+
+            .material-icons {
+                color: $black;
+            }
+
+            &:hover {
+                // background: rgba(0, 0, 0, 0.14);
+                background: rgba(0, 0, 0, 0.1);
+                border: 1px solid $black;
+                color: $black;
+
+                .button-text {
+                    color: $black;
+                }
+            }
+        }
+
+    } */
+
+    .variant-primary-large {
+        background: $black;
+
+        .material-symbols-outlined {
+            color: $white;
+        }
+    }
+
+    // varient Primary Inverted
+    .variant-primary-inverted-large {
+        background: $white;
+
+        .material-symbols-outlined {
+            color: $black;
+        }
+
+        .button-text {
+            color: $black;
+        }
+
+        &:hover {
+            background: $grey-05;
+        }
+    }
+
+    // varient Secondary Large
+    .variant-secondary-large {
+        background: $white;
+        border: 1px solid $black;
+
+        .material-symbols-outlined {
+            color: $black;
+        }
+
+        .button-text {
+            color: $black;
+        }
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    // varient Secondary inverted Large
+    .variant-secondary-inverted-large {
+        background: transparent;
+        border: 1px solid $white;
+
+        .material-symbols-outlined {
+            color: $white;
+        }
+
+        .button-text {
+            color: $white;
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+    }
+
+    // varient Secondary Large
+    .variant-blank-large {
+        background: transparent; // to override system style
+
+        .material-symbols-outlined {
+            color: $black;
+        }
+
+        .button-text {
+            color: $black;
+        }
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    // varient Secondary Large
+    .variant-blank-inverted-large {
+        background: transparent; // to override system style
+
+        .material-symbols-outlined {
+            color: $white;
+        }
+
+        .button-text {
+            color: $white;
+        }
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+    }
+
+    /////END SYSTEM 2 VARIANTS
+
+
+    /////
+    /////
+    ////
+    /// SYSTEM
+    ////
+    ////
+    ////
+
+
+
+    // System large, Desktop Large (just default
+    .button-sys-desktop-large {
+        padding: 16px; //--- px or rem
+        height: 56px;
+        align-self: stretch;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: $white; // not correct - needs blend
+        border: 1px solid rgba(0, 0, 0, 0.1); // color var + percentage
+        cursor: pointer;
+
+
+        .Text {
+            font-family: 'BreuerCondensedBold';
+            font-size: 18px;
+            font-weight: bold;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.18px;
+            text-align: center;
+            //color: var(--text-text-highest-emphasis); /// check correct to use here
+            color: $black; /// black is not correct
+            padding-left: 8px;
+            padding-right: 8px;
+            // ease in ease out 150 ms
+        }
+
+       /* &:active {
+            background: green;
+            border: 1px solid #000000;
+        }*/
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.1);
+            border: 1px solid #000000;
+        }
+
+    }
+
+
+
+    // System Toggled, Desktop Large
+    .button-sys-toggled {
+        padding: 12px; //--- px or rem
+        //height: 56px;
+       // align-self: stretch;
+       // flex-grow: 0;
+        display: flex;
+       // flex-direction: row;
+       // justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.12);
+        //background-color: rgba( $black, .1 );
+
+        border: 1px solid rgba($black, .1);
+        cursor: pointer;
+
+
+        .Text {
+            font-family: 'BreuerCondensedBold';
+            font-size: 18px;
+            font-weight: bold;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.18px;
+            text-align: center;
+            //color: var(--text-text-highest-emphasis); /// check correct to use here
+            color: $black; /// black is not correct
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.14);
+            /* Greyscale/Black */
+
+            border: 1px solid $black;
+
+        }
+
+       /* &:active {
+            transform: scale(0.98);
+
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+
+        } */
+        // looses focus on click
+        &:focus {
+            background: rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid red;
+
+            &:hover {
+               // background: rgba(0, 0, 0, 0.14);
+                background: green;
+                border: 1px solid #000000;
+            }
+        }
+
+    }
+
+   /* .focus:focus {
+        color: red;
+    } */
+
+
+     /// Button with circle left
+    /// desktop Primary Small
+    //// needs to draw from base --- at top
+
+
+
+
+    .button-desktop-primary-small {
+        padding: 7px; //--- px or rem
+        min-width: 153px;
+        height: 40px;
+        //align-self: stretch;
+        //flex-grow: 0;
+        display: flex;
+       // flex-direction: row;
+        // justify-content: center;
+        align-items: center;
+        // padding: 16px;
+        background: $black; //// top base does not have a color
+        transition: all 150ms ease-out;
+        cursor: pointer;
+
+        //
+        border: 1px solid rgba(0, 0, 0, 0.1);
+
+        .material-symbols-outlined {
+            /// base needs material icons size... its not set // variant or???
+            color: $white;
+            size: 24px;
+        }
+        .Ellipse-62 {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: -8px;
+            margin-top: -16px;
+           // background-color: var(--alert-red-danger); /// use real color
+            background-color: $red-00; // not correct fix to above
+        }
+        .Text {
+            // width: 79px;
+            // height: 18px;
+            //  flex-grow: 0;
+            font-family: 'BreuerCondensedBold';
+            font-size: 16px;
+            font-weight: bold;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 16px;
+            letter-spacing: 0.48px;
+            text-align: center;
+            //color: var(--text-text-highest-emphasis); /// check correct to use here
+            color: $white; /// black is not correct
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        &:hover {
+            background: $grey-80;
+            color: rgba($white, .8);
+        }
+    }
+
+    /// Button with circle left
+    /// desktop Primary XS
+    //// needs to draw from base --- at top
+    .button-desktop-primary-xs {
+        padding: 5px; //--- px or rem
+        min-width: 125px;
+        height: 32px;
+        align-self: stretch;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        // padding: 16px;
+
+        //
+        border: 1px solid transparent;
+        // border: 1px solid rgba(0, 0, 0, 0.1);
+
+        .material-icons {
+            /// base needs material icons size... its not set
+            color: $black;
+            font-size: 20px;
+        }
+        .Ellipse-62 {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: -9px;
+            margin-top: -15px;
+            // background-color: var(--alert-red-danger); /// use real color
+            background-color: $red-00; // not correct fix to above
+        }
+        .Text {
+            // width: 79px;
+            // height: 18px;
+            //  flex-grow: 0;
+            font-family: 'BreuerCondensedBold';
+            font-size: 14px;
+            font-weight: bold;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 16px;
+            letter-spacing: 0.56px;
+            text-align: center;
+            //color: var(--text-text-highest-emphasis); /// check correct to use here
+            color: black; /// black is not correct
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+    }
+
+    //// end button circle left
+
+
+
+
+
+    ///// End  with circle
+    /// button icon right
+    .button-icon-circle-right {
+        padding: 6px;
+        border: 1px solid transparent; // use either
+        width: 32px;
+        height: 32px;
+        background: $black; // not correct
+        position: relative;
+
+        .elipse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            // background-color: var(--alert-red-danger); /// use real color
+            background-color: $red-00; // not correct fix to above
+            // is display needed
+            display: block;
+        }
+
+        // do yo uneed to add in a shortcode?? so that different icons can appear
+        .icon {
+            background-image: url(../Icons/ComponentIcons/chevron_left.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 32px;
+            height: 32px;
+            display: block;
+        }
+    }
+    /// in or out above
+    .jsx-minicart-header-icon-count {
+        background: $red-00;
+        border-radius: 100px;
+        left: 50%;
+        letter-spacing: .2px;
+        //line-height: .8125rem;
+        //min-width: 1.5625rem;
+        min-width: 8px;
+        min-height: 8px;
+        //padding: 4px 6px;
+        position: absolute;
+        text-align: center;
+        //top: -50%; use this to position
+    }
+    .svg-header-icon-svg {
+       // width: 11.58px;
+       // height: 15.37px;
+    }
+    // color svg
+    .svg-header-icon-svg-path {
+        fill: $white; // correct var
+    }
+}
+
+//// TO DO
+// Correct text
+// huge cleanup
+// Rename classes
+// MAybe look at examples
+
+
+/// tech
+/*
+          font-size: rem-calc(16px);
+          margin-right: rem-calc(4px);
+          vertical-align: text-bottom;
+ */
+/// Helper
+
+/// gradient checkerboard
+.checkerboard {
+    background-image: linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+
+///// Ikean
+
+.hnf-header__cart-counter {
+    background-color: var(--info-default);
+    color: var(--text-primary-inverted);
+    border-radius: 50px;
+    //line-height: .95rem;
+    line-height: 14px; /* 100% */
+    margin-top: 0;
+    margin-bottom: 0;
+    right: 0;
+    top: 0;
+   // position: absolute;
+    min-width: 20px;
+    height: 20px;
+    text-align: center;
+    //font-size: .65rem; /// good eg?
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-style: normal;
+    font-family: breuercondensed;
+
+    //padding: 2px;
+    padding: 5px;
+    // too much (makes it 25) --- so...... i need to sort this out
+    ///
+    // 2.5 is it enough?
+    //padding: 2.5px;
+}
