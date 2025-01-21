@@ -3,7 +3,12 @@ import React from 'react';
 import MainIntroComponent from "./TemplateComponents/MainIntroComponent";
 import SecondaryIntroComponent from "./TemplateComponents/SecondaryIntroComponent";
 
-import './layout.scss';
+import './layout.scss'; // ?? vin
+import './layout-templates.scss';  // ?? 
+
+import '../../globalStyles/foundation-fonts-weights.scss';  // ??  -- in relation to main??? 
+// vin to do - gold standard in templates + their html structure
+
 
 const Layout = () => {
 

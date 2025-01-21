@@ -1,0 +1,140 @@
+import React, { useEffect } from 'react';
+import { Body } from './Body';
+import CustomDocsContainer from './CustomDocsContainer';
+
+const generateHtmlSnippet = (args) => {
+  const { size = 'body-xl', summary, modifier = 'None', marginBottom = 'None' } = args;  
+  const classes = [size];
+
+  // Only add modifier and marginBottom if they are not 'None'
+  if (modifier !== 'None') classes.push(modifier);
+  if (marginBottom !== 'None') classes.push(marginBottom);
+
+  return `<p class="${classes.join(' ')}">${summary}</p>`;
+};
+
+const fontModifiers = {
+  'body-sm': ['None', 'body-sm--italic', 'body-sm--underline', 'body-sm--strikethrough', 'body-sm--bold', 'body-sm-bold--italic', 'body-sm-bold--underline', 'body-sm-bold--strikethrough'],
+  'body-md': ['None', 'body-md--bold', 'body-md--italic', 'body-md--underline', 'body-md--strikethrough', 'body-md--bold-italic', 'body-md--bold-underline', 'body-md--bold-strikethrough'],
+  'body-lg': ['None', 'body-lg--bold', 'body-lg--italic', 'body-lg--underline', 'body-lg--strikethrough', 'body-lg--bold-italic', 'body-lg--bold-underline', 'body-lg--bold-strikethrough'],
+  'body-xl': ['None', 'body-xl--preamble', 'body-xl--bold', 'body-xl--italic', 'body-xl--underline', 'body-xl--strikethrough', 'body-xl--bold-italic', 'body-xl--bold-underline', 'body-xl--bold-strikethrough'],
+};
+
+export default {
+  title: 'Foundation/Typography/Components/Body',
+  component: Body,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      container: CustomDocsContainer,
+      description: {
+        component: `
+### Body Component
+Body is used for longer passages of text in the UI, usually in order to populate paragraphs. The body style is adjusted to be readable at smaller sizes.
+
+**Body X-Large** is used for short intro passages of longer texts and non-recurrent text passages.
+
+<div class="content-block content-block--callout callout-primary" role="alert">
+  <div class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      <polyline points="11 12 12 12 12 16 13 16"></polyline>
+    </svg>
+  </div>
+  <div class="content">
+    To set spacing, use the spacing design token from the spacing scale. 
+    Add this to any component in any design where there’s need for spacing.
+  </div>
+</div>
+        `,
+      },
+      source: {
+        transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+      },
+    },
+  },
+  argTypes: { 
+    version: {
+      control: { type: 'select' }, 
+      options: ['Desktop', 'Mobile'],
+      defaultValue: 'Desktop',
+    },
+    breakpoint: {
+      description: '', 
+      table: {
+        type: { summary: 'Information' },
+        defaultValue: '',
+      },
+      control: false, 
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['body-sm', 'body-md', 'body-lg', 'body-xl'],  
+      defaultValue: 'body-lg',
+    },
+    modifier: {
+      control: { type: 'select' },
+      options: fontModifiers['body-xl'],  
+      defaultValue: 'None',
+    },
+    marginBottom: {
+      control: { type: 'select' },
+      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'],  
+      defaultValue: 'None',
+    },
+  },
+  decorators: [
+    (Story, context) => {
+      const { size, version } = context.args;
+      const modifierControl = context.argTypes.modifier;
+
+      useEffect(() => {
+        modifierControl.options = fontModifiers[size] || [''];
+      }, [size]);  
+
+      useEffect(() => {
+        // Update breakpoint description based on the selected version
+        context.argTypes.breakpoint.description = version === 'Desktop' 
+          ? 'breakpoint-md & breakpoint-lg'
+          : 'breakpoint-xs & breakpoint-sm';
+      }, [version]);
+
+      return <Story {...context.args} />;
+    },
+  ],
+  tags: ['autodocs'],
+};
+
+const summaryText = 'Swedol caters to the needs of professional users as a multispecialist. We provide high quality goods and services in a straightforward and professional manner.';
+
+const Template = (args) => <Body {...args} />;
+
+export const BodyXLargeDesktop = Template.bind({});
+BodyXLargeDesktop.args = {
+  version: 'Desktop',
+  breakpoint: '',
+  summary: summaryText,
+  size: 'body-lg',
+  modifier: 'None',
+  marginBottom: 'None',
+};
+
+export const BodyLargeDesktop = Template.bind({});
+BodyLargeDesktop.args = {
+  ...BodyXLargeDesktop.args,
+  size: 'body-lg',
+};
+
+export const BodyMediumDesktop = Template.bind({});
+BodyMediumDesktop.args = {
+  ...BodyXLargeDesktop.args,
+  size: 'body-md',
+};
+
+export const BodySmallDesktop = Template.bind({});
+BodySmallDesktop.args = {
+  ...BodyXLargeDesktop.args,
+  size: 'body-sm',
+};

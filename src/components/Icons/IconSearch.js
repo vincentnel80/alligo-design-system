@@ -6,6 +6,8 @@ import CodeSnippet from '../../shared/Helpers/CodeSnippet/CodeSnippet';
 import './icon-search.scss';
 import './flexible-icon-component.scss';
 
+// To do: FlexibleIconComponent is missing - need to retrieve it from another system
+
 const IconSearch = () => {
     const data = [
         {
@@ -218,7 +220,7 @@ const IconSearch = () => {
                     .map((item) => (
                         <div key={item.title} className={'icon-library-column'} data-id={item.title} onClick={() => setIconName(item.title)}>
                             <div className={'vertical-center'} onClick={scrollToCodeSnippet}>
-                                <FlexibleIconComponent iconName={item.title} />
+                                {/*<FlexibleIconComponent iconName={item.title} />  */}
                                 <div className={'body-sm icon-name'} style={{
                                     opacity: '80%',
                                 }}>{item.formatted}</div>

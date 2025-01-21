@@ -1,74 +1,140 @@
-// Header.stories.js
+import React, { useEffect } from 'react';
+import { BlockQuote } from './BlockQuote';
+import CustomDocsContainer from './CustomDocsContainer';
 
-import React from 'react';
-//import Header from './Header.component';
-import BlockQuote from './BlockQuote';
-
-// HTML Snippet for the Breadcrumb component
-const htmlSnippet = `
-<h1 class="display-lg">Laurem Ipsum</h1>
-`;
+// Dynamic HTML snippet generator function
+const generateHtmlSnippet = (args) => {
+  const { summary, name, title, marginBottom = '', theme = 'Swedol', alignment = 'left' } = args;
+  
+  // Return HTML snippet with dynamic values
+  return `
+    <div class="blockq-container">
+      <div class="blockq-container-inner" style="border-left: ${theme === 'Swedol' ? '#C7D300' : '#CD1125'};">
+        <div class="headline-md headline-md--blockquote">
+          "${summary}"
+        </div>
+        <div class="bottom-text-wrapper">
+          <span class="label-sm">${name}</span>
+          <span class="body-sm">${title}</span>
+        </div>
+      </div>
+    </div>`;
+};
 
 export default {
-    //title: 'Typography/Blockquote (Modifier: Headline Medium)', vin to do
-    title: 'Foundation/Typography/Components/Blockquote (Modifier: Headline Medium)',
-    component: BlockQuote,
-    parameters: {
-      layout: 'centered',
-      docs: {
-        description: {
-          component: 'A customizable Block quote component text description.',
-        },
-        source: {
-          code: `<div class="blockq-container">
-  <div class="blockq-container-inner">
-    <Tag style={{ paddingBottom }} className="headline-md headline-md--blockquote">
-      {text}
-    </Tag>
-    <div class="bottom-text-wrapper">
-      <span class="label-sm"> NAME SURNAME</span>
-      <span class="body-sm">TItle</span>
-    </div>
-  </div>
-</div>
-`,
-        },
+  title: 'Components/Block Quote',
+  component: BlockQuote,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      container: CustomDocsContainer,
+      source: {
+        transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
       },
     },
-    argTypes: {
-      text: { 
-        control: 'text',
-        description: 'The text to display',
-        defaultValue: 'Sample Text'
-      },
-     /* level: { 
-        control: 'number', 
-        min: 1, 
-        max: 6, 
-        step: 1, 
-        defaultValue: 1
-      }, */
-      paddingBottom: {
-        options: ['16px'],
-        control: { type: 'select' },
-        description: 'Bottom padding of the header',
-      },
+  },
+  argTypes: { 
+    version: {
+      control: { type: 'select' }, 
+      options: ['Desktop', 'Mobile'],
+      defaultValue: 'Desktop',
+      description: 'The version size for the component',
     },
-    tags: ['autodocs'],
-  };
-  
-  const Template = (args) => <BlockQuote {...args} />;
-  
-  export const Default = Template.bind({});
-  Default.args = {
-    text: '“It has to start somewhere, it has to start sometime. What better place than here, what better time than now?”',
-   // level: 1,
-    paddingBottom: '0px',
-  };
-  
-  export const CustomPadding = Template.bind({});
-  CustomPadding.args = {
-    text: 'Header with Custom Padding',
-   // level: 1,
-    paddingBottom: '40px',
-  };
+    breakpoint: {
+      description: '', 
+      table: {
+        type: { summary: 'Information' },
+       defaultValue: '',
+      },
+      control: false, 
+    },
+    summary: {
+      control: 'text',
+      description: 'The main quote text to display',
+      defaultValue: 'It has to start somewhere, it has to start sometime. What better place than here, what better time than now?',
+    },
+    name: {
+      control: 'text',
+      description: 'The name to display',
+      defaultValue: 'NAME SURNAME',
+    },
+    title: {
+      control: 'text',
+      description: 'The title to display',
+      defaultValue: 'Title',
+    },
+    marginBottom: {
+      control: { type: 'select' },
+      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'],
+      defaultValue: '',
+    },
+    alignment: {
+      control: { type: 'select' }, 
+      options: ['left', 'center', 'right'],
+      defaultValue: 'left',
+      description: 'alignment for the component',
+    },
+    theme: {
+      control: { type: 'select' },
+      options: ['Swedol', 'Tools'],
+      defaultValue: 'Swedol',
+    },
+  },
+  decorators: [
+    (Story, context) => {
+      const { version } = context.args;
+ 
+      useEffect(() => {
+        context.argTypes.breakpoint.description = version === 'Desktop' 
+          ? 'breakpoint-md & breakpoint-lg'
+          : 'breakpoint-xs & breakpoint-sm';
+      }, [version]);
+
+      return <Story {...context.args} />;
+    },
+  ],
+  tags: ['autodocs'],
+};
+
+const Template = (args) => <BlockQuote {...args} />;
+
+export const BlockQuoteDesktop = Template.bind({});
+BlockQuoteDesktop.args = {
+  version: 'Desktop',  // Default version
+  breakpoint: '',
+  summary: 'It has to start somewhere, it has to start sometime. What better place than here, what better time than now?',
+  name: 'Name Surname',
+  title: 'Title',
+  theme: 'Swedol',
+  marginBottom: 'None',
+  alignment: 'left',
+};
+
+BlockQuoteDesktop.parameters = {
+  docs: {
+    disable: false,
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+// New Mobile Component Example
+export const BlockQuoteMobile = Template.bind({});
+BlockQuoteMobile.args = {
+  summary: 'It has to start somewhere, it has to start sometime. What better place than here, what better time than now?',
+  name: 'NAME SURNAME',
+  title: 'Title',
+  theme: 'Swedol',
+  marginBottom: 'None',
+  version: 'Mobile',  // Set to Mobile for this variant
+};
+
+BlockQuoteMobile.parameters = {
+  docs: {
+    disable: false,
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};

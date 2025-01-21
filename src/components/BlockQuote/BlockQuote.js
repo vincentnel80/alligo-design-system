@@ -1,53 +1,80 @@
-// BlockQuote.component.js
-
 import React from 'react';
 import PropTypes from 'prop-types';
+import './blockquote.scss';
 
 /**
- * 
-* sdfgsfsddfsfd
+ * A blockquote refers to a cited quotation that is visually distinguished from the primary text on a page.
  */
 
-/**
- * BlockQuote component for displaying headings
- * @param {Object} props - Props for the component
- * @param {string} props.text - The text to display
- * @param {1|2|3|4|5|6} props.level - The heading level
- * @param {string} props.paddingBottom - The bottom padding of the header
- * @returns {JSX.Element} The rendered header
- */
-const BlockQuote = ({ text, level, paddingBottom }) => {
-    const Tag = `h3`;
+export const BlockQuote = ({ 
+  version, 
+  summary, 
+  name = 'Name Surname', 
+  title = 'Title', 
+  marginBottom = '', 
+  theme = 'Swedol' ,
+  alignment = 'left',
+}) => {
+  // Apply conditional theme class for the background color
+  const containerStyle = {
+    borderLeft: `4px solid ${theme === 'Swedol' ? '#C7D300' : '#CD1125'}`,
+  };
+
+  // Conditionally render the mobile version of the blockquote when the version is 'Mobile'
+  // add in demo text or not??
+  if (version === 'Mobile') {
     return (
-      <div class="blockq-container">
-        <div class="blockq-container-inner">
-      <Tag
-        style={{ paddingBottom }}
-        className="headline-md headline-md--blockquote"
-      >
-        {text}
-      </Tag>
-      <div class="bottom-text-wrapper">
-        <span class="label-sm"> NAME SURNAME</span>
-        <span class="body-sm">TItle</span>
-      </div>
+      <div className={`alignment-container ${alignment}`}>
+      <div className="blockq-container blockq-container--sb-mobile">
+        <div className="blockq-container-inner needshere">
+          <div className="headline-md headline-md--blockquote">
+            {summary}
+          </div>
+          <div className="bottom-text-wrapper">
+            <span className="label-sm">{name}</span>
+            <span className="body-sm">{title}</span>
+          </div>
+        </div>
+        {/* alignment container */}
+        {marginBottom && <div className={`${marginBottom}-temp`}></div>}
       </div>
       </div>
     );
-  };
-  
-  BlockQuote.propTypes = {
-    /** The text to display */
-    text: PropTypes.string.isRequired,
-    /** The heading level */
-    //level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
-    /** The bottom padding */
-    paddingBottom: PropTypes.string,
-  };
-  
-  BlockQuote.defaultProps = {
-   // level: 1,
-    paddingBottom: '16px',
-  };
-  
-  export default BlockQuote;
+  }
+
+  // Default Desktop version
+  return (
+    <div className={`alignment-container ${alignment}`}>
+    <div className="blockq-container blockq-container--sb-desktop">
+      <div className="blockq-container-inner">
+        <div className="headline-md headline-md--blockquote">
+          {summary}
+        </div>
+        <div className="bottom-text-wrapper">
+          <span className="label-sm">{name}</span>
+          <span className="body-sm">{title}</span>
+        </div>
+      </div>
+      {/* should margin be here* ?? */}
+      {marginBottom && <div className={`${marginBottom}-temp`}></div>}
+    </div>
+    </div>
+  );
+};
+
+BlockQuote.propTypes = {
+  version: PropTypes.string,
+  summary: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  title: PropTypes.string,
+  marginBottom: PropTypes.string,
+  alignment: PropTypes.oneOf(['left','center', 'right']),
+  theme: PropTypes.oneOf(['Swedol', 'Tools']),
+};
+
+BlockQuote.defaultProps = {
+  name: 'Name Surname',
+  title: 'Title',
+  theme: 'Swedol',
+  alignment: 'left',
+};

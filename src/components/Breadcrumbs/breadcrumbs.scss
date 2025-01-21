@@ -77,7 +77,7 @@ fomnt-familt, variable, spacing, padding
 /// 
 /// 
 /// fix this put in better place
- @font-face {
+ /*@font-face {
   font-family: "breuercondensed";
   src: url("fonts/breuercondensed-bold-webfont.woff2") format("woff2"), url("fonts/breuercondensed-bold-webfont.woff") format("woff");
   font-weight: 700;
@@ -119,7 +119,7 @@ fomnt-familt, variable, spacing, padding
   font-weight: 300;
   font-style: italic;
 }
-
+*/
 /*
 initial color: 
 var(--text-text-medium-emphasis);
@@ -130,34 +130,11 @@ var(--greyscale-black);
 */
 
 
-.css-qa4clq :where(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)) {
-  font-family: "breuercondensed" !important;
-  font-size: 20px !important;
-  line-height: 1.75rem !important;
-  font-weight: 400 !important;
-  color: var(--greyscale-black) !important;
-}
 
-.css-11knh3z { 
 
-  font-family: "breuercondensed" !important;
-  font-size: 32px !important;
-  font-size: 46px !important;
-  line-height: 3rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0px;
-  color: var(--greyscale-black) !important;
-}
 
-.css-qa4clq :where(h3:not(.sb-anchor, .sb-unstyled, .sb-unstyled h3)):first-of-type {
-  font-family: "breuercondensed" !important;
-  font-size: 2.25rem !important;
-  line-height: 2.5rem !important;
-  font-weight: 700 !important;
-  color: var(--greyscale-black) !important;
-  margin-bottom: 16px;
-}
-
+/// adding as resets etc
+/// // global styles - vin
 
 *,
 *:before,
@@ -566,6 +543,8 @@ ul {
     }
   }
 
+  /*
+  move this to _storybook-templates.scss
   .figma-link-container {
     display: flex;
     align-items: center;
@@ -586,13 +565,13 @@ ul {
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 12px; /* 100% */
+    line-height: 12px; 
     letter-spacing: 0.24px;
   }
 
   .figma-link-container:hover .figma-link-text {
     color: var(--greyscale-black);
-  }
+  } */
 
   // hide view code button
 #anchor--example-breadcrumb--clicked {

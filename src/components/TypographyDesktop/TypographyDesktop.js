@@ -67,7 +67,7 @@ const TypographyDesktop = ({
             <GridContainerComponent
                 fontClassName={'alt-label-sm'}
                 fontDescription={'Alt-Label styles (Alternative) are smaller, utilitarian styles, used for things like the text inside components, text inside buttons, labeling formfields and user info.'}
-                fontInformation={'Font-family: Breuer-Condensed \\n Font-size: 14x; \\n Line-height: 14px; \\n Letter-spacing: 0.56px; \\n Font-weight: 500; \\n Text-transform: Uppercase; \\n Paragraph-spacing: 14px;'}
+                fontInformation={'Font-family: Breuer-Condensed \\n Font-size: 14px; \\n Line-height: 14px; \\n Letter-spacing: 0.56px; \\n Font-weight: 500; \\n Text-transform: Uppercase; \\n Paragraph-spacing: 14px;'}
                 fontName={'Alt-Label Small'}
                 textSnippet={'Lorem ipsum Dolor sit amet'}
                 tokenName={'alt-label-sm'}
@@ -94,7 +94,7 @@ const TypographyDesktop = ({
             <GridContainerComponent
                 fontClassName={'label-sm'}
                 fontDescription={'Label styles are a bolder version of Alt-Label and are smaller, utilitarian styles, used for things like the text inside components, text inside buttons, labeling formfields and user info.'}
-                fontInformation={'Font-family: Breuer-Condensed \\n Font-size: 14x; \\n Line-height: 14px; \\n Letter-spacing: 0.56px; \\n Font-weight: 700; \\n Text-transform: Uppercase; \\n Paragraph-spacing: 14px;'}
+                fontInformation={'Font-family: Breuer-Condensed \\n Font-size: 14px; \\n Line-height: 14px; \\n Letter-spacing: 0.56px; \\n Font-weight: 700; \\n Text-transform: Uppercase; \\n Paragraph-spacing: 14px;'}
                 fontName={'Label Small'}
                 textSnippet={'Lorem ipsum Dolor sit amet'}
                 tokenName={'label-sm'}
@@ -221,16 +221,8 @@ const TypographyDesktop = ({
         <GridHeaderComponent/>
 
         <div className={'sb-grid-container'} role={'listbox'}>
-            <GridContainerComponent
-                fontClassName={'body-xl body-xl--preamble'}
-                fontDescription={'Modified Body X-Large. Used as Preamble text'}
-                fontInformation={'Font-weight: 600;'}
-                fontName={'Body X-Large (Modifier) -> Preamble'}
-                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.\\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. '}
-                tokenName={'body-xl body-xl--preamble'}
-            />
 
-            <GridContainerComponent
+        <GridContainerComponent
                 fontClassName={'headline-md headline-md--blockquote'}
                 fontDescription={'Modified Label Medium style. Used as text for blockquotes.'}
                 fontInformation={'Text-transform: uppercase;'}
@@ -239,7 +231,7 @@ const TypographyDesktop = ({
                 tokenName={'headline-md headline-md--blockquote'}
             />
 
-            <GridContainerComponent
+<GridContainerComponent
                 fontClassName={'label-sm label-sm--badge'}
                 fontDescription={'Modified Label Small style. Used for Badge base.'}
                 fontInformation={'Font-weight: 600; \\n Text-transform: normal;'}
@@ -248,7 +240,7 @@ const TypographyDesktop = ({
                 tokenName={'label-sm label-sm--badge'}
             />
 
-            <GridContainerComponent
+<GridContainerComponent
                 fontClassName={'label-lg label-lg--underline'}
                 fontDescription={'Modified Label Small style. Used for ????'}
                 fontInformation={'Text-decoration: underline;'}
@@ -258,12 +250,43 @@ const TypographyDesktop = ({
             />
 
             <GridContainerComponent
+                fontClassName={'body-xl body-xl--preamble'}
+                fontDescription={'Modified Body X-Large. Used as Preamble text'}
+                fontInformation={'Font-weight: 600;'}
+                fontName={'Body X-Large (Modifier) -> Preamble'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.\\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. '}
+                tokenName={'body-xl body-xl--preamble'}
+            />
+
+
+
+<GridContainerComponent
+                fontClassName={'body-xl body-xl--italic'}
+                fontDescription={'Modified Body X-Large style.'}
+                fontInformation={'font-style: italic;'}
+                fontName={'Body X-Large (Modifier) -> italic'}
+                textSnippet={'Lorem ipsum dolor sit amet'}
+                tokenName={'body-xl body-xl--italic'}
+            />
+
+
+
+            <GridContainerComponent
                 fontClassName={'body-xl body-xl--underline'}
                 fontDescription={'Modified Body X-Large style.'}
                 fontInformation={'Text-decoration: underline;'}
                 fontName={'Body X-Large (Modifier) -> Underline'}
                 textSnippet={'Lorem ipsum dolor sit amet'}
                 tokenName={'body-xl body-xl--underline'}
+            />
+
+<GridContainerComponent
+                fontClassName={'body-xl body-xl--strikethrough'}
+                fontDescription={'Modified Body X-Large style.'}
+                fontInformation={'Text-decoration: line-through;'}
+                fontName={'Body X-Large (Modifier) -> Strikethrough'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
+                tokenName={'body-xl body-xl--strikethrough'}
             />
 
             <GridContainerComponent
@@ -275,14 +298,43 @@ const TypographyDesktop = ({
                 tokenName={'body-xl body-xl--bold'}
             />
 
-            <GridContainerComponent
-                fontClassName={'body-xl body-xl--strikethrough'}
+<GridContainerComponent
+                fontClassName={'body-xl body-xl--bold-italic'}
                 fontDescription={'Modified Body X-Large style.'}
-                fontInformation={'Text-decoration: line-through;'}
-                fontName={'Body X-Large (Modifier) -> Strikethrough'}
+                fontInformation={'Font-weight: 700; font-style: italic;'}
+                fontName={'Body X-Large (Modifier) -> Bold Italic'}
                 textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
-                tokenName={'body-xl body-xl--strikethrough'}
+                tokenName={'body-xl body-xl--bold-italic'}
             />
+
+<GridContainerComponent
+                fontClassName={'body-xl body-xl--bold-underline'}
+                fontDescription={'Modified Body X-Large style.'}
+                fontInformation={'Font-weight: 700; font-style: italic;'}
+                fontName={'Body X-Large (Modifier) -> Bold Underline'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
+                tokenName={'body-xl body-xl--bold-underline'}
+            />
+
+<GridContainerComponent
+                fontClassName={'body-xl body-xl--bold-strikethrough'}
+                fontDescription={'Modified Body X-Large style.'}
+                fontInformation={'Font-weight: 700; text-decoration: line-through'}
+                fontName={'Body X-Large (Modifier) -> Bold Strikethrough'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
+                tokenName={'body-xl body-xl--bold-strikethrough'}
+            />
+
+
+<GridContainerComponent
+                fontClassName={'body-lg body-lg--italic'}
+                fontDescription={'Modified body-lg style.'}
+                fontInformation={'font-style: italic;'}
+                fontName={'Body Large (Modifier) -> Italic'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. '}
+                tokenName={'body-lg body-lg--italic'}
+            />
+
 
             <GridContainerComponent
                 fontClassName={'body-lg body-lg--underline'}
@@ -291,6 +343,15 @@ const TypographyDesktop = ({
                 fontName={'Body Large (Modifier) -> Underline'}
                 textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. '}
                 tokenName={'body-lg body-lg--underline'}
+            />
+
+<GridContainerComponent
+                fontClassName={'body-lg body-lg--strikethrough'}
+                fontDescription={'Modified Body Large style.'}
+                fontInformation={'Text-decoration: line-through;'}
+                fontName={'Body Large (Modifier) -> Strikethrough'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. '}
+                tokenName={'body-lg body-lg--strikethrough'}
             />
 
             <GridContainerComponent
@@ -302,6 +363,16 @@ const TypographyDesktop = ({
                 tokenName={'body-lg body-lg--bold'}
             />
 
+
+<GridContainerComponent
+                fontClassName={'body-lg body-lg--bold-italic'}
+                fontDescription={'Modified body-lg style.'}
+                fontInformation={'font-style: italic; font-weight: 700;'}
+                fontName={'Body Large (Modifier) -> Bold Italic'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. '}
+                tokenName={'body-lg body-lg--bold-italic'}
+            />
+
             <GridContainerComponent
                 fontClassName={'body-lg body-lg--bold-underline'}
                 fontDescription={'Modified Body Large style.'}
@@ -311,13 +382,22 @@ const TypographyDesktop = ({
                 tokenName={'body-lg body-lg--bold-underline'}
             />
 
-            <GridContainerComponent
-                fontClassName={'body-lg body-lg--strikethrough'}
-                fontDescription={'Modified Body Large style.'}
-                fontInformation={'Text-decoration: line-through;'}
-                fontName={'Body Large (Modifier) -> Strikethrough'}
-                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. '}
-                tokenName={'body-lg body-lg--strikethrough'}
+<GridContainerComponent
+                fontClassName={'body-md body-md--bold-strikethrough'}
+                fontDescription={'Modified Body Medium style.'}
+                fontInformation={'font-weight: 700; Text-decoration: line-through'}
+                fontName={'Body Large (Modifier) -> Bold Strikethrough'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. \\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
+                tokenName={'body-md body-md--bold-strikethrough'}
+            />
+
+<GridContainerComponent
+                fontClassName={'body-md body-md--italic'}
+                fontDescription={'Modified Body Medium style.'}
+                fontInformation={'font-style: italic;'}
+                fontName={'Body Large (Modifier) -> Italic'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. \\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
+                tokenName={'body-md body-md--italic'}
             />
 
             <GridContainerComponent
@@ -329,6 +409,15 @@ const TypographyDesktop = ({
                 tokenName={'body-md body-md--underline'}
             />
 
+<GridContainerComponent
+                fontClassName={'body-md body-md--strikethrough'}
+                fontDescription={'Modified Body Medium style.'}
+                fontInformation={'Text-decoration: strikethrough;'}
+                fontName={'Body Medium (Modifier) -> Bold Underline'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. \\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
+                tokenName={'body-md body-md--strikethrough'}
+            />
+
             <GridContainerComponent
                 fontClassName={'body-md body-md--bold'}
                 fontDescription={'Modified Body Medium style.'}
@@ -336,6 +425,15 @@ const TypographyDesktop = ({
                 fontName={'Body Medium (Modifier) -> Bold'}
                 textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. \\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
                 tokenName={'body-md body-md--bold'}
+            />
+
+<GridContainerComponent
+                fontClassName={'body-md body-md--bold-italic'}
+                fontDescription={'Modified Body Medium style.'}
+                fontInformation={'Font-weight: 700; \\n font-style: italic;'}
+                fontName={'Body Medium (Modifier) -> Bold Italic'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. \\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
+                tokenName={'body-md body-md--bold-italic'}
             />
 
             <GridContainerComponent
@@ -347,14 +445,16 @@ const TypographyDesktop = ({
                 tokenName={'body-md body-md--bold-underline'}
             />
 
-            <GridContainerComponent
-                fontClassName={'body-md body-md--strikethrough'}
+<GridContainerComponent
+                fontClassName={'body-md body-md--bold-strikethrough'}
                 fontDescription={'Modified Body Medium style.'}
-                fontInformation={'Text-decoration: strikethrough;'}
+                fontInformation={'Text-decoration: Bold Strikethrough;'}
                 fontName={'Body Medium (Modifier) -> Bold Underline'}
                 textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. \\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
-                tokenName={'body-md body-md--strikethrough'}
+                tokenName={'body-md body-md--bold-strikethrough'}
             />
+
+
 
             <GridContainerComponent
                 fontClassName={'body-sm body-sm--bold'}
@@ -363,6 +463,15 @@ const TypographyDesktop = ({
                 fontName={'Body Small (Modifier) -> Bold'}
                 textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. \\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
                 tokenName={'body-sm body-sm--bold'}
+            />
+
+<GridContainerComponent
+                fontClassName={'body-sm body-sm--italic'}
+                fontDescription={'Modified Body Small style.'}
+                fontInformation={'Text-decoration: underline;'}
+                fontName={'Body Small (Modifier) -> Italic'}
+                textSnippet={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed. \\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla mattis odio vivamus est turpis pellentesque sed.'}
+                tokenName={'body-sm body-sm--underline'}
             />
 
             <GridContainerComponent
@@ -390,7 +499,7 @@ const TypographyDesktop = ({
 </div>;
 
 TypographyDesktop.propTypes = {
-  /*  fontClassName: PropTypes.string.isRequired,
+    fontClassName: PropTypes.string.isRequired,
     fontDescription: PropTypes.string.isRequired,
     fontInformation: PropTypes.string.isRequired,
     fontName: PropTypes.string.isRequired,
@@ -398,7 +507,7 @@ TypographyDesktop.propTypes = {
     textSnippet: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     tokenName: PropTypes.string.isRequired,
-    */
+    
 };
 
 export default TypographyDesktop;

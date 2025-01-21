@@ -3,24 +3,27 @@ import PropTypes from 'prop-types';
 import './headline.scss';
 
 /**
- * Headline XL, L, M or S are best-suited for short high-emphasis text. These styles can be good for marking primary passages of text or important regions of content, like headlines.
-Headline X-Large is well suited for H1 content. Headline X-Large is never to be used in conjunction with Display Large or vice versa. Display Large always trumps Headline X-Large in a plain text context.
+ * Headline XL, L, M or S are best-suited for short high-emphasis text. 
+ * These styles can be good for marking primary passages of text or important regions of content, like headlines.
+ * Headline X-Large is well suited for H1 content. 
+ * 
+ * Headline X-Large is never to be used in conjunction with Display Large or vice versa. Display Large always trumps Headline X-Large in a plain text context.
  */
 
 
 // if i dont add these, then it always comes back as undefined - why?
-  export const Headline = ({ fontName = 'headline-lg', viewport = 'Desktop', summary, marginBottom = '', modifier = 'blockquote' }) => {
+  export const Headline = ({ size = 'headline-lg', version = 'Desktop', summary, marginBottom = 'None', modifier = 'None' }) => {
     return (
      
       <>
-      {viewport === 'Desktop' ? (
+      {version === 'Desktop' ? (
         <>
-         <div className={`${fontName}-dt ${modifier === 'blockquote' ? 'headline-md--blockquote-dt' : ''} ${marginBottom}`}>{summary}</div>
+         <div className={`${size}-dt ${modifier === 'headline-md--blockquote' ? 'headline-md--blockquote-dt' : ''} ${marginBottom}`}>{summary}</div>
          <div className={`${marginBottom}-temp`}></div>
          </>
       ) : (
         <>
-        <div className={`${fontName}-mob ${modifier === 'blockquote' ? 'headline-md--blockquote-dt' : ''} ${marginBottom}`}>{summary}</div>
+        <div className={`${size}-mob ${modifier === 'headline-md--blockquote' ? 'headline-md--blockquote-mob' : ''} ${marginBottom}`}>{summary}</div>
         <div className={`${marginBottom}-temp`}></div>
         </>
       )}
@@ -30,26 +33,37 @@ Headline X-Large is well suited for H1 content. Headline X-Large is never to be 
   };
 
   Headline.propTypes = {
+
+  /**
+   * Determines whether Desktop or Mobile styles are applied
+   */
+  version: PropTypes.oneOf(['Desktop', 'Mobile']),
+
+  /**
+   * Current breakpoint viewed, based on version
+   */
+  breakpoint: PropTypes.string,
+
+  /**
+   * Font size for the text
+   */
+  size: PropTypes.oneOf(['headline-sm', 'headline-md', 'headline-lg', 'headline-xl']),
+
     /**
      * Summary text to be displayed
      */
     summary: PropTypes.string.isRequired, // assuming summary is a required string
 
+      /**
+   * Margin bottom spacing
+   */
+      marginBottom: PropTypes.string,
+
+        /**
+   * Modifier that can be applied to font
+   */
+  modifier: PropTypes.oneOf(['None', 'headline-md--blockquote']),
+
   
-    /**
-     * Additional property A, type can vary based on usage
-     */
-  
-    /**
-     * Padding value for the component
-     */
-   //padding: PropTypes.string, // assuming padding is an optional string like '10px'
   };
 
-// add shir here, or in title???
-/*Title.defaultProps = {
-  backgroundColor: 'transparent',
- // textColor: '#000',
-  //fontSize: '14px / 16px',
- // separator: '/',
-}; */

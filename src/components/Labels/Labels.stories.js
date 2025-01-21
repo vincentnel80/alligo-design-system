@@ -1,61 +1,115 @@
 import { Label } from './Label';
 import CustomDocsContainer from './CustomDocsContainer';
+import React, { useEffect } from 'react';
 
 // Dynamic HTML snippet generator function
 const generateHtmlSnippet = (args) => {
-  const { fontName = 'label-lg', summary, modifier = '', marginBottom = '' } = args;  // Default values
-  return `<p class="${fontName} ${fontName}--${modifier} ${marginBottom}">${summary}</p>`;
+  const { size = 'label-lg', summary, modifier = 'None', marginBottom = 'None' } = args;  // Default values
+  const modifierClass = modifier !== 'None' ? modifier : '';
+  const marginBottomClass = marginBottom !== 'None' ? marginBottom : '';
+
+  // Join classes and filter out any empty strings to avoid extra spaces
+  const classNames = [size, modifierClass, marginBottomClass].filter(Boolean).join(' ');
+
+  return `<p class="${classNames}">${summary}</p>`;
 };
 
 export default {
-  // title: 'Typography/Label',
   title: 'Foundation/Typography/Components/Label',
   component: Label,
   parameters: {
     layout: 'centered',
     docs: {
       container: CustomDocsContainer,
+      description: {
+        component: `
+
+Labels are smaller, utilitarian styles, used for things like the text inside components, text inside buttons, labeling form fields and user info. Label styles are a bolder version of Alt-Label and therefore higher empasis than the Alt version.
+
+<div class="content-block content-block--callout callout-primary" role="alert">
+  <div class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      <polyline points="11 12 12 12 12 16 13 16"></polyline>
+    </svg>
+  </div>
+  <div class="body-md content">
+Disclaimer: The look of fonts in the Storybook Panel may appear slightly different from fonts registered on the live site (via css) due to a font rendering error / issue in Storybook.
+
+Generally, in order for fonts to appear correctly on the live site, the font-weight needs to be "stepped down" by 100, from the font-weight value listed in Figma.
+  </div>
+</div>
+        `,
+      },
       source: {
         transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
       },
     },
   },
   argTypes: { 
-    viewport: {
+    version: {
       control: { type: 'select' }, 
       options: ['Desktop', 'Mobile'],
       defaultValue: 'Desktop',
     },
-    fontName: {
+    breakpoint: {
+      description: '', // Initially empty; dynamically set in the decorator
+      table: {
+        type: { summary: 'Information' },
+      },
+      control: false, // No direct control, purely informational
+    },
+    size: {
       control: { type: 'select' },
       options: ['label-sm', 'label-md', 'label-lg'],
       defaultValue: 'label-lg',
     },
     modifier: {
       control: { type: 'select' },
-      options: ['', 'preamble', 'underline', 'bold', 'strikethrough'],
-      defaultValue: 'preamble',
-      // Conditionally disable the modifier control based on the value of fontName
+      options: ['None', 'label-lg--underline'],
+      defaultValue: 'None',
       table: {
-        disable: true, // initially disabled in the docs table
+        disable: false, // Modifier control visible by default
       },
     },
     marginBottom: {
       control: { type: 'select' },
-      options: ['', 'space-16-small', 'space-24-small', 'space-32-large'], // go over
-      defaultValue: '',
+      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'],
+      defaultValue: 'None',
     },
   },
-  // Custom logic to enable or disable the modifier based on fontName
-  /// there are no modifiers for this vin
-    /// there are no modifiers for this vin
-      /// there are no modifiers for this vin
-        /// there are no modifiers for this vin
   decorators: [
     (Story, context) => {
       const { args } = context;
       const modifierControl = context.argTypes.modifier;
-      modifierControl.table.disable = args.fontName !== 'label-lg';
+
+      useEffect(() => {
+        // Update breakpoint description based on the selected version
+        context.argTypes.breakpoint.description = args.version === 'Desktop' 
+          ? 'breakpoint-md & breakpoint-lg'
+          : 'breakpoint-xs & breakpoint-sm';
+      }, [args.version]);
+
+      // Existing logic for modifier options based on size
+      if (args.size === 'label-sm') {
+        if (args.modifier !== 'None' && modifierControl.options[0] !== 'None') {
+          args.modifier = 'None';
+        }
+        modifierControl.options = ['None', 'label-sm--badge'];
+        modifierControl.table.disable = false;
+      } else if (args.size === 'label-lg') {
+        if (args.modifier !== 'None' && modifierControl.options[0] !== 'None') {
+          args.modifier = 'None';
+        }
+        modifierControl.options = ['None', 'label-lg--underline'];
+        modifierControl.table.disable = false;
+      } else {
+        args.modifier = 'None';
+        modifierControl.table.disable = true; // Hide modifier for label-md
+      }
+
       return <Story {...args} />;
     },
   ],
@@ -66,65 +120,36 @@ const summaryText = 'Surname';
 
 const Template = (args) => <Label {...args} />;
 
-// Dynamic generation of the Default story
-// after session with Erik, default is redundant and make an actual text
-/*export const Default = Template.bind({});
-Default.args = {
-  summary: summaryText,
-  fontName: 'body-xl',  // Set a default fontName
-  marginBottom: '',  // Set a default marginBottom
-};
-
-Default.parameters = {
-  docs: {
-    disable: true,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
-    },
-  },
-}; */
-
-// Dynamic generation of the Default story - now replaced with body x large
 export const LabelLarge = Template.bind({});
 LabelLarge.args = {
+  version: 'Desktop',
+  breakpoint: '',
+  size: 'label-lg',
   summary: summaryText,
-  fontName: 'label-lg',  // Set a default fontName
-  marginBottom: '',  // Set a default marginBottom
+  marginBottom: 'None',
+  modifier: 'None',
 };
 
 LabelLarge.parameters = {
   docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
+    disable: false,
     source: {
       transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
     },
   },
 };
 
-// Other variants like HeadlineLarge, HeadlineMedium, etc.
-/*export const BodyXLarge = Template.bind({});
-BodyXLarge.args = {
-  ...Default.args,
-  fontName: 'body-xl',
-};
-BodyXLarge.parameters = {
-  docs: {
-    disable: true,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args), // the above will hide this. to reactivate, delete "disable: true"
-    },
-  },
-}; */
-
+// NB add in modifier and then only on actual stories for that do it
 export const LabelMedium = Template.bind({});
 LabelMedium.args = {
-  //...Default.args, // will change all of this
-  ...LabelLarge.args, // will change all of this
-  fontName: 'label-md',
+  ...LabelLarge.args,
+  size: 'label-md',
+  modifier: 'None',
 };
+
 LabelMedium.parameters = {
   docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
+    disable: false,
     source: {
       transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
     },
@@ -134,16 +159,46 @@ LabelMedium.parameters = {
 export const LabelSmall = Template.bind({});
 LabelSmall.args = {
   ...LabelLarge.args,
-  fontName: 'label-sm',
+  size: 'label-sm',
 };
+
 LabelSmall.parameters = {
   docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
+    disable: false,
     source: {
       transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
     },
   },
 };
 
+export const LabelSmallBadge = Template.bind({});
+LabelSmallBadge.args = {
+  ...LabelLarge.args,
+  size: 'label-sm',
+  modifier: 'label-sm--badge',
+};
 
-// body LG modifiers
+LabelSmallBadge.parameters = {
+  docs: {
+    disable: false,
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};
+
+export const LabelLargeUnderline = Template.bind({});
+LabelLargeUnderline.args = {
+  ...LabelLarge.args,
+  size: 'label-lg',
+  modifier: 'label-lg--underline',
+};
+
+LabelLargeUnderline.parameters = {
+  docs: {
+    disable: false,
+    source: {
+      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
+    },
+  },
+};

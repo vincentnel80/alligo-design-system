@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build:styles": "webpack --config webpack.config.js",
+    "build": "webpack",
+    "compile-sass": "sass src/globalStyles/main.scss dist/main.css"
   },
   "repository": {
     "type": "git",
@@ -29,13 +32,17 @@
     "@storybook/test": "^7.6.10",
     "chromatic": "^11.3.5",
     "css-loader": "^6.5.1",
+    "eslint": "^9.16.0",
+    "eslint-plugin-storybook": "^0.11.1",
+    "mini-css-extract-plugin": "^2.9.2",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sass": "^1.49.0",
-    "sass-loader": "^12.4.0",
+    "sass-loader": "^13.3.3",
     "storybook": "^7.6.10",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "webpack-cli": "^6.0.1"
   },
   "peerDependencies": {
     "react": "^18.3.1",

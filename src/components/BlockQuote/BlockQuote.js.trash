@@ -1,0 +1,81 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import './blockquote.scss';
+
+/**
+ * Body is used for longer passages of text in the UI . Usually in order to populate paragraphs. The body style is also adjusted to be readable at smaller sizes.
+ * Body X-Large is used for short intro passages of longer texts and non-recurrent text passages.
+ */
+
+/*export const BlockQuote = ({ 
+  fontName = 'body-xl', 
+  viewport = 'Desktop', 
+  summary, 
+  marginBottom = '', 
+  modifier = '' 
+}) => {
+  // Conditionally apply the -mob or -dt suffix for mobile or desktop viewport
+  const computedFontName = viewport === 'Mobile' ? `${fontName}-mob` : `${fontName}-dt`;
+  
+  // Combine font name with the modifier (if any)
+  const classNames = `${computedFontName} ${modifier} ${marginBottom}`;
+
+  return (
+    <>
+      <p className={classNames}>{summary}</p>
+      <div className={`${marginBottom}-temp`}></div>
+    </>
+  );
+};*/
+
+const BlockQuote = ({ }) => {
+//const BlockQuote = ({ text, level, paddingBottom }) => {
+  const Tag = `h3`;
+  return (
+    <div class="blockq-container">
+      <div class="blockq-container-inner">
+    <Tag
+      style={{ paddingBottom }}
+      className="headline-md headline-md--blockquote"
+    >
+      {text}
+    </Tag>
+    <div class="bottom-text-wrapper">
+      <span class="label-sm"> NAME SURNAME</span>
+      <span class="body-sm">TItle</span>
+    </div>
+    </div>
+    </div>
+  );
+};
+
+// Add displayName to help Storybook identify the component
+// Why does only this component need this?
+BlockQuote.displayName = 'BlockQuote';
+
+BlockQuote.propTypes = {
+  /**
+   * Summary text to be displayed
+   */
+  summary: PropTypes.string.isRequired, // assuming summary is a required string
+
+  /**
+   * Font name for the body text
+   */
+  fontName: PropTypes.string,
+
+  /**
+   * Viewport, determines whether Desktop or Mobile styles are applied
+   */
+  viewport: PropTypes.oneOf(['Desktop', 'Mobile']),
+
+  /**
+   * Modifier class for additional styling (e.g., bold, italic, etc.)
+   */
+  modifier: PropTypes.string,
+
+  /**
+   * Margin bottom spacing
+   */
+  marginBottom: PropTypes.string,
+};
