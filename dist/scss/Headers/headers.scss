@@ -1,0 +1,1101 @@
+// New Design System breakpoints
+// New breakpoints to be added into main system
+
+$breakpoints: (
+    xsmall: 0,
+    smaller: 376px,
+    small: 640px,
+    medium: 769px,
+    large: 1024px,
+    xlarge: 1270px,
+    xxlarge: 1440px,
+);
+
+// Define the breakpoint mixin
+@mixin breakpoint($size) {
+    @if map-has-key($breakpoints, $size) {
+        @media (min-width: map-get($breakpoints, $size)) {
+            @content;
+        }
+    } @else {
+        @error "Invalid breakpoint name: #{$size}.";
+    }
+}
+// End new Design System breakpoints
+
+
+// Main System Essential Color Values
+
+// Neutral
+// nicknames
+$black: #000000;
+$white: #FFFFFF;
+$grey-90: #222222;
+$grey-80: #333333;
+$grey-70: #4F4F4F;
+$grey-60: #595959;
+$grey-50: #737373;
+$grey-40: #999999;
+$grey-20: #CCCCCC;
+$grey-15: #DAD9D7;
+$grey-10: #E5E5E5;
+$grey-05: #F6F6F6;
+$grey-02: #FAFAFA;
+
+// Reds
+$red-00: #D90000;
+$red-03: #F7CCCC;
+$red-04: #FCE9E9;
+$red-05: #CD1125;
+$red-06: #FBE5E5;
+$red-07: #980000;
+
+// Oranges
+$orange-00: #F57500;
+$orange-01: #FDEEDD;
+$orange-02: #AC5200;
+
+// yellows
+$yellow-00: #FFBA00;
+$yellow-01: #FFE399;
+$yellow-02: #FFF1CC;
+$yellow-03: #C7D300;
+$yellow-04: #F4F6CC;
+$yellow-05: #8B9400;
+
+// Blues
+$blue-00: #0066FF;
+$blue-01: #D0E9FF;
+$blue-02: #E2F1FF;
+$blue-03: #1877F2;
+
+// Slate
+$slate-00: #637797;
+$slate-01: #E9EEF1;
+$slate-02: #41526D;
+
+// Greens
+$green-00: #138746;
+$green-01: #D6F1E2;
+$green-02: #E8F6EE;
+$green-03: #00838F;
+
+// tokens
+/*
+text-primary
+text-secondary
+text-tertiary
+text-primary-inverted
+text-secondary-inverted
+
+ */
+:root {
+    // text vars
+    --text-highest-emphasis: #{$black};
+    --text-high-emphasis: #{$grey-70};
+    --text-medium-emphasis: #{$grey-50};
+    --text-white-100: #{$white};
+    --text-white-78: transparentize(#{$white}, 0.78); // can figma token handle it this way?
+    --text-success: #{$green-00};
+    --text-danger: #{$red-00};
+    --text-price-customer: #{$green-03};
+    --text-price-guest: #{$red-00};
+    --text-information: #{$blue-00};
+    //alert vars
+    /// toeksn dont match -- eg these are fom erik but in Zeplyn: --alert-danger-default (add alert or not)
+    --info-default: #{$blue-00};
+    --info-medium: #{$blue-01};
+    --info-light: #{$blue-02};
+    --success-default: #{$green-00};
+    --success-medium: #{$green-01};
+    --success-light: #{$green-02};
+    --warning-default: #{$yellow-00};
+    --warning-medium: #{$yellow-01};
+    --warning-light: #{$yellow-02};
+    --danger-default: #{$red-00};
+    --danger-medium: #{$red-03};
+    --danger-light: #{$red-04};
+
+    /// these dont have eg $text-highest-emphasis: $black; and should i make it that way?
+    // Border
+    --border-primary: #{$grey-10};
+    --border-secondary: #{$grey-05};
+
+        // Surface
+    --surface-primary: #{$white};
+    --surface-secondary: #{$grey-05};
+        // text
+    --text-primary: var(--text-highest-emphasis);
+    --text-secondary: var(--text-high-emphasis);
+    --text-tertiary: var(--text-medium-emphasis);
+    --text-primary-inverted: var(--text-white-100);
+    --text-secondary-inverted: var(--text-white-78);
+
+        // Icon
+    --icon-default: #{$black};
+    --icon-inverted: #{$white};
+
+    //// colors
+    /// neutral
+    /// these are made by me
+    //// in Figma, but not defined by erik in tokens--- so debatable but it it in Nor, and ... its the first line
+    /// so... its a color, but then you can use these to make new tokens such as what erik made
+    /// these are from ---- badges ... should i make colors for this or add
+    // maybe change this to badges eg-- $grey-10 badge --greyscale-grey-50:
+
+// look at nord's root
+    --alligo-neutral-00: #{$white};
+    --color-greyscale-black: #{$black};
+    --color-greyscale-white: #{$white};
+    --color-greyscale-grey-90: #{$grey-90};
+    --color-greyscale-grey-80: #{$grey-80};
+    --color-greyscale-grey-70: #{$grey-70};
+    --color-greyscale-grey-60: #{$grey-60};
+    --color-greyscale-grey-50: #{$grey-50};
+    --color-greyscale-grey-40: #{$grey-40};
+    --color-greyscale-grey-20: #{$grey-20};
+    //color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+    --color-greyscale-grey-15: #{$grey-15};
+    --color-greyscale-grey-10: #{$grey-10};
+    --color-greyscale-grey-05: #{$grey-05};
+    --color-greyscale-grey-02: #{$grey-02};
+
+
+}
+.selector {
+    color: var(--text-highest-emphasis); /* Use the "--main-color" variable as the color for this selector */
+    background-color: var(--text-high-emphasis); /* Use the same variable for the background-color */
+}
+//vars
+// 1.) color vars. Greyscale. eg Grey-90 --- make sure to use those...current might not be correct
+//2.) Text vars
+$text-highest-emphasis: $black;
+//--main-color: #007bff; /* Define a variable named "--main-color" with a value of "#007bff" (a blue color) */
+$text-high-emphasis: $grey-70;
+$text-medium-emphasis: $grey-50;
+$text-white-100: $white;
+/// decision --- vars like this, or color tokens??
+// i'm guessing vars like this --
+// do i use transparentize, lighten($clr-primary, 5%);, darken($clr-primary, 5%); or rgba(255, 255, 255, 0.78);
+//$text-white-78: rgba(255, 255, 255, 0.78); // white / 78% transparency option a
+//$text-white-78: transparentize($white, 0.22); 22 or 0.78
+// this also equates to Grey-05 --- so should I use that?
+// this is hext colour #FFFFFFC7 --- white with 78 use that --- hmmmm
+$text-white-78: transparentize($white, 0.78); // still results in above once compiled rgba(255, 255, 255, 0.78);
+$text-success: $green-00;
+$text-danger: $red-00;
+$text-price-customer: $green-03;
+$text-price-guest: $red-00;
+$text-information: $blue-00;
+//3.) alert vars
+$info-default: $blue-00;
+$info-medium: $blue-01;
+$info-light: $blue-02;
+$success-default: $green-00;
+$success-medium: $green-01;
+$success-light: $green-02;
+$warning-default: $yellow-00;
+$warning-medium: $yellow-01;
+$warning-light: $yellow-02;
+$danger-default: $red-00;
+$danger-medium: $red-03;
+$danger-light: $red-04;
+//4.) /// Theme vars
+
+/// Tokens
+
+
+
+// End System Essential Color Values
+
+
+// Storybook Essential + Main System optional
+
+$colors: (
+    univern: (
+        brand: $slate-00,
+        light: $slate-01,
+        dark: $slate-02,
+    ),
+    grolls: (
+        brand: $orange-00,
+        light: $orange-01,
+        dark: $orange-02,
+    ),
+    swedol: (
+        brand: $yellow-03,
+        light: $yellow-04,
+        dark: $yellow-05,
+    ),
+    tools: (
+        brand: $red-05,
+        light: $red-06,
+        dark: $red-07,
+    ),
+    blue: (
+        0: $blue-00,
+        1: $blue-01,
+        2: $blue-02,
+        3: $blue-03,
+    ),
+    green: (
+        0: $green-00,
+        1: $green-01,
+        2: $green-02,
+        3: $green-03,
+    ),
+    neutral: (
+        black: $black,
+        white: $white,
+        90: $grey-90,
+        80: $grey-80,
+        70: $grey-70,
+        60: $grey-60,
+        50: $grey-50,
+        40: $grey-40,
+        20: $grey-20,
+        15: $grey-15,
+        10: $grey-10,
+        5: $grey-05,
+        2: $grey-02,
+    ),
+    red: (
+        0: $red-00,
+        3: $red-03,
+        4: $red-04,
+    ),
+    yellow: (
+        0: $yellow-00,
+        1: $yellow-01,
+        2: $yellow-02,
+    ),
+);
+
+$properties: (
+    color: 'color',
+    bg-color: 'background-color'
+);
+
+
+@each $color-set-name, $color-set in $colors {
+    @each $color-index ,$color in $color-set {
+        @each $property-index, $property in $properties{
+            .#{$property-index}-#{$color-set-name}-#{$color-index}{
+                #{$property}: $color;
+            }
+        }
+    }
+}
+
+@function clr($name, $shade: default) {
+    $color: map-get(map-get($colors, $name), $shade);
+    @return $color;
+}
+
+// base style for color example block
+.bg-color-base {
+    display: block;
+    min-height: 98px;
+    padding:16px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+// End Storybook Essential + Main System optional
+
+
+/// find a way to import all the styles that you need
+
+
+///
+/// Icons
+
+.jsx-minicart-header-icon-count {
+    display: flex;
+    padding: 4px 7px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    border-radius: 50px;
+    background: var(--color-alert-danger-default, #D90000);
+    top: -7px;
+    right: -2px;
+    direction: rtl;
+
+    // fonts
+    color: var(--text-text-primary-inverted, #FFF);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    //font-family: Breuer;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 12px; /* 100% */
+    text-transform: uppercase;
+}
+
+.badge-component {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    color: white; // color alert danger
+    position: absolute;
+    border-radius: 50%;
+    display: inline-block;
+    background: #D90000;
+    right: 0;
+}
+
+///
+
+.alligo-page-body {
+    .alligo-page-wrapper {
+
+        .new-search-container {
+            display: flex;
+            width: 375px;
+            padding: 8px;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            border-bottom: 1px solid var(--color-greyscale-white, #FFF);
+            background: #FFF; /// this depends on sys var
+            /* Elevation & Shadows/Down/60% */
+            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10), 0px 0px 1px 0px rgba(0, 0, 0, 0.05);
+
+            // left chevron
+            .search-nav-button {
+                display: flex;
+                padding: 8px;
+                justify-content: center;
+                align-items: center;
+
+                .icon {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            // input
+
+            .input-container {
+                // layout
+                display: flex;
+                flex-wrap: wrap; // this centers it - awesome
+                height: 40px;
+                padding: 8px;
+                width: 100%;
+                align-items: center;
+                gap: 8px;
+                align-self: stretch;
+
+                // style
+                border: 1px solid var(--greyscale-black, #000);
+
+                .input-search-icon {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                .input-text {
+                    height: 22px;
+                    flex: 1 0 0;
+
+
+                    /// text
+                }
+
+                .barcode-icon {
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            } // input-container
+
+        } // new search container (just search element the new drawer is below
+
+        /// algolia search drawer
+        .algolia-searchdrawer {
+            width: 375px;
+            height: 755px;
+            padding: 24px;
+            flex-shrink: 0;
+            background: #FFF; // sys var
+            /* Alligo/Test Shadow/Alternative 40% */
+            box-shadow: 0px 2px 4px 0px rgba(48, 49, 51, 0.10), 0px 0px 1px 0px rgba(48, 49, 51, 0.05);
+
+            .drawer-header {
+                color: var(--text-text-highest-emphasis, var(--color-text-text-highest-emphasis, #000));
+                //font-family: BreuerCondensedBold;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 20px; /* 125% */
+                text-transform: uppercase;
+            }
+
+            .singular-container {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+                &:nth-child(2) {
+                padding-top: 16px;
+                }
+
+                &:last-child {
+                    // Styles for the last .singular-container
+                    // For example, add a border or change the background color
+                    margin-bottom: 24px;
+                }
+
+                .image-container {
+                    width: 75px;
+                    height: 18px;
+                }
+
+                .product-info-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 9px;
+
+                    .product-info-container-brand{
+                        color: var(--text-text-high-emphasis, var(--color-text-text-high-emphasis, #4F4F4F));
+                        //font-family: BreuerCondensedRegular;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 16px; /* 100% */
+                        text-transform: uppercase;
+                    }
+                    /// contains two sections
+                    .product-info-container-prod-name {
+                        // typography
+                        color: #000;
+                        //font-family: Breuer Condensed;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 16px; /* 88.889% */
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                    }
+                    .product-info-container-show-product {
+                        color: var(--text-text-high-emphasis, var(--color-text-text-high-emphasis, #4F4F4F));
+                        //font-family: BreuerCondensedRegular;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 16px; /* 100% */
+                    }
+                }
+
+            }
+        }
+
+        /// new headers
+        .alligo-page-header {
+            background: $black; // needs to be replaced with system var
+            color: $white; // system variable
+            /// not needed as covered in bottom sections
+            width: 375px;
+
+           /* @include breakpoint(medium) {
+                width: 600px;
+            }
+
+            */
+
+            .figma-top-nav-container {
+                display: flex;
+                padding: 8px;
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+                background: var(--color-greyscale-black); // use like this, or add it into eg - alligo background var
+                /* Elevation & Shadows/Down/60% */
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10), 0px 0px 1px 0px rgba(0, 0, 0, 0.05);
+
+                .left-nav-wrapper {
+                    // layout
+                    display: flex;
+                   // width: 120px; /// probably dont need, as the other padding work out
+                    align-items: center;
+                    // style (extra section in figma not sure if its needed
+                    border-radius: 100px;
+
+                    // buton styles
+                    .base-hamburger {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .hamburger-button {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+
+                    .base-search {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .search-button {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+
+                    .base-compare {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .compare-button {
+                            width: 24px;
+                            height: 24px;
+                            position: relative;
+                        }
+                    }
+
+
+                } // left nav wrapper
+
+                .logo {
+                    width: 76px;
+                   // height: 14.555px;
+                    flex-shrink: 0;
+                }
+
+                .account-purchase-wrapper {
+                    display: flex;
+                    width: 120px;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    .base-account {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .account-button {
+                            display: flex;
+                            width: 24px;
+                            height: 24px;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 100px;
+                            border: 1px solid var(--greyscale-grey-90, #222);
+                            box-shadow: 0px 2px 4px 0px rgba(48, 49, 51, 0.10), 0px 0px 1px 0px rgba(48, 49, 51, 0.05);
+
+                            .img {
+                                width: 24px;
+                                height: 24px;
+                                flex-shrink: 0;
+                                background: url('person-image.svg') center/cover no-repeat;
+                               // fill: url('person-image.svg'), lightgray 50% / cover no-repeat, url('person-image.svg'), lightgray 50% / cover no-repeat; fix this
+                            }
+                        }
+                    }
+
+                    .base-favourites {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .favourites-button {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+
+                    .base-minicart {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .minicart-button {
+                            width: 24px;
+                            height: 24px;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+
+            /// scanner bar
+            .scanner-container {
+                display: flex;
+                padding: 0px 8px 8px 8px;
+                flex-direction: column;
+                align-items: flex-start;
+                align-self: stretch;
+
+                /// bottom -- changes to top on scroll
+                border-bottom: 1px solid var(--theme-swedol-brand, #C7D300);
+                background: var(--color-greyscale-black, #000);
+
+                .input-wrapper {
+                    display: flex;
+                    height: 40px;
+                    padding: 8px;
+                    align-items: center;
+                    gap: 8px;
+                    align-self: stretch;
+                    background: var(--color-greyscale-grey-05, #F6F6F6);
+
+                    .search-button {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    .input {
+                        // layout
+                        height: 22px;
+                        flex: 1 0 0;
+
+                        // typography
+                        overflow: hidden;
+                        color: var(--text-text-secondary, #4F4F4F);
+                        font-feature-settings: 'ss06' on, 'ss03' on, 'ss02' on;
+                        text-overflow: ellipsis;
+                        whitespace: nowrap;
+                        /* Desktop/Body Medium */
+                       /* font-family: 'BreuerCondensedRegular'; // fix
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 22px; /* 137.5% */
+                      /*  letter-spacing: 0.32px; */
+                    }
+
+                    .scanner-icon {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+
+
+        } // alligo-page-header
+
+        /// new header cust only for demo
+        //// Tablet
+        //// Tablet
+        //// Tablet
+        //// Tablet
+        //// Tablet
+        //// Tablet
+
+        .alligo-page-header-tablet-cust {
+            background: $black; // needs to be replaced with system var
+            color: $white; // system variable
+            /// not needed as covered in bottom sections
+            width: 768px;
+
+            /* @include breakpoint(medium) {
+                 width: 600px;
+             }
+
+             */
+
+            .figma-top-nav-container-tablet-cust {
+                display: flex;
+                padding: 8px;
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+                background: var(--color-greyscale-black); // use like this, or add it into eg - alligo background var
+                /* Elevation & Shadows/Down/60% */
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10), 0px 0px 1px 0px rgba(0, 0, 0, 0.05);
+
+                .left-nav-wrapper-tablet-cust {
+                    // layout
+                    display: flex;
+                    //width: 120px;
+                    align-items: center;
+                    // style (extra section in figma not sure if its needed
+                    border-radius: 100px;
+
+                    // buton styles
+                    .base-hamburger-tablet-cust {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .hamburger-button {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+
+                    .base-search-tablet-cust {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .search-button-tablet-cust {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+
+                    .base-compare-tablet-cust {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .compare-button-tablet-cust {
+                            width: 24px;
+                            height: 24px;
+                            position: relative;
+                        }
+                    }
+
+
+                } // left nav wrapper
+
+                .logo-tablet-cust {
+                    width: 76px;
+                    //height: 14.555px;
+                    flex-shrink: 0;
+                }
+
+                .account-purchase-wrapper-tablet-cust {
+                    display: flex;
+                    //width: 120px;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    /// variant --- tablet
+                    .account-login-wrapper-tablet-cust {
+                        display: flex;
+                        padding: 12px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .account-icon-tablet-cust {
+                            width: 24px;
+                            height: 24px;
+                        }
+
+                        .text-wrapper-tablet-cust {
+                            display: flex;
+                            padding: 4px 8px;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 8px;
+
+                            .label-lg {
+                                /// issue - had to ovveride defaults
+                                line-height: 16px; /* 100% */
+                            }
+                        }
+
+                    } /// login wrapper
+
+
+
+                    .base-favourites-tablet-cust {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .favourites-button-tablet-cust {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+
+                    .base-minicart-tablet-cust {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .minicart-button-tablet-cust {
+                            width: 24px;
+                            height: 24px;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+
+            /// scanner bar
+            .scanner-container-tablet-cust {
+                display: flex;
+                padding: 0px 8px 8px 8px;
+                flex-direction: column;
+                align-items: flex-start;
+                align-self: stretch;
+
+                /// bottom -- changes to top on scroll
+                border-bottom: 1px solid var(--theme-swedol-brand, #C7D300);
+                background: var(--color-greyscale-black, #000);
+
+                .input-wrapper-tablet-cust {
+                    display: flex;
+                    height: 40px;
+                    padding: 8px;
+                    align-items: center;
+                    gap: 8px;
+                    align-self: stretch;
+                    background: var(--color-greyscale-grey-05, #F6F6F6);
+
+                    .search-button-tablet-cust {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    .input-tablet-cust {
+                        // layout
+                        height: 22px;
+                        flex: 1 0 0;
+
+                        // typography
+                        overflow: hidden;
+                        color: var(--text-text-secondary, #4F4F4F);
+                        font-feature-settings: 'ss06' on, 'ss03' on, 'ss02' on;
+                        text-overflow: ellipsis;
+                        whitespace: nowrap;
+                        /* Desktop/Body Medium */
+                        /* font-family: 'BreuerCondensedRegular'; // fix
+                         font-size: 16px;
+                         font-style: normal;
+                         font-weight: 500;
+                         line-height: 22px; /* 137.5% */
+                        /*  letter-spacing: 0.32px; */
+                    }
+
+                    .scanner-icon-tablet-cust {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        } // alligo-page-header
+        //// END TABLET CUT NOT LOGGED IN
+
+        //// START TABLET CUST LOGGED INM
+        //// START TABLET CUST LOGGED INM
+        //// START TABLET CUST LOGGED INM
+        //// START TABLET CUST LOGGED INM
+        //// START TABLET CUST LOGGED INM
+        //// START TABLET CUST LOGGED INM
+        .alligo-page-header-tablet-cust-loggedin {
+            background: $black; // needs to be replaced with system var
+            color: $white; // system variable
+            /// not needed as covered in bottom sections
+            width: 768px;
+
+            /* @include breakpoint(medium) {
+                 width: 600px;
+             }
+
+             */
+
+            .figma-top-nav-container-tablet-cust {
+                display: flex;
+                padding: 8px;
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+                background: var(--color-greyscale-black); // use like this, or add it into eg - alligo background var
+                /* Elevation & Shadows/Down/60% */
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10), 0px 0px 1px 0px rgba(0, 0, 0, 0.05);
+
+                .left-nav-wrapper-tablet-cust {
+                    // layout
+                    display: flex;
+                    //width: 120px;
+                    align-items: center;
+                    // style (extra section in figma not sure if its needed
+                    border-radius: 100px;
+
+                    // buton styles
+                    .base-hamburger-tablet-cust {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .hamburger-button {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+
+                    .base-search-tablet-cust {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .search-button-tablet-cust {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+
+                    .base-compare-tablet-cust {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .compare-button-tablet-cust {
+                            width: 24px;
+                            height: 24px;
+                            position: relative;
+                        }
+                    }
+
+
+                } // left nav wrapper
+
+                .logo-tablet-cust {
+                    width: 76px;
+                    //height: 14.555px;
+                    flex-shrink: 0;
+                }
+
+                .account-purchase-wrapper-tablet-cust {
+                    display: flex;
+                    //width: 120px;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    /// variant --- tablet
+                    .account-login-wrapper-tablet-cust {
+                        display: flex;
+                        padding: 12px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .account-icon-tablet-cust {
+                            width: 24px;
+                            height: 24px;
+                        }
+
+                        .text-wrapper-tablet-cust {
+                            display: flex;
+                            padding: 4px 8px;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 8px;
+
+                            .label-lg {
+                                /// issue - had to ovveride defaults
+                                line-height: 16px; /* 100% */
+                            }
+                        }
+
+                    } /// login wrapper
+
+                    .base-favourites-tablet-cust {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .favourites-button-tablet-cust {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+
+                    .base-minicart-tablet-cust {
+                        display: flex;
+                        padding: 8px;
+                        justify-content: center;
+                        align-items: center;
+
+                        .minicart-button-tablet-cust {
+                            width: 24px;
+                            height: 24px;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+
+            /// scanner bar
+            .scanner-container-tablet-cust {
+                display: flex;
+                padding: 0px 8px 8px 8px;
+                flex-direction: column;
+                align-items: flex-start;
+                align-self: stretch;
+
+                /// bottom -- changes to top on scroll
+                border-bottom: 1px solid var(--theme-swedol-brand, #C7D300);
+                background: var(--color-greyscale-black, #000);
+
+                .input-wrapper-tablet-cust {
+                    display: flex;
+                    height: 40px;
+                    padding: 8px;
+                    align-items: center;
+                    gap: 8px;
+                    align-self: stretch;
+                    background: var(--color-greyscale-grey-05, #F6F6F6);
+
+                    .search-button-tablet-cust {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    .input-tablet-cust {
+                        // layout
+                        height: 22px;
+                        flex: 1 0 0;
+
+                        // typography
+                        overflow: hidden;
+                        color: var(--text-text-secondary, #4F4F4F);
+                        font-feature-settings: 'ss06' on, 'ss03' on, 'ss02' on;
+                        text-overflow: ellipsis;
+                        whitespace: nowrap;
+                        /* Desktop/Body Medium */
+                        /* font-family: 'BreuerCondensedRegular'; // fix
+                         font-size: 16px;
+                         font-style: normal;
+                         font-weight: 500;
+                         line-height: 22px; /* 137.5% */
+                        /*  letter-spacing: 0.32px; */
+                    }
+
+                    .scanner-icon-tablet-cust {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        } // alligo-page-header
+        //// END TABLET CUST LOGGED INM
+        //// END TABLET CUST LOGGED INM
+        //// END TABLET CUST LOGGED INM
+        //// END TABLET CUST LOGGED INM
+
+
+
+
+
+
+    } // alligo-page-wrapper
+} // alligo-page-body

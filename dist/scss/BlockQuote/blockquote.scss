@@ -1,0 +1,220 @@
+// Blockquote Container
+// maybe should be the real item
+.blockq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+  
+    .blockq-container-inner {
+      display: flex;
+      padding: 16px 32px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      align-self: stretch;
+      border-left: 4px solid var(--surface-accent-default, #C7D300);
+  
+      h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+  
+      .bottom-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+
+       .body-sm {
+            color: var(--color-text-secondary, #4F4F4F);
+        }
+      }
+    }
+  }
+
+  .blockq-container--sb-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+  
+    .blockq-container-inner {
+      display: flex;
+      padding: 16px 32px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      align-self: stretch;
+      border-left: 4px solid var(--surface-accent-default, #C7D300);
+  
+      h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .headline-md--blockquote {
+            font-size: var(--font-size-headline-md, 32px);
+            font-weight: var(--font-weight-headline-md, 600);
+            line-height: var(--line-height-headline-md, 36px); /* 112.5% */
+            letter-spacing: var(--letter-spacing-headline-md, 0px);
+           // text-transform: uppercase;
+      }
+  
+      .bottom-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+
+        .label-sm {
+            font-size: var(--font-size-label-sm, 14px);
+            font-weight: var(--font-weight-label-sm, 600);
+            line-height: var(--line-height-label-sm, 14px); /* 100% */
+            letter-spacing: var(--letter-spacing-alt-label-sm, 0.56px);
+            text-transform: uppercase;
+        }
+        .body-sm {
+            color: var(--color-text-secondary, #4F4F4F);
+            font-size: var(--font-size-body-sm, 14px);
+            font-weight: var(--font-weight-body-sm, 400);
+            line-height: var(--line-height-body-sm, 20px); /* 142.857% */
+            letter-spacing: var(--letter-spacing-body-sm, 0.28px);
+        }
+      }
+    }
+  }
+
+  // modifier for SB display only
+  // redo top correctly, make visual styles accordingly
+  // it has to function normally too (ie @media queries
+  .blockq-container--sb-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    max-width: 311px;
+  
+    .blockq-container-inner {
+      display: flex;
+      padding: 16px !important;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      align-self: stretch;
+      border-left: 4px solid var(--surface-accent-default, #C7D300);
+
+      .headline-md--blockquote {
+            font-size: var(--font-size-headline-md, 26px);
+            font-weight: var(--font-weight-headline-md, 600);
+            line-height: var(--line-height-headline-md, 32px); /* 123.077% */
+            letter-spacing: var(--letter-spacing-headline-md, 0px);
+           // text-transform: uppercase;
+      }
+  
+      h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+  
+      .bottom-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+
+        .label-sm {
+            font-size: var(--font-size-label-sm, 12px);
+            font-weight: var(--font-weight-label-sm, 600);
+            line-height: var(--line-height-label-sm, 12px);
+            letter-spacing: var(--letter-spacing-alt-label-sm, 0.48px);
+            text-transform: uppercase;
+        }
+
+        .body-sm {
+            color: var(--color-text-secondary, #4F4F4F);
+            font-size: var(--font-size-body-sm, 14px);
+            font-weight: var(--font-weight-body-sm, 400);
+            line-height: var(--line-height-body-sm, 20px);
+            letter-spacing: var(--letter-spacing-body-sm, 0.28px);
+        }
+      }
+    }
+  }
+
+  // These override storyblok styles default styles buw will need to see how it behaves in the system
+/*
+  .css-1qq744x {
+    display: block !important;
+    
+  }
+
+  .left {
+    float: left !important;
+  }
+
+  .right {
+    float: right !important;
+  }
+
+  .center {
+align-items: center;
+  }
+*/
+
+/// here or in main - its just to overwrite the parent
+
+.css-1if7k1k {
+  width: 100%;
+}
+
+// the above and this one switch for some reason
+.css-1lslclb {
+  height: auto !important;
+}
+
+.left {
+  float: none !important;
+}
+
+.center {
+  //float: right !important;
+  .blockq-container--sb-desktop .blockq-container-inner {
+    align-items: center !important;
+  }
+
+  .blockq-container--sb-desktop .blockq-container-inner .bottom-text-wrapper {
+    align-items: center !important;
+  }
+}
+
+.right {
+  //min-width: 513px;
+  min-width: 938px; // need to resolve this
+  float: right !important;
+  align-content: right !important;
+  -webkit-align-items: right !important;
+  -webkit-box-align: right !important;
+  -ms-flex-align: right !important;
+  align-items: right !important;
+
+
+  .blockq-container--sb-desktop .blockq-container-inner {
+    align-items: flex-end !important;
+  }
+
+  .blockq-container--sb-desktop .blockq-container-inner .bottom-text-wrapper {
+    align-items:  flex-end !important;
+  }
+
+}
+/*
+.alignment-container{
+  width: 100%;
+  //display: block ;
+  box-sizing: border-box;
+  overflow: hidden; 
+}*/

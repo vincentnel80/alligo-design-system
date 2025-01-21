@@ -1,0 +1,386 @@
+// Import colors
+//@import '../../../../StyleConfig/foundation-sites/scss/util/util';
+// import Icons - but like cesar did -- for --- invoice library -- material icons class
+// remake colors
+//frontend/applications/StyleConfig/src/assets/scss/app.scss
+//@import '../StyleConfig/src/assets/scss/mixins/material';
+//@import 'mixins/fonts';
+
+.links-container {
+
+    /// Base Link
+    .Text-link-desktop-large {
+        /*width: 52px;
+        height: 28px;
+        flex-grow: 0;*/
+        font-family: BreuerCondensedRegular;
+        font-size: 20px;
+        font-weight: normal;
+        font-stretch: condensed;
+        font-style: normal;
+        line-height: 1.4;
+        letter-spacing: normal;
+        text-align: left;
+        cursor: pointer;
+        color: var(--text-text-highest-emphasis); // get correct color
+        // me
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+        // for ease ins
+        text-decoration-color: black;
+        transition: 100ms ease-in;
+
+        /*add those for opera and mozilla support*/
+        -webkit-text-decoration-color: black;
+        -moz-text-decoration-color: black;
+
+        &:hover {
+            //background-color: yellow;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+
+
+            text-decoration-color: transparent;
+
+            /*add those for opera and mozilla support*/
+            -webkit-text-decoration-color: transparent;
+            -moz-text-decoration-color: transparent;
+            color: #737373;
+        }
+    }
+
+    /// dektop medium
+    .Text-link-desktop-medium {
+        /*width: 52px;
+        height: 28px;
+        flex-grow: 0;*/
+        font-family: BreuerCondensedRegular;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: condensed;
+        font-style: normal;
+        line-height: 1.38;
+        letter-spacing: 0.32px;
+        text-align: left;
+        cursor: pointer;
+        color: var(--text-text-highest-emphasis); // get correct color
+        // me
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+        // for ease ins
+        text-decoration-color: black;
+        transition: 100ms ease-in;
+
+        /*add those for opera and mozilla support*/
+        -webkit-text-decoration-color: black;
+        -moz-text-decoration-color: black;
+
+        &:hover {
+            //background-color: yellow;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+
+
+            text-decoration-color: transparent;
+
+            /*add those for opera and mozilla support*/
+            -webkit-text-decoration-color: transparent;
+            -moz-text-decoration-color: transparent;
+            color: #737373;
+        }
+    }
+
+    .Text-link-desktop-small {
+        /*width: 52px;
+        height: 28px;
+        flex-grow: 0;*/
+        font-family: BreuerCondensedRegular;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: condensed;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: 0.28px;
+        text-align: left;
+        cursor: pointer;
+        color: var(--text-text-highest-emphasis); // get correct color
+        // me
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+        // for ease ins
+        text-decoration-color: black;
+        transition: 100ms ease-in;
+
+        /*add those for opera and mozilla support*/
+        -webkit-text-decoration-color: black;
+        -moz-text-decoration-color: black;
+
+        &:hover {
+            //background-color: yellow;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+
+
+            text-decoration-color: transparent;
+
+            /*add those for opera and mozilla support*/
+            -webkit-text-decoration-color: transparent;
+            -moz-text-decoration-color: transparent;
+            color: #737373;
+        }
+    }
+
+    /// end base link
+
+    //ACTION LINK
+    // Desktop Regular Large
+    .Action-LinkDesktopLargeRegularText-Highest-Emphasis {
+       // width: 116px;
+      //  height: 28px; check if needed
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+        padding: 0;
+        //
+        cursor: pointer;
+
+        /// transitions
+        transition: 100ms ease-in;
+
+
+        .image-left {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+        }
+
+        .image-right {
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+        }
+
+        /// text
+        .Text-link {
+           // width: 52px;
+           // height: 28px; /// maybe needed
+            flex-grow: 0;
+            font-family: BreuerCondensedRegular;
+            font-size: 20px;
+            font-weight: normal;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 1.4;
+            letter-spacing: normal;
+            text-align: left;
+            color: var(--text-text-highest-emphasis);
+
+            ///
+        }
+
+        &:hover {
+
+        }
+    }
+
+    // Desktop Regular Medium
+
+    .Action-LinkDesktopLargeRegularText-Highest-Emphasis-medium {
+        // width: 116px;
+        //  height: 28px; check if needed
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+        padding: 0;
+        //
+        cursor: pointer;
+
+        /// transitions
+        transition: 100ms ease-in;
+
+
+        .image-left {
+            width: 20px;
+            height: 20px;
+            flex-grow: 0;
+            object-fit: contain;
+        }
+
+        .image-right {
+            width: 20px;
+            height: 20px;
+            flex-grow: 0;
+            object-fit: contain;
+        }
+
+        /// text
+        .Text-link {
+            // width: 52px;
+            // height: 28px; /// maybe needed
+            flex-grow: 0;
+            font-family: BreuerCondensedRegular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 1.4;
+            letter-spacing: normal;
+            text-align: left;
+            color: var(--text-text-highest-emphasis);
+
+            ///
+        }
+
+        &:hover {
+
+        }
+    }
+
+    //// Link Tile
+
+    .desktop-linktile-large {
+        width: 65px;
+        max-height: 40px;
+        //flex-grow: 0;
+        padding: 9px 16px;
+        //border: solid 1px var(--greyscale-grey-10);
+        border: solid 1px #E5E5E5;
+
+        .Content {
+           /* width: 33px;
+            height: 22px; */
+            flex-grow: 0;
+            font-family: BreuerCondensedRegular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 1.38;
+            letter-spacing: 0.32px;
+            text-align: center;
+            color: var(--text-text-highest-emphasis);
+            display: block;
+        }
+    }
+
+    //// Link Tile Icon (hanger)
+
+    .desktop-linktile-hangar {
+        width: 65px;
+        height: 72px;
+        flex-grow: 0;
+       // padding: 9px 16px;
+        //border: solid 1px var(--greyscale-grey-10);
+        border: solid 1px #E5E5E5;
+        text-align: center;
+
+        .MaterialOutlined300styler {
+           // width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+
+            // mine
+            padding: 9px 16px 8px;
+        }
+
+        .Content {
+            width: 33px;
+            height: 22px;
+            flex-grow: 0;
+            font-family: BreuerCondensedRegular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 1.38;
+            letter-spacing: 0.32px;
+            text-align: center;
+            color: var(--text-text-highest-emphasis);
+        }
+
+    }
+
+    // desktop link tile search
+    .desktop-linktile-search {
+        width: 93px;
+        height: 40px;
+        flex-grow: 0;
+        padding: 9px 16px;
+        border: solid 1px #E5E5E5;
+
+        .MaterialOutlined300search {
+            width: 20px;
+            height: 20px;
+            flex-grow: 0;
+            object-fit: contain;
+        }
+
+        .Content {
+            width: 33px;
+            height: 22px;
+            flex-grow: 0;
+            font-family: BreuerCondensedRegular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 1.38;
+            letter-spacing: 0.32px;
+            text-align: center;
+            color: var(--text-text-highest-emphasis);
+        }
+    }
+
+
+    // björn kläder
+    .border {
+        width: 199px;
+        height: 112px;
+        flex-grow: 0;
+        padding: 32px 49.8px 32px 50.1px;
+        // border: solid 1px var(--greyscale-grey-10);
+        border: solid 1px #E5E5E5;
+        cursor: pointer;
+
+        /// transitions
+        transition: 100ms ease-in;
+
+
+        .bjornklader {
+            width: 99.1px;
+            height: 48px;
+           // flex-grow: 0;
+            margin: 0 auto;
+
+            svg {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        &:hover {
+            //border: solid 1px var(--greyscale-grey-80);
+            border: solid 1px #333333;
+
+        }
+    }
+
+}
+

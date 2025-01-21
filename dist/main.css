@@ -1,0 +1,139 @@
+@import '//variables';
+@font-face {
+  font-family: "breuercondensed";
+  src: url("../shared/fonts/breuercondensed-bold-webfont.woff2") format("woff2"), url("../shared/fonts/breuercondensed-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "breuercondensed";
+  src: url("../shared/fonts/breuercondensed-medium-webfont.woff2") format("woff2"), url("../shared/fonts/breuercondensed-medium-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "breuercondensed";
+  src: url("../shared/fonts/breuercondensed-regular-webfont.woff2") format("woff2"), url("../shared/fonts/breuercondensed-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "breuercondensed";
+  src: url("../shared/fonts/breuercondensed-light-webfont.woff2") format("woff2"), url("../shared/fonts/breuercondensed-light-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "breuercondensed";
+  src: url("../shared/fonts/breuercondensed-bolditalic-webfont.woff2") format("woff2"), url("../shared/fonts/breuercondensed-bolditalic-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "breuercondensed";
+  src: url("../shared/fonts/breuercondensed-mediumitalic-webfont.woff2") format("woff2"), url("../shared/fonts/breuercondensed-mediumitalic-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "breuercondensed";
+  src: url("../shared/fonts/breuercondensed-lightitalic-webfont.woff2") format("woff2"), url("../shared/fonts/breuercondensed-lightitalic-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+.figma-link-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 16px;
+}
+
+/*.figma-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+} */
+.figma-link-text {
+  /* color: var(--greyscale-black);
+   text-align: center;
+   font-family: "breuercondensed";
+   font-size: 12px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 12px; 
+   letter-spacing: 0.24px; */
+}
+
+.figma-link-container:hover .figma-link-text {
+  color: var(--greyscale-black);
+}
+
+.figma-icon-new {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.css-qa4clq :where(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)) {
+  /* font-family: "breuercondensed" !important;
+   font-size: 20px !important;
+  // line-height: 1.75rem !important;
+   font-weight: 400 !important;
+   color: black !important; */
+  font-family: "breuercondensed" !important;
+  color: var(--color-text-primary, #000) !important;
+  font-size: 24px !important;
+  font-weight: var(--Font-weight-medium-600, 500) !important;
+  line-height: var(--Line-height-32, 32px) !important;
+  margin: 0 0 24px 0 !important;
+}
+
+.css-11knh3z {
+  font-family: "breuercondensed" !important;
+  font-size: 32px !important;
+  font-size: 46px !important;
+  line-height: 3rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0px;
+  color: var(--greyscale-black) !important;
+}
+
+.css-qa4clq :where(h3:not(.sb-anchor, .sb-unstyled, .sb-unstyled h3)):first-of-type {
+  font-family: "breuercondensed" !important;
+  font-size: 2.25rem !important;
+  line-height: 28px !important;
+  font-weight: 700 !important;
+  color: black !important;
+  margin-bottom: 16px;
+}
+
+.content-block--callout.callout-primary {
+  color: #0F62FE !important;
+}
+
+.content-block--callout.callout-primary {
+  background-color: #EDF5FF !important;
+  border: 1px solid #D0E2FF !important;
+}
+
+.content-block--callout {
+  padding: 16px;
+  border-radius: 4px;
+  display: flex;
+  gap: 12px;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px;
+}
+.content-block--callout .content p {
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+  margin-bottom: 16px !important;
+  color: #0F62FE !important;
+}
+.content-block--callout .content p:last-child {
+  margin-bottom: 0 !important; /* Example: Remove the margin */
+}
+
+/*# sourceMappingURL=main.css.map */

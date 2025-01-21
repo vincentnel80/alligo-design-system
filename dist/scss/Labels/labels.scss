@@ -1,0 +1,84 @@
+
+.label-md-mob {
+color: var(--color-text-primary, #000);
+font-family: var(--font-family-label-md, "breuercondensed");
+font-size: var(--font-size-label-md, 14px);
+font-style: normal;
+font-weight: var(--font-weight-label-md, 600);
+line-height: var(--line-height-label-md, 14px); /* 100% */
+letter-spacing: var(--letter-spacing-label-md, 0.42px);
+text-transform: uppercase;
+}
+.label-lg-mob {
+  color: var(--color-text-primary, #000);
+font-family: var(--font-family-label-lg, "breuercondensed");
+font-size: var(--font-size-label-lg, 16px);
+font-style: normal;
+font-weight: var(--font-weight-label-lg, 600);
+line-height: var(--line-height-label-lg, 16px); /* 100% */
+letter-spacing: var(--letter-spacing-label-lg, 0.32px);
+text-transform: uppercase;
+}
+
+.label-md-dt {
+  color: var(--color-text-primary, #000);
+font-family: var(--font-family-label-md, "breuercondensed");
+font-size: var(--font-size-label-md, 16px) !important;
+font-weight: var(--font-weight-label-md, 600);
+line-height: var(--line-height-label-md, 16px) !important; /* 100% */
+letter-spacing: var(--letter-spacing-label-md, 0.48px) !important;
+text-transform: uppercase;
+}
+
+.label-lg-dt {
+  color: var(--color-text-primary, #000);
+font-family: var(--font-family-label-md, "breuercondensed");
+font-size: var(--font-size-label-md, 18px) !important;
+font-weight: var(--font-weight-label-md, 600);
+line-height: var(--line-height-label-md, 18px) !important; /* 100% */
+letter-spacing: var(--letter-spacing-label-md, 0.18px) !important;
+text-transform: uppercase;
+}
+
+.label-sm-dt {
+  font-family: var(--font-family-label-md, "breuercondensed");
+  font-size: var(--font-size-label-sm, 14px) !important;
+  font-weight: var(--font-weight-label-sm, 600) !important;
+  line-height: var(--line-height-label-sm, 14px) !important; /* 100% */
+  letter-spacing: var(--letter-spacing-alt-label-sm, 0.56px) !important;
+  text-transform: uppercase;
+}
+
+// the above maybe not valid
+.label-sm-mob {
+  font-family: var(--font-family-label-md, "breuercondensed");
+  font-size: var(--font-size-label-sm, 12px);
+  font-weight: var(--font-weight-label-sm, 600);
+  line-height: var(--line-height-label-sm, 12px); /* 100% */
+  letter-spacing: var(--letter-spacing-alt-label-sm, 0.48px);
+  text-transform: uppercase;
+}
+
+.label-sm--badge-dt  {
+  font-family: var(--font-family-label-md, "breuercondensed") !important;
+  font-size: var(--font-size-label-sm, 14px) !important;
+  font-weight: var(--Font-weight-medium-600, 500) !important;
+  line-height: var(--line-height-label-sm, 14px) !important;
+  letter-spacing: var(--letter-spacing-label-sm, 0.56px) !important;
+  text-transform: none !important;
+}
+
+.label-sm--badge-mob  {
+font-weight: var(--Font-weight-medium-500, 500) !important;
+text-transform: none !important;
+}
+
+.label-lg--underline-dt {
+text-decoration: underline !important;
+text-underline-offset: 3px;
+}
+
+.label-lg--underline-mob {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  }
