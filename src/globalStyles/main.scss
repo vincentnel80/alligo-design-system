@@ -4,7 +4,7 @@
 
 
 // Import your variables and mixins first
-@import '//variables'; // Contains your color, font size, spacing variables
+//@import '//variables'; // Contains your color, font size, spacing variables make vars
 //@import 'mixins';    // Contains reusable mixins
 
 // Import your base styles (reset, global, typography, etc.)
@@ -13,4 +13,4 @@
 //@import 'typography';// Typography styles
 @import '_font-faces'; //mine
 
-@import '_storybook-templates'; //mine
+@import '_storybook-templates'; //mine Vin shall i sue this or not -- i guess not

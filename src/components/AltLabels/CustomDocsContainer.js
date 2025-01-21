@@ -1,15 +1,13 @@
 import React from 'react';
-import { DocsContainer, DocsContext } from '@storybook/addon-docs/blocks';
-import { DocsPage } from '@storybook/addon-docs';
-import CustomDiv from './CustomDiv';
+import { DocsContainer } from '@storybook/addon-docs/blocks'; // needed
+import { DocsPage } from '@storybook/addon-docs'; // needed
+import DocResourcesContainer from './DocResourcesContainer';
 
 const CustomDocsContainer = ({ context }) => {
   return (
     <DocsContainer context={context}>
-      {/* Custom Div goes here <CustomDiv /> */}
-      
       <DocsPage />
-      <CustomDiv />
+      <DocResourcesContainer />
     </DocsContainer>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './body.scss';
+import './bodies.scss';
 
 /**
  * Body is used for longer passages of text in the UI. 

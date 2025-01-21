@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './alt-label.scss';
+import './altlabels.scss';
 
 /**
  * Alt-Label styles (Alternative) are smaller, utilitarian styles, used for things like the text inside components, labeling formfields and user info. 
@@ -15,14 +15,13 @@ export const AltLabel = ({
   version = 'Desktop', 
   size = 'alt-label-lg', 
   summary, 
-  marginBottom = 'None', 
-  modifier = '' 
+  marginBottom = 'None'
 }) => {
   // Conditionally apply the -mob or -dt suffix for mobile or desktop version
   const computedSize = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
   
   // Combine font name with the modifier (if any)
-  const classNames = `${computedSize} ${modifier} ${marginBottom}`;
+  const classNames = `${computedSize} ${marginBottom}`;
 
   return (
     <>
@@ -37,11 +36,6 @@ export const AltLabel = ({
    * Determines whether Desktop or Mobile styles are applied
    */
   version: PropTypes.oneOf(['Desktop', 'Mobile']),
-
-    /**
-   * Current breakpoint viewed, based on version
-   */
-    breakpoint: PropTypes.string,
 
   /**
    * Font size for the text

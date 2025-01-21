@@ -1,0 +1,98 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import './social-area.scss';
+
+/**
+ * A blockquote refers to a cited quotation that is visually distinguished from the primary text on a page.
+ */
+
+export const SocialArea = ({ 
+  version, 
+  summary, 
+  name = 'Name Surname', 
+  title = 'Title', 
+  marginBottom = '', 
+  theme = 'Swedol' ,
+  alignment = 'left',
+}) => {
+  // Apply conditional theme class for the background color
+  const containerStyle = {
+    borderLeft: `4px solid ${theme === 'Swedol' ? '#C7D300' : '#CD1125'}`,
+  };
+
+  // Conditionally render the mobile version of the blockquote when the version is 'Mobile'
+  // add in demo text or not??
+  if (version === 'Mobile') {
+    return (
+      <div className={`alignment-container ${alignment}`}>
+      <div className="blockq-container blockq-container--sb-mobile">
+        <div className="blockq-container-inner needshere">
+          <div className="headline-md headline-md--blockquote">
+            {summary}
+          </div>
+          <div className="bottom-text-wrapper">
+            <span className="label-sm">{name}</span>
+            <span className="body-sm">{title}</span>
+          </div>
+        </div>
+        {/* alignment container */}
+        {marginBottom && <div className={`${marginBottom}-temp`}></div>}
+      </div>
+      </div>
+    );
+  }
+
+  // Default Desktop version
+  return (
+<div class="social-container">
+  <ul class="social-wrapper">
+    <li class="icon-wrapper">
+      <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 16.84 5.44 20.87 10 21.8V15H8V12H10V9.5C10 7.57 11.57 6 13.5 6H16V9H14C13.45 9 13 9.45 13 10V12H16V15H13V21.95C18.05 21.45 22 17.19 22 12Z"></path>
+        </svg>
+      </a>
+    </li>
+    <li class="icon-wrapper">
+      <a href="https://youtube.com" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M9.95451 15.2436V9.75651L15.1818 12.5001L9.95451 15.2436ZM21.582 8.02997C21.352 7.23094 20.6743 6.60167 19.8138 6.38811C18.2542 6 12 6 12 6C12 6 5.74582 6 4.18616 6.38811C3.32571 6.60167 2.64798 7.23094 2.41795 8.02997C2 9.47824 2 12.5 2 12.5C2 12.5 2 15.5217 2.41795 16.97C2.64798 17.7691 3.32562 18.3983 4.18616 18.612C5.74582 19 12 19 12 19C12 19 18.2542 19 19.8138 18.612C20.6743 18.3983 21.352 17.7691 21.582 16.97C22 15.5217 22 12.5 22 12.5C22 12.5 22 9.47824 21.582 8.02997Z"></path>
+        </svg>
+      </a>
+    </li>
+    <li class="icon-wrapper">
+      <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 3.8025C14.67 3.8025 14.9867 3.8125 16.0417 3.86083C18.7517 3.98417 20.0175 5.27 20.1408 7.96C20.1892 9.01417 20.1983 9.33083 20.1983 12.0008C20.1983 14.6717 20.1883 14.9875 20.1408 16.0417C20.0167 18.7292 18.7542 20.0175 16.0417 20.1408C14.9867 20.1892 14.6717 20.1992 12 20.1992C9.33 20.1992 9.01333 20.1892 7.95917 20.1408C5.2425 20.0167 3.98333 18.725 3.86 16.0408C3.81167 14.9867 3.80167 14.6708 3.80167 12C3.80167 9.33 3.8125 9.01417 3.86 7.95917C3.98417 5.27 5.24667 3.98333 7.95917 3.86C9.01417 3.8125 9.33 3.8025 12 3.8025ZM17.3383 5.4625C16.675 5.4625 16.1375 6 16.1375 6.6625C16.1375 7.325 16.675 7.8625 17.3383 7.8625C18.0008 7.8625 18.5375 7.325 18.5375 6.6625C18.5375 6 18.0008 5.4625 17.3383 5.4625Z"></path>
+        </svg>
+      </a>
+    </li>
+    <li class="icon-wrapper">
+      <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M4.94337 2.3999C3.54089 2.3999 2.3999 3.54216 2.3999 4.94617C2.3999 6.35081 3.54089 7.4935 4.94337 7.4935C6.34473 7.4935 7.48479 6.35075 7.48479 4.94617C7.48485 3.54216 6.34473 2.3999 4.94337 2.3999ZM6.86922 8.56909H3.01476C2.84369 8.56909 2.70508 8.70807 2.70508 8.87945V21.2895C2.70508 21.4609 2.84369 21.5998 3.01476 21.5998H6.86922C7.04029 21.5998 7.1789 21.4609 7.1789 21.2895V8.87945C7.1789 8.70807 7.04029 8.56909 6.86922 8.56909ZM13.2864 9.68555C13.9805 8.92771 15.1249 8.26074 16.673 8.26074C21.0144 8.26074 21.5998 11.4059 21.5998 14.4825V21.2896C21.5998 21.4611 21.4611 21.6 21.2901 21.6H17.4426C17.2715 21.6 17.1329 21.4611 17.1329 21.2896V15.2559C17.1329 13.5666 17.0084 12.2743 15.441 12.2743C14.0019 12.2743 13.4411 13.0804 13.4411 15.1495V21.2896C13.4411 21.461 13.3025 21.5999 13.1314 21.5999H9.28539C9.11432 21.5999 8.97571 21.461 8.97571 21.2896V8.87954C8.97571 8.70816 9.11432 8.56918 9.28539 8.56918H12.9767C13.1478 8.56918 13.2864 8.70816 13.2864 8.87954V9.68555Z"></path>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  );
+};
+
+SocialArea.propTypes = {
+  version: PropTypes.string,
+  summary: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  title: PropTypes.string,
+  marginBottom: PropTypes.string,
+  alignment: PropTypes.oneOf(['left','center', 'right']),
+  theme: PropTypes.oneOf(['Swedol', 'Tools']),
+};
+
+SocialArea.defaultProps = {
+  name: 'Name Surname',
+  title: 'Title',
+  theme: 'Swedol',
+  alignment: 'left',
+};
