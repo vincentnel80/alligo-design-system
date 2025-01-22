@@ -1,0 +1,111 @@
+
+
+/// relates to bottom component.
+/// // Might need to go into own file
+.figma-link-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 16px;
+  }
+
+  /*.figma-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  } */
+
+  .figma-link-text {
+   /* color: var(--greyscale-black);
+    text-align: center;
+    font-family: "breuercondensed";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px; 
+    letter-spacing: 0.24px; */
+  }
+
+  .figma-link-container:hover .figma-link-text {
+    color: var(--greyscale-black);
+  }
+
+  .figma-icon-new {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  /// header hoverwriutes
+  /// 
+  /// 
+  /// 
+  .css-qa4clq :where(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)) {
+   /* font-family: "breuercondensed" !important;
+    font-size: 20px !important;
+   // line-height: 1.75rem !important;
+    font-weight: 400 !important;
+    color: black !important; */
+
+    font-family: "breuercondensed" !important;
+    color: var(--color-text-primary, #000) !important;
+    font-size: 24px !important;
+    font-weight: var(--Font-weight-medium-600, 500) !important;
+    line-height: var(--Line-height-32, 32px) !important;
+
+    margin: 0 0 24px 0 !important; // only to overwrite
+  }
+  
+  .css-11knh3z { 
+    font-family: "breuercondensed" !important;
+    font-size: 32px !important;
+    font-size: 46px !important;
+    line-height: 3rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0px;
+    color: var(--greyscale-black) !important;
+  }
+  
+  // page container
+  .css-qa4clq :where(h3:not(.sb-anchor, .sb-unstyled, .sb-unstyled h3)):first-of-type {
+    font-family: "breuercondensed" !important;
+    font-size: 2.25rem !important;
+    line-height: 28px !important;
+    font-weight: 700 !important;
+    color: black !important;
+    margin-bottom: 16px;
+  }
+
+  /// for blue warning
+  .content-block--callout.callout-primary {
+    color: #0F62FE !important;
+}
+
+.content-block--callout.callout-primary {
+  background-color: #EDF5FF !important;
+  border: 1px solid #D0E2FF !important;
+}
+
+.content-block--callout {
+  padding: 16px;
+  border-radius: 4px;
+  display: flex;
+  gap: 12px;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px;
+
+  .content {
+    p {
+      font-size: 16px !important;
+      line-height: 24px !important;
+      font-weight: 400 !important;
+      margin-bottom: 16px !important;
+      color: #0F62FE !important;
+
+      &:last-child {
+        margin-bottom: 0 !important; /* Example: Remove the margin */
+      }
+    }
+  }
+}
