@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './labels.scss';
+import './storybook/labels-sb.scss';
 
 /**
 * Labels are smaller, utilitarian styles, used for things like the text inside components, text inside buttons, labeling form fields and user info.
 * Label styles are a bolder version of Alt-Label and therefore higher empasis than the Alt version.
 */
 
-
+/*
 // if i dont add these, then it always comes back as undefined - why?
 export const Label = ({ size = 'label-lg', version = 'Desktop', summary, marginBottom = 'None', modifier = 'None' }) => {
   // Conditionally set modifier based on size
@@ -38,6 +38,41 @@ export const Label = ({ size = 'label-lg', version = 'Desktop', summary, marginB
     </>
   );
 };
+*/
+
+export const Label = ({ 
+  size = 'label-lg', 
+  version = 'Desktop', 
+  summary, 
+  marginBottom = 'None', 
+  modifier = 'None' 
+}) => {
+  // Conditionally apply the -mob or -dt suffix for mobile or desktop version
+  const computedFontName = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
+
+  // Conditionally set modifier based on size
+  const allowedModifier = 
+    size === 'label-lg' && modifier === 'label-lg--underline'
+      ? modifier
+      : size === 'label-sm' && modifier === 'label-sm--badge'
+      ? modifier
+      : 'None';
+
+  // Combine font name with the modifier (if valid) and suffix based on version
+  const classNames = allowedModifier !== 'None' 
+    ? `${computedFontName} ${allowedModifier}-${version === 'Mobile' ? 'mob' : 'dt'}`
+    : computedFontName;
+
+  return (
+    <>
+      <div className={`${marginBottom}-sb`}>
+        <div className={`${size} ${classNames} ${marginBottom}`}>{summary}</div>
+      </div>
+    </>
+  );
+};
+
+
 
 
   /*

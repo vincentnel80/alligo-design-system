@@ -3,6 +3,7 @@ import CustomDocsContainer from './CustomDocsContainer';
 import React, { useEffect } from 'react';
 
 // Dynamic HTML snippet generator function
+/*
 const generateHtmlSnippet = (args) => {
   const { size = 'label-lg', summary, modifier = 'None', marginBottom = 'None' } = args;  // Default values
   const modifierClass = modifier !== 'None' ? modifier : '';
@@ -12,6 +13,19 @@ const generateHtmlSnippet = (args) => {
   const classNames = [size, modifierClass, marginBottomClass].filter(Boolean).join(' ');
 
   return `<p class="${classNames}">${summary}</p>`;
+};*/
+
+const generateHtmlSnippet = (args) => {
+  const { size = 'label-lg', summary, modifier = 'None', marginBottom = 'None' } = args;
+  const classes = [size];
+
+  // Only add modifier if it is not 'None'
+  if (modifier !== 'None') classes.push(modifier);
+
+  // Determine if the <div> needs a class
+  const divTag = marginBottom !== 'None' ? `<div class="${marginBottom}">` : `<div>`;
+
+  return `${divTag}<p class="${classes.join(' ')}">${summary}</p></div>`;
 };
 
 export default {
@@ -76,7 +90,7 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
     },
     marginBottom: {
       control: { type: 'select' },
-      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'],
+      options: ['None', 'margin-bottom-16-small', 'margin-bottom-24-medium', 'margin-bottom-32-large'],  
       defaultValue: 'None',
     },
   },

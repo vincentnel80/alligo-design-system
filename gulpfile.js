@@ -5,7 +5,7 @@ const cleanCSS = require('gulp-clean-css');
 // Paths for SCSS files
 const paths = {
   // scss: 'src/**/*.scss', // Adjust path to your SCSS files
-  scss: 'src/components/**/*.scss', // Adjust path to your SCSS files
+  scss: ['src/components/**/*.scss', 'src/globalStyles/**/*.scss'], // Adjust path to your SCSS files
   dist: 'dist/scss', // Output folder for SCSS
 };
 

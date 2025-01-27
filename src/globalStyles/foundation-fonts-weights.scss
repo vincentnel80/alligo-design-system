@@ -1,6 +1,10 @@
 // vin
 // rename: split up, package, turn into mixins, vars, package and bundle into 1 etc etc --- in depth best practice
 
+// Launch - 
+// add in margin bottom - here or spacing
+// this contains all the styles
+
 // Add modifiers here
 // Font weights
 $font-weight-default-400: 400;
@@ -97,7 +101,7 @@ $line-height-display-sm: $value-22;
 $line-height-display-md: $value-28;
 $line-height-display-lg: $value-36;
 
-// Paragraph spacing - mobile
+// Paragraph spacing - mobile // what is it, how to use Launch
 $paragraph-spacing-body-sm: $value-12;
 $paragraph-spacing-body-md: $value-16;
 $paragraph-spacing-body-lg: $value-16;
@@ -184,7 +188,7 @@ $letter-spacing-display-lg: $value-0;
 @include apply-to-tags(body-sm, $font-weight-body-sm, $font-size-body-sm, $line-height-body-sm, $letter-spacing-body-sm);
 @include apply-to-tags(body-md, $font-weight-body-md, $font-size-body-md, $line-height-body-md, $letter-spacing-body-md);
 @include apply-to-tags(body-lg, $font-weight-body-lg, $font-size-body-lg, $line-height-body-lg, $letter-spacing-body-lg);
-@include apply-to-tags(body-xl, $font-weight-body-xl, $font-size-body-xl, $line-height-body-xl, $letter-spacing-body-xl);
+@include apply-to-tags(body-xl, $font-weight-body-xl, $font-size-body-xl, $line-height-body-xl, $letter-spacing-body-xl, $paragraph-spacing-body-xl);
 
 // modifiers
 // what is best way to handle modifiers?

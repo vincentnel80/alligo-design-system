@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './bodies.scss';
+import './storybook/bodies-sb.scss';
+// Body.js
+import '../Spacing/storybook/spacing-sb.scss';
+// just rember its using both now (spacing) as everything gets compiled into one, but in system it wont
+
 
 /**
  * Body is used for longer passages of text in the UI. 
@@ -20,16 +24,18 @@ export const Body = ({
   // Conditionally apply the -mob or -dt suffix for mobile or desktop version
   const computedFontName = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
   
-  // Combine font name with the modifier (if any)
-  const classNames = `${computedFontName} ${modifier} ${marginBottom}`;
+  // Combine font name with the modifier (if it's not 'None')
+  const classNames = modifier !== 'None' ? `${computedFontName} ${modifier}` : computedFontName;
 
   return (
     <>
-      <p className={classNames}>{summary}</p>
-      <div className={`${marginBottom}-temp`}></div>
+      <div className={`${marginBottom}-sb`}>
+        <p className={classNames}>{summary}</p>
+      </div>
     </>
   );
 };
+
 
 Body.propTypes = {
   /**

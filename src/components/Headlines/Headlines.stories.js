@@ -10,7 +10,7 @@ const generateHtmlSnippet = (args) => {
 };
 */
 // Dynamic HTML snippet generator function
-const generateHtmlSnippet = (args) => {
+/*const generateHtmlSnippet = (args) => {
   const { size = 'headline-lg', summary, modifier = 'None', marginBottom = 'None' } = args;  // Default values
   
   // Conditionally add modifier and marginBottom if they are not 'None'
@@ -20,6 +20,19 @@ const generateHtmlSnippet = (args) => {
 
   // Join the classes array into a string, filtering out any empty values
   return `<p class="${classes.join(' ')}">${summary}</p>`;
+}; */
+
+const generateHtmlSnippet = (args) => {
+  const { size = 'headline-lg', summary, modifier = 'None', marginBottom = 'None' } = args;
+  const classes = [size];
+
+  // Only add modifier if it is not 'None'
+  if (modifier !== 'None') classes.push(modifier);
+
+  // Determine if the <div> needs a class
+  const divTag = marginBottom !== 'None' ? `<div class="${marginBottom}">` : `<div>`;
+
+  return `${divTag}<p class="${classes.join(' ')}">${summary}</p></div>`;
 };
 
 
@@ -92,7 +105,7 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
     },
     marginBottom: {
       control: { type: 'select' },
-      options: ['None', 'space-8-small', 'space-12-small', 'space-16-small'],
+      options: ['None', 'margin-bottom-8-small', 'margin-bottom-12-small', 'margin-bottom-16-large'],  
       defaultValue: 'None',
     },
   },

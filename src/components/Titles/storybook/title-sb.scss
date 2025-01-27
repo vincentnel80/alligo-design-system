@@ -1,0 +1,118 @@
+.title-lg-mob {
+  color: var(--color-text-primary, #000);
+  font-family: "breuercondensed";
+  font-size: var(--font-size-title-lg, 20px);
+  font-style: normal;
+  font-weight: var(--font-weight-title-lg, 700);
+  line-height: var(--line-height-title-lg, 24px); /* 120% */
+  letter-spacing: var(--letter-spacing-title-lg, 0px);
+
+    /* Add spacing by default */
+    margin-bottom: var(--margin-bottom-title-lg, 0px); // Launch - check with Erik
+
+    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+}
+
+.title-md-mob {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-title-md, "breuercondensed");
+  font-size: var(--font-size-title-md, 18px);
+  font-style: normal;
+  font-weight: var(--font-weight-title-md, 600);
+  line-height: var(--line-height-title-md, 24px); /* 133.333% */
+  letter-spacing: var(--letter-spacing-title-md, 0px);
+
+    /* Add spacing by default */
+    margin-bottom: var(--margin-bottom-title-md, 18px); // Launch - check with Erik
+
+    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+}
+
+.title-sm-mob {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-title-sm, "breuercondensed");
+  font-size: var(--font-size-title-sm, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-title-sm, 600);
+  line-height: var(--line-height-title-sm, 22px); /* 137.5% */
+  letter-spacing: var(--letter-spacing-title-sm, 0px);
+  // Paragraph-spacing: 16px;
+
+    /* Add spacing by default */
+    margin-bottom: var(--margin-bottom-title-sm, 16px); // Launch - check with Erik
+
+    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+}
+
+/* Media Query for Desktop Small and Up */
+
+.title-lg-dt {
+  color: var(--color-text-primary, #000);
+  font-family: "breuercondensed";
+  font-size: var(--font-size-title-lg, 24px);
+  font-style: normal;
+  font-weight: var(--font-weight-title-lg, 600);
+  line-height: var(--line-height-title-lg, 28px); /* 116.667% */
+  letter-spacing: var(--letter-spacing-title-lg, 0px);
+
+      /* Add spacing by default */
+      margin-bottom: var(--margin-bottom-title-lg, 24px); // Launch - check with Erik
+
+      /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+}
+
+.title-md-dt {
+
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-title-md, "breuercondensed");
+  font-size: var(--font-size-title-md, 20px);
+  font-style: normal;
+  font-weight: var(--font-weight-title-md, 600);
+  line-height: var(--line-height-title-md, 24px); /* 120% */
+  letter-spacing: var(--letter-spacing-title-md, 0px);
+
+      /* Add spacing by default */
+      margin-bottom: var(--margin-bottom-title-lg, 20px); // Launch - check with Erik
+
+      /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+}
+
+.title-sm-dt {
+
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-title-sm, "breuercondensed");
+  font-size: var(--font-size-title-sm, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-title-sm, 600);
+  line-height: var(--line-height-title-sm, 22px); /* 137.5% */
+  letter-spacing: var(--letter-spacing-title-sm, 0px);
+
+      /* Add spacing by default */
+      margin-bottom: var(--margin-bottom-title-lg, 16px); // Launch - check with Erik
+
+      /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+}

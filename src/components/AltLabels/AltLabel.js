@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './altlabels.scss';
+import './storybook/altlabels-sb.scss';
 
 /**
  * Alt-Label styles (Alternative) are smaller, utilitarian styles, used for things like the text inside components, labeling formfields and user info. 
@@ -11,7 +11,7 @@ import './altlabels.scss';
 // if i dont add these, then it always comes back as undefined - why?
 // To Do - vin - key notes - there are no modifiers here, so delete everything concerning that
 // delete the extra docs that are not being used
-export const AltLabel = ({ 
+/*export const AltLabel = ({ 
   version = 'Desktop', 
   size = 'alt-label-lg', 
   summary, 
@@ -26,10 +26,37 @@ export const AltLabel = ({
   return (
     <>
       <p className={classNames}>{summary}</p>
+      <p className={classNames}>{summary}</p>
       <div className={`${marginBottom}-temp`}></div>
     </>
   );
+}; */
+
+
+export const AltLabel = ({ 
+  size = 'alt-label-lg', 
+  version = 'Desktop', 
+  summary, 
+  marginBottom = 'None', 
+  modifier = 'None' 
+}) => {
+  // Conditionally apply the -mob or -dt suffix for mobile or desktop version
+  const computedFontName = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
+  
+  // Combine font name with the modifier (if it's not 'None')
+  const classNames = modifier !== 'None' ? `${computedFontName} ${modifier}` : computedFontName;
+
+  return (
+    <>
+      <div className={`${marginBottom}-sb`}>
+        <p className={classNames}>{summary}</p>
+        <p className={classNames}>{summary}</p>
+      </div>
+    </>
+  );
 };
+
+
 
   AltLabel.propTypes = {
       /**

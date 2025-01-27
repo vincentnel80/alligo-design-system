@@ -1,0 +1,140 @@
+/// Spacing Size examples
+/// // only for storybook
+/// // question - should these be at component level, or global? Launch
+/// 
+ /* no longer valid as i changed everything
+.space-1-small-sb {
+    background-color: #E5E5E5;
+    width: 1px;
+    height: 1px;
+}
+.space-2-small-sb {
+    background-color: #E5E5E5;
+    width: 2px;
+    height: 2px;
+}
+.space-4-small-sb {
+    background-color: #E5E5E5;
+    width: 4px;
+    height: 4px;
+}
+.space-8-small-sb {
+    background-color: #E5E5E5;
+    width: 8px;
+    height: 8px;
+}
+.space-12-small-sb {
+    background-color: #E5E5E5;
+    width: 12px;
+    height: 12px;
+}
+.space-16-small-sb {
+    background-color: #E5E5E5;
+    width: 16px;
+    height: 16px;
+}
+.space-24-medium-sb {
+    background-color: #E5E5E5;
+    width: 24px;
+    height: 24px;
+}
+.space-32-large-sb {
+    background-color: #E5E5E5;
+    width: 32px;
+    height: 32px;
+}
+
+.space-40-large-sb {
+    background-color: #E5E5E5;
+    width: 40px;
+    height: 40px;
+}
+.space-48-large-sb {
+    background-color: #E5E5E5;
+    width: 48px;
+    height: 48px;
+}
+.space-56-large-sb {
+    background-color: #E5E5E5;
+    width: 56px;
+    height: 56px;
+}
+.space-64-large-sb {
+    background-color: #E5E5E5;
+    width: 64px;
+    height: 64px;
+}
+.space-72-large-sb {
+    background-color: #E5E5E5;
+    width: 72px;
+    height: 72px;
+}
+.space-80-large-sb {
+    background-color: #E5E5E5;
+    width: 80px;
+    height: 80px;
+}
+.space-112-large-sb {
+    background-color: #E5E5E5;
+    width: 112px;
+    height: 112px;
+}
+
+.space-16-small-temp {
+    background-color: #ccc;
+    width: 16px;
+    height: 16px;
+  }
+  */
+
+  .margin-bottom-8-small-sb::after {
+    content: ''; /* Makes the pseudo-element appear */
+    display: block; /* Ensure it behaves like a block-level element */
+    background-color: #ccc; /* Matches the space-32-large-temp class */
+    width: 8px;
+    height: 8px;
+  }
+
+
+  .margin-bottom-12-small-sb::after {
+    content: ''; /* Makes the pseudo-element appear */
+    display: block; /* Ensure it behaves like a block-level element */
+    background-color: #ccc; /* Matches the space-32-large-temp class */
+    width: 12px;
+    height: 12px;
+  }
+  
+  .margin-bottom-16-small-sb::after {
+    content: ''; /* Makes the pseudo-element appear */
+    display: block; /* Ensure it behaves like a block-level element */
+    background-color: #ccc; /* Matches the space-32-large-temp class */
+    width: 16px;
+    height: 16px;
+  }
+  
+  .margin-bottom-24-medium-sb::after {
+    content: ''; /* Makes the pseudo-element appear */
+    display: block; /* Ensure it behaves like a block-level element */
+    background-color: #ccc; /* Matches the space-32-large-temp class */
+    width: 24px;
+    height: 24px;
+  }
+  
+  .margin-bottom-32-large-sb::after {
+    content: ''; /* Makes the pseudo-element appear */
+    display: block; /* Ensure it behaves like a block-level element */
+    background-color: #ccc; /* Matches the space-32-large-temp class */
+    width: 32px;
+    height: 32px;
+  }
+
+// Launch
+//Go over figma - add any new spacings - chack that these exist
+// seperate real styles from SB specific (best strategy to seperate, best practice - how to handle so it does not conflict or get built)
+// How to include in build
+
+// space 0 how to handle - include or not
+//make real and split
+// decide to use "pure - here and in SB - I guess i cant cause I need temp visuals
+
+

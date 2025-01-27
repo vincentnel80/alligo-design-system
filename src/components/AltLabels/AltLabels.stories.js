@@ -3,13 +3,18 @@ import { AltLabel } from './AltLabel';
 import CustomDocsContainer from './CustomDocsContainer';
 
 // Dynamic HTML snippet generator function
+
 const generateHtmlSnippet = (args) => {
-  const { version = 'Desktop', size = 'alt-label-lg', summary, marginBottom = 'None' } = args;  // Default values
-  const marginBottomClass = marginBottom !== 'None' ? marginBottom : '';
+  const { size = 'alt-label-lg', summary, modifier = 'None', marginBottom = 'None' } = args;
+  const classes = [size];
 
-  const classNames = [size, marginBottomClass].filter(Boolean).join(' ');
+  // Only add modifier if it is not 'None'
+  if (modifier !== 'None') classes.push(modifier);
 
-  return `<p class="${classNames}">${summary}</p>`;
+  // Determine if the <div> needs a class
+  const divTag = marginBottom !== 'None' ? `<div class="${marginBottom}">` : `<div>`;
+
+  return `${divTag}<p class="${classes.join(' ')}">${summary}</p></div>`;
 };
 
 
@@ -52,7 +57,7 @@ export default {
     },
     marginBottom: {
       control: { type: 'select' },
-      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'], // go over
+      options: ['None', 'margin-bottom-16-small', 'margin-bottom-24-small', 'margin-bottom-32-large'],  
       defaultValue: 'None',
     },
   },
