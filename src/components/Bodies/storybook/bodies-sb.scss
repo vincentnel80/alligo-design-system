@@ -1,0 +1,242 @@
+
+// SB only template display
+// mobile
+
+//@import 'variables';
+//@import 'spacing';
+//@use '../Spacing/spacing-production' as spacing;
+
+
+.body-xl-mob {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-xl, "breuercondensed");
+  font-size: 20px;
+  font-style: normal;
+  // 400 in figma
+  font-weight: var(--font-weight-body-xl, 400);
+  line-height: var(--line-height-body-xl, 26px); /* 130% */
+  letter-spacing: var(--letter-spacing-body-xl, 0px);
+
+    /* Add spacing by default */
+    margin-bottom: var(--margin-bottom-body-xl, 16px); // Launch - check with Erik
+
+    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+}
+
+.body-lg-mob {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-lg, "breuercondensed");
+  font-size: var(--font-size-body-lg, 18px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-lg, 400);
+  line-height: var(--line-height-body-lg, 26px); /* 144.444% */
+  letter-spacing: var(--letter-spacing-body-lg, 0px);
+
+    /* Add spacing by default */
+    margin-bottom: var(--margin-bottom-body-lg, 16px);
+
+    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+}
+
+.body-md-mob {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-md, "breuercondensed");
+  font-size: var(--font-size-body-md, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-md, 400);
+  line-height: var(--line-height-body-md, 22px); /* 137.5% */
+  letter-spacing: var(--letter-spacing-body-md, 0.32px);
+
+    /* Add spacing by default */
+    margin-bottom: var(--margin-bottom-body-md, 16px);
+
+    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+}
+
+.body-sm-mob {
+  color: var(--color-text-primary, #000);
+  font-family: var(--Font-global-serif, "breuercondensed");
+  font-size: var(--font-size-body-sm, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-sm, 400);
+  line-height: var(--line-height-body-sm, 20px); /* 142.857% */
+  letter-spacing: var(--letter-spacing-body-sm, 0.28px);
+
+    /* Add spacing by default */
+    margin-bottom: var(--margin-bottom-body-sm, 12px);
+
+    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+}
+
+/* Media Query for Desktop Small and Up */
+
+// span not accounted for
+.body-xl-dt {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-xl, "breuercondensed");
+  font-size: var(--font-size-body-xl, 24px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-xl, 400);
+  line-height: var(--line-height-body-xl, 32px); /* within paragraph */
+  letter-spacing: var(--letter-spacing-body-xl, 0px);
+
+  /* Add spacing by default */
+  margin-bottom: var(--margin-bottom-body-xl, 24px);
+
+  /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+
+.body-lg-dt {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-lg, "breuercondensed");
+  font-size: var(--font-size-body-lg, 20px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-lg, 400);
+  line-height: var(--line-height-body-lg, 28px); /* 140% */
+  letter-spacing: var(--letter-spacing-body-lg, 0px);
+
+    /* Add spacing by default */
+    margin-bottom: var(--margin-bottom-body-lg, 20px);
+
+    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+}
+
+.body-md-dt {
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-body-md, "breuercondensed");
+  font-size: var(--font-size-body-md, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-md, 400);
+  line-height: var(--line-height-body-md, 24px); /* 150% */
+  letter-spacing: var(--letter-spacing-body-md, 0.32px);
+
+    /* Add spacing by default */
+    margin-bottom: var(--margin-bottom-body-md, 16px);
+
+    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+}
+
+.body-sm-dt {
+  color: var(--color-text-primary, #000);
+  font-family: var(--Font-global-serif, "breuercondensed");
+  font-size: var(--font-size-body-sm, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-sm, 400);
+  line-height: var(--line-height-body-sm, 20px);
+  letter-spacing: var(--letter-spacing-body-sm, 0.28px);
+
+    /* Add spacing by default */
+    margin-bottom: var(--margin-bottom-body-sm, 12px);
+
+    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+}
+
+/*
+// temp modifier: needs rework name is incorrect
+.body-xl--preamble-mob {
+  font-weight: 500 !important;
+}
+
+.body-xl--strikethrough-mob {
+  text-decoration: line-through !important;
+}
+
+// make all in one -- so lose mob etc
+
+
+.body-xl--underline-mob {
+  text-decoration: underline !important;
+}
+
+.body-xl--bold-mob {
+  font-weight: 600 !important;
+}
+
+.body-xl--strikethrough-mob {
+  text-decoration: line-through !important;
+}
+
+.body-lg--underline-mob {
+  text-decoration: underline !important;
+  // no longer needed
+}
+
+.body-lg--bold-mob {
+  font-weight: 500 !important; //??? check
+}
+
+.body-xl--italic-mob {
+  font-style: italic !important;
+}
+
+.body-xl--bold-italic {
+  font-style: italic !important;
+}
+*/
+/*
+.body-sm-mob {
+
+  color: var(--color-text-primary, #000);
+  font-family: var(--Font-global-serif, "breuercondensed");
+  font-size: var(--font-size-body-sm, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-body-sm, 400);
+  line-height: var(--line-height-body-sm, 20px); /* 142.857% */
+  /*letter-spacing: var(--letter-spacing-body-sm, 0.28px);
+
+} */
+
+// make a global one ?? in a new file?
+
+
+
+// launch
+// fake and real real
+// I need the spacing from module ported in here
+/*
+.space-32-large-temp {
+  background-color: #ccc;
+  width: 32px;
+  height: 32px;
+} */
+/*.space-32-large {
+  background-color: #ccc;
+  width: 32px;
+  height: 32px;
+} */
+
+// fake
+
+
+
+// ovveride p (from storybook)
+
+//options: ['', 'space-16-small', 'space-24-small', 'space-32-small'], // go over
+

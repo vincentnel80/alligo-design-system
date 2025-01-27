@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './display.scss';
+import './storybook/display-sb.scss';
 
 /**
  * Display styles are intended for short, prominent text or numerals, helping to emphasize important content and establish clear hierarchy. 
@@ -15,26 +15,30 @@ import './display.scss';
 
 // if i dont add these, then it always comes back as undefined - why
 
-  export const Display = ({ 
-    version = 'Desktop', 
-    size = 'display-lg', 
-    summary, 
-    marginBottom = 'None', 
-    modifier = 'None' 
-  }) => {
-    // Conditionally apply the -mob or -dt suffix for mobile or desktop version
-    const computedSize = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
-    
-    // Combine font name with the modifier (if any)
-    const classNames = `${computedSize} ${modifier} ${marginBottom}`;
+
+export const Display = ({ 
+  size = 'display-lg', 
+  version = 'Desktop', 
+  summary, 
+  marginBottom = 'None', 
+  modifier = 'None' 
+}) => {
+  // Conditionally apply the -mob or -dt suffix for mobile or desktop version
+  const computedFontName = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
   
-    return (
-      <>
+  // Combine font name with the modifier (if it's not 'None')
+  const classNames = modifier !== 'None' ? `${computedFontName} ${modifier}` : computedFontName;
+
+  return (
+    <>
+      <div className={`${marginBottom}-sb`}>
         <p className={classNames}>{summary}</p>
-        <div className={`${marginBottom}-temp`}></div>
-      </>
-    );
-  };
+        <p className={classNames}>{summary}</p>
+      </div>
+    </>
+  );
+};
+
 
   Display.propTypes = {
   /**

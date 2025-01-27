@@ -1,0 +1,76 @@
+/// Spacing Size examples
+/// // only for storybook -- margin bottom or padding bottom - Ask AI how to handle
+/// 
+/// 
+/// useing marging as creating spacing
+/// // should I use classes, or just a value that can be ported into padding or margin ??
+
+
+// must go in _variables? 
+//that is what chat gpt says
+// Define spacing variables
+$space-0-small: 0px;
+$space-1-small: 1px;
+$space-2-small: 2px;
+$space-4-small: 4px;
+$space-8-small: 8px;
+$space-12-small: 12px;
+$space-16-small: 16px;
+$space-24-medium: 24px;
+$space-32-large: 32px;
+$space-40-large: 40px;
+$space-48-large: 48px;
+$space-56-large: 56px;
+$space-64-large: 64px;
+$space-72-large: 72px;
+$space-80-large: 80px;
+$space-112-large: 112px;
+$space-120-large: 120px;
+
+// Define a spacing map for looping
+$spacing-map: (
+  "0-small": $space-0-small,
+  "1-small": $space-1-small,
+  "2-small": $space-2-small,
+  "4-small": $space-4-small,
+  "8-small": $space-8-small,
+  "12-small": $space-12-small,
+  "16-small": $space-16-small,
+  "24-medium": $space-24-medium,
+  "32-large": $space-32-large,
+  "40-large": $space-40-large,
+  "48-large": $space-48-large,
+  "56-large": $space-56-large,
+  "64-large": $space-64-large,
+  "72-large": $space-72-large,
+  "80-large": $space-80-large,
+  "112-large": $space-112-large,
+  "120-large": $space-120-large
+);
+
+// Generate padding-bottom classes
+@each $key, $value in $spacing-map {
+  .padding-bottom-#{$key} {
+    padding-bottom: #{$value};
+  }
+}
+
+// Generate margin-bottom classes
+@each $key, $value in $spacing-map {
+  .margin-bottom-#{$key} {
+    margin-bottom: #{$value};
+  }
+}
+
+
+
+// Launch
+//Go over figma - add any new spacings - chack that these exist
+// seperate real styles from SB specific (best strategy to seperate, best practice - how to handle so it does not conflict or get built)
+// How to include in build
+
+// space 0 how to handle - include or not
+//make real and split
+// decide to use "pure - here and in SB - I guess i cant cause I need temp visuals
+
+

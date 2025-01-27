@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './headline.scss';
+import './storybook/headline-sb.scss';
 
 /**
  * Headline XL, L, M or S are best-suited for short high-emphasis text. 
@@ -12,6 +12,7 @@ import './headline.scss';
 
 
 // if i dont add these, then it always comes back as undefined - why?
+/*
   export const Headline = ({ size = 'headline-lg', version = 'Desktop', summary, marginBottom = 'None', modifier = 'None' }) => {
     return (
      
@@ -30,7 +31,38 @@ import './headline.scss';
     </>
 
     );
+  };*/
+
+  export const Headline = ({ 
+    size = 'headline-lg', 
+    version = 'Desktop', 
+    summary, 
+    marginBottom = 'None', 
+    modifier = 'None' 
+  }) => {
+    // Conditionally apply the -mob or -dt suffix for mobile or desktop version
+    const computedFontName = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
+  
+    // Handle blockquote modifier specifically
+    const blockquoteClass = modifier === 'headline-md--blockquote'
+      ? `${modifier}-${version === 'Mobile' ? 'mob' : 'dt'}`
+      : '';
+  
+    // Combine font name with the modifier (if it's not 'None')
+    const classNames = blockquoteClass
+      ? `${computedFontName} ${blockquoteClass}`
+      : `${computedFontName} ${modifier !== 'None' ? modifier : ''}`.trim();
+  
+    return (
+      <>
+        <div className={`${marginBottom}-sb`}>
+          <div className={classNames}>{summary}</div>
+          <div className={classNames}>{summary}</div>
+        </div>
+      </>
+    );
   };
+  
 
   Headline.propTypes = {
 

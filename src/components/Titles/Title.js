@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './title.scss';
+import './storybook/title-sb.scss';
 
 /**
  * Titles are smaller than headline styles, and should be used for medium-emphasis text that remains relatively short. For example, like the text inside components.
@@ -9,6 +9,7 @@ import './title.scss';
  */
 
 
+/*
   export const Title = ({ size = 'title-lg', version = 'Desktop', summary, marginBottom = 'None' }) => {
     console.log(version,"version");
     return (
@@ -28,7 +29,31 @@ import './title.scss';
     </>
 
     );
-  };
+  }; */
+
+export const Title = ({ 
+  size = 'title-lg', 
+  version = 'Desktop', 
+  summary, 
+  marginBottom = 'None', 
+  modifier = 'None' 
+}) => {
+  // Conditionally apply the -mob or -dt suffix for mobile or desktop version
+  const computedFontName = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
+  
+  // Combine font name with the modifier (if it's not 'None')
+  const classNames = modifier !== 'None' ? `${computedFontName} ${modifier}` : computedFontName;
+
+  return (
+    <>
+      <div className={`${marginBottom}-sb`}>
+        <p className={classNames}>{summary}</p>
+        <p className={classNames}>{summary}</p>
+      </div>
+    </>
+  );
+};
+
 
   Title.propTypes = {
 

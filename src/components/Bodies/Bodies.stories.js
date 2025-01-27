@@ -11,15 +11,19 @@ import CustomDocsContainer from './CustomDocsContainer';
 }; */
 
 const generateHtmlSnippet = (args) => {
-  const { size = 'body-xl', summary, modifier = 'None', marginBottom = 'None' } = args;  
+  const { size = 'body-xl', summary, modifier = 'None', marginBottom = 'None' } = args;
   const classes = [size];
 
-  // Only add modifier and marginBottom if they are not 'None'
+  // Only add modifier if it is not 'None'
   if (modifier !== 'None') classes.push(modifier);
-  if (marginBottom !== 'None') classes.push(marginBottom);
 
-  return `<p class="${classes.join(' ')}">${summary}</p>`;
+  // Determine if the <div> needs a class
+  const divTag = marginBottom !== 'None' ? `<div class="${marginBottom}">` : `<div>`;
+
+  return `${divTag}<p class="${classes.join(' ')}">${summary}</p></div>`;
 };
+
+
 
 
 const fontModifiers = {
@@ -92,7 +96,7 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
     },
     marginBottom: {
       control: { type: 'select' },
-      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'],  
+      options: ['None', 'margin-bottom-16-small', 'margin-bottom-24-medium', 'margin-bottom-32-large'],  
       defaultValue: 'None',
     },
 

@@ -9,6 +9,7 @@ const generateHtmlSnippet = (args) => {
   return `<div class="${size} ${marginBottom}">${summary}</div>`;
 }; 
 */
+/*
 const generateHtmlSnippet = (args) => {
   const { size = 'title-lg', summary, marginBottom = 'None' } = args; 
   
@@ -17,6 +18,19 @@ const generateHtmlSnippet = (args) => {
   if (marginBottom !== 'None') classes.push(marginBottom);
 
   return `<div class="${classes.join(' ')}">${summary}</div>`;
+}; */
+
+const generateHtmlSnippet = (args) => {
+  const { size = 'title-lg', summary, modifier = 'None', marginBottom = 'None' } = args;
+  const classes = [size];
+
+  // Only add modifier if it is not 'None'
+  if (modifier !== 'None') classes.push(modifier);
+
+  // Determine if the <div> needs a class
+  const divTag = marginBottom !== 'None' ? `<div class="${marginBottom}">` : `<div>`;
+
+  return `${divTag}<p class="${classes.join(' ')}">${summary}</p></div>`;
 };
 
 
@@ -77,7 +91,7 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       defaultValue: 'title-lg',
     },
     marginBottom: {
-      options: ['None', 'space-4-small', 'space-8-small', 'space-12-small'],
+      options: ['None', 'margin-bottom-16-small', 'margin-bottom-24-small', 'margin-bottom-32-large'], 
       control: { type: 'select' },
       defaultValue: 'None',
     },

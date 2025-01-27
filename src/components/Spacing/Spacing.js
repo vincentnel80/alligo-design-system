@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './spacing.scss';
+//import './system/spacing.scss'; not needed here
 
 import FlexibleContentComponent from '../../shared/Layout/TemplateComponents/FlexibleContentComponent';
 import GridHeaderComponent from '../../shared/Layout/TemplateComponents/GridHeaderComponent';
