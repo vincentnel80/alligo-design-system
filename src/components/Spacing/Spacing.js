@@ -2,10 +2,10 @@ import React from 'react';
 
 //import './system/spacing.scss'; not needed here
 
-import FlexibleContentComponent from '../../shared/Layout/TemplateComponents/FlexibleContentComponent';
-import GridHeaderComponent from '../../shared/Layout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../shared/Layout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../shared/Layout/TemplateComponents/SecondaryIntroComponent';
+import FlexibleContentComponent from '../../shared/StorybookLayout/TemplateComponents/FlexibleContentComponent';
+import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
+import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
 
 const Spacing = () => <div className={'sb-page-container'}>
     <main className={'sb-maincontent'}>
@@ -24,7 +24,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 0-Small'}
+                itemName={'Space 0 Small'}
                 spacingSizeExample={'space-0-none'}
                 textSnippet={'0px'}
                 tokenName={'space-0-none'}
@@ -33,7 +33,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 1-Small'}
+                itemName={'Space 1 Small'}
                 spacingSizeExample={'space-1-small'}
                 textSnippet={'1px'}
                 tokenName={'space-1-small'}
@@ -42,7 +42,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 2-Small'}
+                itemName={'Space 2 Small'}
                 spacingSizeExample={'space-2-small'}
                 textSnippet={'2px'}
                 tokenName={'space-2-small'}
@@ -51,7 +51,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 4-Small'}
+                itemName={'Space 4 Small'}
                 spacingSizeExample={'space-4-small'}
                 textSnippet={'4px'}
                 tokenName={'space-4-small'}
@@ -60,7 +60,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 8-Small'}
+                itemName={'Space 8 Small'}
                 spacingSizeExample={'space-8-small'}
                 textSnippet={'8px'}
                 tokenName={'space-8-small'}
@@ -69,7 +69,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 12-Small'}
+                itemName={'Space 12 Small'}
                 spacingSizeExample={'space-12-small'}
                 textSnippet={'12px'}
                 tokenName={'space-12-small'}
@@ -78,16 +78,16 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 16-Small'}
-                spacingSizeExample={'space-16-small'}
+                itemName={'Space 16 Medium'}
+                spacingSizeExample={'space-16-medium'}
                 textSnippet={'16px'}
-                tokenName={'space-16-small'}
+                tokenName={'space-16-medium'}
             />
             <FlexibleContentComponent
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 24-Medium'}
+                itemName={'Space 24 Medium'}
                 spacingSizeExample={'space-24-medium'}
                 textSnippet={'24px'}
                 tokenName={'space-24-medium'}
@@ -96,7 +96,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 32-Large'}
+                itemName={'Space 32 Large'}
                 spacingSizeExample={'space-32-large'}
                 textSnippet={'32px'}
                 tokenName={'space-32-large'}
@@ -105,7 +105,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 40-Large'}
+                itemName={'Space 40 Large'}
                 spacingSizeExample={'space-40-large'}
                 textSnippet={'40px'}
                 tokenName={'space-40-large'}
@@ -114,7 +114,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 48-Large'}
+                itemName={'Space 48 Large'}
                 spacingSizeExample={'space-48-large'}
                 textSnippet={'48px'}
                 tokenName={'space-48-large'}
@@ -123,7 +123,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 56-Large'}
+                itemName={'Space 56 Large'}
                 spacingSizeExample={'space-56-large'}
                 textSnippet={'56px'}
                 tokenName={'space-56-large'}
@@ -132,7 +132,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 64-Large'}
+                itemName={'Space 64 Large'}
                 spacingSizeExample={'space-64-large'}
                 textSnippet={'64px'}
                 tokenName={'space-64-large'}
@@ -141,7 +141,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={'XXX'}
                 itemExtraInformation={''}
-                itemName={'Space: 72-Large'}
+                itemName={'Space 72-Large'}
                 spacingSizeExample={'space-72-large'}
                 textSnippet={'72px'}
                 tokenName={'space-72-large'}
@@ -150,7 +150,7 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 80-Large'}
+                itemName={'Space 80 Large'}
                 spacingSizeExample={'space-80-large'}
                 textSnippet={'80px'}
                 tokenName={'space-80-large'}
@@ -159,12 +159,20 @@ const Spacing = () => <div className={'sb-page-container'}>
                 fontClassName={'body-md'}
                 itemDescription={''}
                 itemExtraInformation={''}
-                itemName={'Space: 112-Large'}
+                itemName={'Space 112 Large'}
                 spacingSizeExample={'space-112-large'}
                 textSnippet={'112px'}
                 tokenName={'space-112-large'}
             />
-
+            <FlexibleContentComponent
+                fontClassName={'body-md'}
+                itemDescription={''}
+                itemExtraInformation={''}
+                itemName={'Space 120 XLarge'}
+                spacingSizeExample={'space-120-xlarge'}
+                textSnippet={'120px'}
+                tokenName={'space-120-large'}
+            />
         </div>
     </main>
 </div>;

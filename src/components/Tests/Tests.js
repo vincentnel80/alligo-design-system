@@ -5,7 +5,7 @@ import React, {
     useState,
 } from 'react';
 
-import MainIntroComponent from '../../shared/Layout/TemplateComponents/MainIntroComponent';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
 
 import './tests.scss';
 

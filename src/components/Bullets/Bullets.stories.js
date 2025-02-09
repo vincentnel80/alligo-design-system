@@ -85,7 +85,8 @@ export default {
     },
     marginBottom: {
       control: { type: 'select' },
-      options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'],
+     // options: ['None', 'space-16-small', 'space-24-small', 'space-32-large'],
+      options: ['None', 'margin-bottom-16-small', 'margin-bottom-24-medium', 'margin-bottom-32-large'],
       defaultValue: 'None',
       description: 'Used to create bottom margin on the bullet list, in various sizes.',
     },

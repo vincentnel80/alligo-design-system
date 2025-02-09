@@ -15,7 +15,7 @@ $space-2-small: 2px;
 $space-4-small: 4px;
 $space-8-small: 8px;
 $space-12-small: 12px;
-$space-16-small: 16px;
+$space-16-medium: 16px;
 $space-24-medium: 24px;
 $space-32-large: 32px;
 $space-40-large: 40px;
@@ -28,6 +28,7 @@ $space-112-large: 112px;
 $space-120-large: 120px;
 
 // Define a spacing map for looping
+// Launch - theres and issue with space 16 small changed to spacing 16 medium - what to do with other references in system?
 $spacing-map: (
   "0-small": $space-0-small,
   "1-small": $space-1-small,
@@ -35,7 +36,7 @@ $spacing-map: (
   "4-small": $space-4-small,
   "8-small": $space-8-small,
   "12-small": $space-12-small,
-  "16-small": $space-16-small,
+  "16-medium": $space-16-medium,
   "24-medium": $space-24-medium,
   "32-large": $space-32-large,
   "40-large": $space-40-large,

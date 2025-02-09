@@ -1,0 +1,521 @@
+
+// needs these ovveride
+// notes::after// seperate SB styles from real styles, maybe move SB specific styles into globals
+
+
+
+
+
+// end needs these ovveride
+
+// vin to do: decide is the below styles will be nested in this? 
+//It is in figman, but maybe users will not need it when adding into their own stuff
+
+.outercontainer {
+  display: flex;
+  //width: 342px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  //gap: 22px;
+
+  @media (min-width: 768px) {}
+
+}
+
+// needs desktop large, mobile large
+//desktop medium
+// mobile medium
+
+// Base Bullet List Styles
+
+/*
+// Desktop Large Variant
+.bullet-list--desktop-large {
+  font-size: 24px;
+  line-height: 32px; // Adjusted for large screens
+  .list-wrapper span {
+    font-size: 24px; // Specific adjustment
+  }
+}
+
+// Desktop Medium Variant
+.bullet-list--desktop-medium {
+  font-size: 20px;
+  line-height: 28px;
+  .list-wrapper span {
+    font-size: 20px;
+  }
+}
+
+// Mobile Large Variant
+.bullet-list--mobile-large {
+  font-size: 18px;
+  line-height: 26px;
+  .list-wrapper span {
+    font-size: 18px;
+  }
+}
+
+// Mobile Medium Variant
+.bullet-list--mobile-medium {
+  font-size: 16px;
+  line-height: 22px;
+  .list-wrapper span {
+    font-size: 16px;
+  }
+} */
+
+// base styles
+
+//variants
+// check - desktop large
+// dot - desktop large
+// numbered list - desktop large
+
+///
+/// 
+/// // Base Bullet List Styles
+/// THESE ARE ALL NEW IE added after first ---- so first is still applicable
+/// // Desktop Large
+.bullet-list {
+ /* list-style-type: none;
+  color: var(--color-text-primary, #000); */
+  
+  .list-wrapper {
+    display: flex;
+    //align-items: flex-start;
+
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 8px;
+
+
+    // only adding this, as initial fonts build is not working (that i set up as mixins) - not switching always shows mobile
+    // so fix and remove
+    .body-lg {
+      font-size: 18px;
+      line-height: 26px; 
+
+      @media (min-width: 768px) {
+
+        font-size: 20px;
+        line-height: 28px; 
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+  }
+
+  .list-level-2 {
+    margin-left: 20px; // Indentation for level 2
+
+    .list-wrapper {
+      padding-bottom: 8px; // Default bottom padding for level 2 items
+
+      // Target the last child of the second level and remove bottom padding
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .list-level-3 {
+    margin-left: 20px; // Indentation for level 3
+    .list-wrapper {
+      padding-bottom: 20px; // Default bottom padding for level 2 items
+
+      // Target the last child of the second level and remove bottom padding
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+// vinny
+.dot {
+  ul li div div  {
+    list-style-type: none; /* Remove default bullets */
+   // margin-left: 20px;     /* Adjust left margin */
+  }
+
+  ul li div div::before {
+    content: ''; /* Empty content */
+    display: inline-block;
+    width: 8px; /* Set width to 8px */
+    height: 8px; /* Set height to 8px */
+    background-color: black; /* Circle color */
+    border-radius: 50%; /* Make it a circle */
+    vertical-align: middle; /* Align it with the text */
+  }
+
+  @media (min-width: 768px) {}
+
+}
+
+
+.number {
+  ol, li {
+    list-style-type: decimal; /* Removes default bullet or marker */
+  }
+
+  ol, li::marker {
+    list-style-type: decimal; /* Removes default bullet or marker */
+    font-family: 'breuercondensed'; // this one works - so remove previous
+
+
+// do these vars actually exist ? if not - make it so --- to do vin
+    font-size: var(--font-size-body-lg, 20px);
+    font-weight: var(--font-weight-body-lg, 400);
+    line-height: var(--line-height-body-lg, 28px);
+    letter-spacing: var(--letter-spacing-body-lg, 0px);
+    
+  }
+
+  .list-wrapper {
+    padding-left: 10px;
+
+    @media (min-width: 768px) {}
+
+
+  }
+}
+
+.medium {
+  // mob
+
+     .list-wrapper {
+       display: flex;
+       gap: 8px;
+       padding-bottom: 8px;
+       padding-left: 8px;
+   
+   
+       // only adding this, as initial fonts build is not working (that i set up as mixins) - not switching always shows mobile
+       // so fix and remove
+       .body-lg {
+         font-size: 16px;
+         line-height: 22px; 
+         letter-spacing: var(--letter-spacing-body-md, 0.32px);
+   
+         @media (min-width: 768px) {
+   
+           font-size: 16px;
+           line-height: 24px; 
+         }
+       }
+   
+     }
+  
+}
+
+
+
+/// FOR SB presentation
+/// 
+
+  .check-desktop-large {
+    .bullet-list {
+      /* list-style-type: none;
+       color: var(--color-text-primary, #000); */
+       
+       .list-wrapper {
+         display: flex;
+         //align-items: flex-start;
+     
+         align-items: center;
+         gap: 12px;
+         padding-bottom: 9px;
+     
+     
+         // only adding this, as initial fonts build is not working (that i set up as mixins) - not switching always shows mobile
+         // so fix and remove
+         .body-lg {
+             font-size: 20px;
+             line-height: 28px; 
+
+         }
+     
+       }
+     
+     }
+  }
+  .check-mobile-large {
+
+      /* list-style-type: none;
+       color: var(--color-text-primary, #000); */
+       
+       .list-wrapper {
+         display: flex;
+         //align-items: flex-start;
+     
+         align-items: center;
+         gap: 12px ;
+         padding-bottom: 9px ;
+
+         svg {
+          width: 24px;
+          height: 24px;
+         }
+     
+     
+         // only adding this, as initial fonts build is not working (that i set up as mixins) - not switching always shows mobile
+         // so fix and remove
+         .body-lg {
+           font-size: 18px ;
+           line-height: 26px ; 
+         }
+     
+       }
+  }
+
+
+  .check-desktop-medium {
+    .list-wrapper {
+      display: flex;
+      gap: 8px;
+      padding-bottom: 8px;
+      padding-left: 8px;
+  
+      svg {
+        width: 20px;
+        height: 20px;
+       }
+      // only adding this, as initial fonts build is not working (that i set up as mixins) - not switching always shows mobile
+      // so fix and remove
+      .body-lg {
+        font-size: 16px;
+        line-height: 22px; 
+        letter-spacing: var(--letter-spacing-body-md, 0.32px);
+  
+          font-size: 16px;
+          line-height: 24px; 
+
+      }
+
+    }
+    
+  }
+  .check-mobile-medium {
+    .list-wrapper {
+      display: flex;
+      gap: 8px;
+      padding-bottom: 8px;
+      padding-left: 8px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+       }
+  
+      // only adding this, as initial fonts build is not working (that i set up as mixins) - not switching always shows mobile
+      // so fix and remove
+      .body-lg {
+        font-size: 16px;
+        line-height: 22px; 
+        letter-spacing: var(--letter-spacing-body-md, 0.32px);
+      }
+  
+    }
+  }
+  .dot-desktop-large {
+
+    ul li div div  {
+      list-style-type: none; /* Remove default bullets */
+     // margin-left: 20px;     /* Adjust left margin */
+    }
+  
+    ul li div div::before {
+      content: ''; /* Empty content */
+      display: inline-block;
+      width: 8px; /* Set width to 8px */
+      height: 8px; /* Set height to 8px */
+      background-color: black; /* Circle color */
+      border-radius: 50%; /* Make it a circle */
+      vertical-align: middle; /* Align it with the text */
+    }
+
+    .list-wrapper {
+
+      svg {
+        width: 8px;
+        height: 8px;
+      }
+  
+    }
+  
+    @media (min-width: 768px) {}
+  }
+  .dot-mobile-large {
+
+    .list-wrapper {
+
+      svg {
+        width: 8px;
+        height: 8px;
+      }
+
+      .body-lg {
+        font-size: 18px ;
+        line-height: 26px ; 
+        letter-spacing: var(--letter-spacing-body-lg, 0px);
+      }
+  
+    }
+  }
+
+  .dot-desktop-medium {
+    .list-wrapper {
+      display: flex;
+      gap: 8px;
+      padding-bottom: 8px;
+      padding-left: 8px;
+  
+      svg {
+        width: 6px;
+        height: 6px;
+      }
+  
+      // only adding this, as initial fonts build is not working (that i set up as mixins) - not switching always shows mobile
+      // so fix and remove
+      .body-lg {
+          font-size: 16px;
+          line-height: 24px; 
+      }
+  
+    }
+  }
+  .dot-mobile-medium {
+    .list-wrapper {
+      display: flex;
+      gap: 8px;
+      padding-bottom: 8px;
+      padding-left: 8px;
+  
+      svg {
+        width: 6px;
+        height: 6px;
+      }
+      // only adding this, as initial fonts build is not working (that i set up as mixins) - not switching always shows mobile
+      // so fix and remove
+      .body-lg {
+        font-size: 16px;
+        line-height: 22px; 
+        letter-spacing: var(--letter-spacing-body-md, 0.32px);
+
+      }
+  
+    }
+  }
+  .number-desktop-large {
+
+    ol, li {
+      list-style-type: decimal; /* Removes default bullet or marker */
+    }
+  
+    ol, li::marker {
+      list-style-type: decimal; /* Removes default bullet or marker */
+
+      font-size: var(--font-size-body-lg, 20px);
+      font-style: normal;
+      font-weight: var(--font-weight-body-lg, 400);
+      line-height: var(--line-height-body-lg, 28px); /* 140% */
+      letter-spacing: var(--letter-spacing-body-lg, 0px);
+
+    }
+  
+    .list-wrapper {
+      padding-left: 12px;
+  
+      @media (min-width: 768px) {}
+  
+    }
+  }
+  .number-mobile-large {
+
+    ol, li {
+      list-style-type: decimal; /* Removes default bullet or marker */
+    }
+  
+    ol, li::marker {
+      list-style-type: decimal; /* Removes default bullet or marker */ // is this needed
+      font-size: var(--font-size-body-lg, 18px);
+font-weight: var(--font-weight-body-lg, 400);
+line-height: var(--line-height-body-lg, 26px); /* 144.444% */
+letter-spacing: var(--letter-spacing-body-lg, 0px);
+     // font-family: 'breuercondensed'; // 1 does nothing
+    }
+  
+    .list-wrapper {
+      padding-left: 10px;
+
+      .body-lg {
+        font-size: 18px ;
+        line-height: 26px ; 
+        letter-spacing: var(--letter-spacing-body-lg, 0px);
+      }
+  
+      @media (min-width: 768px) {}
+  
+  
+    }
+
+  }
+  .number-desktop-medium {
+
+    ol, li::marker {
+      font-size: var(--font-size-body-md, 16px);
+      font-weight: var(--font-weight-body-md, 400);
+      line-height: var(--line-height-body-md, 24px); /* 150% */
+      letter-spacing: var(--letter-spacing-body-md, 0.32px);
+    }
+
+    .list-wrapper {
+      display: flex;
+      gap: 8px;
+      padding-bottom: 8px;
+      padding-left: 8px;
+  
+  
+      // only adding this, as initial fonts build is not working (that i set up as mixins) - not switching always shows mobile
+      // so fix and remove
+      .body-lg {
+
+          font-size: 16px;
+          line-height: 24px; 
+
+      }
+  
+    }
+  }
+  .number-mobile-medium {
+
+    ol, li::marker {
+      font-size: var(--font-size-body-md, 16px);
+      font-weight: var(--font-weight-body-md, 400);
+      line-height: var(--line-height-body-md, 22px); /* 137.5% */
+      letter-spacing: var(--letter-spacing-body-md, 0.32px);
+    }
+
+    .list-wrapper {
+      display: flex;
+      gap: 8px;
+      padding-bottom: 8px;
+      padding-left: 8px;
+  
+  
+      // only adding this, as initial fonts build is not working (that i set up as mixins) - not switching always shows mobile
+      // so fix and remove
+      .body-lg {
+        font-size: 16px;
+        line-height: 22px; 
+        letter-spacing: var(--letter-spacing-body-md, 0.32px);
+      }
+    }
+  }
+
+

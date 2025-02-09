@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './bullet.scss';
+import './storybook/bullet-sb.scss';
 import '../../globalStyles/foundation-fonts-weights.scss'; // make global -- but saying that --- when I add it like this, it works, but when I use import, it fails ---
 
 /**
@@ -21,7 +21,7 @@ export const Bullet = ({ version,  marginBottom = 'None', variant= 'dot-desktop-
   console.log(marginBottom,"marginBottom");
   return (
   <>
-    <div className={`outercontainer bullet-list ${variant}-${size}`}>
+    <div className={`outercontainer bullet-list ${variant}-${size} ${marginBottom}-sb`}>
         {/* Conditionally render ordered list (ol) for numbered variants */}
         {isNumberVariant ? (
           <>
@@ -107,7 +107,7 @@ export const Bullet = ({ version,  marginBottom = 'None', variant= 'dot-desktop-
           </ul>
         )}
     </div>
-    <div className={`${marginBottom}-temp`}></div>
+   {/*  <div className={`${marginBottom}-temp`}></div> */}
 </>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ComponentSwitcherButtons from '../../shared/Layout/TemplateComponents/ComponentSwitcherButtons';
-import MainIntroComponent from '../../shared/Layout/TemplateComponents/MainIntroComponent';
+import ComponentSwitcherButtons from '../../shared/StorybookLayout/TemplateComponents/ComponentSwitcherButtons';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
 
 //import './buttons.scss';
 import './buttons-new.scss';

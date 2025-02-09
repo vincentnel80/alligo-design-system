@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ComponentSwitcher from '../../shared/Layout/TemplateComponents/ComponentSwitcher';
-import MainIntroComponent from '../../shared/Layout/TemplateComponents/MainIntroComponent';
+import ComponentSwitcher from '../../shared/StorybookLayout/TemplateComponents/ComponentSwitcher';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
 
 // replace with material
 import AccountCircle from '../../common/components/Ui/DesignSystemIcons/AccountCircle';

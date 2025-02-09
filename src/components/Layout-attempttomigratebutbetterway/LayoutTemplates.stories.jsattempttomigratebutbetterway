@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LayoutTemplates from '../../StorybookComponents/Layout/LayoutTemplates';
+import LayoutTemplates from '../../StorybookComponents/StorybookLayout/LayoutTemplates';
 
 export default {
     title: 'Foundation/Layout',

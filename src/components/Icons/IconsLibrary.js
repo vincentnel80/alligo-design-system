@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainIntroComponent from '../../shared/Layout/TemplateComponents/MainIntroComponent';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
 
 import IconSearch from './IconSearch';
 

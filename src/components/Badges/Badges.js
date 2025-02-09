@@ -1,8 +1,8 @@
 import React from 'react';
 
-import ComponentSwitcherTemplate from '../../StorybookComponents/Layout/TemplateComponents/ComponentSwitcherTemplate';
-import MainIntroComponent from '../../StorybookComponents/Layout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../StorybookComponents/Layout/TemplateComponents/SecondaryIntroComponent';
+import ComponentSwitcherTemplate from '../../StorybookComponents/StorybookLayout/TemplateComponents/ComponentSwitcherTemplate';
+import MainIntroComponent from '../../StorybookComponents/StorybookLayout/TemplateComponents/MainIntroComponent';
+import SecondaryIntroComponent from '../../StorybookComponents/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
 
 const Badges = () => <div className={'sb-page-container'}>
     <main className={'sb-maincontent'}>

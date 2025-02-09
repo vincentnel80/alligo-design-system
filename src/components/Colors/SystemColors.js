@@ -1,10 +1,10 @@
 import React from 'react';
 
 import CopyToClipboard from '../../shared/Helpers/CopyToClipboard/CopyToClipboard';
-import GridHeaderComponent from '../../shared/Layout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../shared/Layout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../shared/Layout/TemplateComponents/SecondaryIntroComponent';
-import SubHeaderComponent from '../../shared/Layout/TemplateComponents/SubHeaderComponent';
+import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
+import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
+import SubHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/SubHeaderComponent';
 
 import './colors.scss';
 import './system-colors.scss';

@@ -1,14 +1,7 @@
 import React, { useEffect } from 'react';
 import { Body } from './Body';
-import CustomDocsContainer from './CustomDocsContainer';
+import CustomDocsContainer from '../../shared/Docs/CustomDocsContainer';
 
-/*const generateHtmlSnippet = (args) => {
-  const { size = 'body-xl', summary, modifier = '', marginBottom = '' } = args;  
-  const classes = [size];
-  if (modifier) classes.push(modifier);
-  if (marginBottom) classes.push(marginBottom);
-  return `<p class="${classes.join(' ')}">${summary}</p>`;
-}; */
 
 const generateHtmlSnippet = (args) => {
   const { size = 'body-xl', summary, modifier = 'None', marginBottom = 'None' } = args;

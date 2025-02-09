@@ -1,9 +1,9 @@
 import React from 'react';
 
-import GridContainerComponent from '../../shared/Layout/TemplateComponents/GridContainerComponent';
-import GridHeaderComponent from '../../shared/Layout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../shared/Layout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../shared/Layout/TemplateComponents/SecondaryIntroComponent';
+import GridContainerComponent from '../../shared/StorybookLayout/TemplateComponents/GridContainerComponent';
+import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
+import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
 
 import './icons.scss';
 

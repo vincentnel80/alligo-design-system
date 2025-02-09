@@ -1,7 +1,7 @@
 import React from 'react';
 
-import MainIntroComponent from '../../StorybookComponents/Layout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../StorybookComponents/Layout/TemplateComponents/SecondaryIntroComponent';
+import MainIntroComponent from '../../StorybookComponents/StorybookLayout/TemplateComponents/MainIntroComponent';
+import SecondaryIntroComponent from '../../StorybookComponents/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
 
 import './headers-desktop.scss';
 

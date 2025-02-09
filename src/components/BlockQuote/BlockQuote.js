@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './blockquote.scss';
+import './storybook/blockquote-sb.scss';
+import '../Spacing/storybook/spacing-sb.scss'; // global? mixins? how to handle
 
 /**
  * A blockquote refers to a cited quotation that is visually distinguished from the primary text on a page.
@@ -24,7 +25,7 @@ export const BlockQuote = ({
   // add in demo text or not??
   if (version === 'Mobile') {
     return (
-      <div className={`alignment-container ${alignment}`}>
+      <div className={`alignment-container ${alignment} ${marginBottom}-sb`}>
       <div className="blockq-container blockq-container--sb-mobile">
         <div className="blockq-container-inner needshere">
           <div className="headline-md headline-md--blockquote">
@@ -36,7 +37,7 @@ export const BlockQuote = ({
           </div>
         </div>
         {/* alignment container */}
-        {marginBottom && <div className={`${marginBottom}-temp`}></div>}
+        {/*marginBottom && <div className={`${marginBottom}-temp`}></div>*/}
       </div>
       </div>
     );
@@ -44,7 +45,7 @@ export const BlockQuote = ({
 
   // Default Desktop version
   return (
-    <div className={`alignment-container ${alignment}`}>
+    <div className={`alignment-container ${alignment} ${marginBottom}-sb`}>
     <div className="blockq-container blockq-container--sb-desktop">
       <div className="blockq-container-inner">
         <div className="headline-md headline-md--blockquote">
@@ -56,7 +57,7 @@ export const BlockQuote = ({
         </div>
       </div>
       {/* should margin be here* ?? */}
-      {marginBottom && <div className={`${marginBottom}-temp`}></div>}
+      {/*marginBottom && <div className={`${marginBottom}-temp`}></div>*/}
     </div>
     </div>
   );

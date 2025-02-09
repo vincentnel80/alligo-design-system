@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import FlexibleContentComponent from '../../shared/Layout/TemplateComponents/FlexibleContentComponent';
-import GridHeaderComponent from '../../shared/Layout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../shared/Layout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../shared/Layout/TemplateComponents/SecondaryIntroComponent';
+import FlexibleContentComponent from '../../shared/StorybookLayout/TemplateComponents/FlexibleContentComponent';
+import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
+import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
 
 import './elevations-shadows.scss';
 
