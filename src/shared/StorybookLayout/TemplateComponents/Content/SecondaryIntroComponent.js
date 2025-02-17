@@ -5,12 +5,12 @@ const SecondaryIntroComponent = ({
     secondaryTitle, secondaryContent,
 }) => (
     <>
-        <div className={'sb-secondary-intro-container'}>
-            <div className={'sb-secondary-title-wrapper'}>
+        <div className={'sb-sub-intro-container'}>
+            <div className={'sb-sub-title-wrap'}>
                 <div className={'headline-lg'}>{secondaryTitle}</div>
                 <hr className={'hr-line-division'}></hr>
             </div>
-            <div className={'sb-secondary-content-wrapper'}>
+            <div className={'sb-secondary-content-text'}>
                 {secondaryContent.split('\\n').map((secondaryContentLine, index) => (
                     <React.Fragment key={index}>
                         <p className={'body-lg'}>{secondaryContentLine}</p>

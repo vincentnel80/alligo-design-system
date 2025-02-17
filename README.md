@@ -28,7 +28,26 @@ Ensure you have the following installed on your machine:
 ### Installation
 
 1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/your-storybook-repo.git
+   cd your-storybook-repo
 
-   ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   npm install
+
+### Start Storybook
+   npm run storybook
+
+   ### Project Structure
+   
+your-storybook-repo/
+│── .storybook/       # Storybook configuration files
+│── src/
+│   ├── components/   # UI components
+│   ├── stories/      # Storybook stories
+│   ├── styles/       # Global styles, design tokens
+│   ├── utils/        # Helper functions, utilities
+│   ├── assets/       # Images, icons, etc.
+│── package.json      # Project dependencies & scripts
+│── README.md         # Project documentation
+
+

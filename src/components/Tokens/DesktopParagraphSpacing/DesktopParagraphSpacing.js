@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import './sb-desktop-paragraph-spacing.scss';
+// Launch : fix tokens correct - they are not correct now
+// i removed styles as it was empty
+import Page from '../../../shared/StorybookLayout/TemplateComponents/Page/Page';
 
-import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/GridContainerComponent';
-import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
+import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridContainerComponent';
+import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridHeaderComponent';
+import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
 
 const DesktopParagraphSpacing = ({
     textSnippet, fontName, fontClassName, fontDescription, fontInformation, tokenName,
-}) => <div className={'sb-page-container'}>
-    <main className={'sb-maincontent'}>
-
+}) => <Page>
         <MainIntroComponent
             fontClassName={'body-xl body-xl--preamble'}
             introText={'One space = One spacing unit. Designers must resist the urge to combine spacing units, particularly when doing so leads to pixel dimensions that are not defined in the spacing unit chart. Use the tokens as they are and trust the spacings been designed to work all the way throughout our applications. The same token can be used in Desktop and Mobile View. Add more instructions on how to use (when needing to use Paragraph spacing'}
@@ -202,8 +202,7 @@ tokenName={'paragraph-spacing-display-lg'}
 />
 
         </div>
-    </main>
-</div>;
+</Page>;
 
 DesktopParagraphSpacing.propTypes = {
     fontClassName: PropTypes.string.isRequired,

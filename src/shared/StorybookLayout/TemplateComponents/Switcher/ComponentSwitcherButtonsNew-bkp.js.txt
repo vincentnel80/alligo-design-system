@@ -11,7 +11,7 @@ import ButtonsBlankInvertedSubComponent from '../../Buttons/BlankInverted/Button
 */
 import './component-switcher.scss';
 //import '../../Buttons/buttons.scss';
-import '../../Buttons/buttons-new.scss';
+import '../../../Buttons/buttons-new.scss';
 
 const ComponentSwitcherButtonsNew = () => {
     // NEw

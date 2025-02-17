@@ -1,15 +1,15 @@
 import React from 'react';
 
-import ComponentSwitcherButtons from '../../shared/StorybookLayout/TemplateComponents/ComponentSwitcherButtons';
-import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
+import Page from '../../shared/StorybookLayout/TemplateComponents/Page/Page';
+import ComponentSwitcherButtons from '../../shared/StorybookLayout/TemplateComponents/Switcher/ComponentSwitcherButtons';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
 
 //import './buttons.scss';
 import './buttons-new.scss';
 
-<link rel="stylesheet" type="text/css" src="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&amp;family=Material+Symbols+Outlined:wght,FILL@300,0;300,1&amp;display=swap" src_type="url" />
 
-const ButtonsNew = () => <div className={'sb-page-container'}>
-    <main className={'sb-maincontent'}>
+
+const ButtonsNew = () =>  <Page>
         <MainIntroComponent
             fontClassName={'body-xl body-xl--preamble'}
             introText={'A button is used to trigger an action or to navigate to a different page. Buttons allow users to make choices, with a single tap.'}
@@ -17,7 +17,6 @@ const ButtonsNew = () => <div className={'sb-page-container'}>
         />
 
         <ComponentSwitcherButtons/>
-    </main>
-</div>;
+ </Page>;
 
 export default ButtonsNew;

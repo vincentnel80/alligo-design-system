@@ -6,9 +6,9 @@ const MainIntroComponent = ({
 }) => (
     <>
         <div className={'sb-main-intro-container'}>
-            <div className={'sb-main-intro-headline-wrapper'}>
+            <div className={'sb-intro-headline-wrapper'}>
                 <div className={'headline-xl'}>{title}</div>
-                <div className={'sb-design-status-label draft'}>
+                <div className={'sb-status-label draft'}>
                     <div className={'badge-basic variant-warning-light'}><span className={'badge-message'}>Draft</span></div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-// Custom Storybook doc templates
+// Overrides for Storybook's own styles
 .css-zgt7u1 {
     padding: 0 !important;
 }

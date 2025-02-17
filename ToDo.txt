@@ -1,0 +1,53 @@
+Fix @media - so it syncs with system
+Fix imports
+look at system, font faces, how it was made, mixing etc
+splitting up - sb - main system decide on true build vs sys and directory
+bim or not
+simplify, refine, correct --
+get that other shit to work
+commit
+build
+colors?
+
+upgarde after?
+Page.js - imported glyphicons - should be probably in header
+importing components into toehrs
+SB hacks for - EG doc paragraphs, vs inbuilts styles (the initial correct what, )
+
+components
+
+Main Page templte
+- HTM, cleaned, refined,renamed
+- CSS, cleaned, refined,renamed
+-- local placement, build
+- screen readers aria
+
+MainIntoComponent
+- HTM, cleaned, refined,renamed
+- CSS, cleaned, refined,renamed
+-- local placement, build
+
+secondaryIntoComponent
+- HTM, cleaned, refined,renamed
+- CSS, cleaned, refined,renamed
+-- local placement, build
+-- renamed to Sub Header
+
+SubHeaderComponent
+- HTM, cleaned, refined,renamed
+- CSS, cleaned, refined,renamed
+-- local placement, build
+-- renamed to small sub
+
+
+Grid header 3 col
+- HTM, cleaned, refined,renamed
+- CSS, cleaned, refined,renamed
+-- local placement, build
+
+
+GridContainerComponent (the data columns)
+- HTM, cleaned, refined,renamed
+- CSS, cleaned, refined,renamed
+-- local placement, build
+needs serious rework

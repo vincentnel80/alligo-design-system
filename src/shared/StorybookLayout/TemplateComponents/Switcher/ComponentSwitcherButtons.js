@@ -1,12 +1,20 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
-import ButtonsPrimarySubComponent from '../../../components/Buttons/Primary/ButtonsPrimarySubComponent';
-import ButtonsPrimaryInvertedSubComponent from '../../../components/Buttons/PrimaryInverted/ButtonsPrimaryInvertedSubComponent';
-import ButtonsSecondarySubComponent from '../../../components/Buttons/Secondary/ButtonsSecondarySubComponent';
-import ButtonsSecondaryInvertedSubComponent from '../../../components/Buttons/SecondaryInverted/ButtonsSecondaryInvertedSubComponent';
-import ButtonsBlankSubComponent from '../../../components/Buttons/Blank/ButtonsBlankSubComponent';
-import ButtonsBlankInvertedSubComponent from '../../../components/Buttons/BlankInverted/ButtonsBlankInvertedSubComponent';
+/*
+import ButtonsPrimarySubComponent from '../../../../components/Buttons/Primary/ButtonsPrimarySubComponent';
+import ButtonsPrimaryInvertedSubComponent from '../../../../components/Buttons/PrimaryInverted/ButtonsPrimaryInvertedSubComponent';
+import ButtonsSecondarySubComponent from '../../../../components/Buttons/Secondary/ButtonsSecondarySubComponent';
+import ButtonsSecondaryInvertedSubComponent from '../../../../components/Buttons/SecondaryInverted/ButtonsSecondaryInvertedSubComponent';
+import ButtonsBlankSubComponent from '../../../../components/Buttons/Blank/ButtonsBlankSubComponent';
+import ButtonsBlankInvertedSubComponent from '../../../../components/Buttons/BlankInverted/ButtonsBlankInvertedSubComponent';
+*/
+import ButtonsPrimarySubComponent from '../../../../components/Buttons/Primary/ButtonsPrimarySubComponent';
+import ButtonsPrimaryInvertedSubComponent from '../../../../components/Buttons/PrimaryInverted/ButtonsPrimaryInvertedSubComponent';
+import ButtonsSecondarySubComponent from '../../../../components/Buttons/Secondary/ButtonsSecondarySubComponent';
+import ButtonsSecondaryInvertedSubComponent from '../../../../components/Buttons/SecondaryInverted/ButtonsSecondaryInvertedSubComponent';
+import ButtonsBlankSubComponent from '../../../../components/Buttons/Blank/ButtonsBlankSubComponent';
+import ButtonsBlankInvertedSubComponent from '../../../../components/Buttons/BlankInverted/ButtonsBlankInvertedSubComponent';
 
 
 import './component-switcher.scss';

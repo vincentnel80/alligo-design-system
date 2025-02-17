@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import './sb-font-weights.scss';
+import Page from '../../../shared/StorybookLayout/TemplateComponents/Page/Page';
 
-import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/GridContainerComponent';
-import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
+import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridContainerComponent';
+import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridHeaderComponent';
+import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
 
 const FontWeights = ({
     textSnippet, fontName, fontClassName, fontDescription, fontInformation, tokenName,

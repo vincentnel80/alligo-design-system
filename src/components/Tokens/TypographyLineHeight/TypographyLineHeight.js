@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Page from '../../../shared/StorybookLayout/TemplateComponents/Page/Page';
 // import './foundation-fonts-weights.scss'; // needs to go to global pos vin TODO internal styling ref broken
-import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/GridContainerComponent4Col';
-import GridHeaderComponentFourCol from '../../../shared/StorybookLayout/TemplateComponents/GridHeaderComponentFourCol';
-import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
+import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridContainerComponent4Col';
+import GridHeaderComponentFourCol from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridHeaderComponentFourCol';
+import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
+import SecondaryIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/Content/SecondaryIntroComponent';
 
 
 
 const TypographyLineHeight = ({
     fontClassName, fontDescription, fontInformation, fontName, introText, textSnippet, title, tokenName,
-}) => <div className={'sb-page-container'}>
-    <main className={'sb-maincontent'}>
+}) => <Page>
 
         <MainIntroComponent
             fontClassName={'body-xl body-xl--preamble'}
@@ -219,8 +219,7 @@ const TypographyLineHeight = ({
 
         </div>{/* grid container for rows */}
 
-    </main>
-</div>;
+</Page>;
 
 TypographyLineHeight.propTypes = {
   /*  fontClassName: PropTypes.string.isRequired,

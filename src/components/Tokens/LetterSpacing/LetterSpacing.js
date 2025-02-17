@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import './sb-letter-spacing.scss';
 
-import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/GridContainerComponent';
-import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
+import Page from '../../../shared/StorybookLayout/TemplateComponents/Page/Page';
+
+import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridContainerComponent';
+import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridHeaderComponent';
+import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
 
 const LetterSpacing = ({
     textSnippet, fontName, fontClassName, fontDescription, fontInformation, tokenName,
-}) => <div className={'sb-page-container'}>
-    <main className={'sb-maincontent'}>
+}) => <Page>
 
         <MainIntroComponent
             fontClassName={'body-xl body-xl--preamble'}
@@ -226,8 +226,7 @@ tokenName={'letter-spacing-display-lg'}
 />
 
         </div>
-    </main>
-</div>;
+</Page>;
 
 LetterSpacing.propTypes = {
     fontClassName: PropTypes.string.isRequired,

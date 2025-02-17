@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
 import HeadersDesktop from './HeadersDesktop';
 
 import './headers.scss';
@@ -35,7 +35,7 @@ const Headers = () => (
                 <div style={{marginTop: '30px'}}></div>
                 <div className="sb-main-intro-headline-wrapper" style={{paddingBottom: '10px'}}>
                     <div className="title-md">Swedol</div>
-                    <div className="sb-design-status-label draft">
+                    <div className="sb-status-label draft">
                         <div className="badge-basic variant-success-light">
                             <span className="badge-message">Ready for Review</span>
                         </div>
@@ -157,7 +157,7 @@ const Headers = () => (
 
                 <div className="sb-main-intro-headline-wrapper" style={{paddingBottom: '10px'}}>
                     <div className="title-md">Swedol</div>
-                    <div className="sb-design-status-label draft">
+                    <div className="sb-status-label draft">
                         <div className="badge-basic variant-warning-light">
                             <span className="badge-message">Draft</span>
                         </div>
@@ -383,7 +383,7 @@ const Headers = () => (
                 <div style={{marginTop: '30px'}}></div>
                 <div className="sb-main-intro-headline-wrapper" style={{paddingBottom: '10px'}}>
                     <div className="title-md">Swedol</div>
-                    <div className="sb-design-status-label draft">
+                    <div className="sb-status-label draft">
                         <div className="badge-basic variant-warning-light">
                             <span className="badge-message">Draft</span>
                         </div>

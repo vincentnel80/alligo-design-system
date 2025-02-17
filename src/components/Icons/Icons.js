@@ -1,15 +1,14 @@
 import React from 'react';
 
-import GridContainerComponent from '../../shared/StorybookLayout/TemplateComponents/GridContainerComponent';
-import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
+import Page from '../../shared/StorybookLayout/TemplateComponents/Page/Page';
+import GridContainerComponent from '../../shared/StorybookLayout/TemplateComponents/Grids/GridContainerComponent';
+import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/Grids/GridHeaderComponent';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
+import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/Content/SecondaryIntroComponent';
 
 import './icons.scss';
 
-const Icons = () => <div className={'sb-page-container'}>
-    <main className={'sb-maincontent'}>
-
+const Icons = () => <Page>
         <MainIntroComponent
             fontClassName={'body-xl body-xl--preamble'}
             introText={'Icons provide additional visual context and enhance usability and should be used in a purposeful manner to maximize comprehension and reduce cognitive load. For example when you need to call attention to a particular action, command, or section. \\nUse them infrequently – if you’re questioning an icon’s use, it probably doesn’t need to be used at all.'}
@@ -110,7 +109,6 @@ const Icons = () => <div className={'sb-page-container'}>
             />
 
         </div>
-    </main>
-</div>;
+</Page>;
 
 export default Icons;

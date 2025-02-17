@@ -44,7 +44,7 @@
     align-items: center;
 }
 
-.sb-design-status-label {
+.sb-status-label {
     align-items: center;
     display: flex;
     flex-direction: row;

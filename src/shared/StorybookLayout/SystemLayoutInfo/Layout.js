@@ -1,20 +1,18 @@
 import React from 'react';
+import Page from '../../../shared/StorybookLayout/TemplateComponents/Page/Page'; // question, one root page once? now i have to add this everytime?
+import MainIntroComponent from "../TemplateComponents/Content/MainIntroComponent";
+import SecondaryIntroComponent from "../TemplateComponents/Content/SecondaryIntroComponent";
 
-import MainIntroComponent from "./TemplateComponents/MainIntroComponent";
-import SecondaryIntroComponent from "./TemplateComponents/SecondaryIntroComponent";
 
-import './layout.scss'; // ?? vin
-import './layout-templates.scss';  // ?? 
 
-import '../../globalStyles/foundation-fonts-weights.scss';  // ??  -- in relation to main??? 
+//import '../../../globalStyles/foundation-fonts-weights.scss';  // ??  -- in relation to main??? 
 // vin to do - gold standard in templates + their html structure
 
 
 const Layout = () => {
 
     return (
-        <div className={'sb-page-container'}>
-            <main className={'sb-maincontent'}>
+   <Page>
 
                 <MainIntroComponent
                     fontClassName={'body-xl'}
@@ -168,8 +166,7 @@ const Layout = () => {
                         <div className={'body-md'} style={{paddingTop:'11px', color: '#4F4F4F'}}>Example responsive width: 1200px</div>
                     </div>
                 </div>
-            </main>
-        </div>
+</Page>
     )
 };
 

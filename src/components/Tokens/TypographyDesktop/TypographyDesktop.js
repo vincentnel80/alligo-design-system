@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import '../../../globalStyles/foundation-fonts-weights.scss';
-import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/GridContainerComponent';
-import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
+import Page from '../../../shared/StorybookLayout/TemplateComponents/Page/Page';
+
+import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridContainerComponent';
+import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridHeaderComponent';
+import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
+import SecondaryIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/Content/SecondaryIntroComponent';
 
 const TypographyDesktop = ({
     fontClassName, fontDescription, fontInformation, fontName, introText, textSnippet, title, tokenName,
-}) => <div className={'sb-page-container'}>
-    <main className={'sb-maincontent'}>
+}) => <Page>
 
         <MainIntroComponent
             fontClassName={'body-xl body-xl--preamble'}
@@ -495,8 +495,7 @@ const TypographyDesktop = ({
 
         </div>
 
-    </main>
-</div>;
+</Page>;
 
 TypographyDesktop.propTypes = {
     fontClassName: PropTypes.string.isRequired,

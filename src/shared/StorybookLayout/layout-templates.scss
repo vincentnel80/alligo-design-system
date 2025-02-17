@@ -9,18 +9,25 @@
 
 // import fonts? correct here?
 
-
-.sb-page-container {
+// Global page.
+/*
+Launch - removing this as i changed html
+.sb-page {
     max-width: 1440px !important;
 }
 
-.sb-page-container-mobile {
+// launch - is this being used and where? why
+.sb-page-mobile {
     max-width: 1440px;
     display: flex;
     justify-content: center;
 }
-
-.sb-maincontent {
+*/
+// thidsnk - nest or not - is it reusable?
+// main page....This i
+//Does this need to be here or split?
+//keep here for now
+.sb-main-content {
     margin: 20px 10px 20px;
     max-width: 1200px;
 
@@ -29,57 +36,70 @@
     }
 }
 
-.sb-maincontent-mobile-only {
+.sb-main-content-mobile-only {
     max-width: 379px;
     margin: 20px 10px 20px;
 }
+// in the above --- check to see mobile vs desktop ... the instance ... or else nest
 
 // Main into header and text
-.sb-main-intro-container {
+/// LAUNCH - Page first container ...
+.sb-intro-container {
     display: flex;
     flex-direction: column;
     max-width: 1200px;
     justify-content: flex-start;
     align-items: flex-start;
     padding-bottom: 32px;
-}
 
-.sb-main-intro-headline-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
+    .sb-intro-title-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
 
-.sb-design-status-label {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-left: 8px;
-   // padding: 4px 5px 4px 5px;
-
-    &.draft {
-        /// del this
-       // background-color: var(--warning-medium);
-    }
-}
-.sb-main-intro-description-text {
-    max-width: 690px;
-    margin-top: 16px;
-
-    p {
-        margin-bottom: 20px;
+        .sb-status-label {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-left: 8px;
+           // padding: 4px 5px 4px 5px;
+        
+            &.draft {
+                /// del this
+                /// // or actually use
+               // background-color: var(--warning-medium);
+            }
+        }
     }
 
-    // used to override system default p
-    p:last-child {
-        margin-bottom: 0px;
+    // write description for each section
+    //Stroybook into test
+    .sb-intro-text {
+        max-width: 690px;
+        margin-top: 16px;
+    
+        p {
+            margin-bottom: 20px;
+        }
+    
+        // used to override system default p
+        p:last-child {
+            margin-bottom: 0px;
+        }
     }
+
+
 }
 
-/// Sub-Header component with Underline
-.sb-secondary-intro-container {
+
+
+
+
+
+/// Sub Header with underline standard
+.sb-sub-intro-container {
     display: flex;
     flex-direction: column;
     max-width: 1200px;
@@ -87,52 +107,54 @@
     align-items: flex-start;
     margin-top: 32px;
     margin-bottom: 32px;
-}
 
-.sb-secondary-title-wrapper {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    justify-content: flex-start;
-    align-self: stretch;
-    width: 1200px;
-    align-items: flex-start;
-}
-
-.hr-line-division {
-    width: 100%;
-    max-width: 1200px;
-    margin: 16px 0 0 0;
-    border-bottom: 1px solid #CCCCCC;
-    clear: both;
-}
-
-.sb-secondary-content-wrapper {
-    max-width: 950px;
-    margin-top: 24px;
-
-    p {
-        margin-bottom: 1.125rem;
+    .sb-sub-title-wrap {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        justify-content: flex-start;
+        align-self: stretch;
+        width: 1200px;
+        align-items: flex-start;
     }
-    p:last-child {
-        margin-bottom: 0;
+
+    .hr-line-division {
+        width: 100%;
+        max-width: 1200px;
+        margin: 16px 0 0 0;
+        border-bottom: 1px solid #CCCCCC;
+        clear: both;
+    }
+
+    .sb-secondary-content-text {
+        max-width: 950px;
+        margin-top: 24px;
+    
+        p {
+            margin-bottom: 1.125rem;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 
-//// Single small header with no underline
-.sb-desc-content-container {
+
+//// Single small Sub header with no underline (small sub)
+.sb-sub-small-container {
     margin-bottom: -16px;
     margin-top: 32px;
-}
-.sb-desc-title-wrapper {
 
-}
-.sb-desc-content-text {
-    margin-top: 8px;
+    .sb-desc-content-text {
+        margin-top: 8px;
+    }
 }
 
-//// Column header component
-.sb-grid-header-container {
+///
+/// 
+//// Grid Column header 3 -colcomponent
+/// 
+.sb-grid-header-3-col {
     background-color: #FAFAFA; /// color variable
     border-top: 1px solid #E5E5E5; // grey 10
     border-bottom: 1px solid #E5E5E5; // grey 10

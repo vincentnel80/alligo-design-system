@@ -1,14 +1,14 @@
 import React from 'react';
 
-//import './system/spacing.scss'; not needed here
 
-import FlexibleContentComponent from '../../shared/StorybookLayout/TemplateComponents/FlexibleContentComponent';
-import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
+import Page from '../../shared/StorybookLayout/TemplateComponents/Page/Page';
 
-const Spacing = () => <div className={'sb-page-container'}>
-    <main className={'sb-maincontent'}>
+import FlexibleContentComponent from '../../shared/StorybookLayout/TemplateComponents/Content/FlexibleContentComponent';
+import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/Grids/GridHeaderComponent';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
+import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/Content/SecondaryIntroComponent';
+
+const Spacing = () => <Page>
         <MainIntroComponent
             fontClassName={'body-xl body-xl--preamble'}
             introText={'We use the below defined tokens to create a predictable and harmonious spacing for our interface.'}
@@ -174,7 +174,6 @@ const Spacing = () => <div className={'sb-page-container'}>
                 tokenName={'space-120-large'}
             />
         </div>
-    </main>
-</div>;
+</Page>;
 
 export default Spacing;

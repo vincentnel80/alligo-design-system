@@ -1,17 +1,16 @@
 import React from 'react';
 
+import Page from '../../shared/StorybookLayout/TemplateComponents/Page/Page';
 import CopyToClipboard from '../../shared/Helpers/CopyToClipboard/CopyToClipboard';
-import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
-import SubHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/SubHeaderComponent';
+import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/Grids/GridHeaderComponent';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
+import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/Content/SecondaryIntroComponent';
+import SubHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/Content/SubHeaderComponent';
 
-import './colors.scss';
+import './colors.scss'; // here or in page? or global
 import './system-colors.scss';
 
-const SystemColors = () => <div className={'sb-page-container'}>
-    <main className={'sb-maincontent'}>
-
+const SystemColors = () => <Page>
         <MainIntroComponent
             fontClassName={'body-xl body-xl--preamble'}
             introText={''}
@@ -2667,7 +2666,6 @@ const SystemColors = () => <div className={'sb-page-container'}>
             </div>
         </div>
 
-    </main>
-</div>;
+</Page>;
 
 export default SystemColors;

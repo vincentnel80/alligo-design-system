@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import FlexibleContentComponent from '../../shared/StorybookLayout/TemplateComponents/FlexibleContentComponent';
-import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
-import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/SecondaryIntroComponent';
+import Page from '../../shared/StorybookLayout/TemplateComponents/Page/Page';
+
+import FlexibleContentComponent from '../../shared/StorybookLayout/TemplateComponents/Content/FlexibleContentComponent';
+import GridHeaderComponent from '../../shared/StorybookLayout/TemplateComponents/Grids/GridHeaderComponent';
+import MainIntroComponent from '../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
+import SecondaryIntroComponent from '../../shared/StorybookLayout/TemplateComponents/Content/SecondaryIntroComponent';
 
 import './elevations-shadows.scss';
 
-const ElevationsShadows = () => <div className={'sb-page-container'}>
-    <main className={'sb-maincontent'}>
+const ElevationsShadows = () => <Page>
         <MainIntroComponent
             fontClassName={'body-xl body-xl--preamble'}
             introText={'Shadows express the degree of elevation between surfaces. \\nBoth a shadow’s size and amount of softness or diffusion express the degree of distance between two surfaces. For example, a surface with a shadow that is small and sharp indicates a surface’s close proximity to the surface behind it. Larger, softer shadows express more distance.'}
@@ -185,8 +186,7 @@ const ElevationsShadows = () => <div className={'sb-page-container'}>
             />
         </div>
 
-    </main>
-</div>;
+</Page>;
 
 ElevationsShadows.propTypes = {
     fontClassName: PropTypes.string,

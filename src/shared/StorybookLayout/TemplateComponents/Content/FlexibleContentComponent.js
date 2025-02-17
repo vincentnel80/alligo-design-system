@@ -1,41 +1,46 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import CopyToClipboard from '../../Helpers/CopyToClipboard/CopyToClipboard';
+import CopyToClipboard from '../../../Helpers/CopyToClipboard/CopyToClipboard';
 
-const GridContainerComponent = ({
-    textSnippet, fontName, fontClassName, fontDescription, fontInformation, tokenName,
+const FlexibleContentComponent = ({
+    textSnippet, itemName, fontClassName, itemDescription, itemExtraInformation, tokenName, spacingSizeExample,
 }) => (
     <>
         <div className={'sb-grid-row'}>
             <div className={'sb-grid-item-example'}>
+                <div className={spacingSizeExample} style={{
+                    marginBottom: '8px',
+                }}></div>
                 {textSnippet.split('\\n').map((textSnippetLine, index) => (
                     <React.Fragment key={index}>
-                        <p className={fontClassName}>{textSnippetLine} </p>
+                        <div className={fontClassName} style={{
+                            opacity: '0.7',
+                        }}>{textSnippetLine}</div>
                     </React.Fragment>
                 ))}
             </div>
             <div className={'sb-grid-item-desc'}>
-                <span className={'title-md'}>{fontName}</span>
+                <span className={'title-md'}>{itemName}</span>
                 <span className={'body-md'} style={{
                     display: 'block',
                     paddingBottom: '14px',
                 }}>
-                    {fontDescription.split('\\n').map((fontDescriptionLine, index) => (
+                    {itemDescription.split('\\n').map((itemDescriptionLine, index) => (
                         <React.Fragment key={index}>
                             <span className={'body-md'} style={{
                                 display: 'block',
                                 paddingBottom: '4px',
-                            }}>{fontDescriptionLine}</span>
+                            }}>{itemDescriptionLine}</span>
                         </React.Fragment>
                     ))}
                 </span>
-                {fontInformation.split('\\n').map((fontInformationLine, index) => (
+                {itemExtraInformation.split('\\n').map((itemInformationLine, index) => (
                     <React.Fragment key={index}>
                         <span className={'body-md'} style={{
                             display: 'block',
                             paddingBottom: '4px',
-                        }}>{fontInformationLine}</span>
+                        }}>{itemInformationLine}</span>
                     </React.Fragment>
                 ))}
 
@@ -51,13 +56,14 @@ const GridContainerComponent = ({
     </>
 );
 
-GridContainerComponent.propTypes = {
-    fontClassName: PropTypes.string.isRequired,
-    fontDescription: PropTypes.string.isRequired,
-    fontInformation: PropTypes.string.isRequired,
-    fontName: PropTypes.string.isRequired,
-    textSnippet: PropTypes.string.isRequired,
-    tokenName: PropTypes.string.isRequired,
+FlexibleContentComponent.propTypes = {
+    fontClassName: PropTypes.string,
+    itemDescription: PropTypes.string,
+    itemExtraInformation: PropTypes.string,
+    itemName: PropTypes.string,
+    spacingSizeExample: PropTypes.string,
+    textSnippet: PropTypes.string,
+    tokenName: PropTypes.string,
 };
 
-export default GridContainerComponent;
+export default FlexibleContentComponent;

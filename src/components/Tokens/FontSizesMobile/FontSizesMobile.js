@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import './sb-font-sizes.scss';
 
-import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/GridContainerComponent';
-import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
+import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridContainerComponent';
+import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridHeaderComponent';
+import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
 
 const FontSizesMobile = ({
     textSnippet, fontName, fontClassName, fontDescription, fontInformation, tokenName,

@@ -1,0 +1,10 @@
+// file used to make absolute path, used in imports 
+{
+    "compilerOptions": {
+      "baseUrl": "src",
+      "paths": {
+        "@components/*": ["shared/components/*"]
+      }
+    }
+  }
+  

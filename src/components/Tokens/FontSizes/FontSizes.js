@@ -1,16 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import './sb-font-sizes.scss';
 
-import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/GridContainerComponent';
-import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/GridHeaderComponent';
-import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/MainIntroComponent';
+import Page from '../../../shared/StorybookLayout/TemplateComponents/Page/Page';
+
+import GridContainerComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridContainerComponent';
+import GridHeaderComponent from '../../../shared/StorybookLayout/TemplateComponents/Grids/GridHeaderComponent';
+import MainIntroComponent from '../../../shared/StorybookLayout/TemplateComponents/Content/MainIntroComponent';
 
 const FontSizes = ({
     textSnippet, fontName, fontClassName, fontDescription, fontInformation, tokenName,
-}) => <div className={'sb-page-container'}>
-    <main className={'sb-maincontent'}>
-
+}) => <Page>
         <MainIntroComponent
             fontClassName={'body-xl body-xl--preamble'}
             introText={'Font size values used in various typefaces. The displayed tokens can be used for Both Desktop and Mobile view.. Add more instructions on how to use'}
@@ -226,8 +225,7 @@ tokenName={'font-size-display-lg'}
 />
 
         </div>
-    </main>
-</div>;
+</Page>;
 
 FontSizes.propTypes = {
     fontClassName: PropTypes.string.isRequired,

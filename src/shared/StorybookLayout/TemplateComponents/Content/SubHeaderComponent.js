@@ -1,17 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const SubHeaderComponent = ({
-                                subTitle, subContent,
-                            }) => (
-    <div className={'sb-desc-content-container'}>
-        <div className={'sb-desc-title-wrapper'}>
-            <span className={'title-lg'}>{subTitle}</span>
-        </div>
+const SubHeaderComponent = ({ subTitle, subContent }) => (
+    <div className={'sb-sub-small-container'}>
+        <h3 className={'title-lg'}>{subTitle}</h3>
         <div className={'sb-desc-content-text'}>
             {subContent.split('\\n').map((subContentLine, index) => (
                 <React.Fragment key={index}>
-                    <span className={'body-lg'}> {subContentLine}</span>
+                    <p className={'body-lg'}> {subContentLine}</p>
                 </React.Fragment>
             ))}
         </div>

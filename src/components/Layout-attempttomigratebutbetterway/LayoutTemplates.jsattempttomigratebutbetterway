@@ -11,7 +11,7 @@ const LayoutTemplates = () => <div className={'sb-page-container'}>
         <div className={'sb-main-intro-container'}>
             <div className={'sb-main-intro-headline-wrapper'}>
                 <div className={'headline-xl'}>Storybook Pages & Components Examples</div>
-                <div className={'sb-design-status-label draft'}>
+                <div className={'sb-status-label draft'}>
                     <div className={'label-sm'}>Draft</div>
                 </div>
             </div>

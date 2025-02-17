@@ -5,58 +5,6 @@
 // add in margin bottom - here or spacing
 // this contains all the styles
 
-  :root {
-    --margin-bottom-display-sm: 10px;
-    --margin-bottom-display-md: 12px;
-    --margin-bottom-display-lg: 18px;
-    --margin-bottom-headline-sm: 8px;
-    --margin-bottom-headline-md: 10px;
-    --margin-bottom-headline-lg: 16px;
-    --margin-bottom-headline-xl: 18px;
-    --margin-bottom-title-sm: 8px;
-    --margin-bottom-title-md: 10px;
-    --margin-bottom-title-lg: 12px;
-    --margin-bottom-label-sm: 6px;
-    --margin-bottom-label-md: 8px;
-    --margin-bottom-label-lg: 10px;
-    --margin-bottom-alt-label-sm: 6px;
-    --margin-bottom-alt-label-md: 8px;
-    --margin-bottom-alt-label-lg: 10px;
-    --margin-bottom-body-sm: 6px;
-    --margin-bottom-body-md: 8px;
-    --margin-bottom-body-lg: 10px;
-    --margin-bottom-body-xl: 12px;
-  }
-
-  @mixin typography-style($class-name, $weight, $size, $line-height, $letter-spacing, $margin-bottom-var, $transform: none) {
-    .#{$class-name} {
-      font-family: breuercondensed;
-      font-weight: $weight;
-      font-size: $size;
-      line-height: $line-height;
-      letter-spacing: $letter-spacing;
-      text-transform: $transform;
-  
-      /* Apply margin-bottom using CSS variable */
-      margin-bottom: var(#{$margin-bottom-var}, 12px);
-  
-      /* Remove margin-bottom if it's the last of its type */
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-  
-      @media (min-width: 768px) {
-        /* Apply desktop margin-bottom */
-        margin-bottom: var(#{$margin-bottom-var}-dt, 18px);
-  
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-  
-  
 // Add modifiers here
 // Font weights
 $font-weight-default-400: 400;
@@ -221,7 +169,7 @@ $letter-spacing-display-lg: $value-0;
 }
 
 // Typeface classes
-/*@include apply-to-tags(display-sm, $font-weight-display-sm, $font-size-display-sm, $line-height-display-sm, $letter-spacing-display-sm, uppercase);
+@include apply-to-tags(display-sm, $font-weight-display-sm, $font-size-display-sm, $line-height-display-sm, $letter-spacing-display-sm, uppercase);
 @include apply-to-tags(display-md, $font-weight-display-md, $font-size-display-md, $line-height-display-md, $letter-spacing-display-md, uppercase);
 @include apply-to-tags(display-lg, $font-weight-display-lg, $font-size-display-lg, $line-height-display-lg, $letter-spacing-display-lg, uppercase);
 @include apply-to-tags(headline-sm, $font-weight-headline-sm, $font-size-headline-sm, $line-height-headline-sm, $letter-spacing-headline-sm);
@@ -241,34 +189,6 @@ $letter-spacing-display-lg: $value-0;
 @include apply-to-tags(body-md, $font-weight-body-md, $font-size-body-md, $line-height-body-md, $letter-spacing-body-md);
 @include apply-to-tags(body-lg, $font-weight-body-lg, $font-size-body-lg, $line-height-body-lg, $letter-spacing-body-lg);
 @include apply-to-tags(body-xl, $font-weight-body-xl, $font-size-body-xl, $line-height-body-xl, $letter-spacing-body-xl, $paragraph-spacing-body-xl);
- */
-
- @include apply-to-tags(display-sm, $font-weight-display-sm, $font-size-display-sm, $line-height-display-sm, $letter-spacing-display-sm, uppercase, var(--margin-bottom-display-sm));
-@include apply-to-tags(display-md, $font-weight-display-md, $font-size-display-md, $line-height-display-md, $letter-spacing-display-md, uppercase, var(--margin-bottom-display-md));
-@include apply-to-tags(display-lg, $font-weight-display-lg, $font-size-display-lg, $line-height-display-lg, $letter-spacing-display-lg, uppercase, var(--margin-bottom-display-lg));
-
-@include apply-to-tags(headline-sm, $font-weight-headline-sm, $font-size-headline-sm, $line-height-headline-sm, $letter-spacing-headline-sm, none, var(--margin-bottom-headline-sm));
-@include apply-to-tags(headline-md, $font-weight-headline-md, $font-size-headline-md, $line-height-headline-md, $letter-spacing-headline-md, none, var(--margin-bottom-headline-md));
-@include apply-to-tags(headline-lg, $font-weight-headline-lg, $font-size-headline-lg, $line-height-headline-lg, $letter-spacing-headline-lg, none, var(--margin-bottom-headline-lg));
-@include apply-to-tags(headline-xl, $font-weight-headline-xl, $font-size-headline-xl, $line-height-headline-xl, $letter-spacing-headline-xl, none, var(--margin-bottom-headline-xl));
-
-@include apply-to-tags(title-sm, $font-weight-title-sm, $font-size-title-sm, $line-height-title-sm, $letter-spacing-title-sm, none, var(--margin-bottom-title-sm));
-@include apply-to-tags(title-md, $font-weight-title-md, $font-size-title-md, $line-height-title-md, $letter-spacing-title-md, none, var(--margin-bottom-title-md));
-@include apply-to-tags(title-lg, $font-weight-title-lg, $font-size-title-lg, $line-height-title-lg, $letter-spacing-title-lg, none, var(--margin-bottom-title-lg));
-
-@include apply-to-tags(label-sm, $font-weight-label-sm, $font-size-label-sm, $line-height-label-sm, $letter-spacing-label-sm, uppercase, var(--margin-bottom-label-sm));
-@include apply-to-tags(label-md, $font-weight-label-md, $font-size-label-md, $line-height-label-md, $letter-spacing-label-md, uppercase, var(--margin-bottom-label-md));
-@include apply-to-tags(label-lg, $font-weight-label-lg, $font-size-label-lg, $line-height-label-lg, $letter-spacing-label-lg, uppercase, var(--margin-bottom-label-lg));
-
-@include apply-to-tags(alt-label-sm, $font-weight-alt-label-sm, $font-size-alt-label-sm, $line-height-alt-label-sm, $letter-spacing-alt-label-sm, uppercase, var(--margin-bottom-alt-label-sm));
-@include apply-to-tags(alt-label-md, $font-weight-alt-label-md, $font-size-alt-label-md, $line-height-alt-label-md, $letter-spacing-alt-label-md, uppercase, var(--margin-bottom-alt-label-md));
-@include apply-to-tags(alt-label-lg, $font-weight-alt-label-lg, $font-size-alt-label-lg, $line-height-alt-label-lg, $letter-spacing-alt-label-lg, uppercase, var(--margin-bottom-alt-label-lg));
-
-@include apply-to-tags(body-sm, $font-weight-body-sm, $font-size-body-sm, $line-height-body-sm, $letter-spacing-body-sm, none, var(--margin-bottom-body-sm));
-@include apply-to-tags(body-md, $font-weight-body-md, $font-size-body-md, $line-height-body-md, $letter-spacing-body-md, none, var(--margin-bottom-body-md));
-@include apply-to-tags(body-lg, $font-weight-body-lg, $font-size-body-lg, $line-height-body-lg, $letter-spacing-body-lg, none, var(--margin-bottom-body-lg));
-@include apply-to-tags(body-xl, $font-weight-body-xl, $font-size-body-xl, $line-height-body-xl, $letter-spacing-body-xl, none, var(--margin-bottom-body-xl));
-
 
 // modifiers
 // what is best way to handle modifiers?
