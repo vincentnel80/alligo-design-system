@@ -1,36 +1,29 @@
-
-// the above maybe not valid
 .label-sm-mob {
   font-family: var(--font-family-label-md, "breuercondensed");
   font-size: var(--font-size-label-sm, 12px);
   font-weight: var(--font-weight-label-sm, 600);
-  line-height: var(--line-height-label-sm, 12px); /* 100% */
+  line-height: var(--line-height-label-sm, 12px);
   letter-spacing: var(--letter-spacing-alt-label-sm, 0.48px);
   text-transform: uppercase;
+  margin-bottom: var(--margin-bottom-label-sm, 12px);
 
-      /* Add spacing by default */
-      margin-bottom: var(--margin-bottom-label-sm, 12px); // Launch - check with Erik
-
-      /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-      &:last-of-type {
-        margin-bottom: 0;
-      }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .label-md-mob {
-color: var(--color-text-primary, #000);
-font-family: var(--font-family-label-md, "breuercondensed");
-font-size: var(--font-size-label-md, 14px);
-font-style: normal;
-font-weight: var(--font-weight-label-md, 600);
-line-height: var(--line-height-label-md, 14px); /* 100% */
-letter-spacing: var(--letter-spacing-label-md, 0.42px);
-text-transform: uppercase;
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-label-md, "breuercondensed");
+  font-size: var(--font-size-label-md, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-label-md, 600);
+  line-height: var(--line-height-label-md, 14px); 
+  letter-spacing: var(--letter-spacing-label-md, 0.42px);
+  text-transform: uppercase;
+  margin-bottom: var(--margin-bottom-label-md, 0px); 
 
-    /* Add spacing by default */
-    margin-bottom: var(--margin-bottom-label-md, 0px); // Launch - check with Erik
 
-    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
     &:last-of-type {
       margin-bottom: 0;
     }
@@ -38,76 +31,62 @@ text-transform: uppercase;
 }
 .label-lg-mob {
   color: var(--color-text-primary, #000);
-font-family: var(--font-family-label-lg, "breuercondensed");
-font-size: var(--font-size-label-lg, 16px);
-font-style: normal;
-font-weight: var(--font-weight-label-lg, 600);
-line-height: var(--line-height-label-lg, 16px); /* 100% */
-letter-spacing: var(--letter-spacing-label-lg, 0.32px);
-text-transform: uppercase;
+  font-family: var(--font-family-label-lg, "breuercondensed");
+  font-size: var(--font-size-label-lg, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-label-lg, 600);
+  line-height: var(--line-height-label-lg, 16px); 
+  letter-spacing: var(--letter-spacing-label-lg, 0.32px);
+  text-transform: uppercase;
+  margin-bottom: var(--margin-bottom-label-lg, 0px); 
 
-      /* Add spacing by default */
-      margin-bottom: var(--margin-bottom-label-lg, 0px); // Launch - check with Erik
-
-      /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-      &:last-of-type {
-        margin-bottom: 0;
-      }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .label-sm-dt {
   font-family: var(--font-family-label-sm, "breuercondensed");
   font-size: var(--font-size-label-sm, 14px) !important;
   font-weight: var(--font-weight-label-sm, 600) !important;
-  line-height: var(--line-height-label-sm, 14px) !important; /* 100% */
+  line-height: var(--line-height-label-sm, 14px) !important; 
   letter-spacing: var(--letter-spacing-alt-label-sm, 0.56px) !important;
   text-transform: uppercase;
+  margin-bottom: var(--margin-bottom-label-sm, 14px); 
 
-        /* Add spacing by default */
-        margin-bottom: var(--margin-bottom-label-sm, 14px); // Launch - check with Erik
-
-        /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .label-md-dt {
   color: var(--color-text-primary, #000);
-font-family: var(--font-family-label-md, "breuercondensed");
-font-size: var(--font-size-label-md, 16px) !important;
-font-weight: var(--font-weight-label-md, 600);
-line-height: var(--line-height-label-md, 16px) !important; /* 100% */
-letter-spacing: var(--letter-spacing-label-md, 0.48px) !important;
-text-transform: uppercase;
+  font-family: var(--font-family-label-md, "breuercondensed");
+  font-size: var(--font-size-label-md, 16px) !important;
+  font-weight: var(--font-weight-label-md, 600);
+  line-height: var(--line-height-label-md, 16px) !important; 
+  letter-spacing: var(--letter-spacing-label-md, 0.48px) !important;
+  text-transform: uppercase;
+  margin-bottom: var(--margin-bottom-label-md, 16px); 
 
-      /* Add spacing by default */
-      margin-bottom: var(--margin-bottom-label-md, 16px); // Launch - check with Erik
-
-      /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-      &:last-of-type {
-        margin-bottom: 0;
-      }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .label-lg-dt {
   color: var(--color-text-primary, #000);
-font-family: var(--font-family-label-lg, "breuercondensed");
-font-size: var(--font-size-label-lg, 18px) !important;
-font-weight: var(--font-weight-label-lg, 600);
-line-height: var(--line-height-label-lg, 18px) !important; /* 100% */
-letter-spacing: var(--letter-spacing-label-lg, 0.18px) !important;
-text-transform: uppercase;
+  font-family: var(--font-family-label-lg, "breuercondensed");
+  font-size: var(--font-size-label-lg, 18px) !important;
+  font-weight: var(--font-weight-label-lg, 600);
+  line-height: var(--line-height-label-lg, 18px) !important; 
+  letter-spacing: var(--letter-spacing-label-lg, 0.18px) !important;
+  text-transform: uppercase;
+  margin-bottom: var(--margin-bottom-label-lg, 18px); 
 
-// is this needed
-      /* Add spacing by default */
-      margin-bottom: var(--margin-bottom-label-lg, 18px); // Launch - check with Erik
-
-      /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-      &:last-of-type {
-        margin-bottom: 0;
-      }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .label-sm--badge-dt  {
@@ -117,26 +96,21 @@ text-transform: uppercase;
   line-height: var(--line-height-label-sm, 14px) !important;
   letter-spacing: var(--letter-spacing-label-sm, 0.56px) !important;
   text-transform: none !important;
+  margin-bottom: var(--margin-bottom-label-sm, 16px); 
 
-  // is this needed
-        /* Add spacing by default */
-        margin-bottom: var(--margin-bottom-label-sm, 16px); // Launch - check with Erik
-
-        /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .label-sm--badge-mob  {
-font-weight: var(--Font-weight-medium-500, 500) !important;
-text-transform: none !important;
+  font-weight: var(--Font-weight-medium-500, 500) !important;
+  text-transform: none !important;
 }
 
 .label-lg--underline-dt {
-text-decoration: underline !important;
-text-underline-offset: 3px;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
 }
 
 .label-lg--underline-mob {

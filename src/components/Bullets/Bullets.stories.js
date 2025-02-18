@@ -214,13 +214,6 @@ DesktopLargeDot.parameters = {
     },
   },
 };
-// it's up to you process the information and see the items go into the control. We will see you there in the future and not get into
-// the habit to be controlled intot he vertical shift
-// we will not be there
-// we will not do that.
-// Coljander coljander loop deur die bos my ma en pa eet lekker kos, die kinders verstuk aan 
-// ** ** ** ** ** ** ** ** ** ** ** **
-
 
 export const DesktopMediumDot = Template.bind({});
 DesktopMediumDot.args = {

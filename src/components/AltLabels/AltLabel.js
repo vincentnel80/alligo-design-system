@@ -7,32 +7,6 @@ import './storybook/altlabels-sb.scss';
  * The style should be considered as a compliment to the Label style.
  */
 
-
-// if i dont add these, then it always comes back as undefined - why?
-// To Do - vin - key notes - there are no modifiers here, so delete everything concerning that
-// delete the extra docs that are not being used
-/*export const AltLabel = ({ 
-  version = 'Desktop', 
-  size = 'alt-label-lg', 
-  summary, 
-  marginBottom = 'None'
-}) => {
-  // Conditionally apply the -mob or -dt suffix for mobile or desktop version
-  const computedSize = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
-  
-  // Combine font name with the modifier (if any)
-  const classNames = `${computedSize} ${marginBottom}`;
-
-  return (
-    <>
-      <p className={classNames}>{summary}</p>
-      <p className={classNames}>{summary}</p>
-      <div className={`${marginBottom}-temp`}></div>
-    </>
-  );
-}; */
-
-
 export const AltLabel = ({ 
   size = 'alt-label-lg', 
   version = 'Desktop', 
@@ -40,16 +14,13 @@ export const AltLabel = ({
   marginBottom = 'None', 
   modifier = 'None' 
 }) => {
-  // Conditionally apply the -mob or -dt suffix for mobile or desktop version
+
   const computedFontName = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
-  
-  // Combine font name with the modifier (if it's not 'None')
   const classNames = modifier !== 'None' ? `${computedFontName} ${modifier}` : computedFontName;
 
   return (
     <>
       <div className={`${marginBottom}-sb`}>
-        <p className={classNames}>{summary}</p>
         <p className={classNames}>{summary}</p>
       </div>
     </>
@@ -58,8 +29,8 @@ export const AltLabel = ({
 
 
 
-  AltLabel.propTypes = {
-      /**
+AltLabel.propTypes = {
+  /**
    * Determines whether Desktop or Mobile styles are applied
    */
   version: PropTypes.oneOf(['Desktop', 'Mobile']),
@@ -69,14 +40,13 @@ export const AltLabel = ({
    */
   size: PropTypes.oneOf(['alt-label-sm', 'alt-label-md', 'alt-label-lg']),
 
-    /**
-     * Summary text to be displayed
-     */
-    summary: PropTypes.string.isRequired, // assuming summary is a required string
+  /**
+   * Summary text to be displayed
+   */
+  summary: PropTypes.string.isRequired, // assuming summary is a required string
 
-    /**
+  /**
    * Margin bottom spacing
    */
-    marginBottom: PropTypes.string,
-
-  };
+  marginBottom: PropTypes.string,
+};

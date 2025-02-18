@@ -1,12 +1,12 @@
 // Blockquote Container
 // maybe should be the real item
-.blockq-container {
+.blockquote-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
   
-    .blockq-container-inner {
+    .blockquote-container-inner {
       display: flex;
       padding: 16px 32px;
       flex-direction: column;
@@ -21,7 +21,7 @@
         padding-bottom: 0;
       }
   
-      .bottom-text-wrapper {
+      .blockquote__meta {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -34,13 +34,13 @@
     }
   }
 
-  .blockq-container--sb-desktop {
+  .blockquote-container--sb-desktop {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
   
-    .blockq-container-inner {
+    .blockquote-container-inner {
       display: flex;
       padding: 16px 32px;
       flex-direction: column;
@@ -63,7 +63,7 @@
            // text-transform: uppercase;
       }
   
-      .bottom-text-wrapper {
+      .blockquote__meta {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -90,14 +90,14 @@
   // modifier for SB display only
   // redo top correctly, make visual styles accordingly
   // it has to function normally too (ie @media queries
-  .blockq-container--sb-mobile {
+  .blockquote-container--sb-mobile {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
     max-width: 311px;
   
-    .blockq-container-inner {
+    .blockquote-container-inner {
       display: flex;
       padding: 16px !important;
       flex-direction: column;
@@ -120,7 +120,7 @@
         padding-bottom: 0;
       }
   
-      .bottom-text-wrapper {
+      .blockquote__meta {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -145,25 +145,7 @@
     }
   }
 
-  // These override storyblok styles default styles buw will need to see how it behaves in the system
-/*
-  .css-1qq744x {
-    display: block !important;
-    
-  }
 
-  .left {
-    float: left !important;
-  }
-
-  .right {
-    float: right !important;
-  }
-
-  .center {
-align-items: center;
-  }
-*/
 
 /// here or in main - its just to overwrite the parent
 
@@ -182,11 +164,11 @@ align-items: center;
 
 .center {
   //float: right !important;
-  .blockq-container--sb-desktop .blockq-container-inner {
+  .blockquote-container--sb-desktop .blockquote-container-inner {
     align-items: center !important;
   }
 
-  .blockq-container--sb-desktop .blockq-container-inner .bottom-text-wrapper {
+  .blockquote-container--sb-desktop .blockquote-container .bottom-text-wrapper {
     align-items: center !important;
   }
 }
@@ -202,11 +184,11 @@ align-items: center;
   align-items: right !important;
 
 
-  .blockq-container--sb-desktop .blockq-container-inner {
+  .blockquote-container--sb-desktop .blockquote-container-inner {
     align-items: flex-end !important;
   }
 
-  .blockq-container--sb-desktop .blockq-container-inner .bottom-text-wrapper {
+  .blockquote-container--sb-desktop .blockquote-container-inner .bottom-text-wrapper {
     align-items:  flex-end !important;
   }
 

@@ -26,12 +26,12 @@ export const BlockQuote = ({
   if (version === 'Mobile') {
     return (
       <div className={`alignment-container ${alignment} ${marginBottom}-sb`}>
-      <div className="blockq-container blockq-container--sb-mobile">
-        <div className="blockq-container-inner needshere">
+      <div className="blockquote-container blockquote-container--sb-mobile">
+        <div className="blockquote-container-inner">
           <div className="headline-md headline-md--blockquote">
             {summary}
           </div>
-          <div className="bottom-text-wrapper">
+          <div className="blockquote__meta">
             <span className="label-sm">{name}</span>
             <span className="body-sm">{title}</span>
           </div>
@@ -46,12 +46,12 @@ export const BlockQuote = ({
   // Default Desktop version
   return (
     <div className={`alignment-container ${alignment} ${marginBottom}-sb`}>
-    <div className="blockq-container blockq-container--sb-desktop">
-      <div className="blockq-container-inner">
+    <div className="blockquote-container blockquote-container-inner">
+      <div className="blockquote-container-inner">
         <div className="headline-md headline-md--blockquote">
           {summary}
         </div>
-        <div className="bottom-text-wrapper">
+        <div className="blockquote__meta">
           <span className="label-sm">{name}</span>
           <span className="body-sm">{title}</span>
         </div>

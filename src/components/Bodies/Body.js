@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './storybook/bodies-sb.scss';
-// Body.js
 import '../Spacing/storybook/spacing-sb.scss';
-// just rember its using both now (spacing) as everything gets compiled into one, but in system it wont
 
 
 /**
@@ -21,10 +19,7 @@ export const Body = ({
   marginBottom = 'None', 
   modifier = 'None' 
 }) => {
-  // Conditionally apply the -mob or -dt suffix for mobile or desktop version
   const computedFontName = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
-  
-  // Combine font name with the modifier (if it's not 'None')
   const classNames = modifier !== 'None' ? `${computedFontName} ${modifier}` : computedFontName;
 
   return (
@@ -36,30 +31,11 @@ export const Body = ({
   );
 };
 
-
+// TODO: Add descriptions for Storybook Doc
 Body.propTypes = {
-  /**
-   * Summary text to be displayed
-   */
-  summary: PropTypes.string.isRequired, // assuming summary is a required string
-
-  /**
-   * Font size for the body text
-   */
+  summary: PropTypes.string.isRequired,
   size: PropTypes.oneOf(['body-sm', 'body-md', 'body-lg', 'body-xl']),
-
-  /**
-   * Determines whether Desktop or Mobile styles are applied
-   */
   version: PropTypes.oneOf(['Desktop', 'Mobile']),
-
-  /**
-   * Modifier class for additional styling (e.g., bold, italic, etc.)
-   */
   modifier: PropTypes.string,
-
-  /**
-   * Margin bottom spacing
-   */
   marginBottom: PropTypes.string,
 };

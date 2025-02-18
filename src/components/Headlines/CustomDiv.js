@@ -77,7 +77,6 @@ Consider using title styles to divide secondary passages of text or secondary re
             <tbody>
               <tr>
                 <td>
-
                   Semantic Navigation Landmark: The 'nav' element is used to define a section of the page intended for navigation. This helps assistive technologies identify it as a navigation area.
                   ARIA Label: The aria-label="Breadcrumb" attribute provides an accessible name for the navigation landmark, indicating to screen readers that this section is a breadcrumb navigation. This helps users understand the purpose of this navigation.
 

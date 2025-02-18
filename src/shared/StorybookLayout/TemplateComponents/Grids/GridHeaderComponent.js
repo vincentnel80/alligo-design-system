@@ -6,8 +6,6 @@ const GridHeaderComponent = () => (
         <div className={'alt-label-lg'}>Description</div>
         <div className={'alt-label-lg'}>Token</div>
     </div>
-
-    
 );
 
 GridHeaderComponent.propTypes = {};

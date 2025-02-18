@@ -6,49 +6,32 @@ import CopyToClipboard from '../../../Helpers/CopyToClipboard/CopyToClipboard';
 const GridContainerComponent4Col = ({
     textSnippet, fontName, fontClassName, fontDescription, fontInformation, tokenName,
 }) => (
-    <>
-        <div className={'sb-grid-row-4-col'}>
-            <div className={'sb-grid-item-example'}>
-                {textSnippet.split('\\n').map((textSnippetLine, index) => (
-                    <React.Fragment key={index}>
-                        <p className={fontClassName}>{textSnippetLine} </p>
-                    </React.Fragment>
-                ))}
-            </div>
-            <div className={'sb-grid-item-desc'}>
-                <span className={'title-md'}>{fontName}</span>
-                <span className={'body-md'} style={{
-                    display: 'block',
-                    paddingBottom: '14px',
-                }}>
-                    {fontDescription.split('\\n').map((fontDescriptionLine, index) => (
-                        <React.Fragment key={index}>
-                            <span className={'body-md'} style={{
-                                display: 'block',
-                                paddingBottom: '4px',
-                            }}>{fontDescriptionLine}</span>
-                        </React.Fragment>
-                    ))}
-                </span>
-                {fontInformation.split('\\n').map((fontInformationLine, index) => (
-                    <React.Fragment key={index}>
-                        <span className={'body-md'} style={{
-                            display: 'block',
-                            paddingBottom: '4px',
-                        }}>{fontInformationLine}</span>
-                    </React.Fragment>
-                ))}
+    <div className="sb-grid-row-4-col">
+        {/* Text Snippet */}
+        <div className="sb-grid-item-example">
+            {textSnippet.split('\\n').filter(line => line.trim() !== '').map((line, index) => (
+                <p key={index} className={fontClassName}>{line}</p>
+            ))}
+        </div>
 
-            </div>
-            <div className={'sb-grid-item-token'}>
-                <div className={'body-md'}>
-                    <CopyToClipboard
-                        tokenName={tokenName}
-                    />
-                </div>
+        {/* Font Description & Information */}
+        <div className="sb-grid-item-desc">
+            <span className="title-md">{fontName}</span>
+            {fontDescription.split('\\n').filter(line => line.trim() !== '').map((line, index) => (
+                <span key={index} className="body-md sb-grid-desc-text">{line}</span>
+            ))}
+            {fontInformation.split('\\n').filter(line => line.trim() !== '').map((line, index) => (
+                <span key={index} className="body-md sb-grid-info-text">{line}</span>
+            ))}
+        </div>
+
+        {/* Token Copy Feature */}
+        <div className="sb-grid-item-token">
+            <div className="body-md">
+                <CopyToClipboard tokenName={tokenName} />
             </div>
         </div>
-    </>
+    </div>
 );
 
 GridContainerComponent4Col.propTypes = {

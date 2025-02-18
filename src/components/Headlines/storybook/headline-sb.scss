@@ -1,23 +1,16 @@
-
-// SB only template display
-// mobile
 .headline-xl-mob {
   color: var(--color-text-primary, #000);
   font-family: var(--font-family-headline-xl, "breuercondensed");
   font-size: var(--font-size-headline-xl, 30px);
   font-style: normal;
   font-weight: var(--font-weight-headline-xl, 700);
-  line-height: var(--line-height-headline-xl, 34px); /* 113.333% */
+  line-height: var(--line-height-headline-xl, 34px); 
   letter-spacing: var(--letter-spacing-headline-xl, 0px);
+  margin-bottom: var(--margin-bottom-headline-xl, 12px); 
 
-    /* Add spacing by default */
-    margin-bottom: var(--margin-bottom-headline-xl, 12px); // Launch - check with Erik
-
-    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .headline-lg-mob {
@@ -26,39 +19,29 @@
   font-size: var(--font-size-headline-lg, 28px);
   font-style: normal;
   font-weight: var(--font-weight-headline-lg, 700);
-  line-height: var(--line-height-headline-lg, 32px); /* 114.286% */
+  line-height: var(--line-height-headline-lg, 32px);
   letter-spacing: var(--letter-spacing-headline-lg, 0px);
+  margin-bottom: var(--margin-bottom-headline-lg, 12px); 
 
-    /* Add spacing by default */
-    margin-bottom: var(--margin-bottom-headline-lg, 12px); // Launch - check with Erik
-
-    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .headline-md-mob {
   color: var(--color-text-primary, #000);
   font-feature-settings: 'ss02' on, 'ss03' on;
-  
-  /* Type Scale Design Tokens/Headline/headline-md */
   font-family: var(--font-family-headline-md, "breuercondensed");
   font-size: var(--font-size-headline-md, 26px);
   font-style: normal;
   font-weight: var(--font-weight-headline-md, 700);
-  line-height: var(--line-height-headline-md, 32px); /* 123.077% */
+  line-height: var(--line-height-headline-md, 32px); 
   letter-spacing: var(--letter-spacing-headline-md, 0px);
+  margin-bottom: var(--margin-bottom-headline-md, 12px); 
 
-    /* Add spacing by default */
-    margin-bottom: var(--margin-bottom-headline-md, 12px); // Launch - check with Erik
-
-    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .headline-sm-mob {
@@ -67,38 +50,28 @@
   font-size: var(--font-size-headline-sm, 22px);
   font-style: normal;
   font-weight: var(--font-weight-headline-sm, 700);
-  line-height: var(--line-height-headline-sm, 24px); /* 109.091% */
+  line-height: var(--line-height-headline-sm, 24px); 
   letter-spacing: var(--letter-spacing-headline-sm, 0px);
+  margin-bottom: var(--margin-bottom-headline-sm, 12px); 
 
-    /* Add spacing by default */
-    margin-bottom: var(--margin-bottom-headline-sm, 12px); // Launch - check with Erik
-
-    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
-/* Media Query for Desktop Small and Up */
-
 .headline-xl-dt {
-color: var(--color-text-primary, #000);
-font-family: var(--font-family-headline-xl, "breuercondensed");
-font-size: var(--font-size-headline-xl, 46px);
-font-style: normal;
-font-weight: var(--font-weight-headline-xl, 700);
-line-height: var(--line-height-headline-xl, 48px); /* 104.348% */
-letter-spacing: var(--letter-spacing-headline-xl, 0px);
+  color: var(--color-text-primary, #000);
+  font-family: var(--font-family-headline-xl, "breuercondensed");
+  font-size: var(--font-size-headline-xl, 46px);
+  font-style: normal;
+  font-weight: var(--font-weight-headline-xl, 700);
+  line-height: var(--line-height-headline-xl, 48px); 
+  letter-spacing: var(--letter-spacing-headline-xl, 0px);
+  margin-bottom: var(--margin-bottom-headline-xl, 12px); 
 
-    /* Add spacing by default */
-    margin-bottom: var(--margin-bottom-headline-xl, 12px); // Launch - check with Erik
-
-    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .headline-lg-dt {
@@ -107,18 +80,13 @@ letter-spacing: var(--letter-spacing-headline-xl, 0px);
   font-size: var(--font-size-headline-lg, 36px);
   font-style: normal;
   font-weight: var(--font-weight-headline-lg, 700);
-  line-height: var(--line-height-headline-lg, 40px); /* 111.111% */
+  line-height: var(--line-height-headline-lg, 40px); 
   letter-spacing: var(--letter-spacing-headline-lg, 0px);
+  margin-bottom: var(--margin-bottom-headline-lg, 12px); 
 
-
-      /* Add spacing by default */
-      margin-bottom: var(--margin-bottom-headline-lg, 12px); // Launch - check with Erik
-
-      /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .headline-md-dt {
@@ -127,41 +95,31 @@ letter-spacing: var(--letter-spacing-headline-xl, 0px);
   font-size: var(--font-size-headline-md, 32px);
   font-style: normal;
   font-weight: var(--font-weight-headline-md, 700);
-  line-height: var(--line-height-headline-md, 36px); /* 112.5% */
+  line-height: var(--line-height-headline-md, 36px); 
   letter-spacing: var(--letter-spacing-headline-md, 0px);
+  margin-bottom: var(--margin-bottom-headline-md, 12px); 
 
-    /* Add spacing by default */
-    margin-bottom: var(--margin-bottom-headline-md, 12px); // Launch - check with Erik
-
-    /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .headline-sm-dt {
-
   color: var(--color-text-primary, #000);
   font-family: var(--font-family-headline-sm, "breuercondensed");
   font-size: var(--font-size-headline-sm, 28px);
   font-style: normal;
   font-weight: var(--font-weight-headline-sm, 700);
-  line-height: var(--line-height-headline-sm, 32px); /* 114.286% */
+  line-height: var(--line-height-headline-sm, 32px); 
   letter-spacing: var(--letter-spacing-headline-sm, 0px);
+  margin-bottom: var(--margin-bottom-headline-sm, 12px); 
 
-      /* Add spacing by default */
-      margin-bottom: var(--margin-bottom-headline-sm, 12px); // Launch - check with Erik
-
-      /* Remove margin-bottom only from the last <p> with .body-xl-dt */
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
-// temp modifier: needs rework name is incorrect
-// below is not doing anything
+// TODO: Replace these with System modifiers
 .headline-md--blockquote-dt {
   text-transform: uppercase !important;
 }

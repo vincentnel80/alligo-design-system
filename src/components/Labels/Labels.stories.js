@@ -2,27 +2,12 @@ import { Label } from './Label';
 import CustomDocsContainer from './CustomDocsContainer';
 import React, { useEffect } from 'react';
 
-// Dynamic HTML snippet generator function
-/*
-const generateHtmlSnippet = (args) => {
-  const { size = 'label-lg', summary, modifier = 'None', marginBottom = 'None' } = args;  // Default values
-  const modifierClass = modifier !== 'None' ? modifier : '';
-  const marginBottomClass = marginBottom !== 'None' ? marginBottom : '';
-
-  // Join classes and filter out any empty strings to avoid extra spaces
-  const classNames = [size, modifierClass, marginBottomClass].filter(Boolean).join(' ');
-
-  return `<p class="${classNames}">${summary}</p>`;
-};*/
-
 const generateHtmlSnippet = (args) => {
   const { size = 'label-lg', summary, modifier = 'None', marginBottom = 'None' } = args;
   const classes = [size];
 
-  // Only add modifier if it is not 'None'
   if (modifier !== 'None') classes.push(modifier);
 
-  // Determine if the <div> needs a class
   const divTag = marginBottom !== 'None' ? `<div class="${marginBottom}">` : `<div>`;
 
   return `${divTag}<p class="${classes.join(' ')}">${summary}</p></div>`;
@@ -69,11 +54,11 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       defaultValue: 'Desktop',
     },
     breakpoint: {
-      description: '', // Initially empty; dynamically set in the decorator
+      description: '',
       table: {
         type: { summary: 'Information' },
       },
-      control: false, // No direct control, purely informational
+      control: false,
     },
     size: {
       control: { type: 'select' },
@@ -85,7 +70,7 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       options: ['None', 'label-lg--underline'],
       defaultValue: 'None',
       table: {
-        disable: false, // Modifier control visible by default
+        disable: false,
       },
     },
     marginBottom: {
@@ -100,13 +85,11 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       const modifierControl = context.argTypes.modifier;
 
       useEffect(() => {
-        // Update breakpoint description based on the selected version
         context.argTypes.breakpoint.description = args.version === 'Desktop' 
           ? 'breakpoint-md & breakpoint-lg'
           : 'breakpoint-xs & breakpoint-sm';
       }, [args.version]);
 
-      // Existing logic for modifier options based on size
       if (args.size === 'label-sm') {
         if (args.modifier !== 'None' && modifierControl.options[0] !== 'None') {
           args.modifier = 'None';
@@ -121,7 +104,7 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
         modifierControl.table.disable = false;
       } else {
         args.modifier = 'None';
-        modifierControl.table.disable = true; // Hide modifier for label-md
+        modifierControl.table.disable = true;
       }
 
       return <Story {...args} />;
@@ -153,7 +136,6 @@ LabelLarge.parameters = {
   },
 };
 
-// NB add in modifier and then only on actual stories for that do it
 export const LabelMedium = Template.bind({});
 LabelMedium.args = {
   ...LabelLarge.args,

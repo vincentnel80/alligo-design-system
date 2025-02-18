@@ -2,34 +2,12 @@ import React, { useEffect } from 'react';
 import { Headline } from './Headline';
 import CustomDocsContainer from './CustomDocsContainer';
 
-// Dynamic HTML snippet generator function
-/*
-const generateHtmlSnippet = (args) => {
-  const { size = 'headline-lg', summary, marginBottom = '' } = args;  
-  return `<div class="${size} ${marginBottom}">${summary}</div>`;
-};
-*/
-// Dynamic HTML snippet generator function
-/*const generateHtmlSnippet = (args) => {
-  const { size = 'headline-lg', summary, modifier = 'None', marginBottom = 'None' } = args;  // Default values
-  
-  // Conditionally add modifier and marginBottom if they are not 'None'
-  const classes = [size];
-  if (modifier !== 'None') classes.push(modifier);
-  if (marginBottom !== 'None') classes.push(marginBottom);
-
-  // Join the classes array into a string, filtering out any empty values
-  return `<p class="${classes.join(' ')}">${summary}</p>`;
-}; */
-
 const generateHtmlSnippet = (args) => {
   const { size = 'headline-lg', summary, modifier = 'None', marginBottom = 'None' } = args;
   const classes = [size];
 
-  // Only add modifier if it is not 'None'
   if (modifier !== 'None') classes.push(modifier);
 
-  // Determine if the <div> needs a class
   const divTag = marginBottom !== 'None' ? `<div class="${marginBottom}">` : `<div>`;
 
   return `${divTag}<p class="${classes.join(' ')}">${summary}</p></div>`;
@@ -38,7 +16,6 @@ const generateHtmlSnippet = (args) => {
 
 
 export default {
-  //title: 'Typography/Headline',
   title: 'Foundation/Typography/Components/Headline',
   component: Headline,
   parameters: {
@@ -98,9 +75,8 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       control: { type: 'select' },
       options: ['None', 'headline-md--blockquote'],
       defaultValue: 'None',
-      // Conditionally disable the modifier control based on the value of size
       table: {
-        disable: true, // initially disabled in the docs table
+        disable: true,
       },
     },
     marginBottom: {
@@ -109,7 +85,6 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       defaultValue: 'None',
     },
   },
-  // Custom logic to enable or disable the modifier based on size
   decorators: [
     (Story, context) => {
       const { version } = context.args;
@@ -118,7 +93,6 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       modifierControl.table.disable = args.size !== 'headline-md';
 
       useEffect(() => {
-        // Update breakpoint description based on the selected version
         context.argTypes.breakpoint.description = version === 'Desktop' 
           ? 'breakpoint-md & breakpoint-lg'
           : 'breakpoint-xs & breakpoint-sm';
@@ -134,7 +108,6 @@ const summaryText = 'Swedol caters to the needs of the professionals';
 
 const Template = (args) => <Headline {...args} />;
 
-// Dynamic generation of the Default story
 export const Default = Template.bind({});
 Default.args = {
   version: 'Desktop',
@@ -153,7 +126,6 @@ Default.parameters = {
   },
 };
 
-// Other variants like HeadlineLarge, HeadlineMedium, etc.
 export const HeadlineXLarge = Template.bind({});
 HeadlineXLarge.args = {
   ...Default.args,
@@ -201,7 +173,7 @@ HeadlineSmall.args = {
 };
 HeadlineSmall.parameters = {
   docs: {
-    code: null,  // This will hide the "Show Code" button
+    code: null,
   },
 };
 
@@ -213,6 +185,6 @@ HeadlineMediumModifier.args = {
 };
 HeadlineMediumModifier.parameters = {
   docs: {
-    code: null,  // This will hide the "Show Code" button
+    code: null,
   },
 };

@@ -91,7 +91,6 @@ Consider using title styles to divide secondary passages of text or secondary re
           <table>
             <thead>
               <tr>
-
               </tr>
             </thead>
             <tbody>

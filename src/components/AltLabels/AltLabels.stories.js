@@ -2,16 +2,12 @@ import React, { useEffect } from 'react';
 import { AltLabel } from './AltLabel';
 import CustomDocsContainer from './CustomDocsContainer';
 
-// Dynamic HTML snippet generator function
-
 const generateHtmlSnippet = (args) => {
   const { size = 'alt-label-lg', summary, modifier = 'None', marginBottom = 'None' } = args;
   const classes = [size];
 
-  // Only add modifier if it is not 'None'
   if (modifier !== 'None') classes.push(modifier);
 
-  // Determine if the <div> needs a class
   const divTag = marginBottom !== 'None' ? `<div class="${marginBottom}">` : `<div>`;
 
   return `${divTag}<p class="${classes.join(' ')}">${summary}</p></div>`;

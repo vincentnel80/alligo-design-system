@@ -12,10 +12,6 @@ import './storybook/display-sb.scss';
  * Display Large is typically used to present H1 content, especially at the top of a page or article. It is crucial to maintain consistency by never using Display Large in combination with Headline X-Large, as each serves a distinct role in the visual hierarchy.
 */
 
-
-// if i dont add these, then it always comes back as undefined - why
-
-
 export const Display = ({ 
   size = 'display-lg', 
   version = 'Desktop', 
@@ -23,16 +19,13 @@ export const Display = ({
   marginBottom = 'None', 
   modifier = 'None' 
 }) => {
-  // Conditionally apply the -mob or -dt suffix for mobile or desktop version
+
   const computedFontName = version === 'Mobile' ? `${size}-mob` : `${size}-dt`;
-  
-  // Combine font name with the modifier (if it's not 'None')
   const classNames = modifier !== 'None' ? `${computedFontName} ${modifier}` : computedFontName;
 
   return (
     <>
       <div className={`${marginBottom}-sb`}>
-        <p className={classNames}>{summary}</p>
         <p className={classNames}>{summary}</p>
       </div>
     </>
@@ -40,21 +33,21 @@ export const Display = ({
 };
 
 
-  Display.propTypes = {
+Display.propTypes = {
   /**
    * Determines whether Desktop or Mobile styles are applied
    */
   version: PropTypes.oneOf(['Desktop', 'Mobile']),
 
-    /**
+  /**
    * Current breakpoint viewed, based on version
    */
-    breakpoint: PropTypes.string,
+  breakpoint: PropTypes.string,
 
-    /**
-     * Summary text to be displayed
-     */
-    summary: PropTypes.string.isRequired, // assuming summary is a required string
+  /**
+   * Summary text to be displayed
+   */
+  summary: PropTypes.string.isRequired, // assuming summary is a required string
 
   /**
    * Font size for the text
@@ -65,6 +58,5 @@ export const Display = ({
    * Margin bottom spacing
    */
   marginBottom: PropTypes.string,
-  
-  };
+};
 

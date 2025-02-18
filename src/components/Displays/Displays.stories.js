@@ -2,27 +2,13 @@ import React, { useEffect } from 'react';
 import { Display } from './Display';
 import CustomDocsContainer from './CustomDocsContainer';
 
-// Dynamic HTML snippet generator function
-
-
-/* const generateHtmlSnippet = (args) => {
-  const { size = 'display-lg', summary, modifier = 'None', marginBottom = 'None' } = args; 
-  
-  const classes = [size];
-  if (modifier) classes.push(modifier);
-  if (marginBottom) classes.push(marginBottom);
-
-  return `<p class="${classes.join(' ')}">${summary}</p>`;
-}; */
 
 const generateHtmlSnippet = (args) => {
   const { size = 'display-lg', summary, modifier = 'None', marginBottom = 'None' } = args;
   const classes = [size];
 
-  // Only add modifier if it is not 'None'
   if (modifier !== 'None') classes.push(modifier);
 
-  // Determine if the <div> needs a class
   const divTag = marginBottom !== 'None' ? `<div class="${marginBottom}">` : `<div>`;
 
   return `${divTag}<p class="${classes.join(' ')}">${summary}</p></div>`;
@@ -33,11 +19,11 @@ export default {
   title: 'Foundation/Typography/Components/Display',
   component: Display,
   parameters: {
-    layout: 'centered',
-    docs: {
-      container: CustomDocsContainer,
-      description: {
-        component: `
+  layout: 'centered',
+  docs: {
+    container: CustomDocsContainer,
+    description: {
+    component: `
 
 Display styles are intended for short, prominent text or numerals, helping to emphasize important content and establish clear hierarchy. These styles are particularly effective when used in banners, campaign headlines, or any content that needs to capture attention.
 
@@ -90,9 +76,8 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       control: { type: 'select' },
       options: ['None', 'preamble', 'underline', 'bold', 'strikethrough'],
       defaultValue: 'preamble',
-      // Conditionally disable the modifier control based on the value of size
       table: {
-        disable: true, // initially disabled in the docs table
+        disable: true,
       },
     },
     marginBottom: {
@@ -101,11 +86,7 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       defaultValue: 'None',
     },
   },
-  // Custom logic to enable or disable the modifier based on size
-  /// there are no modifiers for this vin
-    /// there are no modifiers for this vin
-      /// there are no modifiers for this vin
-        /// there are no modifiers for this vin
+
   decorators: [
     (Story, context) => {
       const { size, version } = context.args;
@@ -114,7 +95,6 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       modifierControl.table.disable = args.size !== 'body-xl';
 
       useEffect(() => {
-        // Update breakpoint description based on the selected version
         context.argTypes.breakpoint.description = version === 'Desktop' 
           ? 'breakpoint-md & breakpoint-lg'
           : 'breakpoint-xs & breakpoint-sm';
@@ -127,28 +107,8 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
 };
 
 
-
 const Template = (args) => <Display {...args} />;
 
-// Dynamic generation of the Default story
-// after session with Erik, default is redundant and make an actual text
-/*export const Default = Template.bind({});
-Default.args = {
-  summary: summaryText,
-  size: 'body-xl',  // Set a default size
-  marginBottom: '',  // Set a default marginBottom
-};
-
-Default.parameters = {
-  docs: {
-    disable: true,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
-    },
-  },
-}; */
-
-// Dynamic generation of the Default story - now replaced with body x large
 export const DisplayLarge = Template.bind({});
 DisplayLarge.args = {
   version: 'Desktop',
@@ -160,27 +120,12 @@ DisplayLarge.args = {
 
 DisplayLarge.parameters = {
   docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
+    disable: false,  
     source: {
       transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
     },
   },
 };
-
-// Other variants like HeadlineLarge, HeadlineMedium, etc.
-/*export const BodyXLarge = Template.bind({});
-BodyXLarge.args = {
-  ...Default.args,
-  size: 'body-xl',
-};
-BodyXLarge.parameters = {
-  docs: {
-    disable: true,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
-    source: {
-      transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args), // the above will hide this. to reactivate, delete "disable: true"
-    },
-  },
-}; */
 
 export const DisplayMedium = Template.bind({});
 DisplayMedium.args = {
@@ -190,7 +135,7 @@ DisplayMedium.args = {
 };
 DisplayMedium.parameters = {
   docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
+    disable: false,
     source: {
       transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
     },
@@ -205,12 +150,9 @@ DisplaySmall.args = {
 };
 DisplaySmall.parameters = {
   docs: {
-    disable: false,  // This will hide this story from the Docs page and ovverrides the below - it is to hide stories in docs page but - still show on actual stories page
+    disable: false,
     source: {
       transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
     },
   },
 };
-
-
-// body LG modifiers

@@ -17,37 +17,103 @@ SB hacks for - EG doc paragraphs, vs inbuilts styles (the initial correct what, 
 components
 
 Main Page templte
-- HTM, cleaned, refined,renamed
+- HTM, cleaned, refined,renamed (done)
 - CSS, cleaned, refined,renamed
 -- local placement, build
-- screen readers aria
+- screen readers aria (done)
+imports
 
 MainIntoComponent
-- HTM, cleaned, refined,renamed
+- HTM, cleaned, refined,renamed (done)
 - CSS, cleaned, refined,renamed
 -- local placement, build
 
 secondaryIntoComponent
-- HTM, cleaned, refined,renamed
+- HTM, cleaned, refined,renamed (done)
 - CSS, cleaned, refined,renamed
 -- local placement, build
 -- renamed to Sub Header
 
 SubHeaderComponent
-- HTM, cleaned, refined,renamed
+- HTM, cleaned, refined,renamed (done)
 - CSS, cleaned, refined,renamed
 -- local placement, build
 -- renamed to small sub
 
 
 Grid header 3 col
-- HTM, cleaned, refined,renamed
+- HTM, cleaned, refined,renamed (done)
 - CSS, cleaned, refined,renamed
 -- local placement, build
 
 
 GridContainerComponent (the data columns)
-- HTM, cleaned, refined,renamed
+- HTM, cleaned, refined,renamed (done)
 - CSS, cleaned, refined,renamed
 -- local placement, build
 needs serious rework
+
+clipboard
+html
+styles
+
+clipboard Icon
+html
+styles
+
+
+
+---- stories ----
+
+Alt-label
+- HTM, cleaned, refined,renamed (done)
+- CSS, cleaned, refined,renamed (SB Done)
+-- local placement, build
+
+Bodies
+- HTM, cleaned, refined,renamed
+- CSS, cleaned, refined,renamed (SB Done)
+-- local placement, build
+
+Display
+- HTM, cleaned, refined,renamed
+- CSS, cleaned, refined,renamed (SB Done)
+-- local placement, build
+
+Headline
+- HTM, cleaned, refined,renamed
+- CSS, cleaned, refined,renamed (SB Done)
+-- local placement, build
+
+Label
+- HTM, cleaned, refined,renamed
+- CSS, cleaned, refined,renamed (SB Done)
+-- local placement, build
+
+
+Title
+- HTM, cleaned, refined,renamed
+- CSS, cleaned, refined,renamed (SB Done)
+-- local placement, build
+
+Bullets ** a sore point
+
+Blocquote
+
+Misc
+Delete all non used
+build
+global url stuff
+preview head.js - symbols
+Letter Spacing - in foder
+import draft as component
+correct mobile
+custom docs container in all
+wrap each story in Page?
+linter
+/Users/vinnel0526/Sites/alligo-design-system/src/components/Spacing/storybook/spacing-sb.scss
+mofifiers not working (body)
+DOCS
+/Users/vinnel0526/Sites/alligo-design-system/src/components/AltLabels/DocResourcesContainer.scss
+Spacing modile - and will i use that in the rest of the system
+components in SB eg --font-weight-body-xl how to account for that ??

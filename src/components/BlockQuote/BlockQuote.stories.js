@@ -8,12 +8,12 @@ const generateHtmlSnippet = (args) => {
   
   // Return HTML snippet with dynamic values
   return `
-    <div class="blockq-container">
-      <div class="blockq-container-inner" style="border-left: ${theme === 'Swedol' ? '#C7D300' : '#CD1125'};">
+    <div class="blockquote-container">
+      <div class="blockquote-containe blockquote-container-inner" style="border-left: ${theme === 'Swedol' ? '#C7D300' : '#CD1125'};">
         <div class="headline-md headline-md--blockquote">
           "${summary}"
         </div>
-        <div class="bottom-text-wrapper">
+        <div class="blockquote__meta">
           <span class="label-sm">${name}</span>
           <span class="body-sm">${title}</span>
         </div>

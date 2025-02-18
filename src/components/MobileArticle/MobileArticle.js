@@ -40,15 +40,6 @@ const MobileArticle = () => <div className={'sb-page-container-mobile'}>
         <div className={'sb-info-block-container'}>
             <p className={'body-lg'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus interdum facilisi eget sem. Adipiscing convallis est volutpat elit ipsum tristique tellus. Consequat nulla quis at quis. Pharetra, purus odio consequat faucibus rhoncus velit quam faucibus nullam. Cursus vestibulum malesuada velit fames tellus mauris.</p>
         </div>
-
-        {/*
-        <blockquote cite="#" className="sb-blockquote">
-            <div className={'sb-blockquote-label-medium'}>“It has to start somewhere, it has to start sometime. What better place than here, what better time than now?”</div>
-            <span className={'label-sm'}>Name Surname</span>
-            <span className={'body-sm'}>Title</span>
-        </blockquote>
-        */}
-
         <div className={'sb-info-block-container'} >
             <p className={'body-lg'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus interdum facilisi eget sem. Adipiscing convallis est volutpat elit ipsum tristique tellus. Consequat nulla quis at quis. Pharetra, purus odio consequat faucibus rhoncus velit quam faucibus nullam. Cursus vestibulum malesuada velit fames tellus mauris.</p>
         </div>

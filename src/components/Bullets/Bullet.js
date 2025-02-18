@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './storybook/bullet-sb.scss';
 import '../../globalStyles/foundation-fonts-weights.scss'; // make global -- but saying that --- when I add it like this, it works, but when I use import, it fails ---
 
+
 /**
  * 
 * The bullet list component supports up to three levels of nested lists, providing both mobile and desktop variants for flexible design.
@@ -112,16 +113,6 @@ export const Bullet = ({ version,  marginBottom = 'None', variant= 'dot-desktop-
   );
 };
 
-Bullet.propTypes = {
-  version: PropTypes.oneOf(['Desktop', 'Mobile']),
-  size: PropTypes.oneOf(['large', 'medium']),
-  variant: PropTypes.string.isRequired,  // Example: define the expected type
-  marginBottom: PropTypes.string,
-  levels: PropTypes.oneOf([1, 2, 3]),
-  listLevel1: PropTypes.string,
-  listLevel2: PropTypes.string,
-  listLevel3: PropTypes.string,
-};
 // Set default values for the props in Bullet component
 Bullet.defaultProps = {
   version: 'Desktop',
@@ -132,4 +123,15 @@ Bullet.defaultProps = {
   listLevel1: 'List Item Level 1',
   listLevel2: 'List Item Level 2',
   listLevel3: 'List Item Level 3',
+};
+
+Bullet.propTypes = {
+  version: PropTypes.oneOf(['Desktop', 'Mobile']),
+  size: PropTypes.oneOf(['large', 'medium']),
+  variant: PropTypes.string.isRequired,  // Example: define the expected type
+  marginBottom: PropTypes.string,
+  levels: PropTypes.oneOf([1, 2, 3]),
+  listLevel1: PropTypes.string,
+  listLevel2: PropTypes.string,
+  listLevel3: PropTypes.string,
 };

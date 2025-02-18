@@ -7,10 +7,8 @@ const generateHtmlSnippet = (args) => {
   const { size = 'body-xl', summary, modifier = 'None', marginBottom = 'None' } = args;
   const classes = [size];
 
-  // Only add modifier if it is not 'None'
   if (modifier !== 'None') classes.push(modifier);
 
-  // Determine if the <div> needs a class
   const divTag = marginBottom !== 'None' ? `<div class="${marginBottom}">` : `<div>`;
 
   return `${divTag}<p class="${classes.join(' ')}">${summary}</p></div>`;
@@ -71,8 +69,7 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
     breakpoint: {
       description: '', 
       table: {
-        type: { summary: 'Information' },
-       // defaultValue: { summary: 'breakpoint-md & breakpoint-lg' },
+      type: { summary: 'Information' },
        defaultValue: '',
       },
       control: false, 
@@ -104,7 +101,6 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       }, [size]);  
 
       useEffect(() => {
-        // Update breakpoint description based on the selected version
         context.argTypes.breakpoint.description = version === 'Desktop' 
           ? 'breakpoint-md & breakpoint-lg'
           : 'breakpoint-xs & breakpoint-sm';

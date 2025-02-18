@@ -30,9 +30,7 @@ const CustomDiv = () => {
         {activeTab === 'Resources' && (
           <table>
             <thead>
-              <tr>
-
-              </tr>
+              <tr></tr>
             </thead>
             <tbody>
               <tr>

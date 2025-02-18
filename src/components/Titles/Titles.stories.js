@@ -2,32 +2,12 @@ import React, { useEffect } from 'react';
 import { Title } from './Title';
 import CustomDocsContainer from './CustomDocsContainer';
 
-// Dynamic HTML snippet generator function
-/*
-const generateHtmlSnippet = (args) => {
-  const { size = 'title-lg', summary, marginBottom = '' } = args; 
-  return `<div class="${size} ${marginBottom}">${summary}</div>`;
-}; 
-*/
-/*
-const generateHtmlSnippet = (args) => {
-  const { size = 'title-lg', summary, marginBottom = 'None' } = args; 
-  
-  // Only add marginBottom if it's not 'None'
-  const classes = [size];
-  if (marginBottom !== 'None') classes.push(marginBottom);
-
-  return `<div class="${classes.join(' ')}">${summary}</div>`;
-}; */
-
 const generateHtmlSnippet = (args) => {
   const { size = 'title-lg', summary, modifier = 'None', marginBottom = 'None' } = args;
   const classes = [size];
 
-  // Only add modifier if it is not 'None'
   if (modifier !== 'None') classes.push(modifier);
 
-  // Determine if the <div> needs a class
   const divTag = marginBottom !== 'None' ? `<div class="${marginBottom}">` : `<div>`;
 
   return `${divTag}<p class="${classes.join(' ')}">${summary}</p></div>`;
@@ -35,7 +15,6 @@ const generateHtmlSnippet = (args) => {
 
 
 export default {
- // title: 'Typography/Title',
   title: 'Foundation/Typography/Components/Title',
   component: Title,
   parameters: {
@@ -101,7 +80,6 @@ Generally, in order for fonts to appear correctly on the live site, the font-wei
       const { version } = context.args;
 
       useEffect(() => {
-        // Update breakpoint description based on the selected version
         context.argTypes.breakpoint.description = version === 'Desktop' 
           ? 'breakpoint-md & breakpoint-lg'
           : 'breakpoint-xs & breakpoint-sm';
@@ -117,26 +95,23 @@ const summaryText = 'Swedol caters to the needs of professional users as a multi
 
 const Template = (args) => <Title {...args} />;
 
-// Dynamic generation of the Default story
 export const Default = Template.bind({});
 Default.args = {
   version: 'Desktop',
   breakpoint: '',
-  size: 'title-lg',  // Set a default size
+  size: 'title-lg',
   summary: summaryText,
-  marginBottom: 'None',  // Set a default marginBottom
+  marginBottom: 'None',
 };
 
 Default.parameters = {
   docs: {
-    // Pass args to dynamically generate code for the current state
     source: {
       transformSource: (src, storyContext) => generateHtmlSnippet(storyContext.args),
     },
   },
 };
 
-// Other variants like TitleLarge, TitleMedium, etc.
 export const TitleLarge = Template.bind({});
 TitleLarge.args = {
   ...Default.args,

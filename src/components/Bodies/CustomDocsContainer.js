@@ -6,8 +6,6 @@ import CustomDiv from './CustomDiv';
 const CustomDocsContainer = ({ context }) => {
   return (
     <DocsContainer context={context}>
-      {/* Custom Div goes here <CustomDiv /> */}
-      
       <DocsPage />
       <CustomDiv />
     </DocsContainer>

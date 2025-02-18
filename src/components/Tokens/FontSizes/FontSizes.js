@@ -20,30 +20,6 @@ const FontSizes = ({
 
         <div className={'sb-grid-container'} role={'listbox'}>
 
-{/* not universal, as it does not relate to fonts ? */}
-{/* 
-font-size-body-sm
-font-size-body-md
-font-size-body-lg
-font-size-body-xl
-font-size-alt-label-sm
-font-size-alt-label-md
-font-size-alt-label-lg
-font-size-label-sm
-font-size-label-md
-font-size-label-lg
-font-size-title-sm
-font-size-title-md
-font-size-title-lg
-font-size-headline-sm
-font-size-headline-md
-font-size-headline-lg
-font-size-headline-xl
-font-size-display-sm
-font-size-display-md
-font-size-display-lg
-
-*/}
 <GridContainerComponent
 fontClassName={'body-sm'}
 fontDescription={'Font-size: 14px;'}
